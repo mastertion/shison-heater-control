@@ -1,0 +1,30 @@
+# ===== 构建产物 =====
+*.hap
+.hvigor/
+build/
+output/
+oh_modules/
+
+# ===== 逆向中间产物（体积大且含二进制，不入库）=====
+sicn_extract/
+
+# ===== 二进制素材 =====
+*.apk
+*.p12
+*.cer
+*.pem
+*.keystore
+*.jks
+
+# ===== 日志与临时文件 =====
+*.log
+hilog_*.txt
+_h*.txt
+_sz.txt
+
+# ===== IDE / 系统 =====
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db

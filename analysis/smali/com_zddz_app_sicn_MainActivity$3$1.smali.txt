@@ -1,0 +1,21 @@
+### CLASS Lcom/zddz/app/sicn/MainActivity$3$1; (super=Ljava/lang/Object;)
+FIELD: this$1 Lcom/zddz/app/sicn/MainActivity$3;
+FIELD: val$tDiscoveryAddress Ljava/lang/String;
+
+METHOD: constructor <init>(Lcom/zddz/app/sicn/MainActivity$3; Ljava/lang/String;)V
+    iput-object              v1, v0, Lcom/zddz/app/sicn/MainActivity$3$1;->this$1 Lcom/zddz/app/sicn/MainActivity$3;
+    iput-object              v2, v0, Lcom/zddz/app/sicn/MainActivity$3$1;->val$tDiscoveryAddress Ljava/lang/String;
+    invoke-direct            v0, Ljava/lang/Object;-><init>()V
+    return-void              
+
+METHOD: public run()V
+    iget-object              v0, v5, Lcom/zddz/app/sicn/MainActivity$3$1;->this$1 Lcom/zddz/app/sicn/MainActivity$3;
+    iget-object              v0, v0, Lcom/zddz/app/sicn/MainActivity$3;->this$0 Lcom/zddz/app/sicn/MainActivity;
+    invoke-static            v0, Lcom/zddz/app/sicn/MainActivity;->access$100(Lcom/zddz/app/sicn/MainActivity;)Lcom/zddz/bt/BtService;
+    move-result-object       v0
+    iget-object              v1, v5, Lcom/zddz/app/sicn/MainActivity$3$1;->val$tDiscoveryAddress Ljava/lang/String;
+    sget-object              v2, Lcom/zddz/app/sicn/OrderSet;->FFF0 Ljava/util/UUID;
+    sget-object              v3, Lcom/zddz/app/sicn/OrderSet;->FFF1 Ljava/util/UUID;
+    sget-object              v4, Lcom/zddz/app/sicn/OrderSet;->write_synchronize [B
+    invoke-virtual           v0, v1, v2, v3, v4, Lcom/zddz/bt/BtService;->writeCharacteristic(Ljava/lang/String; Ljava/util/UUID; Ljava/util/UUID; [B)I
+    return-void              

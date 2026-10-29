@@ -1,0 +1,186 @@
+### CLASS Lcom/zddz/app/sicn/fragment/ScanFragment; (super=Lcom/zddz/app/sicn/fragment/BaseFragment;)
+FIELD: bar_prompt Landroid/widget/ProgressBar; (access=private)
+FIELD: bt_scan Landroid/widget/TextView; (access=private)
+FIELD: mDeviceItemRAdapter Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter; (access=private)
+FIELD: mOnClickListener Landroid/view/View$OnClickListener; (access=private)
+FIELD: mScanning Z (access=private)
+FIELD: mScanningObserver Landroidx/lifecycle/Observer; (access=private)
+FIELD: rv_device Landroidx/recyclerview/widget/RecyclerView; (access=private)
+
+METHOD: public constructor <init>()V
+    invoke-direct            v1, Lcom/zddz/app/sicn/fragment/BaseFragment;-><init>()V
+    const/4                  v0, 0
+    iput-boolean             v0, v1, Lcom/zddz/app/sicn/fragment/ScanFragment;->mScanning Z
+    new-instance             v0, Lcom/zddz/app/sicn/fragment/ScanFragment$1;
+    invoke-direct            v0, v1, Lcom/zddz/app/sicn/fragment/ScanFragment$1;-><init>(Lcom/zddz/app/sicn/fragment/ScanFragment;)V
+    iput-object              v0, v1, Lcom/zddz/app/sicn/fragment/ScanFragment;->mOnClickListener Landroid/view/View$OnClickListener;
+    new-instance             v0, Lcom/zddz/app/sicn/fragment/ScanFragment$2;
+    invoke-direct            v0, v1, Lcom/zddz/app/sicn/fragment/ScanFragment$2;-><init>(Lcom/zddz/app/sicn/fragment/ScanFragment;)V
+    iput-object              v0, v1, Lcom/zddz/app/sicn/fragment/ScanFragment;->mScanningObserver Landroidx/lifecycle/Observer;
+    return-void              
+
+METHOD: static synthetic access$000(Lcom/zddz/app/sicn/fragment/ScanFragment;)Z
+    iget-boolean             v0, v0, Lcom/zddz/app/sicn/fragment/ScanFragment;->mScanning Z
+    return                   v0
+
+METHOD: static synthetic access$002(Lcom/zddz/app/sicn/fragment/ScanFragment; Z)Z
+    iput-boolean             v1, v0, Lcom/zddz/app/sicn/fragment/ScanFragment;->mScanning Z
+    return                   v1
+
+METHOD: static synthetic access$100(Lcom/zddz/app/sicn/fragment/ScanFragment;)Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;
+    iget-object              v0, v0, Lcom/zddz/app/sicn/fragment/ScanFragment;->mDeviceItemRAdapter Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;
+    return-object            v0
+
+METHOD: static synthetic access$200(Lcom/zddz/app/sicn/fragment/ScanFragment;)Landroid/widget/ProgressBar;
+    iget-object              v0, v0, Lcom/zddz/app/sicn/fragment/ScanFragment;->bar_prompt Landroid/widget/ProgressBar;
+    return-object            v0
+
+METHOD: static synthetic access$300(Lcom/zddz/app/sicn/fragment/ScanFragment;)Landroid/widget/TextView;
+    iget-object              v0, v0, Lcom/zddz/app/sicn/fragment/ScanFragment;->bt_scan Landroid/widget/TextView;
+    return-object            v0
+
+METHOD: synthetic lambda$onViewCreated$0$com-zddz-app-sicn-fragment-ScanFragment(Landroid/view/View; I)V
+    iget-object              v3, v2, Lcom/zddz/app/sicn/fragment/ScanFragment;->mDeviceItemRAdapter Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;
+    invoke-virtual           v3, v4, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;->getItem(I)Lcom/zddz/bt/DeviceItem;
+    move-result-object       v3
+    iget                     v4, v3, Lcom/zddz/bt/DeviceItem;->mState I
+    const/4                  v0, 2
+    if-ne                    v4, v0, +025h
+    iget-object              v4, v2, Lcom/zddz/app/sicn/fragment/ScanFragment;->mIMain Lcom/zddz/app/sicn/fragment/IMain;
+    iget-object              v0, v3, Lcom/zddz/bt/DeviceItem;->mAddress Ljava/lang/String;
+    invoke-interface         v4, v0, Lcom/zddz/app/sicn/fragment/IMain;->disconnectBle(Ljava/lang/String;)V
+    iget-object              v3, v3, Lcom/zddz/bt/DeviceItem;->mAddress Ljava/lang/String;
+    iget-object              v4, v2, Lcom/zddz/app/sicn/fragment/ScanFragment;->mBaseViewModel Lcom/zddz/app/sicn/fragment/BaseViewModel;
+    invoke-virtual           v4, Lcom/zddz/app/sicn/fragment/BaseViewModel;->getBleAddress()Ljava/lang/String;
+    move-result-object       v4
+    invoke-virtual           v3, v4, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result              v3
+    if-eqz                   v3, +03fh
+    iget-object              v3, v2, Lcom/zddz/app/sicn/fragment/ScanFragment;->mBaseViewModel Lcom/zddz/app/sicn/fragment/BaseViewModel;
+    const/4                  v4, 0
+    invoke-virtual           v3, v4, Lcom/zddz/app/sicn/fragment/BaseViewModel;->setAutoConnect(Z)V
+    iget-object              v3, v2, Lcom/zddz/app/sicn/fragment/ScanFragment;->mBaseViewModel Lcom/zddz/app/sicn/fragment/BaseViewModel;
+    const-string             v4, ""
+    invoke-virtual           v3, v4, Lcom/zddz/app/sicn/fragment/BaseViewModel;->setBleAddress(Ljava/lang/String;)V
+    goto                     +30h
+    iget-object              v4, v2, Lcom/zddz/app/sicn/fragment/ScanFragment;->mIMain Lcom/zddz/app/sicn/fragment/IMain;
+    invoke-interface         v4, Lcom/zddz/app/sicn/fragment/IMain;->stopScanDevice()V
+    iget-object              v4, v2, Lcom/zddz/app/sicn/fragment/ScanFragment;->mIMain Lcom/zddz/app/sicn/fragment/IMain;
+    iget-object              v0, v2, Lcom/zddz/app/sicn/fragment/ScanFragment;->mBaseViewModel Lcom/zddz/app/sicn/fragment/BaseViewModel;
+    invoke-virtual           v0, Lcom/zddz/app/sicn/fragment/BaseViewModel;->getBleAddress()Ljava/lang/String;
+    move-result-object       v0
+    invoke-interface         v4, v0, Lcom/zddz/app/sicn/fragment/IMain;->disconnectBle(Ljava/lang/String;)V
+    const/4                  v4, 1
+    iput                     v4, v3, Lcom/zddz/bt/DeviceItem;->mState I
+    iget-object              v0, v2, Lcom/zddz/app/sicn/fragment/ScanFragment;->mDeviceItemRAdapter Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;
+    invoke-virtual           v0, v3, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;->updateItem(Lcom/zddz/bt/DeviceItem;)V
+    iget-object              v0, v2, Lcom/zddz/app/sicn/fragment/ScanFragment;->mBaseViewModel Lcom/zddz/app/sicn/fragment/BaseViewModel;
+    iget-object              v1, v3, Lcom/zddz/bt/DeviceItem;->mAddress Ljava/lang/String;
+    invoke-virtual           v0, v1, Lcom/zddz/app/sicn/fragment/BaseViewModel;->setBleAddress(Ljava/lang/String;)V
+    iget-object              v0, v2, Lcom/zddz/app/sicn/fragment/ScanFragment;->mBaseViewModel Lcom/zddz/app/sicn/fragment/BaseViewModel;
+    invoke-virtual           v0, v4, Lcom/zddz/app/sicn/fragment/BaseViewModel;->setAutoConnect(Z)V
+    iget-object              v4, v2, Lcom/zddz/app/sicn/fragment/ScanFragment;->mIMain Lcom/zddz/app/sicn/fragment/IMain;
+    iget-object              v0, v3, Lcom/zddz/bt/DeviceItem;->mAddress Ljava/lang/String;
+    iget-object              v1, v3, Lcom/zddz/bt/DeviceItem;->mName Ljava/lang/String;
+    iget-object              v3, v3, Lcom/zddz/bt/DeviceItem;->mManufactureData Ljava/lang/String;
+    invoke-interface         v4, v0, v1, v3, Lcom/zddz/app/sicn/fragment/IMain;->connectBle(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)V
+    return-void              
+
+METHOD: public onCreateView(Landroid/view/LayoutInflater; Landroid/view/ViewGroup; Landroid/os/Bundle;)Landroid/view/View;
+    const                    v4, 2131427377
+    const/4                  v0, 0
+    invoke-virtual           v2, v4, v3, v0, Landroid/view/LayoutInflater;->inflate(I Landroid/view/ViewGroup; Z)Landroid/view/View;
+    move-result-object       v2
+    iput-object              v2, v1, Lcom/zddz/app/sicn/fragment/ScanFragment;->mRootView Landroid/view/View;
+    iget-object              v2, v1, Lcom/zddz/app/sicn/fragment/ScanFragment;->mRootView Landroid/view/View;
+    return-object            v2
+
+METHOD: public onResume()V
+    invoke-super             v1, Lcom/zddz/app/sicn/fragment/BaseFragment;->onResume()V
+    iget-boolean             v0, v1, Lcom/zddz/app/sicn/fragment/ScanFragment;->mScanning Z
+    if-nez                   v0, +00ch
+    iget-object              v0, v1, Lcom/zddz/app/sicn/fragment/ScanFragment;->mDeviceItemRAdapter Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;
+    invoke-virtual           v0, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;->clear()V
+    iget-object              v0, v1, Lcom/zddz/app/sicn/fragment/ScanFragment;->mIMain Lcom/zddz/app/sicn/fragment/IMain;
+    invoke-interface         v0, Lcom/zddz/app/sicn/fragment/IMain;->startScanDevice()V
+    return-void              
+
+METHOD: public onViewCreated(Landroid/view/View; Landroid/os/Bundle;)V
+    invoke-super             v3, v4, v5, Lcom/zddz/app/sicn/fragment/BaseFragment;->onViewCreated(Landroid/view/View; Landroid/os/Bundle;)V
+    iget-object              v4, v3, Lcom/zddz/app/sicn/fragment/ScanFragment;->mRootView Landroid/view/View;
+    const                    v5, 2131230807
+    invoke-virtual           v4, v5, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-result-object       v4
+    check-cast               v4, Landroid/widget/ProgressBar;
+    iput-object              v4, v3, Lcom/zddz/app/sicn/fragment/ScanFragment;->bar_prompt Landroid/widget/ProgressBar;
+    const/16                 v5, 8
+    invoke-virtual           v4, v5, Landroid/widget/ProgressBar;->setVisibility(I)V
+    iget-object              v4, v3, Lcom/zddz/app/sicn/fragment/ScanFragment;->mRootView Landroid/view/View;
+    const                    v5, 2131230828
+    invoke-virtual           v4, v5, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-result-object       v4
+    check-cast               v4, Landroid/widget/TextView;
+    iput-object              v4, v3, Lcom/zddz/app/sicn/fragment/ScanFragment;->bt_scan Landroid/widget/TextView;
+    iget-object              v5, v3, Lcom/zddz/app/sicn/fragment/ScanFragment;->mOnClickListener Landroid/view/View$OnClickListener;
+    invoke-virtual           v4, v5, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    iget-object              v4, v3, Lcom/zddz/app/sicn/fragment/ScanFragment;->mRootView Landroid/view/View;
+    const                    v5, 2131230823
+    invoke-virtual           v4, v5, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-result-object       v4
+    check-cast               v4, Landroid/widget/TextView;
+    iget-object              v5, v3, Lcom/zddz/app/sicn/fragment/ScanFragment;->mOnClickListener Landroid/view/View$OnClickListener;
+    invoke-virtual           v4, v5, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    iget-object              v4, v3, Lcom/zddz/app/sicn/fragment/ScanFragment;->mRootView Landroid/view/View;
+    const                    v5, 2131231115
+    invoke-virtual           v4, v5, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    move-result-object       v4
+    check-cast               v4, Landroidx/recyclerview/widget/RecyclerView;
+    iput-object              v4, v3, Lcom/zddz/app/sicn/fragment/ScanFragment;->rv_device Landroidx/recyclerview/widget/RecyclerView;
+    new-instance             v5, Landroidx/recyclerview/widget/LinearLayoutManager;
+    invoke-virtual           v3, Lcom/zddz/app/sicn/fragment/ScanFragment;->getContext()Landroid/content/Context;
+    move-result-object       v0
+    const/4                  v1, 1
+    const/4                  v2, 0
+    invoke-direct            v5, v0, v1, v2, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(Landroid/content/Context; I Z)V
+    invoke-virtual           v4, v5, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
+    iget-object              v4, v3, Lcom/zddz/app/sicn/fragment/ScanFragment;->rv_device Landroidx/recyclerview/widget/RecyclerView;
+    invoke-virtual           v4, Landroidx/recyclerview/widget/RecyclerView;->getItemAnimator()Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;
+    move-result-object       v4
+    instance-of              v5, v4, Landroidx/recyclerview/widget/SimpleItemAnimator;
+    if-eqz                   v5, +007h
+    check-cast               v4, Landroidx/recyclerview/widget/SimpleItemAnimator;
+    invoke-virtual           v4, v2, Landroidx/recyclerview/widget/SimpleItemAnimator;->setSupportsChangeAnimations(Z)V
+    iget-object              v4, v3, Lcom/zddz/app/sicn/fragment/ScanFragment;->rv_device Landroidx/recyclerview/widget/RecyclerView;
+    invoke-virtual           v4, Landroidx/recyclerview/widget/RecyclerView;->getItemAnimator()Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;
+    move-result-object       v4
+    const-wide/16            v0, 0
+    invoke-virtual           v4, v0, v1, Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;->setChangeDuration(J)V
+    new-instance             v4, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;
+    invoke-direct            v4, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;-><init>()V
+    iput-object              v4, v3, Lcom/zddz/app/sicn/fragment/ScanFragment;->mDeviceItemRAdapter Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;
+    iget-object              v5, v3, Lcom/zddz/app/sicn/fragment/ScanFragment;->rv_device Landroidx/recyclerview/widget/RecyclerView;
+    invoke-virtual           v5, v4, Landroidx/recyclerview/widget/RecyclerView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
+    iget-object              v4, v3, Lcom/zddz/app/sicn/fragment/ScanFragment;->mDeviceItemRAdapter Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;
+    new-instance             v5, Lcom/zddz/app/sicn/fragment/ScanFragment$$ExternalSyntheticLambda0;
+    invoke-direct            v5, v3, Lcom/zddz/app/sicn/fragment/ScanFragment$$ExternalSyntheticLambda0;-><init>(Lcom/zddz/app/sicn/fragment/ScanFragment;)V
+    invoke-virtual           v4, v5, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;->setOnItemClickListener(Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter$OnItemClickListener;)V
+    iget-object              v4, v3, Lcom/zddz/app/sicn/fragment/ScanFragment;->mBaseViewModel Lcom/zddz/app/sicn/fragment/BaseViewModel;
+    invoke-virtual           v4, Lcom/zddz/app/sicn/fragment/BaseViewModel;->getScanningLiveData()Landroidx/lifecycle/MutableLiveData;
+    move-result-object       v4
+    invoke-virtual           v3, Lcom/zddz/app/sicn/fragment/ScanFragment;->getViewLifecycleOwner()Landroidx/lifecycle/LifecycleOwner;
+    move-result-object       v5
+    iget-object              v0, v3, Lcom/zddz/app/sicn/fragment/ScanFragment;->mScanningObserver Landroidx/lifecycle/Observer;
+    invoke-virtual           v4, v5, v0, Landroidx/lifecycle/MutableLiveData;->observe(Landroidx/lifecycle/LifecycleOwner; Landroidx/lifecycle/Observer;)V
+    return-void              
+
+METHOD: public updateDeviceItem(Lcom/zddz/bt/DeviceItem;)V
+    iget-object              v0, v1, Lcom/zddz/app/sicn/fragment/ScanFragment;->mDeviceItemRAdapter Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;
+    if-eqz                   v0, +005h
+    invoke-virtual           v0, v2, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;->updateItem(Lcom/zddz/bt/DeviceItem;)V
+    return-void              
+
+METHOD: public updateDeviceItem(Ljava/lang/String; I)V
+    iget-object              v0, v1, Lcom/zddz/app/sicn/fragment/ScanFragment;->mDeviceItemRAdapter Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;
+    if-eqz                   v0, +005h
+    invoke-virtual           v0, v2, v3, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;->updateItem(Ljava/lang/String; I)V
+    return-void              

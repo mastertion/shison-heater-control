@@ -1,0 +1,19 @@
+### CLASS Lcom/zddz/bt/WriteDataItem; (super=Ljava/lang/Object;)
+FIELD: mAddress Ljava/lang/String; (access=public)
+FIELD: mData [B (access=public)
+FIELD: mService Ljava/util/UUID; (access=public)
+FIELD: mTimeUse J (access=public)
+FIELD: mWrite Ljava/util/UUID; (access=public)
+
+METHOD: public constructor <init>()V
+    invoke-direct            v0, Ljava/lang/Object;-><init>()V
+    return-void              
+
+METHOD: public constructor <init>(Ljava/lang/String; Ljava/util/UUID; Ljava/util/UUID; [B J)V
+    invoke-direct            v0, Ljava/lang/Object;-><init>()V
+    iput-object              v1, v0, Lcom/zddz/bt/WriteDataItem;->mAddress Ljava/lang/String;
+    iput-object              v2, v0, Lcom/zddz/bt/WriteDataItem;->mService Ljava/util/UUID;
+    iput-object              v3, v0, Lcom/zddz/bt/WriteDataItem;->mWrite Ljava/util/UUID;
+    iput-object              v4, v0, Lcom/zddz/bt/WriteDataItem;->mData [B
+    iput-wide                v5, v0, Lcom/zddz/bt/WriteDataItem;->mTimeUse J
+    return-void              

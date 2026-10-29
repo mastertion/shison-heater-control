@@ -1,0 +1,8 @@
+'chcp' is not recognized as an internal or external command,
+operable program or batch file.
+[ERROR] Python is not found. Please install Python 3.10+ and check "Add Python to PATH":
+  https://www.python.org/downloads/
+Then double-click this file again.
+
+
+Done. Press any key to close.

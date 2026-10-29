@@ -1,0 +1,20 @@
+### CLASS Lcom/zddz/bt/BtCallback; (super=Ljava/lang/Object;)
+FIELD: EXTRA_BLE_DEVICE_ADDRESS Ljava/lang/String; (access=public static final)
+FIELD: EXTRA_BLE_DISCOVERY_SERVICE_STATE Ljava/lang/String; (access=public static final)
+FIELD: EXTRA_BLE_MTU_COUNT Ljava/lang/String; (access=public static final)
+FIELD: EXTRA_BLE_MTU_STATE Ljava/lang/String; (access=public static final)
+FIELD: EXTRA_BLE_NOTICE_UUID Ljava/lang/String; (access=public static final)
+FIELD: EXTRA_BLE_VALUE Ljava/lang/String; (access=public static final)
+FIELD: MESSAGE_BLE_CHARACTERISTIC_CHANGED I (access=public static final)
+FIELD: MESSAGE_BLE_CHARACTERISTIC_READ I (access=public static final)
+FIELD: MESSAGE_BLE_CHARACTERISTIC_WRITE I (access=public static final)
+FIELD: MESSAGE_BLE_DESCRIPTOR_WRITE I (access=public static final)
+FIELD: MESSAGE_BLE_DISCOVERY_SERVICE I (access=public static final)
+FIELD: MESSAGE_BLE_MTU I (access=public static final)
+FIELD: MESSAGE_BLE_SCANNING_CHANGED I (access=public static final)
+FIELD: MESSAGE_BLE_STATE I (access=public static final)
+FIELD: MESSAGE_LOCATION_CHANGED I (access=public static final)
+
+METHOD: public constructor <init>()V
+    invoke-direct            v0, Ljava/lang/Object;-><init>()V
+    return-void              

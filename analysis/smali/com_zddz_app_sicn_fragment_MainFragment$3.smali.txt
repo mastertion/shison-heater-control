@@ -1,0 +1,82 @@
+### CLASS Lcom/zddz/app/sicn/fragment/MainFragment$3; (super=Ljava/lang/Object;)
+FIELD: this$0 Lcom/zddz/app/sicn/fragment/MainFragment; (access=final synthetic)
+
+METHOD: constructor <init>(Lcom/zddz/app/sicn/fragment/MainFragment;)V
+    iput-object              v1, v0, Lcom/zddz/app/sicn/fragment/MainFragment$3;->this$0 Lcom/zddz/app/sicn/fragment/MainFragment;
+    invoke-direct            v0, Ljava/lang/Object;-><init>()V
+    return-void              
+
+METHOD: public onProgressChanged(Landroid/widget/SeekBar; I Z)V
+    iget-object              v1, v0, Lcom/zddz/app/sicn/fragment/MainFragment$3;->this$0 Lcom/zddz/app/sicn/fragment/MainFragment;
+    invoke-static            v1, v3, Lcom/zddz/app/sicn/fragment/MainFragment;->access$402(Lcom/zddz/app/sicn/fragment/MainFragment; Z)Z
+    iget-object              v1, v0, Lcom/zddz/app/sicn/fragment/MainFragment$3;->this$0 Lcom/zddz/app/sicn/fragment/MainFragment;
+    invoke-static            v1, Lcom/zddz/app/sicn/fragment/MainFragment;->access$000(Lcom/zddz/app/sicn/fragment/MainFragment;)Lcom/zddz/widget/UIImageView;
+    move-result-object       v1
+    invoke-virtual           v1, Lcom/zddz/widget/UIImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
+    move-result-object       v1
+    invoke-virtual           v1, Landroid/graphics/drawable/Drawable;->getLevel()I
+    move-result              v1
+    if-nez                   v1, +024h
+    int-to-float             v1, v2
+    const/high16             v2, 1073741824
+    div-float/2addr          v1, v2
+    const/high16             v2, 1099956224
+    add-float/2addr          v1, v2
+    iget-object              v2, v0, Lcom/zddz/app/sicn/fragment/MainFragment$3;->this$0 Lcom/zddz/app/sicn/fragment/MainFragment;
+    invoke-static            v2, Lcom/zddz/app/sicn/fragment/MainFragment;->access$500(Lcom/zddz/app/sicn/fragment/MainFragment;)Landroid/widget/TextView;
+    move-result-object       v2
+    new-instance             v3, Ljava/lang/StringBuilder;
+    invoke-direct            v3, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual           v3, v1, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    const-string             v1, "℃"
+    invoke-virtual           v3, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual           v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object       v1
+    invoke-virtual           v2, v1, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    goto                     +1dh
+    iget-object              v1, v0, Lcom/zddz/app/sicn/fragment/MainFragment$3;->this$0 Lcom/zddz/app/sicn/fragment/MainFragment;
+    invoke-static            v1, Lcom/zddz/app/sicn/fragment/MainFragment;->access$500(Lcom/zddz/app/sicn/fragment/MainFragment;)Landroid/widget/TextView;
+    move-result-object       v1
+    new-instance             v3, Ljava/lang/StringBuilder;
+    invoke-direct            v3, Ljava/lang/StringBuilder;-><init>()V
+    add-int/lit8             v2, v2, 64
+    invoke-virtual           v3, v2, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string             v2, "℉"
+    invoke-virtual           v3, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual           v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object       v2
+    invoke-virtual           v1, v2, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    return-void              
+
+METHOD: public onStartTrackingTouch(Landroid/widget/SeekBar;)V
+    iget-object              v2, v1, Lcom/zddz/app/sicn/fragment/MainFragment$3;->this$0 Lcom/zddz/app/sicn/fragment/MainFragment;
+    const/4                  v0, 1
+    invoke-static            v2, v0, Lcom/zddz/app/sicn/fragment/MainFragment;->access$202(Lcom/zddz/app/sicn/fragment/MainFragment; Z)Z
+    iget-object              v2, v1, Lcom/zddz/app/sicn/fragment/MainFragment$3;->this$0 Lcom/zddz/app/sicn/fragment/MainFragment;
+    invoke-static            v2, Lcom/zddz/app/sicn/fragment/MainFragment;->access$300(Lcom/zddz/app/sicn/fragment/MainFragment;)Landroid/os/Handler;
+    move-result-object       v2
+    iget-object              v0, v1, Lcom/zddz/app/sicn/fragment/MainFragment$3;->this$0 Lcom/zddz/app/sicn/fragment/MainFragment;
+    invoke-static            v0, Lcom/zddz/app/sicn/fragment/MainFragment;->access$600(Lcom/zddz/app/sicn/fragment/MainFragment;)Ljava/lang/Runnable;
+    move-result-object       v0
+    invoke-virtual           v2, v0, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    return-void              
+
+METHOD: public onStopTrackingTouch(Landroid/widget/SeekBar;)V
+    iget-object              v4, v3, Lcom/zddz/app/sicn/fragment/MainFragment$3;->this$0 Lcom/zddz/app/sicn/fragment/MainFragment;
+    const/4                  v0, 0
+    invoke-static            v4, v0, Lcom/zddz/app/sicn/fragment/MainFragment;->access$202(Lcom/zddz/app/sicn/fragment/MainFragment; Z)Z
+    iget-object              v4, v3, Lcom/zddz/app/sicn/fragment/MainFragment$3;->this$0 Lcom/zddz/app/sicn/fragment/MainFragment;
+    invoke-static            v4, Lcom/zddz/app/sicn/fragment/MainFragment;->access$300(Lcom/zddz/app/sicn/fragment/MainFragment;)Landroid/os/Handler;
+    move-result-object       v4
+    iget-object              v0, v3, Lcom/zddz/app/sicn/fragment/MainFragment$3;->this$0 Lcom/zddz/app/sicn/fragment/MainFragment;
+    invoke-static            v0, Lcom/zddz/app/sicn/fragment/MainFragment;->access$600(Lcom/zddz/app/sicn/fragment/MainFragment;)Ljava/lang/Runnable;
+    move-result-object       v0
+    invoke-virtual           v4, v0, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+    iget-object              v4, v3, Lcom/zddz/app/sicn/fragment/MainFragment$3;->this$0 Lcom/zddz/app/sicn/fragment/MainFragment;
+    invoke-static            v4, Lcom/zddz/app/sicn/fragment/MainFragment;->access$300(Lcom/zddz/app/sicn/fragment/MainFragment;)Landroid/os/Handler;
+    move-result-object       v4
+    new-instance             v0, Lcom/zddz/app/sicn/fragment/MainFragment$3$1;
+    invoke-direct            v0, v3, Lcom/zddz/app/sicn/fragment/MainFragment$3$1;-><init>(Lcom/zddz/app/sicn/fragment/MainFragment$3;)V
+    const-wide/16            v1, 300
+    invoke-virtual           v4, v0, v1, v2, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable; J)Z
+    return-void              

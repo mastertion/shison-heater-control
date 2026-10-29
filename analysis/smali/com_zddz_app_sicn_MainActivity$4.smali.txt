@@ -1,0 +1,66 @@
+### CLASS Lcom/zddz/app/sicn/MainActivity$4; (super=Ljava/lang/Object;)
+FIELD: this$0 Lcom/zddz/app/sicn/MainActivity; (access=final synthetic)
+
+METHOD: constructor <init>(Lcom/zddz/app/sicn/MainActivity;)V
+    iput-object              v1, v0, Lcom/zddz/app/sicn/MainActivity$4;->this$0 Lcom/zddz/app/sicn/MainActivity;
+    invoke-direct            v0, Ljava/lang/Object;-><init>()V
+    return-void              
+
+METHOD: public onServiceConnected(Landroid/content/ComponentName; Landroid/os/IBinder;)V
+    iget-object              v2, v1, Lcom/zddz/app/sicn/MainActivity$4;->this$0 Lcom/zddz/app/sicn/MainActivity;
+    check-cast               v3, Lcom/zddz/bt/BtService$BtBinder;
+    invoke-virtual           v3, Lcom/zddz/bt/BtService$BtBinder;->getService()Lcom/zddz/bt/BtService;
+    move-result-object       v3
+    invoke-static            v2, v3, Lcom/zddz/app/sicn/MainActivity;->access$102(Lcom/zddz/app/sicn/MainActivity; Lcom/zddz/bt/BtService;)Lcom/zddz/bt/BtService;
+    iget-object              v2, v1, Lcom/zddz/app/sicn/MainActivity$4;->this$0 Lcom/zddz/app/sicn/MainActivity;
+    invoke-static            v2, Lcom/zddz/app/sicn/MainActivity;->access$900(Lcom/zddz/app/sicn/MainActivity;)V
+    iget-object              v2, v1, Lcom/zddz/app/sicn/MainActivity$4;->this$0 Lcom/zddz/app/sicn/MainActivity;
+    invoke-static            v2, Lcom/zddz/app/sicn/MainActivity;->access$100(Lcom/zddz/app/sicn/MainActivity;)Lcom/zddz/bt/BtService;
+    move-result-object       v2
+    new-instance             v3, Landroid/os/Messenger;
+    iget-object              v0, v1, Lcom/zddz/app/sicn/MainActivity$4;->this$0 Lcom/zddz/app/sicn/MainActivity;
+    invoke-static            v0, Lcom/zddz/app/sicn/MainActivity;->access$800(Lcom/zddz/app/sicn/MainActivity;)Landroid/os/Handler;
+    move-result-object       v0
+    invoke-direct            v3, v0, Landroid/os/Messenger;-><init>(Landroid/os/Handler;)V
+    invoke-virtual           v2, v3, Lcom/zddz/bt/BtService;->setMessenger(Landroid/os/Messenger;)V
+    iget-object              v2, v1, Lcom/zddz/app/sicn/MainActivity$4;->this$0 Lcom/zddz/app/sicn/MainActivity;
+    invoke-static            v2, Lcom/zddz/app/sicn/MainActivity;->access$000(Lcom/zddz/app/sicn/MainActivity;)Lcom/zddz/app/sicn/fragment/BaseViewModel;
+    move-result-object       v2
+    invoke-virtual           v2, Lcom/zddz/app/sicn/fragment/BaseViewModel;->getBleAddress()Ljava/lang/String;
+    move-result-object       v2
+    iget-object              v3, v1, Lcom/zddz/app/sicn/MainActivity$4;->this$0 Lcom/zddz/app/sicn/MainActivity;
+    invoke-static            v3, Lcom/zddz/app/sicn/MainActivity;->access$000(Lcom/zddz/app/sicn/MainActivity;)Lcom/zddz/app/sicn/fragment/BaseViewModel;
+    move-result-object       v3
+    invoke-virtual           v3, Lcom/zddz/app/sicn/fragment/BaseViewModel;->getAutoConnect()Z
+    move-result              v3
+    if-eqz                   v3, +010h
+    invoke-static            v2, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    move-result              v3
+    if-nez                   v3, +00ah
+    iget-object              v3, v1, Lcom/zddz/app/sicn/MainActivity$4;->this$0 Lcom/zddz/app/sicn/MainActivity;
+    const-string             v0, ""
+    invoke-virtual           v3, v2, v0, v0, Lcom/zddz/app/sicn/MainActivity;->connectBle(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)V
+    goto                     +6h
+    iget-object              v2, v1, Lcom/zddz/app/sicn/MainActivity$4;->this$0 Lcom/zddz/app/sicn/MainActivity;
+    invoke-virtual           v2, Lcom/zddz/app/sicn/MainActivity;->showScanDialog()V
+    return-void              
+
+METHOD: public onServiceDisconnected(Landroid/content/ComponentName;)V
+    iget-object              v2, v1, Lcom/zddz/app/sicn/MainActivity$4;->this$0 Lcom/zddz/app/sicn/MainActivity;
+    invoke-static            v2, Lcom/zddz/app/sicn/MainActivity;->access$1000(Lcom/zddz/app/sicn/MainActivity;)Landroid/content/BroadcastReceiver;
+    move-result-object       v0
+    invoke-virtual           v2, v0, Lcom/zddz/app/sicn/MainActivity;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+    iget-object              v2, v1, Lcom/zddz/app/sicn/MainActivity$4;->this$0 Lcom/zddz/app/sicn/MainActivity;
+    invoke-static            v2, Lcom/zddz/app/sicn/MainActivity;->access$100(Lcom/zddz/app/sicn/MainActivity;)Lcom/zddz/bt/BtService;
+    move-result-object       v2
+    invoke-virtual           v2, Lcom/zddz/bt/BtService;->getScannerLiveData()Lcom/zddz/bt/ScannerLiveData;
+    move-result-object       v2
+    iget-object              v0, v1, Lcom/zddz/app/sicn/MainActivity$4;->this$0 Lcom/zddz/app/sicn/MainActivity;
+    invoke-virtual           v2, v0, Lcom/zddz/bt/ScannerLiveData;->removeObservers(Landroidx/lifecycle/LifecycleOwner;)V
+    goto                     +5h
+    move-exception           v2
+    invoke-virtual           v2, Ljava/lang/Exception;->printStackTrace()V
+    iget-object              v2, v1, Lcom/zddz/app/sicn/MainActivity$4;->this$0 Lcom/zddz/app/sicn/MainActivity;
+    const/4                  v0, 0
+    invoke-static            v2, v0, Lcom/zddz/app/sicn/MainActivity;->access$102(Lcom/zddz/app/sicn/MainActivity; Lcom/zddz/bt/BtService;)Lcom/zddz/bt/BtService;
+    return-void              

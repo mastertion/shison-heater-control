@@ -1,0 +1,3 @@
+type: <class 'dict'>
+key: '74:5C:37:25:B9:3E' | val type: <class 'tuple'>
+val: (BLEDevice(74:5C:37:25:B9:3E, None), AdvertisementData(service_data={'0000fdee-0000-1000-8000-00805f9b34fb': b'\x06 @\xceN\x00\x00\x00\x00\x00\x00\x0e\xccm\xd3@\x95%7\x84\x00\x00\x00'}, rssi=-76))

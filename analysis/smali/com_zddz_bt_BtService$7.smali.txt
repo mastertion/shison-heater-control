@@ -1,0 +1,20 @@
+### CLASS Lcom/zddz/bt/BtService$7; (super=Landroid/bluetooth/le/ScanCallback;)
+FIELD: this$0 Lcom/zddz/bt/BtService;
+
+METHOD: constructor <init>(Lcom/zddz/bt/BtService;)V
+    iput-object              v1, v0, Lcom/zddz/bt/BtService$7;->this$0 Lcom/zddz/bt/BtService;
+    invoke-direct            v0, Landroid/bluetooth/le/ScanCallback;-><init>()V
+    return-void              
+
+METHOD: public onScanResult(I Landroid/bluetooth/le/ScanResult;)V
+    invoke-super             v6, v7, v8, Landroid/bluetooth/le/ScanCallback;->onScanResult(I Landroid/bluetooth/le/ScanResult;)V
+    iget-object              v7, v6, Lcom/zddz/bt/BtService$7;->this$0 Lcom/zddz/bt/BtService;
+    invoke-static            v7, Lcom/zddz/bt/BtService;->access$200(Lcom/zddz/bt/BtService;)Lcom/zddz/bt/ScannerLiveData;
+    move-result-object       v0
+    const/4                  v4, 0
+    const/4                  v5, 0
+    const/4                  v1, 0
+    const/4                  v3, 0
+    move-object              v2, v8
+    invoke-virtual/range     v0 ... v5, Lcom/zddz/bt/ScannerLiveData;->update(Landroid/bluetooth/BluetoothDevice; Landroid/bluetooth/le/ScanResult; I [B I)V
+    return-void              

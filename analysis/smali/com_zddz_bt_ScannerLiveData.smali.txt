@@ -1,0 +1,46 @@
+### CLASS Lcom/zddz/bt/ScannerLiveData; (super=Landroidx/lifecycle/LiveData;)
+FIELD: mBluetoothDevice Landroid/bluetooth/BluetoothDevice;
+FIELD: mRssi I
+FIELD: mScanRecord [B
+FIELD: mScanResult Landroid/bluetooth/le/ScanResult;
+FIELD: mState I
+
+METHOD: public constructor <init>()V
+    invoke-direct            v2, Landroidx/lifecycle/LiveData;-><init>()V
+    const/4                  v0, 0
+    iput-object              v0, v2, Lcom/zddz/bt/ScannerLiveData;->mBluetoothDevice Landroid/bluetooth/BluetoothDevice;
+    iput-object              v0, v2, Lcom/zddz/bt/ScannerLiveData;->mScanResult Landroid/bluetooth/le/ScanResult;
+    const/4                  v1, 0
+    iput                     v1, v2, Lcom/zddz/bt/ScannerLiveData;->mRssi I
+    iput-object              v0, v2, Lcom/zddz/bt/ScannerLiveData;->mScanRecord [B
+    iput                     v1, v2, Lcom/zddz/bt/ScannerLiveData;->mState I
+    return-void              
+
+METHOD: public getBluetoothDevice()Landroid/bluetooth/BluetoothDevice;
+    iget-object              v0, v1, Lcom/zddz/bt/ScannerLiveData;->mBluetoothDevice Landroid/bluetooth/BluetoothDevice;
+    return-object            v0
+
+METHOD: public getRssi()I
+    iget                     v0, v1, Lcom/zddz/bt/ScannerLiveData;->mRssi I
+    return                   v0
+
+METHOD: public getScanRecord()[B
+    iget-object              v0, v1, Lcom/zddz/bt/ScannerLiveData;->mScanRecord [B
+    return-object            v0
+
+METHOD: public getScanResult()Landroid/bluetooth/le/ScanResult;
+    iget-object              v0, v1, Lcom/zddz/bt/ScannerLiveData;->mScanResult Landroid/bluetooth/le/ScanResult;
+    return-object            v0
+
+METHOD: public getState()I
+    iget                     v0, v1, Lcom/zddz/bt/ScannerLiveData;->mState I
+    return                   v0
+
+METHOD: public update(Landroid/bluetooth/BluetoothDevice; Landroid/bluetooth/le/ScanResult; I [B I)V
+    iput-object              v1, v0, Lcom/zddz/bt/ScannerLiveData;->mBluetoothDevice Landroid/bluetooth/BluetoothDevice;
+    iput-object              v2, v0, Lcom/zddz/bt/ScannerLiveData;->mScanResult Landroid/bluetooth/le/ScanResult;
+    iput                     v3, v0, Lcom/zddz/bt/ScannerLiveData;->mRssi I
+    iput-object              v4, v0, Lcom/zddz/bt/ScannerLiveData;->mScanRecord [B
+    iput                     v5, v0, Lcom/zddz/bt/ScannerLiveData;->mState I
+    invoke-virtual           v0, v0, Lcom/zddz/bt/ScannerLiveData;->postValue(Ljava/lang/Object;)V
+    return-void              

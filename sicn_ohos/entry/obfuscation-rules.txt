@@ -1,0 +1,2 @@
+# ArkTS obfuscation rules
+# Keep class/method names used by reflection or JSON serialization.

@@ -1,0 +1,2 @@
+strings_resources err: AttributeError("'bytes' object has no attribute 'items'")
+public err: TypeError("ARSCParser.get_public_resources() missing 1 required positional argument: 'package_name'")

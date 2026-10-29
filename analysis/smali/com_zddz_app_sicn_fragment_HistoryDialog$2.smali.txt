@@ -1,0 +1,29 @@
+### CLASS Lcom/zddz/app/sicn/fragment/HistoryDialog$2; (super=Ljava/lang/Object;)
+FIELD: this$0 Lcom/zddz/app/sicn/fragment/HistoryDialog;
+
+METHOD: constructor <init>(Lcom/zddz/app/sicn/fragment/HistoryDialog;)V
+    iput-object              v1, v0, Lcom/zddz/app/sicn/fragment/HistoryDialog$2;->this$0 Lcom/zddz/app/sicn/fragment/HistoryDialog;
+    invoke-direct            v0, Ljava/lang/Object;-><init>()V
+    return-void              
+
+METHOD: public bridge synthetic onChanged(Ljava/lang/Object;)V
+    check-cast               v1, Ljava/lang/String;
+    invoke-virtual           v0, v1, Lcom/zddz/app/sicn/fragment/HistoryDialog$2;->onChanged(Ljava/lang/String;)V
+    return-void              
+
+METHOD: public onChanged(Ljava/lang/String;)V
+    new-instance             v0, Ljava/lang/StringBuilder;
+    const-string             v1, "收到数据: "
+    invoke-direct            v0, v1, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual           v0, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual           v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object       v0
+    const-string             v1, "HYT-DIALOG"
+    invoke-static            v1, v0, Landroid/util/Log;->d(Ljava/lang/String; Ljava/lang/String;)I
+    iget-object              v0, v3, Lcom/zddz/app/sicn/fragment/HistoryDialog$2;->this$0 Lcom/zddz/app/sicn/fragment/HistoryDialog;
+    const/4                  v1, 0
+    invoke-static            v4, Lcom/zddz/bt/Convert;->hexStringToBytes(Ljava/lang/String;)[B
+    move-result-object       v4
+    const-string             v2, ""
+    invoke-virtual           v0, v2, v1, v4, Lcom/zddz/app/sicn/fragment/HistoryDialog;->notice(Ljava/lang/String; Ljava/util/UUID; [B)V
+    return-void              

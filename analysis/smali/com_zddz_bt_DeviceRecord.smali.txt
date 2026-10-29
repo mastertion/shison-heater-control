@@ -1,0 +1,16 @@
+### CLASS Lcom/zddz/bt/DeviceRecord; (super=Lorg/litepal/crud/LitePalSupport;)
+FIELD: address Ljava/lang/String; (access=public)
+FIELD: auto_connect Z (access=public)
+FIELD: manufacture_data Ljava/lang/String; (access=public)
+FIELD: name Ljava/lang/String; (access=public)
+
+METHOD: public constructor <init>()V
+    invoke-direct            v0, Lorg/litepal/crud/LitePalSupport;-><init>()V
+    return-void              
+
+METHOD: public constructor <init>(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)V
+    invoke-direct            v0, Lorg/litepal/crud/LitePalSupport;-><init>()V
+    iput-object              v1, v0, Lcom/zddz/bt/DeviceRecord;->address Ljava/lang/String;
+    iput-object              v2, v0, Lcom/zddz/bt/DeviceRecord;->name Ljava/lang/String;
+    iput-object              v3, v0, Lcom/zddz/bt/DeviceRecord;->manufacture_data Ljava/lang/String;
+    return-void              

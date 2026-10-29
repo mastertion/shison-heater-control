@@ -1,0 +1,81 @@
+### CLASS Lcom/zddz/bt/DeviceItem; (super=Ljava/lang/Object;)
+FIELD: CREATOR Landroid/os/Parcelable$Creator; (access=public static final)
+FIELD: ConnectBonded I (access=public static final)
+FIELD: ConnectBonding I (access=public static final)
+FIELD: ConnectError I (access=public static final)
+FIELD: ConnectTimeout I (access=public static final)
+FIELD: Connected I (access=public static final)
+FIELD: Connecting I (access=public static final)
+FIELD: Disconnect I (access=public static final)
+FIELD: Paired I (access=public static final)
+FIELD: mAddress Ljava/lang/String; (access=public)
+FIELD: mManufactureData Ljava/lang/String; (access=public)
+FIELD: mName Ljava/lang/String; (access=public)
+FIELD: mRssi I (access=public)
+FIELD: mState I (access=public)
+
+METHOD: static constructor <clinit>()V
+    new-instance             v0, Lcom/zddz/bt/DeviceItem$1;
+    invoke-direct            v0, Lcom/zddz/bt/DeviceItem$1;-><init>()V
+    sput-object              v0, Lcom/zddz/bt/DeviceItem;->CREATOR Landroid/os/Parcelable$Creator;
+    return-void              
+
+METHOD: public constructor <init>(Landroid/bluetooth/BluetoothDevice; Ljava/lang/String; I)V
+    invoke-direct            v1, Ljava/lang/Object;-><init>()V
+    const/4                  v0, 0
+    iput                     v0, v1, Lcom/zddz/bt/DeviceItem;->mState I
+    const-string             v0, ""
+    iput-object              v0, v1, Lcom/zddz/bt/DeviceItem;->mManufactureData Ljava/lang/String;
+    invoke-static            v3, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    move-result              v0
+    if-eqz                   v0, +009h
+    invoke-virtual           v2, Landroid/bluetooth/BluetoothDevice;->getName()Ljava/lang/String;
+    move-result-object       v3
+    iput-object              v3, v1, Lcom/zddz/bt/DeviceItem;->mName Ljava/lang/String;
+    goto                     +3h
+    iput-object              v3, v1, Lcom/zddz/bt/DeviceItem;->mName Ljava/lang/String;
+    invoke-virtual           v2, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
+    move-result-object       v2
+    iput-object              v2, v1, Lcom/zddz/bt/DeviceItem;->mAddress Ljava/lang/String;
+    iput                     v4, v1, Lcom/zddz/bt/DeviceItem;->mState I
+    return-void              
+
+METHOD: protected constructor <init>(Landroid/os/Parcel;)V
+    invoke-direct            v1, Ljava/lang/Object;-><init>()V
+    const/4                  v0, 0
+    iput                     v0, v1, Lcom/zddz/bt/DeviceItem;->mState I
+    const-string             v0, ""
+    iput-object              v0, v1, Lcom/zddz/bt/DeviceItem;->mManufactureData Ljava/lang/String;
+    invoke-virtual           v2, Landroid/os/Parcel;->readString()Ljava/lang/String;
+    move-result-object       v0
+    iput-object              v0, v1, Lcom/zddz/bt/DeviceItem;->mName Ljava/lang/String;
+    invoke-virtual           v2, Landroid/os/Parcel;->readString()Ljava/lang/String;
+    move-result-object       v0
+    iput-object              v0, v1, Lcom/zddz/bt/DeviceItem;->mAddress Ljava/lang/String;
+    invoke-virtual           v2, Landroid/os/Parcel;->readInt()I
+    move-result              v2
+    iput                     v2, v1, Lcom/zddz/bt/DeviceItem;->mState I
+    return-void              
+
+METHOD: public describeContents()I
+    const/4                  v0, 0
+    return                   v0
+
+METHOD: public matches(Landroid/bluetooth/le/ScanResult;)Z
+    iget-object              v0, v1, Lcom/zddz/bt/DeviceItem;->mAddress Ljava/lang/String;
+    invoke-static            v2, Lcom/zddz/bt/BtService$$ExternalSyntheticApiModelOutline0;->m(Landroid/bluetooth/le/ScanResult;)Landroid/bluetooth/BluetoothDevice;
+    move-result-object       v2
+    invoke-virtual           v2, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
+    move-result-object       v2
+    invoke-virtual           v0, v2, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result              v2
+    return                   v2
+
+METHOD: public writeToParcel(Landroid/os/Parcel; I)V
+    iget-object              v2, v0, Lcom/zddz/bt/DeviceItem;->mName Ljava/lang/String;
+    invoke-virtual           v1, v2, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    iget-object              v2, v0, Lcom/zddz/bt/DeviceItem;->mAddress Ljava/lang/String;
+    invoke-virtual           v1, v2, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
+    iget                     v2, v0, Lcom/zddz/bt/DeviceItem;->mState I
+    invoke-virtual           v1, v2, Landroid/os/Parcel;->writeInt(I)V
+    return-void              

@@ -1,0 +1,159 @@
+### CLASS Lcom/zddz/bt/BtService$6; (super=Landroid/bluetooth/BluetoothGattCallback;)
+FIELD: this$0 Lcom/zddz/bt/BtService; (access=final synthetic)
+
+METHOD: constructor <init>(Lcom/zddz/bt/BtService;)V
+    iput-object              v1, v0, Lcom/zddz/bt/BtService$6;->this$0 Lcom/zddz/bt/BtService;
+    invoke-direct            v0, Landroid/bluetooth/BluetoothGattCallback;-><init>()V
+    return-void              
+
+METHOD: public onCharacteristicChanged(Landroid/bluetooth/BluetoothGatt; Landroid/bluetooth/BluetoothGattCharacteristic;)V
+    invoke-super             v3, v4, v5, Landroid/bluetooth/BluetoothGattCallback;->onCharacteristicChanged(Landroid/bluetooth/BluetoothGatt; Landroid/bluetooth/BluetoothGattCharacteristic;)V
+    invoke-static            Landroid/os/Message;->obtain()Landroid/os/Message;
+    move-result-object       v0
+    const/4                  v1, 4
+    iput                     v1, v0, Landroid/os/Message;->what I
+    invoke-virtual           v4, Landroid/bluetooth/BluetoothGatt;->getDevice()Landroid/bluetooth/BluetoothDevice;
+    move-result-object       v1
+    invoke-virtual           v1, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
+    move-result-object       v1
+    iput-object              v1, v0, Landroid/os/Message;->obj Ljava/lang/Object;
+    new-instance             v1, Landroid/os/Bundle;
+    invoke-direct            v1, Landroid/os/Bundle;-><init>()V
+    const-string             v2, "com.zddz.bt.extra.BLE_DEVICE_ADDRESS"
+    invoke-virtual           v4, Landroid/bluetooth/BluetoothGatt;->getDevice()Landroid/bluetooth/BluetoothDevice;
+    move-result-object       v4
+    invoke-virtual           v4, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
+    move-result-object       v4
+    invoke-virtual           v1, v2, v4, Landroid/os/Bundle;->putString(Ljava/lang/String; Ljava/lang/String;)V
+    const-string             v4, "com.zddz.bt.extra.BLE_NOTICE_UUID"
+    invoke-virtual           v5, Landroid/bluetooth/BluetoothGattCharacteristic;->getUuid()Ljava/util/UUID;
+    move-result-object       v2
+    invoke-virtual           v1, v4, v2, Landroid/os/Bundle;->putSerializable(Ljava/lang/String; Ljava/io/Serializable;)V
+    const-string             v4, "com.zddz.bt.extra.BLE_VALUE"
+    invoke-virtual           v5, Landroid/bluetooth/BluetoothGattCharacteristic;->getValue()[B
+    move-result-object       v5
+    invoke-virtual           v1, v4, v5, Landroid/os/Bundle;->putByteArray(Ljava/lang/String; [B)V
+    invoke-virtual           v0, v1, Landroid/os/Message;->setData(Landroid/os/Bundle;)V
+    iget-object              v4, v3, Lcom/zddz/bt/BtService$6;->this$0 Lcom/zddz/bt/BtService;
+    invoke-static            v4, Lcom/zddz/bt/BtService;->access$100(Lcom/zddz/bt/BtService;)Landroid/os/Messenger;
+    move-result-object       v4
+    invoke-virtual           v4, v0, Landroid/os/Messenger;->send(Landroid/os/Message;)V
+    goto                     +5h
+    move-exception           v4
+    invoke-virtual           v4, Ljava/lang/Exception;->printStackTrace()V
+    return-void              
+
+METHOD: public onConnectionStateChange(Landroid/bluetooth/BluetoothGatt; I I)V
+    invoke-virtual           v4, Landroid/bluetooth/BluetoothGatt;->getDevice()Landroid/bluetooth/BluetoothDevice;
+    move-result-object       v0
+    invoke-virtual           v0, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
+    move-result-object       v0
+    const/16                 v1, 133
+    const/4                  v2, 0
+    if-ne                    v5, v1, +016h
+    invoke-static            v4, Lcom/zddz/bt/BtMethod;->refreshGatt(Landroid/bluetooth/BluetoothGatt;)Z
+    invoke-virtual           v4, Landroid/bluetooth/BluetoothGatt;->close()V
+    iget-object              v4, v3, Lcom/zddz/bt/BtService$6;->this$0 Lcom/zddz/bt/BtService;
+    iget-object              v4, v4, Lcom/zddz/bt/BtService;->mConnectListHelper Lcom/zddz/bt/ConnectListHelper;
+    invoke-virtual           v4, v0, v2, Lcom/zddz/bt/ConnectListHelper;->updateBluetoothGattConnected(Ljava/lang/String; Z)V
+    iget-object              v4, v3, Lcom/zddz/bt/BtService$6;->this$0 Lcom/zddz/bt/BtService;
+    const/4                  v5, 3
+    invoke-static            v4, v0, v5, Lcom/zddz/bt/BtService;->access$000(Lcom/zddz/bt/BtService; Ljava/lang/String; I)V
+    goto                     +3dh
+    if-nez                   v5, +028h
+    const/4                  v5, 2
+    if-ne                    v6, v5, +010h
+    iget-object              v4, v3, Lcom/zddz/bt/BtService$6;->this$0 Lcom/zddz/bt/BtService;
+    iget-object              v4, v4, Lcom/zddz/bt/BtService;->mConnectListHelper Lcom/zddz/bt/ConnectListHelper;
+    const/4                  v6, 1
+    invoke-virtual           v4, v0, v6, Lcom/zddz/bt/ConnectListHelper;->updateBluetoothGattConnected(Ljava/lang/String; Z)V
+    iget-object              v4, v3, Lcom/zddz/bt/BtService$6;->this$0 Lcom/zddz/bt/BtService;
+    invoke-static            v4, v0, v5, Lcom/zddz/bt/BtService;->access$000(Lcom/zddz/bt/BtService; Ljava/lang/String; I)V
+    goto                     +2ah
+    if-nez                   v6, +029h
+    iget-object              v5, v3, Lcom/zddz/bt/BtService$6;->this$0 Lcom/zddz/bt/BtService;
+    iget-object              v5, v5, Lcom/zddz/bt/BtService;->mConnectListHelper Lcom/zddz/bt/ConnectListHelper;
+    invoke-virtual           v5, v0, v2, Lcom/zddz/bt/ConnectListHelper;->updateBluetoothGattConnected(Ljava/lang/String; Z)V
+    iget-object              v5, v3, Lcom/zddz/bt/BtService$6;->this$0 Lcom/zddz/bt/BtService;
+    invoke-static            v5, v0, v2, Lcom/zddz/bt/BtService;->access$000(Lcom/zddz/bt/BtService; Ljava/lang/String; I)V
+    invoke-static            v4, Lcom/zddz/bt/BtMethod;->refreshGatt(Landroid/bluetooth/BluetoothGatt;)Z
+    invoke-virtual           v4, Landroid/bluetooth/BluetoothGatt;->close()V
+    goto                     +15h
+    if-nez                   v6, +014h
+    iget-object              v5, v3, Lcom/zddz/bt/BtService$6;->this$0 Lcom/zddz/bt/BtService;
+    iget-object              v5, v5, Lcom/zddz/bt/BtService;->mConnectListHelper Lcom/zddz/bt/ConnectListHelper;
+    invoke-virtual           v5, v0, v2, Lcom/zddz/bt/ConnectListHelper;->updateBluetoothGattConnected(Ljava/lang/String; Z)V
+    iget-object              v5, v3, Lcom/zddz/bt/BtService$6;->this$0 Lcom/zddz/bt/BtService;
+    invoke-static            v5, v0, v2, Lcom/zddz/bt/BtService;->access$000(Lcom/zddz/bt/BtService; Ljava/lang/String; I)V
+    invoke-static            v4, Lcom/zddz/bt/BtMethod;->refreshGatt(Landroid/bluetooth/BluetoothGatt;)Z
+    invoke-virtual           v4, Landroid/bluetooth/BluetoothGatt;->close()V
+    return-void              
+
+METHOD: public onMtuChanged(Landroid/bluetooth/BluetoothGatt; I I)V
+    invoke-super             v4, v5, v6, v7, Landroid/bluetooth/BluetoothGattCallback;->onMtuChanged(Landroid/bluetooth/BluetoothGatt; I I)V
+    const/4                  v0, 1
+    const/4                  v1, 0
+    if-nez                   v7, +00ah
+    iget-object              v2, v4, Lcom/zddz/bt/BtService$6;->this$0 Lcom/zddz/bt/BtService;
+    iget-object              v2, v2, Lcom/zddz/bt/BtService;->mConnectListHelper Lcom/zddz/bt/ConnectListHelper;
+    invoke-virtual           v2, v5, v6, v0, Lcom/zddz/bt/ConnectListHelper;->updateBluetoothGattStateMtuSwitch(Landroid/bluetooth/BluetoothGatt; I Z)V
+    goto                     +8h
+    iget-object              v2, v4, Lcom/zddz/bt/BtService$6;->this$0 Lcom/zddz/bt/BtService;
+    iget-object              v2, v2, Lcom/zddz/bt/BtService;->mConnectListHelper Lcom/zddz/bt/ConnectListHelper;
+    invoke-virtual           v2, v5, v6, v1, Lcom/zddz/bt/ConnectListHelper;->updateBluetoothGattStateMtuSwitch(Landroid/bluetooth/BluetoothGatt; I Z)V
+    invoke-static            Landroid/os/Message;->obtain()Landroid/os/Message;
+    move-result-object       v2
+    const/4                  v3, 2
+    iput                     v3, v2, Landroid/os/Message;->what I
+    invoke-virtual           v5, Landroid/bluetooth/BluetoothGatt;->getDevice()Landroid/bluetooth/BluetoothDevice;
+    move-result-object       v5
+    invoke-virtual           v5, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
+    move-result-object       v5
+    iput-object              v5, v2, Landroid/os/Message;->obj Ljava/lang/Object;
+    if-nez                   v7, +005h
+    iput                     v0, v2, Landroid/os/Message;->arg1 I
+    goto                     +3h
+    iput                     v1, v2, Landroid/os/Message;->arg1 I
+    iput                     v6, v2, Landroid/os/Message;->arg2 I
+    iget-object              v5, v4, Lcom/zddz/bt/BtService$6;->this$0 Lcom/zddz/bt/BtService;
+    invoke-static            v5, Lcom/zddz/bt/BtService;->access$100(Lcom/zddz/bt/BtService;)Landroid/os/Messenger;
+    move-result-object       v5
+    invoke-virtual           v5, v2, Landroid/os/Messenger;->send(Landroid/os/Message;)V
+    goto                     +5h
+    move-exception           v5
+    invoke-virtual           v5, Ljava/lang/Exception;->printStackTrace()V
+    return-void              
+
+METHOD: public onServicesDiscovered(Landroid/bluetooth/BluetoothGatt; I)V
+    const/4                  v0, 1
+    const/4                  v1, 0
+    if-nez                   v6, +00ah
+    iget-object              v2, v4, Lcom/zddz/bt/BtService$6;->this$0 Lcom/zddz/bt/BtService;
+    iget-object              v2, v2, Lcom/zddz/bt/BtService;->mConnectListHelper Lcom/zddz/bt/ConnectListHelper;
+    invoke-virtual           v2, v5, v0, Lcom/zddz/bt/ConnectListHelper;->updateBluetoothGattStateDiscoveryService(Landroid/bluetooth/BluetoothGatt; Z)V
+    goto                     +bh
+    iget-object              v2, v4, Lcom/zddz/bt/BtService$6;->this$0 Lcom/zddz/bt/BtService;
+    iget-object              v2, v2, Lcom/zddz/bt/BtService;->mConnectListHelper Lcom/zddz/bt/ConnectListHelper;
+    invoke-virtual           v2, v5, v1, Lcom/zddz/bt/ConnectListHelper;->updateBluetoothGattStateDiscoveryService(Landroid/bluetooth/BluetoothGatt; Z)V
+    invoke-virtual           v5, Landroid/bluetooth/BluetoothGatt;->disconnect()V
+    invoke-static            Landroid/os/Message;->obtain()Landroid/os/Message;
+    move-result-object       v2
+    const/4                  v3, 3
+    iput                     v3, v2, Landroid/os/Message;->what I
+    invoke-virtual           v5, Landroid/bluetooth/BluetoothGatt;->getDevice()Landroid/bluetooth/BluetoothDevice;
+    move-result-object       v5
+    invoke-virtual           v5, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
+    move-result-object       v5
+    iput-object              v5, v2, Landroid/os/Message;->obj Ljava/lang/Object;
+    if-nez                   v6, +005h
+    iput                     v0, v2, Landroid/os/Message;->arg1 I
+    goto                     +3h
+    iput                     v1, v2, Landroid/os/Message;->arg1 I
+    iget-object              v5, v4, Lcom/zddz/bt/BtService$6;->this$0 Lcom/zddz/bt/BtService;
+    invoke-static            v5, Lcom/zddz/bt/BtService;->access$100(Lcom/zddz/bt/BtService;)Landroid/os/Messenger;
+    move-result-object       v5
+    invoke-virtual           v5, v2, Landroid/os/Messenger;->send(Landroid/os/Message;)V
+    goto                     +5h
+    move-exception           v5
+    invoke-virtual           v5, Ljava/lang/Exception;->printStackTrace()V
+    return-void              

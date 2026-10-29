@@ -1,0 +1,354 @@
+found: True
+METHOD notice found
+???? move-object/from16         v1, v16
+???? invoke-static/range        v19, Lcom/zddz/bt/Convert;->bytesToHexString([B)Ljava/lang/String;
+???? move-result-object         v0
+???? invoke-virtual             v0, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+???? move-result-object         v0
+???? sget-object                v2, Lcom/zddz/app/sicn/OrderSet;->notice_current_temperature Ljava/lang/String;
+???? invoke-virtual             v0, v2, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+???? move-result                v2
+???? const-string               v3, "℉"
+???? const-string               v4, "℃"
+???? const/4                    v5, 5
+???? const/high16               v6, 1092616192
+???? const/16                   v7, 16
+???? const/4                    v8, 4
+???? const/16                   v9, 8
+???? const/4                    v10, 3
+???? const/16                   v11, 10
+???? const/4                    v12, 2
+???? const/4                    v13, 1
+???? const/4                    v14, 0
+???? if-eqz                     v2, +210h
+???? new-instance               v2, Ljava/lang/StringBuilder;
+???? invoke-direct              v2, Ljava/lang/StringBuilder;-><init>()V
+???? const/16                   v15, 12
+???? invoke-virtual             v0, v11, v15, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+???? move-result-object         v15
+???? invoke-virtual             v2, v15, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+???? invoke-virtual             v0, v9, v11, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+???? move-result-object         v0
+???? invoke-virtual             v2, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+???? invoke-virtual             v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+???? move-result-object         v0
+???? invoke-static              v0, v7, Ljava/lang/Integer;->valueOf(Ljava/lang/String; I)Ljava/lang/Integer;
+???? move-result-object         v0
+???? invoke-virtual             v0, Ljava/lang/Integer;->intValue()I
+???? move-result                v0
+???? int-to-float               v0, v0
+???? div-float/2addr            v0, v6
+???? iput                       v0, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->mTemperature F
+???? aget-byte                  v0, v19, v10
+???? and-int/lit16              v0, v0, 255
+???? iget-object                v2, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->mBaseViewModel Lcom/zddz/app/sicn/fragment/BaseViewModel;
+???? invoke-virtual             v2, v0, Lcom/zddz/app/sicn/fragment/BaseViewModel;->setTemperatureType(I)V
+???? if-eqz                     v0, +01fh
+???? if-eq                      v0, v13, +003h
+???? goto                       +34h
+???? invoke-direct/range        v16, Lcom/zddz/app/sicn/fragment/MainFragment;->changeFahrenheit()V
+???? iget-object                v0, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->tv_current_temperature Landroid/widget/TextView;
+???? new-instance               v2, Ljava/lang/StringBuilder;
+???? invoke-direct              v2, Ljava/lang/StringBuilder;-><init>()V
+???? iget                       v4, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->mTemperature F
+???? invoke-virtual             v2, v4, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+???? invoke-virtual             v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+???? invoke-virtual             v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+???? move-result-object         v2
+???? invoke-virtual             v0, v2, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+???? goto                       +1ah
+???? invoke-direct/range        v16, Lcom/zddz/app/sicn/fragment/MainFragment;->changeCentigrade()V
+???? iget-object                v0, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->tv_current_temperature Landroid/widget/TextView;
+???? new-instance               v2, Ljava/lang/StringBuilder;
+???? invoke-direct              v2, Ljava/lang/StringBuilder;-><init>()V
+???? iget                       v3, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->mTemperature F
+???? invoke-virtual             v2, v3, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+???? invoke-virtual             v2, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+???? invoke-virtual             v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+???? move-result-object         v2
+???? invoke-virtual             v0, v2, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+???? iget-object                v0, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->tmr_current Lcom/zddz/widget/ThermometerView;
+???? iget                       v2, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->mTemperature F
+???? invoke-virtual             v0, v2, Lcom/zddz/widget/ThermometerView;->setTemperature(F)V
+???? aget-byte                  v0, v19, v12
+???? and-int/lit16              v0, v0, 255
+???? const/4                    v2, 0
+???? if-eqz                     v0, +165h
+???? if-eq                      v0, v13, +12ch
+???? if-eq                      v0, v12, +0f3h
+???? const/high16               v3, -65536
+???? const/high16               v4, 67108864
+???? const-string               v6, "ALARM"
+???? if-eq                      v0, v10, +0a0h
+???? if-eq                      v0, v8, +051h
+???? if-eq                      v0, v5, +004h
+???? goto/16                    +258h
+???? invoke-virtual/range       v16, Lcom/zddz/app/sicn/fragment/MainFragment;->getResources()Landroid/content/res/Resources;
+???? move-result-object         v0
+???? const                      v5, 2131165385
+???? invoke-virtual             v0, v5, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+???? move-result-object         v0
+???? invoke-virtual             v0, Landroid/graphics/drawable/Drawable;->getMinimumWidth()I
+???? move-result                v5
+???? invoke-virtual             v0, Landroid/graphics/drawable/Drawable;->getMinimumHeight()I
+???? move-result                v7
+???? invoke-virtual             v0, v14, v14, v5, v7, Landroid/graphics/drawable/Drawable;->setBounds(I I I I)V
+???? iget-object                v5, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->tv_current_mode Landroid/widget/TextView;
+???? invoke-virtual             v5, v2, v0, v2, v2, Landroid/widget/TextView;->setCompoundDrawables(Landroid/graphics/drawable/Drawable; Landroid/graphics/drawable/Drawable; Landroid/graphics/drawable/Drawable; Landroid/graphics/drawable/Drawable;)V
+???? iget-object                v0, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->tv_current_mode Landroid/widget/TextView;
+???? const                      v2, 2131755219
+???? invoke-virtual             v0, v2, Landroid/widget/TextView;->setText(I)V
+???? iget-object                v0, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->tv_current_mode Landroid/widget/TextView;
+???? invoke-virtual             v0, v3, Landroid/widget/TextView;->setTextColor(I)V
+???? iget-object                v0, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->tmr_current Lcom/zddz/widget/ThermometerView;
+???? invoke-virtual             v0, Lcom/zddz/widget/ThermometerView;->stopAnimator()V
+???? iget-object                v0, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->mBaseViewModel Lcom/zddz/app/sicn/fragment/BaseViewModel;
+???? invoke-virtual             v0, Lcom/zddz/app/sicn/fragment/BaseViewModel;->getNeedProbeFailure()Z
+???? move-result                v0
+???? if-eqz                     v0, +223h
+???? new-instance               v0, Landroid/content/Intent;
+???? invoke-virtual/range       v16, Lcom/zddz/app/sicn/fragment/MainFragment;->getContext()Landroid/content/Context;
+???? move-result-object         v2
+???? const-class                v3, Lcom/zddz/app/sicn/activity/AlarmActivity;
+???? invoke-direct              v0, v2, v3, Landroid/content/Intent;-><init>(Landroid/content/Context; Ljava/lang/Class;)V
+???? invoke-virtual             v0, v6, v13, Landroid/content/Intent;->putExtra(Ljava/lang/String; I)Landroid/content/Intent;
+???? invoke-virtual             v0, v4, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+???? invoke-virtual             v1, v0, Lcom/zddz/app/sicn/fragment/MainFragment;->startActivity(Landroid/content/Intent;)V
+???? goto/16                    +20dh
+???? invoke-virtual/range       v16, Lcom/zddz/app/sicn/fragment/MainFragment;->getResources()Landroid/content/res/Resources;
+???? move-result-object         v0
+???? const                      v3, 2131165384
+???? invoke-virtual             v0, v3, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+???? move-result-object         v0
+???? invoke-virtual             v0, Landroid/graphics/drawable/Drawable;->getMinimumWidth()I
+???? move-result                v3
+???? invoke-virtual             v0, Landroid/graphics/drawable/Drawable;->getMinimumHeight()I
+???? move-result                v5
+???? invoke-virtual             v0, v14, v14, v3, v5, Landroid/graphics/drawable/Drawable;->setBounds(I I I I)V
+???? iget-object                v3, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->tv_current_mode Landroid/widget/TextView;
+???? invoke-virtual             v3, v2, v0, v2, v2, Landroid/widget/TextView;->setCompoundDrawables(Landroid/graphics/drawable/Drawable; Landroid/graphics/drawable/Drawable; Landroid/graphics/drawable/Drawable; Landroid/graphics/drawable/Drawable;)V
+???? iget-object                v0, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->tv_current_mode Landroid/widget/TextView;
+???? const                      v2, 2131755217
+???? invoke-virtual             v0, v2, Landroid/widget/TextView;->setText(I)V
+???? iget-object                v0, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->tv_current_mode Landroid/widget/TextView;
+???? const/16                   v2, -1024
+???? invoke-virtual             v0, v2, Landroid/widget/TextView;->setTextColor(I)V
+???? iget-object                v0, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->tmr_current Lcom/zddz/widget/ThermometerView;
+???? invoke-virtual             v0, Lcom/zddz/widget/ThermometerView;->stopAnimator()V
+???? iget-object                v0, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->mBaseViewModel Lcom/zddz/app/sicn/fragment/BaseViewModel;
+???? invoke-virtual             v0, Lcom/zddz/app/sicn/fragment/BaseViewModel;->getNeedPowerOffWhenLeavingWater()Z
+???? move-result                v0
+???? if-eqz                     v0, +1d6h
+???? new-instance               v0, Landroid/content/Intent;
+???? invoke-virtual/range       v16, Lcom/zddz/app/sicn/fragment/MainFragment;->getContext()Landroid/content/Context;
+???? move-result-object         v2
+???? const-class                v3, Lcom/zddz/app/sicn/activity/AlarmActivity;
+???? invoke-direct              v0, v2, v3, Landroid/content/Intent;-><init>(Landroid/content/Context; Ljava/lang/Class;)V
+???? invoke-virtual             v0, v6, v14, Landroid/content/Intent;->putExtra(Ljava/lang/String; I)Landroid/content/Intent;
+???? invoke-virtual             v0, v4, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+???? invoke-virtual             v1, v0, Lcom/zddz/app/sicn/fragment/MainFragment;->startActivity(Landroid/content/Intent;)V
+???? goto/16                    +1c0h
+???? invoke-virtual/range       v16, Lcom/zddz/app/sicn/fragment/MainFragment;->getResources()Landroid/content/res/Resources;
+???? move-result-object         v0
+???? const                      v5, 2131165383
+???? invoke-virtual             v0, v5, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+???? move-result-object         v0
+???? invoke-virtual             v0, Landroid/graphics/drawable/Drawable;->getMinimumWidth()I
+???? move-result                v5
+???? invoke-virtual             v0, Landroid/graphics/drawable/Drawable;->getMinimumHeight()I
+???? move-result                v7
+???? invoke-virtual             v0, v14, v14, v5, v7, Landroid/graphics/drawable/Drawable;->setBounds(I I I I)V
+???? iget-object                v5, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->tv_current_mode Landroid/widget/TextView;
+???? invoke-virtual             v5, v2, v0, v2, v2, Landroid/widget/TextView;->setCompoundDrawables(Landroid/graphics/drawable/Drawable; Landroid/graphics/drawable/Drawable; Landroid/graphics/drawable/Drawable; Landroid/graphics/drawable/Drawable;)V
+???? iget-object                v0, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->tv_current_mode Landroid/widget/TextView;
+???? const                      v2, 2131755207
+???? invoke-virtual             v0, v2, Landroid/widget/TextView;->setText(I)V
+???? iget-object                v0, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->tv_current_mode Landroid/widget/TextView;
+???? invoke-virtual             v0, v3, Landroid/widget/TextView;->setTextColor(I)V
+???? iget-object                v0, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->tmr_current Lcom/zddz/widget/ThermometerView;
+???? invoke-virtual             v0, Lcom/zddz/widget/ThermometerView;->stopAnimator()V
+???? iget-object                v0, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->mBaseViewModel Lcom/zddz/app/sicn/fragment/BaseViewModel;
+???? invoke-virtual             v0, Lcom/zddz/app/sicn/fragment/BaseViewModel;->getNeedOverTemperatureProtection()Z
+???? move-result                v0
+???? if-eqz                     v0, +18bh
+???? new-instance               v0, Landroid/content/Intent;
+???? invoke-virtual/range       v16, Lcom/zddz/app/sicn/fragment/MainFragment;->getContext()Landroid/content/Context;
+???? move-result-object         v2
+???? const-class                v3, Lcom/zddz/app/sicn/activity/AlarmActivity;
+???? invoke-direct              v0, v2, v3, Landroid/content/Intent;-><init>(Landroid/content/Context; Ljava/lang/Class;)V
+???? invoke-virtual             v0, v6, v12, Landroid/content/Intent;->putExtra(Ljava/lang/String; I)Landroid/content/Intent;
+???? invoke-virtual             v0, v4, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+???? invoke-virtual             v1, v0, Lcom/zddz/app/sicn/fragment/MainFragment;->startActivity(Landroid/content/Intent;)V
+???? goto/16                    +175h
+???? invoke-virtual/range       v16, Lcom/zddz/app/sicn/fragment/MainFragment;->getResources()Landroid/content/res/Resources;
+???? move-result-object         v0
+???? const                      v3, 2131165381
+???? invoke-virtual             v0, v3, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+???? move-result-object         v0
+???? invoke-virtual             v0, Landroid/graphics/drawable/Drawable;->getMinimumWidth()I
+???? move-result                v3
+???? invoke-virtual             v0, Landroid/graphics/drawable/Drawable;->getMinimumHeight()I
+???? move-result                v4
+???? invoke-virtual             v0, v14, v14, v3, v4, Landroid/graphics/drawable/Drawable;->setBounds(I I I I)V
+???? iget-object                v3, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->tv_current_mode Landroid/widget/TextView;
+???? invoke-virtual             v3, v2, v0, v2, v2, Landroid/widget/TextView;->setCompoundDrawables(Landroid/graphics/drawable/Drawable; Landroid/graphics/drawable/Drawable; Landroid/graphics/drawable/Drawable; Landroid/graphics/drawable/Drawable;)V
+???? iget-object                v0, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->tv_current_mode Landroid/widget/TextView;
+???? const                      v2, 2131755089
+???? invoke-virtual             v0, v2, Landroid/widget/TextView;->setText(I)V
+???? iget-object                v0, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->tv_current_mode Landroid/widget/TextView;
+???? const                      v2, -113919
+???? invoke-virtual             v0, v2, Landroid/widget/TextView;->setTextColor(I)V
+???? iget-object                v0, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->tmr_current Lcom/zddz/widget/ThermometerView;
+???? invoke-virtual             v0, Lcom/zddz/widget/ThermometerView;->startAnimator()V
+???? iget-object                v0, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->mIMain Lcom/zddz/app/sicn/fragment/IMain;
+???? invoke-interface           v0, Lcom/zddz/app/sicn/fragment/IMain;->removeAlarm()V
+???? goto/16                    +13eh
+???? invoke-virtual/range       v16, Lcom/zddz/app/sicn/fragment/MainFragment;->getResources()Landroid/content/res/Resources;
+???? move-result-object         v0
+???? const                      v3, 2131165382
+???? invoke-virtual             v0, v3, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+???? move-result-object         v0
+???? invoke-virtual             v0, Landroid/graphics/drawable/Drawable;->getMinimumWidth()I
+???? move-result                v3
+???? invoke-virtual             v0, Landroid/graphics/drawable/Drawable;->getMinimumHeight()I
+???? move-result                v4
+???? invoke-virtual             v0, v14, v14, v3, v4, Landroid/graphics/drawable/Drawable;->setBounds(I I I I)V
+???? iget-object                v3, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->tv_current_mode Landroid/widget/TextView;
+???? invoke-virtual             v3, v2, v0, v2, v2, Landroid/widget/TextView;->setCompoundDrawables(Landroid/graphics/drawable/Drawable; Landroid/graphics/drawable/Drawable; Landroid/graphics/drawable/Drawable; Landroid/graphics/drawable/Drawable;)V
+???? iget-object                v0, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->tv_current_mode Landroid/widget/TextView;
+???? const                      v2, 2131755099
+???? invoke-virtual             v0, v2, Landroid/widget/TextView;->setText(I)V
+???? iget-object                v0, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->tv_current_mode Landroid/widget/TextView;
+???? const                      v2, -11804921
+???? invoke-virtual             v0, v2, Landroid/widget/TextView;->setTextColor(I)V
+???? iget-object                v0, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->tmr_current Lcom/zddz/widget/ThermometerView;
+???? invoke-virtual             v0, Lcom/zddz/widget/ThermometerView;->stopAnimator()V
+???? iget-object                v0, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->mIMain Lcom/zddz/app/sicn/fragment/IMain;
+???? invoke-interface           v0, Lcom/zddz/app/sicn/fragment/IMain;->removeAlarm()V
+???? goto/16                    +107h
+???? invoke-virtual/range       v16, Lcom/zddz/app/sicn/fragment/MainFragment;->getResources()Landroid/content/res/Resources;
+???? move-result-object         v0
+???? const                      v3, 2131165380
+???? invoke-virtual             v0, v3, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+???? move-result-object         v0
+???? invoke-virtual             v0, Landroid/graphics/drawable/Drawable;->getMinimumWidth()I
+???? move-result                v3
+???? invoke-virtual             v0, Landroid/graphics/drawable/Drawable;->getMinimumHeight()I
+???? move-result                v4
+???? invoke-virtual             v0, v14, v14, v3, v4, Landroid/graphics/drawable/Drawable;->setBounds(I I I I)V
+???? iget-object                v3, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->tv_current_mode Landroid/widget/TextView;
+???? invoke-virtual             v3, v2, v0, v2, v2, Landroid/widget/TextView;->setCompoundDrawables(Landroid/graphics/drawable/Drawable; Landroid/graphics/drawable/Drawable; Landroid/graphics/drawable/Drawable; Landroid/graphics/drawable/Drawable;)V
+???? iget-object                v0, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->tv_current_mode Landroid/widget/TextView;
+???? const                      v2, 2131755063
+???? invoke-virtual             v0, v2, Landroid/widget/TextView;->setText(I)V
+???? iget-object                v0, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->tv_current_mode Landroid/widget/TextView;
+???? const                      v2, -12077569
+???? invoke-virtual             v0, v2, Landroid/widget/TextView;->setTextColor(I)V
+???? iget-object                v0, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->tmr_current Lcom/zddz/widget/ThermometerView;
+???? invoke-virtual             v0, Lcom/zddz/widget/ThermometerView;->stopAnimator()V
+???? iget-object                v0, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->mIMain Lcom/zddz/app/sicn/fragment/IMain;
+???? invoke-interface           v0, Lcom/zddz/app/sicn/fragment/IMain;->removeAlarm()V
+???? goto/16                    +0d0h
+???? sget-object                v2, Lcom/zddz/app/sicn/OrderSet;->notice_target_temperature Ljava/lang/String;
+???? invoke-virtual             v0, v2, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+???? move-result                v2
+???? if-eqz                     v2, +0c8h
+???? new-instance               v2, Ljava/lang/StringBuilder;
+???? invoke-direct              v2, Ljava/lang/StringBuilder;-><init>()V
+???? const/4                    v15, 6
+???? invoke-virtual             v0, v15, v9, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+???? move-result-object         v9
+???? invoke-virtual             v2, v9, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+???? invoke-virtual             v0, v8, v15, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+???? move-result-object         v0
+???? invoke-virtual             v2, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+???? invoke-virtual             v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+???? move-result-object         v0
+???? invoke-static              v0, v7, Ljava/lang/Integer;->valueOf(Ljava/lang/String; I)Ljava/lang/Integer;
+???? move-result-object         v0
+???? invoke-virtual             v0, Ljava/lang/Integer;->intValue()I
+???? move-result                v0
+???? int-to-float               v0, v0
+???? div-float/2addr            v0, v6
+???? iget-object                v2, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->uiv_temperature_type Lcom/zddz/widget/UIImageView;
+???? invoke-virtual             v2, Lcom/zddz/widget/UIImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
+???? move-result-object         v2
+???? invoke-virtual             v2, Landroid/graphics/drawable/Drawable;->getLevel()I
+???? move-result                v2
+???? if-nez                     v2, +00bh
+???? const/high16               v2, 1073741824
+???? mul-float                  v2, v2, v0
+???? const/high16               v6, 1108344832
+???? sub-float/2addr            v2, v6
+???? float-to-int               v2, v2
+???? goto                       +6h
+???? const/high16               v2, 1115684864
+???? sub-float                  v2, v0, v2
+???? goto                       -6h
+???? iget-boolean               v6, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->mTargetMove Z
+???? if-nez                     v6, +088h
+???? iget-boolean               v6, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->mTargetFromUser Z
+???? if-eqz                     v6, +045h
+???? iget-object                v6, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->bar_target_temperature Landroid/widget/SeekBar;
+???? invoke-virtual             v6, Landroid/widget/SeekBar;->getProgress()I
+???? move-result                v6
+???? if-eq                      v6, v2, +03dh
+???? sget-object                v0, Lcom/zddz/app/sicn/OrderSet;->write_target_temperature [B
+???? iget-object                v2, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->uiv_temperature_type Lcom/zddz/widget/UIImageView;
+???? invoke-virtual             v2, Lcom/zddz/widget/UIImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
+???? move-result-object         v2
+???? invoke-virtual             v2, Landroid/graphics/drawable/Drawable;->getLevel()I
+???? move-result                v2
+???? if-nez                     v2, +011h
+???? iget-object                v2, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->bar_target_temperature Landroid/widget/SeekBar;
+???? invoke-virtual             v2, Landroid/widget/SeekBar;->getProgress()I
+???? move-result                v2
+???? mul-int/lit8               v2, v2, 5
+???? add-int/lit16              v2, v2, 180
+???? invoke-static              v2, Lcom/zddz/bt/Convert;->intToBytes4Little(I)[B
+???? move-result-object         v2
+???? goto                       +fh
+???? iget-object                v2, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->bar_target_temperature Landroid/widget/SeekBar;
+???? invoke-virtual             v2, Landroid/widget/SeekBar;->getProgress()I
+???? move-result                v2
+???? mul-int/lit8               v2, v2, 10
+???? add-int/lit16              v2, v2, 640
+???? invoke-static              v2, Lcom/zddz/bt/Convert;->intToBytes4Little(I)[B
+???? move-result-object         v2
+???? aget-byte                  v3, v2, v14
+???? aput-byte                  v3, v0, v12
+???? aget-byte                  v2, v2, v13
+???? aput-byte                  v2, v0, v10
+???? iget-object                v2, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->mIMain Lcom/zddz/app/sicn/fragment/IMain;
+???? invoke-interface           v2, v0, Lcom/zddz/app/sicn/fragment/IMain;->writeData([B)Z
+???? iput-boolean               v14, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->mTargetFromUser Z
+???? goto                       +40h
+???? iget-object                v5, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->bar_target_temperature Landroid/widget/SeekBar;
+???? invoke-virtual             v5, v2, Landroid/widget/SeekBar;->setProgress(I)V
+???? iget-object                v2, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->uiv_temperature_type Lcom/zddz/widget/UIImageView;
+???? invoke-virtual             v2, Lcom/zddz/widget/UIImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
+???? move-result-object         v2
+???? invoke-virtual             v2, Landroid/graphics/drawable/Drawable;->getLevel()I
+???? move-result                v2
+???? if-nez                     v2, +017h
+???? iget-object                v2, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->tv_target_temperature Landroid/widget/TextView;
+???? new-instance               v3, Ljava/lang/StringBuilder;
+???? invoke-direct              v3, Ljava/lang/StringBuilder;-><init>()V
+???? invoke-virtual             v3, v0, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+???? invoke-virtual             v3, v4, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+???? invoke-virtual             v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+???? move-result-object         v0
+???? invoke-virtual             v2, v0, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+???? goto                       +1ah
+???? iget-object                v2, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->tv_target_temperature Landroid/widget/TextView;
+???? new-instance               v4, Ljava/lang/StringBuilder;
+???? invoke-direct              v4, Ljava/lang/StringBuilder;-><init>()V
+???? invoke-virtual             v4, v0, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+???? invoke-virtual             v4, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+???? invoke-virtual             v4, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+???? move-result-object         v0
+???? invoke-virtual             v2, v0, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+???? goto                       +5h
+???? move-exception             v0
+???? invoke-virtual             v0, Ljava/lang/Exception;->printStackTrace()V
+???? return-void                

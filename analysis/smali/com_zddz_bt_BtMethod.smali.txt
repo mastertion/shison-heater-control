@@ -1,0 +1,155 @@
+### CLASS Lcom/zddz/bt/BtMethod; (super=Ljava/lang/Object;)
+
+METHOD: public constructor <init>()V
+    invoke-direct            v0, Ljava/lang/Object;-><init>()V
+    return-void              
+
+METHOD: public static cancelBondProcess(Landroid/bluetooth/BluetoothDevice;)Z
+    invoke-virtual           v3, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result-object       v0
+    const-string             v1, "cancelBondProcess"
+    const/4                  v2, 0
+    invoke-virtual           v0, v1, v2, Ljava/lang/Class;->getMethod(Ljava/lang/String; [Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    move-result-object       v0
+    invoke-virtual           v0, v3, v2, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object; [Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object       v3
+    check-cast               v3, Ljava/lang/Boolean;
+    invoke-virtual           v3, Ljava/lang/Boolean;->booleanValue()Z
+    move-result              v3
+    return                   v3
+    move-exception           v3
+    invoke-virtual           v3, Ljava/lang/Exception;->printStackTrace()V
+    const/4                  v3, 0
+    return                   v3
+
+METHOD: public static cancelPairingUserInput(Landroid/bluetooth/BluetoothDevice;)Z
+    invoke-virtual           v3, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result-object       v0
+    const-string             v1, "cancelPairingUserInput"
+    const/4                  v2, 0
+    invoke-virtual           v0, v1, v2, Ljava/lang/Class;->getMethod(Ljava/lang/String; [Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    move-result-object       v0
+    invoke-virtual           v0, v3, v2, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object; [Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object       v3
+    check-cast               v3, Ljava/lang/Boolean;
+    invoke-virtual           v3, Ljava/lang/Boolean;->booleanValue()Z
+    move-result              v3
+    return                   v3
+    move-exception           v3
+    invoke-virtual           v3, Ljava/lang/Exception;->printStackTrace()V
+    const/4                  v3, 0
+    return                   v3
+
+METHOD: public static createBond(Landroid/bluetooth/BluetoothDevice;)Z
+    const-string             v0, "0000"
+    invoke-static            v3, v0, Lcom/zddz/bt/BtMethod;->setPin(Landroid/bluetooth/BluetoothDevice; Ljava/lang/String;)Z
+    invoke-virtual           v3, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result-object       v0
+    const-string             v1, "createBond"
+    const/4                  v2, 0
+    invoke-virtual           v0, v1, v2, Ljava/lang/Class;->getMethod(Ljava/lang/String; [Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    move-result-object       v0
+    invoke-virtual           v0, v3, v2, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object; [Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object       v3
+    check-cast               v3, Ljava/lang/Boolean;
+    invoke-virtual           v3, Ljava/lang/Boolean;->booleanValue()Z
+    move-result              v3
+    return                   v3
+    move-exception           v3
+    invoke-virtual           v3, Ljava/lang/Exception;->printStackTrace()V
+    const/4                  v3, 0
+    return                   v3
+
+METHOD: public static refreshGatt(Landroid/bluetooth/BluetoothGatt;)Z
+    const/4                  v0, 0
+    if-eqz                   v4, +01eh
+    invoke-virtual           v4, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result-object       v1
+    const-string             v2, "refresh"
+    const/4                  v3, 0
+    invoke-virtual           v1, v2, v3, Ljava/lang/Class;->getMethod(Ljava/lang/String; [Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    move-result-object       v1
+    if-eqz                   v1, +011h
+    invoke-virtual           v1, v4, v3, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object; [Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object       v4
+    check-cast               v4, Ljava/lang/Boolean;
+    invoke-virtual           v4, Ljava/lang/Boolean;->booleanValue()Z
+    move-result              v4
+    return                   v4
+    move-exception           v4
+    invoke-virtual           v4, Ljava/lang/Exception;->printStackTrace()V
+    return                   v0
+
+METHOD: public static removeBond(Landroid/bluetooth/BluetoothDevice;)Z
+    invoke-virtual           v3, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result-object       v0
+    const-string             v1, "removeBond"
+    const/4                  v2, 0
+    invoke-virtual           v0, v1, v2, Ljava/lang/Class;->getMethod(Ljava/lang/String; [Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    move-result-object       v0
+    invoke-virtual           v0, v3, v2, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object; [Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object       v3
+    check-cast               v3, Ljava/lang/Boolean;
+    invoke-virtual           v3, Ljava/lang/Boolean;->booleanValue()Z
+    move-result              v3
+    return                   v3
+    move-exception           v3
+    invoke-virtual           v3, Ljava/lang/Exception;->printStackTrace()V
+    const/4                  v3, 0
+    return                   v3
+
+METHOD: public static setPassKey(Landroid/bluetooth/BluetoothDevice; Ljava/lang/String;)Z
+    const/4                  v0, 0
+    invoke-virtual           v6, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result-object       v1
+    const-string             v2, "setPasskey"
+    const/4                  v3, 1
+    new-array                v4, v3, [Ljava/lang/Class;
+    const-class              v5, [B
+    aput-object              v5, v4, v0
+    invoke-virtual           v1, v2, v4, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String; [Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    move-result-object       v1
+    invoke-virtual           v7, Ljava/lang/String;->getBytes()[B
+    move-result-object       v7
+    new-array                v2, v3, [Ljava/lang/Object;
+    aput-object              v7, v2, v0
+    invoke-virtual           v1, v6, v2, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object; [Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object       v6
+    check-cast               v6, Ljava/lang/Boolean;
+    invoke-virtual           v6, Ljava/lang/Boolean;->booleanValue()Z
+    move-result              v6
+    return                   v6
+    move-exception           v6
+    invoke-virtual           v6, Ljava/lang/Exception;->printStackTrace()V
+    return                   v0
+    move-exception           v6
+    invoke-virtual           v6, Ljava/lang/IllegalArgumentException;->printStackTrace()V
+    return                   v0
+    move-exception           v6
+    invoke-virtual           v6, Ljava/lang/SecurityException;->printStackTrace()V
+    return                   v0
+
+METHOD: public static setPin(Landroid/bluetooth/BluetoothDevice; Ljava/lang/String;)Z
+    const/4                  v0, 0
+    invoke-virtual           v6, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result-object       v1
+    const-string             v2, "setPin"
+    const/4                  v3, 1
+    new-array                v4, v3, [Ljava/lang/Class;
+    const-class              v5, [B
+    aput-object              v5, v4, v0
+    invoke-virtual           v1, v2, v4, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String; [Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    move-result-object       v1
+    invoke-virtual           v7, Ljava/lang/String;->getBytes()[B
+    move-result-object       v7
+    new-array                v2, v3, [Ljava/lang/Object;
+    aput-object              v7, v2, v0
+    invoke-virtual           v1, v6, v2, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object; [Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object       v6
+    check-cast               v6, Ljava/lang/Boolean;
+    invoke-virtual           v6, Ljava/lang/Boolean;->booleanValue()Z
+    move-result              v6
+    return                   v6
+    move-exception           v6
+    invoke-virtual           v6, Ljava/lang/Exception;->printStackTrace()V
+    return                   v0

@@ -1,0 +1,32 @@
+Installing dependencies...
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +1
++
+Progress: resolved 1, reused 1, downloaded 0, added 0
+Progress: resolved 1, reused 1, downloaded 0, added 1
+Progress: resolved 1, reused 1, downloaded 0, added 1, done
+
+dependencies:
++ @ohos/hvigor-ohos-plugin 5.8.5 (6.26.8 is available)
+
+ WARN  Issues with peer dependencies found
+.
+└─┬ @ohos/hvigor-ohos-plugin 5.8.5
+  └── ✕ missing peer @ohos/hvigor@5.8.5
+Peer dependencies that should be installed:
+  @ohos/hvigor@5.8.5
+
+Done in 8.7s
+Hvigor install success.
+> hvigor [91mERROR: Cannot find project build file 'build-profile.json5'
+        
+	 at D:\sicn_ohos_build[39m
+> hvigor [91mERROR: Error: Cannot find project build file 'build-profile.json5'
+        
+	 at D:\sicn_ohos_build
+    at HvigorLogger.errorMessageExit (D:\deveco-setup\deveco-studio-5.0.3.900\tools\hvigor\hvigor\src\base\log\hvigor-log.js:1:2905)
+    at initEnvConfigProps (D:\deveco-setup\deveco-studio-5.0.3.900\tools\hvigor\hvigor\src\base\boot\hooks\init-env-config-props.js:1:982)
+    at boot (D:\deveco-setup\deveco-studio-5.0.3.900\tools\hvigor\hvigor\src\base\boot\index.js:1:1600)
+    at startHvigorBuild (D:\deveco-setup\deveco-studio-5.0.3.900\tools\hvigor\hvigor\src\cli\main\cli.js:1:6403)
+    at D:\deveco-setup\deveco-studio-5.0.3.900\tools\hvigor\hvigor\bin\hvigor.js:49:64
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)[39m

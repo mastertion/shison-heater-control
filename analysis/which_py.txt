@@ -1,0 +1,7 @@
+F:\开发\蓝牙设备>where python & python --version & py --version
+C:\Users\13798\AppData\Local\Microsoft\WindowsApps\python.exe
+C:\Users\13798\AppData\Local\Programs\Python\Python312\python.exe
+'py' is not recognized as an internal or external command,
+operable program or batch file.
+
+F:\开发\蓝牙设备>

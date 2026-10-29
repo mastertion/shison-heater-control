@@ -1,0 +1,11 @@
+PASS temp_cmd_C_26 -> 31010401
+PASS temp_cmd_F_78 -> 31010c03
+PASS temp_cmd_C_255 -> 3101ff00
+PASS parse_target_26 -> (26.0, 'target')
+PASS parse_current -> (25.0, 3, 'C', '加热中')
+PASS parse_current_F -> (27.6, 'F')
+PASS parse_history_hour -> (1, [0.1, 25.5, 0.2, 0.3, 0.4])
+PASS parse_history_minute -> [25.5]
+PASS parse_other_none -> None
+
+ALL PASS

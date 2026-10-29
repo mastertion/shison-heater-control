@@ -1,0 +1,498 @@
+### CLASS Lcom/zddz/bt/Convert; (super=Ljava/lang/Object;)
+
+METHOD: public constructor <init>()V
+    invoke-direct            v0, Ljava/lang/Object;-><init>()V
+    return-void              
+
+METHOD: public static bytes4ToIntHighLow([B)I
+    array-length             v0, v4
+    const/4                  v1, 4
+    const/4                  v2, 0
+    if-ne                    v0, v1, +01fh
+    aget-byte                v0, v4, v2
+    and-int/lit16            v0, v0, 255
+    shl-int/lit8             v0, v0, 24
+    const/4                  v1, 1
+    aget-byte                v1, v4, v1
+    and-int/lit16            v1, v1, 255
+    shl-int/lit8             v1, v1, 16
+    const/4                  v2, 2
+    aget-byte                v2, v4, v2
+    and-int/lit16            v2, v2, 255
+    shl-int/lit8             v2, v2, 8
+    const/4                  v3, 3
+    aget-byte                v4, v4, v3
+    and-int/lit16            v4, v4, 255
+    or-int/2addr             v0, v1
+    or-int/2addr             v0, v2
+    or-int/2addr             v4, v0
+    return                   v4
+    return                   v2
+
+METHOD: public static bytes4ToIntLowHigh([B)I
+    array-length             v0, v4
+    const/4                  v1, 4
+    const/4                  v2, 0
+    if-ne                    v0, v1, +01fh
+    const/4                  v0, 3
+    aget-byte                v0, v4, v0
+    and-int/lit16            v0, v0, 255
+    const/4                  v1, 2
+    aget-byte                v1, v4, v1
+    and-int/lit16            v1, v1, 255
+    shl-int/lit8             v1, v1, 8
+    const/4                  v3, 1
+    aget-byte                v3, v4, v3
+    and-int/lit16            v3, v3, 255
+    shl-int/lit8             v3, v3, 16
+    aget-byte                v4, v4, v2
+    and-int/lit16            v4, v4, 255
+    shl-int/lit8             v4, v4, 24
+    or-int/2addr             v0, v1
+    or-int/2addr             v0, v3
+    or-int/2addr             v4, v0
+    return                   v4
+    return                   v2
+
+METHOD: public static bytesToBinaryInts([B)Ljava/lang/String;
+    new-instance             v0, Ljava/lang/StringBuffer;
+    invoke-direct            v0, Ljava/lang/StringBuffer;-><init>()V
+    array-length             v1, v5
+    const/4                  v2, 0
+    if-ge                    v2, v1, +05dh
+    aget-byte                v3, v5, v2
+    shr-int/lit8             v4, v3, 7
+    and-int/lit8             v4, v4, 1
+    invoke-static            v4, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    move-result-object       v4
+    invoke-virtual           v0, v4, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    shr-int/lit8             v4, v3, 6
+    and-int/lit8             v4, v4, 1
+    invoke-static            v4, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    move-result-object       v4
+    invoke-virtual           v0, v4, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    shr-int/lit8             v4, v3, 5
+    and-int/lit8             v4, v4, 1
+    invoke-static            v4, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    move-result-object       v4
+    invoke-virtual           v0, v4, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    shr-int/lit8             v4, v3, 4
+    and-int/lit8             v4, v4, 1
+    invoke-static            v4, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    move-result-object       v4
+    invoke-virtual           v0, v4, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    shr-int/lit8             v4, v3, 3
+    and-int/lit8             v4, v4, 1
+    invoke-static            v4, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    move-result-object       v4
+    invoke-virtual           v0, v4, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    shr-int/lit8             v4, v3, 2
+    and-int/lit8             v4, v4, 1
+    invoke-static            v4, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    move-result-object       v4
+    invoke-virtual           v0, v4, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    shr-int/lit8             v4, v3, 1
+    and-int/lit8             v4, v4, 1
+    invoke-static            v4, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    move-result-object       v4
+    invoke-virtual           v0, v4, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    and-int/lit8             v3, v3, 1
+    invoke-static            v3, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    move-result-object       v3
+    invoke-virtual           v0, v3, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    add-int/lit8             v2, v2, 1
+    goto                     -5ch
+    invoke-virtual           v0, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+    move-result-object       v5
+    return-object            v5
+
+METHOD: public static bytesToHexString([B)Ljava/lang/String;
+    if-eqz                   v5, +02eh
+    array-length             v0, v5
+    if-gtz                   v0, +003h
+    goto                     +29h
+    new-instance             v0, Ljava/lang/StringBuffer;
+    invoke-direct            v0, Ljava/lang/StringBuffer;-><init>()V
+    const/4                  v1, 0
+    array-length             v2, v5
+    if-ge                    v1, v2, +01ch
+    aget-byte                v2, v5, v1
+    and-int/lit16            v2, v2, 255
+    invoke-static            v2, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+    move-result-object       v2
+    invoke-virtual           v2, Ljava/lang/String;->length()I
+    move-result              v3
+    const/4                  v4, 2
+    if-ge                    v3, v4, +007h
+    const-string             v3, "0"
+    invoke-virtual           v0, v3, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    invoke-virtual           v0, v2, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    add-int/lit8             v1, v1, 1
+    goto                     -1ch
+    invoke-virtual           v0, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+    move-result-object       v5
+    return-object            v5
+    const/4                  v5, 0
+    return-object            v5
+
+METHOD: public static bytesToIntBig([B I)I
+    aget-byte                v0, v2, v3
+    and-int/lit16            v0, v0, 255
+    shl-int/lit8             v0, v0, 24
+    add-int/lit8             v1, v3, 1
+    aget-byte                v1, v2, v1
+    and-int/lit16            v1, v1, 255
+    shl-int/lit8             v1, v1, 16
+    or-int/2addr             v0, v1
+    add-int/lit8             v1, v3, 2
+    aget-byte                v1, v2, v1
+    and-int/lit16            v1, v1, 255
+    shl-int/lit8             v1, v1, 8
+    or-int/2addr             v0, v1
+    add-int/lit8             v3, v3, 3
+    aget-byte                v2, v2, v3
+    and-int/lit16            v2, v2, 255
+    or-int/2addr             v2, v0
+    return                   v2
+
+METHOD: public static bytesToIntLittle([B I)I
+    aget-byte                v0, v2, v3
+    and-int/lit16            v0, v0, 255
+    add-int/lit8             v1, v3, 1
+    aget-byte                v1, v2, v1
+    and-int/lit16            v1, v1, 255
+    shl-int/lit8             v1, v1, 8
+    or-int/2addr             v0, v1
+    add-int/lit8             v1, v3, 2
+    aget-byte                v1, v2, v1
+    and-int/lit16            v1, v1, 255
+    shl-int/lit8             v1, v1, 16
+    or-int/2addr             v0, v1
+    add-int/lit8             v3, v3, 3
+    aget-byte                v2, v2, v3
+    and-int/lit16            v2, v2, 255
+    shl-int/lit8             v2, v2, 24
+    or-int/2addr             v2, v0
+    return                   v2
+
+METHOD: public static bytesToShowHexString([B)Ljava/lang/String;
+    if-eqz                   v5, +03fh
+    array-length             v0, v5
+    if-gtz                   v0, +003h
+    goto                     +3ah
+    new-instance             v0, Ljava/lang/StringBuffer;
+    invoke-direct            v0, Ljava/lang/StringBuffer;-><init>()V
+    const/4                  v1, 0
+    array-length             v2, v5
+    if-ge                    v1, v2, +02dh
+    aget-byte                v2, v5, v1
+    and-int/lit16            v2, v2, 255
+    invoke-static            v2, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+    move-result-object       v2
+    invoke-virtual           v2, Ljava/lang/String;->length()I
+    move-result              v3
+    const/4                  v4, 2
+    if-ge                    v3, v4, +007h
+    const-string             v3, "0"
+    invoke-virtual           v0, v3, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    new-instance             v3, Ljava/lang/StringBuilder;
+    invoke-direct            v3, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual           v3, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string             v2, " "
+    invoke-virtual           v3, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual           v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object       v2
+    invoke-virtual           v0, v2, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    add-int/lit8             v1, v1, 1
+    goto                     -2dh
+    invoke-virtual           v0, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+    move-result-object       v5
+    return-object            v5
+    const/4                  v5, 0
+    return-object            v5
+
+METHOD: private static charToByte(C)B
+    const-string             v0, "0123456789ABCDEF"
+    invoke-virtual           v0, v1, Ljava/lang/String;->indexOf(I)I
+    move-result              v1
+    int-to-byte              v1, v1
+    return                   v1
+
+METHOD: public static hexString2binaryString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static            v0, Lcom/zddz/bt/Convert;->hexStringToBytes(Ljava/lang/String;)[B
+    move-result-object       v0
+    invoke-static            v0, Lcom/zddz/bt/Convert;->bytesToBinaryInts([B)Ljava/lang/String;
+    move-result-object       v0
+    return-object            v0
+
+METHOD: public static hexStringToBytes(Ljava/lang/String;)[B
+    if-eqz                   v5, +04eh
+    const-string             v0, ""
+    invoke-virtual           v5, v0, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result              v0
+    if-eqz                   v0, +003h
+    goto                     +44h
+    invoke-virtual           v5, Ljava/lang/String;->length()I
+    move-result              v0
+    rem-int/lit8             v0, v0, 2
+    if-eqz                   v0, +010h
+    new-instance             v0, Ljava/lang/StringBuilder;
+    const-string             v1, "0"
+    invoke-direct            v0, v1, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual           v0, v5, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual           v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object       v5
+    invoke-virtual           v5, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
+    move-result-object       v5
+    invoke-virtual           v5, Ljava/lang/String;->length()I
+    move-result              v0
+    div-int/lit8             v0, v0, 2
+    invoke-virtual           v5, Ljava/lang/String;->toCharArray()[C
+    move-result-object       v5
+    new-array                v1, v0, [B
+    const/4                  v2, 0
+    if-ge                    v2, v0, +01bh
+    mul-int/lit8             v3, v2, 2
+    aget-char                v4, v5, v3
+    invoke-static            v4, Lcom/zddz/bt/Convert;->charToByte(C)B
+    move-result              v4
+    shl-int/lit8             v4, v4, 4
+    add-int/lit8             v3, v3, 1
+    aget-char                v3, v5, v3
+    invoke-static            v3, Lcom/zddz/bt/Convert;->charToByte(C)B
+    move-result              v3
+    or-int/2addr             v3, v4
+    int-to-byte              v3, v3
+    aput-byte                v3, v1, v2
+    add-int/lit8             v2, v2, 1
+    goto                     -1ah
+    return-object            v1
+    const/4                  v5, 0
+    return-object            v5
+
+METHOD: public static intToBytes4Big(I)[B
+    shr-int/lit8             v0, v5, 24
+    and-int/lit16            v0, v0, 255
+    int-to-byte              v0, v0
+    shr-int/lit8             v1, v5, 16
+    and-int/lit16            v1, v1, 255
+    int-to-byte              v1, v1
+    shr-int/lit8             v2, v5, 8
+    and-int/lit16            v2, v2, 255
+    int-to-byte              v2, v2
+    and-int/lit16            v5, v5, 255
+    int-to-byte              v5, v5
+    const/4                  v3, 4
+    new-array                v3, v3, [B
+    const/4                  v4, 0
+    aput-byte                v0, v3, v4
+    const/4                  v0, 1
+    aput-byte                v1, v3, v0
+    const/4                  v0, 2
+    aput-byte                v2, v3, v0
+    const/4                  v0, 3
+    aput-byte                v5, v3, v0
+    return-object            v3
+
+METHOD: public static intToBytes4HighLow(I)[B
+    shr-int/lit8             v0, v5, 24
+    and-int/lit16            v0, v0, 255
+    int-to-byte              v0, v0
+    shr-int/lit8             v1, v5, 16
+    and-int/lit16            v1, v1, 255
+    int-to-byte              v1, v1
+    shr-int/lit8             v2, v5, 8
+    and-int/lit16            v2, v2, 255
+    int-to-byte              v2, v2
+    and-int/lit16            v5, v5, 255
+    int-to-byte              v5, v5
+    const/4                  v3, 4
+    new-array                v3, v3, [B
+    const/4                  v4, 0
+    aput-byte                v0, v3, v4
+    const/4                  v0, 1
+    aput-byte                v1, v3, v0
+    const/4                  v0, 2
+    aput-byte                v2, v3, v0
+    const/4                  v0, 3
+    aput-byte                v5, v3, v0
+    return-object            v3
+
+METHOD: public static intToBytes4Little(I)[B
+    and-int/lit16            v0, v5, 255
+    int-to-byte              v0, v0
+    shr-int/lit8             v1, v5, 8
+    and-int/lit16            v1, v1, 255
+    int-to-byte              v1, v1
+    shr-int/lit8             v2, v5, 16
+    and-int/lit16            v2, v2, 255
+    int-to-byte              v2, v2
+    shr-int/lit8             v5, v5, 24
+    and-int/lit16            v5, v5, 255
+    int-to-byte              v5, v5
+    const/4                  v3, 4
+    new-array                v3, v3, [B
+    const/4                  v4, 0
+    aput-byte                v0, v3, v4
+    const/4                  v0, 1
+    aput-byte                v1, v3, v0
+    const/4                  v0, 2
+    aput-byte                v2, v3, v0
+    const/4                  v0, 3
+    aput-byte                v5, v3, v0
+    return-object            v3
+
+METHOD: public static intToBytes4LowHigh(I)[B
+    and-int/lit16            v0, v5, 255
+    int-to-byte              v0, v0
+    shr-int/lit8             v1, v5, 8
+    and-int/lit16            v1, v1, 255
+    int-to-byte              v1, v1
+    shr-int/lit8             v2, v5, 16
+    and-int/lit16            v2, v2, 255
+    int-to-byte              v2, v2
+    shr-int/lit8             v5, v5, 24
+    and-int/lit16            v5, v5, 255
+    int-to-byte              v5, v5
+    const/4                  v3, 4
+    new-array                v3, v3, [B
+    const/4                  v4, 0
+    aput-byte                v0, v3, v4
+    const/4                  v0, 1
+    aput-byte                v1, v3, v0
+    const/4                  v0, 2
+    aput-byte                v2, v3, v0
+    const/4                  v0, 3
+    aput-byte                v5, v3, v0
+    return-object            v3
+
+METHOD: public static notice2unicode(Ljava/lang/String;)Ljava/lang/String;
+    const-string             v0, "0+$"
+    const-string             v1, ""
+    invoke-virtual           v3, v0, v1, Ljava/lang/String;->replaceAll(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+    move-result-object       v3
+    invoke-virtual           v3, Ljava/lang/String;->length()I
+    move-result              v0
+    rem-int/lit8             v0, v0, 4
+    const/4                  v1, 0
+    if-ge                    v1, v0, +016h
+    new-instance             v2, Ljava/lang/StringBuilder;
+    invoke-direct            v2, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual           v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string             v3, "0"
+    invoke-virtual           v2, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual           v2, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object       v3
+    add-int/lit8             v1, v1, 1
+    goto                     -15h
+    new-instance             v0, Ljava/lang/StringBuffer;
+    invoke-direct            v0, Ljava/lang/StringBuffer;-><init>()V
+    const/4                  v1, 2
+    invoke-virtual           v3, Ljava/lang/String;->length()I
+    move-result              v2
+    if-ge                    v1, v2, +01ch
+    const-string             v2, "\u"
+    invoke-virtual           v0, v2, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    add-int/lit8             v2, v1, 2
+    invoke-virtual           v3, v1, v2, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+    move-result-object       v2
+    invoke-virtual           v0, v2, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    add-int/lit8             v2, v1, -2
+    invoke-virtual           v3, v2, v1, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+    move-result-object       v2
+    invoke-virtual           v0, v2, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
+    add-int/lit8             v1, v1, 4
+    goto                     -1fh
+    invoke-virtual           v0, Ljava/lang/StringBuffer;->toString()Ljava/lang/String;
+    move-result-object       v3
+    return-object            v3
+
+METHOD: public static password2bytes(Ljava/lang/String;)[B
+    invoke-virtual           v4, Ljava/lang/String;->length()I
+    move-result              v0
+    new-array                v0, v0, [B
+    const/4                  v1, 0
+    const/4                  v2, 0
+    invoke-virtual           v4, Ljava/lang/String;->length()I
+    move-result              v3
+    if-ge                    v2, v3, +014h
+    add-int/lit8             v3, v2, 1
+    invoke-virtual           v4, v2, v3, Ljava/lang/String;->substring(I I)Ljava/lang/String;
+    move-result-object       v2
+    invoke-static            v2, Ljava/lang/Byte;->valueOf(Ljava/lang/String;)Ljava/lang/Byte;
+    move-result-object       v2
+    invoke-virtual           v2, Ljava/lang/Byte;->byteValue()B
+    move-result              v2
+    aput-byte                v2, v0, v1
+    move                     v2, v3
+    goto                     -17h
+    return-object            v0
+
+METHOD: public static second2MMSS(I)Ljava/lang/String;
+    div-int/lit8             v0, v2, 60
+    rem-int/lit8             v2, v2, 60
+    new-instance             v1, Ljava/lang/StringBuilder;
+    invoke-direct            v1, Ljava/lang/StringBuilder;-><init>()V
+    invoke-static            v0, Lcom/zddz/bt/Convert;->unitFormat(I)Ljava/lang/String;
+    move-result-object       v0
+    invoke-virtual           v1, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string             v0, ":"
+    invoke-virtual           v1, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static            v2, Lcom/zddz/bt/Convert;->unitFormat(I)Ljava/lang/String;
+    move-result-object       v2
+    invoke-virtual           v1, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual           v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object       v2
+    return-object            v2
+
+METHOD: public static unicodeToString(Ljava/lang/String;)Ljava/lang/String;
+    const-string             v0, "(\\u(\p{XDigit}{4}))"
+    invoke-static            v0, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    move-result-object       v0
+    invoke-virtual           v0, v4, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+    move-result-object       v0
+    invoke-virtual           v0, Ljava/util/regex/Matcher;->find()Z
+    move-result              v1
+    if-eqz                   v1, +029h
+    const/4                  v1, 2
+    invoke-virtual           v0, v1, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
+    move-result-object       v1
+    const/16                 v2, 16
+    invoke-static            v1, v2, Ljava/lang/Integer;->parseInt(Ljava/lang/String; I)I
+    move-result              v1
+    int-to-char              v1, v1
+    const/4                  v2, 1
+    invoke-virtual           v0, v2, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
+    move-result-object       v2
+    new-instance             v3, Ljava/lang/StringBuilder;
+    invoke-direct            v3, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual           v3, v1, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    const-string             v1, ""
+    invoke-virtual           v3, v1, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual           v3, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object       v1
+    invoke-virtual           v4, v2, v1, Ljava/lang/String;->replace(Ljava/lang/CharSequence; Ljava/lang/CharSequence;)Ljava/lang/String;
+    move-result-object       v4
+    goto                     -2ch
+    return-object            v4
+
+METHOD: public static unitFormat(I)Ljava/lang/String;
+    if-ltz                   v2, +019h
+    const/16                 v0, 10
+    if-ge                    v2, v0, +015h
+    new-instance             v0, Ljava/lang/StringBuilder;
+    const-string             v1, "0"
+    invoke-direct            v0, v1, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-static            v2, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+    move-result-object       v2
+    invoke-virtual           v0, v2, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual           v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object       v2
+    goto                     +fh
+    new-instance             v0, Ljava/lang/StringBuilder;
+    const-string             v1, ""
+    invoke-direct            v0, v1, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual           v0, v2, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual           v0, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object       v2
+    return-object            v2

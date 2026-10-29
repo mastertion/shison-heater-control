@@ -1,0 +1,20 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "SHISON 加热器蓝牙控制"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "SHISON 加热器蓝牙控制"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "SHISON 加热器"
+    },
+    {
+      "name": "bluetooth_reason",
+      "value": "用于扫描、连接和控制 SHISON 蓝牙加热器"
+    }
+  ]
+}

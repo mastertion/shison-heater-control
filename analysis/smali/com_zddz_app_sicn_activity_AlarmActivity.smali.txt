@@ -1,0 +1,240 @@
+### CLASS Lcom/zddz/app/sicn/activity/AlarmActivity; (super=Lcom/zddz/crash/CrashBaseActivity;)
+FIELD: ALARM Ljava/lang/String; (access=public static final)
+FIELD: animation_over_temperature Landroid/graphics/drawable/AnimationDrawable; (access=private)
+FIELD: animation_power_off_when_leaving_water Landroid/graphics/drawable/AnimationDrawable; (access=private)
+FIELD: animation_probe_failure Landroid/graphics/drawable/AnimationDrawable; (access=private)
+FIELD: bt_confirm Landroid/widget/TextView; (access=private)
+FIELD: iv_alarm Landroid/widget/ImageView; (access=private)
+FIELD: iv_over_temperature Landroid/widget/ImageView; (access=private)
+FIELD: iv_power_off_when_leaving_water Landroid/widget/ImageView; (access=private)
+FIELD: iv_probe_failure Landroid/widget/ImageView; (access=private)
+FIELD: mShareViewModel Lcom/zddz/app/sicn/fragment/BaseViewModel; (access=private)
+FIELD: mVibrator Landroid/os/Vibrator; (access=private)
+FIELD: tv_prompt Landroid/widget/TextView; (access=private)
+
+METHOD: public constructor <init>()V
+    invoke-direct            v1, Lcom/zddz/crash/CrashBaseActivity;-><init>()V
+    const/4                  v0, 0
+    iput-object              v0, v1, Lcom/zddz/app/sicn/activity/AlarmActivity;->mVibrator Landroid/os/Vibrator;
+    return-void              
+
+METHOD: private initIntent(Landroid/content/Intent;)V
+    if-eqz                   v5, +10ah
+    const-string             v0, "ALARM"
+    const/4                  v1, -1
+    invoke-virtual           v5, v0, v1, Landroid/content/Intent;->getIntExtra(Ljava/lang/String; I)I
+    move-result              v5
+    const/4                  v0, 4
+    const/4                  v1, 1
+    const/4                  v2, 0
+    if-nez                   v5, +054h
+    iget-object              v3, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->iv_over_temperature Landroid/widget/ImageView;
+    invoke-virtual           v3, v0, Landroid/widget/ImageView;->setVisibility(I)V
+    iget-object              v3, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->iv_probe_failure Landroid/widget/ImageView;
+    invoke-virtual           v3, v0, Landroid/widget/ImageView;->setVisibility(I)V
+    iget-object              v0, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->animation_over_temperature Landroid/graphics/drawable/AnimationDrawable;
+    invoke-virtual           v0, Landroid/graphics/drawable/AnimationDrawable;->stop()V
+    iget-object              v0, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->animation_probe_failure Landroid/graphics/drawable/AnimationDrawable;
+    invoke-virtual           v0, Landroid/graphics/drawable/AnimationDrawable;->stop()V
+    iget-object              v0, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->tv_prompt Landroid/widget/TextView;
+    const                    v3, 2131755217
+    invoke-virtual           v0, v3, Landroid/widget/TextView;->setText(I)V
+    iget-object              v0, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->tv_prompt Landroid/widget/TextView;
+    invoke-virtual           v0, v2, Landroid/widget/TextView;->setVisibility(I)V
+    iget-object              v0, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->iv_power_off_when_leaving_water Landroid/widget/ImageView;
+    invoke-virtual           v0, v2, Landroid/widget/ImageView;->setVisibility(I)V
+    iget-object              v0, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->animation_power_off_when_leaving_water Landroid/graphics/drawable/AnimationDrawable;
+    invoke-virtual           v0, Landroid/graphics/drawable/AnimationDrawable;->isRunning()Z
+    move-result              v0
+    if-nez                   v0, +007h
+    iget-object              v0, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->animation_power_off_when_leaving_water Landroid/graphics/drawable/AnimationDrawable;
+    invoke-virtual           v0, Landroid/graphics/drawable/AnimationDrawable;->start()V
+    iget-object              v0, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->iv_alarm Landroid/widget/ImageView;
+    invoke-virtual           v0, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
+    move-result-object       v0
+    invoke-virtual           v0, v5, Landroid/graphics/drawable/Drawable;->setLevel(I)Z
+    iget-object              v5, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->iv_alarm Landroid/widget/ImageView;
+    invoke-virtual           v5, v2, Landroid/widget/ImageView;->setVisibility(I)V
+    iget-object              v5, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->mShareViewModel Lcom/zddz/app/sicn/fragment/BaseViewModel;
+    invoke-virtual           v5, v1, Lcom/zddz/app/sicn/fragment/BaseViewModel;->setNeedOverTemperatureProtection(Z)V
+    iget-object              v5, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->mShareViewModel Lcom/zddz/app/sicn/fragment/BaseViewModel;
+    invoke-virtual           v5, v2, Lcom/zddz/app/sicn/fragment/BaseViewModel;->setNeedPowerOffWhenLeavingWater(Z)V
+    iget-object              v5, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->mShareViewModel Lcom/zddz/app/sicn/fragment/BaseViewModel;
+    invoke-virtual           v5, v1, Lcom/zddz/app/sicn/fragment/BaseViewModel;->setNeedProbeFailure(Z)V
+    goto/16                  +0ach
+    if-ne                    v5, v1, +053h
+    iget-object              v3, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->iv_over_temperature Landroid/widget/ImageView;
+    invoke-virtual           v3, v0, Landroid/widget/ImageView;->setVisibility(I)V
+    iget-object              v3, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->iv_power_off_when_leaving_water Landroid/widget/ImageView;
+    invoke-virtual           v3, v0, Landroid/widget/ImageView;->setVisibility(I)V
+    iget-object              v0, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->animation_over_temperature Landroid/graphics/drawable/AnimationDrawable;
+    invoke-virtual           v0, Landroid/graphics/drawable/AnimationDrawable;->stop()V
+    iget-object              v0, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->animation_power_off_when_leaving_water Landroid/graphics/drawable/AnimationDrawable;
+    invoke-virtual           v0, Landroid/graphics/drawable/AnimationDrawable;->stop()V
+    iget-object              v0, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->tv_prompt Landroid/widget/TextView;
+    const                    v3, 2131755219
+    invoke-virtual           v0, v3, Landroid/widget/TextView;->setText(I)V
+    iget-object              v0, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->tv_prompt Landroid/widget/TextView;
+    invoke-virtual           v0, v2, Landroid/widget/TextView;->setVisibility(I)V
+    iget-object              v0, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->iv_alarm Landroid/widget/ImageView;
+    invoke-virtual           v0, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
+    move-result-object       v0
+    invoke-virtual           v0, v5, Landroid/graphics/drawable/Drawable;->setLevel(I)Z
+    iget-object              v5, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->iv_alarm Landroid/widget/ImageView;
+    invoke-virtual           v5, v2, Landroid/widget/ImageView;->setVisibility(I)V
+    iget-object              v5, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->iv_probe_failure Landroid/widget/ImageView;
+    invoke-virtual           v5, v2, Landroid/widget/ImageView;->setVisibility(I)V
+    iget-object              v5, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->animation_probe_failure Landroid/graphics/drawable/AnimationDrawable;
+    invoke-virtual           v5, Landroid/graphics/drawable/AnimationDrawable;->isRunning()Z
+    move-result              v5
+    if-nez                   v5, +007h
+    iget-object              v5, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->animation_probe_failure Landroid/graphics/drawable/AnimationDrawable;
+    invoke-virtual           v5, Landroid/graphics/drawable/AnimationDrawable;->start()V
+    iget-object              v5, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->mShareViewModel Lcom/zddz/app/sicn/fragment/BaseViewModel;
+    invoke-virtual           v5, v1, Lcom/zddz/app/sicn/fragment/BaseViewModel;->setNeedOverTemperatureProtection(Z)V
+    iget-object              v5, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->mShareViewModel Lcom/zddz/app/sicn/fragment/BaseViewModel;
+    invoke-virtual           v5, v1, Lcom/zddz/app/sicn/fragment/BaseViewModel;->setNeedPowerOffWhenLeavingWater(Z)V
+    iget-object              v5, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->mShareViewModel Lcom/zddz/app/sicn/fragment/BaseViewModel;
+    invoke-virtual           v5, v2, Lcom/zddz/app/sicn/fragment/BaseViewModel;->setNeedProbeFailure(Z)V
+    goto                     +58h
+    const/4                  v3, 2
+    if-ne                    v5, v3, +053h
+    iget-object              v3, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->iv_power_off_when_leaving_water Landroid/widget/ImageView;
+    invoke-virtual           v3, v0, Landroid/widget/ImageView;->setVisibility(I)V
+    iget-object              v3, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->iv_probe_failure Landroid/widget/ImageView;
+    invoke-virtual           v3, v0, Landroid/widget/ImageView;->setVisibility(I)V
+    iget-object              v0, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->animation_power_off_when_leaving_water Landroid/graphics/drawable/AnimationDrawable;
+    invoke-virtual           v0, Landroid/graphics/drawable/AnimationDrawable;->stop()V
+    iget-object              v0, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->animation_probe_failure Landroid/graphics/drawable/AnimationDrawable;
+    invoke-virtual           v0, Landroid/graphics/drawable/AnimationDrawable;->stop()V
+    iget-object              v0, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->tv_prompt Landroid/widget/TextView;
+    const                    v3, 2131755208
+    invoke-virtual           v0, v3, Landroid/widget/TextView;->setText(I)V
+    iget-object              v0, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->tv_prompt Landroid/widget/TextView;
+    invoke-virtual           v0, v2, Landroid/widget/TextView;->setVisibility(I)V
+    iget-object              v0, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->iv_alarm Landroid/widget/ImageView;
+    invoke-virtual           v0, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
+    move-result-object       v0
+    invoke-virtual           v0, v5, Landroid/graphics/drawable/Drawable;->setLevel(I)Z
+    iget-object              v5, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->iv_alarm Landroid/widget/ImageView;
+    invoke-virtual           v5, v2, Landroid/widget/ImageView;->setVisibility(I)V
+    iget-object              v5, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->iv_over_temperature Landroid/widget/ImageView;
+    invoke-virtual           v5, v2, Landroid/widget/ImageView;->setVisibility(I)V
+    iget-object              v5, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->animation_over_temperature Landroid/graphics/drawable/AnimationDrawable;
+    invoke-virtual           v5, Landroid/graphics/drawable/AnimationDrawable;->isRunning()Z
+    move-result              v5
+    if-nez                   v5, +007h
+    iget-object              v5, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->animation_over_temperature Landroid/graphics/drawable/AnimationDrawable;
+    invoke-virtual           v5, Landroid/graphics/drawable/AnimationDrawable;->start()V
+    iget-object              v5, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->mShareViewModel Lcom/zddz/app/sicn/fragment/BaseViewModel;
+    invoke-virtual           v5, v2, Lcom/zddz/app/sicn/fragment/BaseViewModel;->setNeedOverTemperatureProtection(Z)V
+    iget-object              v5, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->mShareViewModel Lcom/zddz/app/sicn/fragment/BaseViewModel;
+    invoke-virtual           v5, v1, Lcom/zddz/app/sicn/fragment/BaseViewModel;->setNeedPowerOffWhenLeavingWater(Z)V
+    iget-object              v5, v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->mShareViewModel Lcom/zddz/app/sicn/fragment/BaseViewModel;
+    invoke-virtual           v5, v1, Lcom/zddz/app/sicn/fragment/BaseViewModel;->setNeedProbeFailure(Z)V
+    goto                     +4h
+    invoke-virtual           v4, Lcom/zddz/app/sicn/activity/AlarmActivity;->finish()V
+    return-void              
+
+METHOD: public finish()V
+    invoke-super             v2, Lcom/zddz/crash/CrashBaseActivity;->finish()V
+    const                    v0, 2130771996
+    const                    v1, 2130771997
+    invoke-virtual           v2, v0, v1, Lcom/zddz/app/sicn/activity/AlarmActivity;->overridePendingTransition(I I)V
+    return-void              
+
+METHOD: protected onCreate(Landroid/os/Bundle;)V
+    invoke-super             v1, v2, Lcom/zddz/crash/CrashBaseActivity;->onCreate(Landroid/os/Bundle;)V
+    const                    v2, 2131427374
+    invoke-virtual           v1, v2, Lcom/zddz/app/sicn/activity/AlarmActivity;->setContentView(I)V
+    new-instance             v2, Landroidx/lifecycle/ViewModelProvider;
+    invoke-direct            v2, v1, Landroidx/lifecycle/ViewModelProvider;-><init>(Landroidx/lifecycle/ViewModelStoreOwner;)V
+    const-class              v0, Lcom/zddz/app/sicn/fragment/BaseViewModel;
+    invoke-virtual           v2, v0, Landroidx/lifecycle/ViewModelProvider;->get(Ljava/lang/Class;)Landroidx/lifecycle/ViewModel;
+    move-result-object       v2
+    check-cast               v2, Lcom/zddz/app/sicn/fragment/BaseViewModel;
+    iput-object              v2, v1, Lcom/zddz/app/sicn/activity/AlarmActivity;->mShareViewModel Lcom/zddz/app/sicn/fragment/BaseViewModel;
+    const                    v2, 2131230972
+    invoke-virtual           v1, v2, Lcom/zddz/app/sicn/activity/AlarmActivity;->findViewById(I)Landroid/view/View;
+    move-result-object       v2
+    check-cast               v2, Landroid/widget/ImageView;
+    iput-object              v2, v1, Lcom/zddz/app/sicn/activity/AlarmActivity;->iv_power_off_when_leaving_water Landroid/widget/ImageView;
+    invoke-virtual           v2, Landroid/widget/ImageView;->getBackground()Landroid/graphics/drawable/Drawable;
+    move-result-object       v2
+    check-cast               v2, Landroid/graphics/drawable/AnimationDrawable;
+    iput-object              v2, v1, Lcom/zddz/app/sicn/activity/AlarmActivity;->animation_power_off_when_leaving_water Landroid/graphics/drawable/AnimationDrawable;
+    const                    v2, 2131230973
+    invoke-virtual           v1, v2, Lcom/zddz/app/sicn/activity/AlarmActivity;->findViewById(I)Landroid/view/View;
+    move-result-object       v2
+    check-cast               v2, Landroid/widget/ImageView;
+    iput-object              v2, v1, Lcom/zddz/app/sicn/activity/AlarmActivity;->iv_probe_failure Landroid/widget/ImageView;
+    invoke-virtual           v2, Landroid/widget/ImageView;->getBackground()Landroid/graphics/drawable/Drawable;
+    move-result-object       v2
+    check-cast               v2, Landroid/graphics/drawable/AnimationDrawable;
+    iput-object              v2, v1, Lcom/zddz/app/sicn/activity/AlarmActivity;->animation_probe_failure Landroid/graphics/drawable/AnimationDrawable;
+    const                    v2, 2131230971
+    invoke-virtual           v1, v2, Lcom/zddz/app/sicn/activity/AlarmActivity;->findViewById(I)Landroid/view/View;
+    move-result-object       v2
+    check-cast               v2, Landroid/widget/ImageView;
+    iput-object              v2, v1, Lcom/zddz/app/sicn/activity/AlarmActivity;->iv_over_temperature Landroid/widget/ImageView;
+    invoke-virtual           v2, Landroid/widget/ImageView;->getBackground()Landroid/graphics/drawable/Drawable;
+    move-result-object       v2
+    check-cast               v2, Landroid/graphics/drawable/AnimationDrawable;
+    iput-object              v2, v1, Lcom/zddz/app/sicn/activity/AlarmActivity;->animation_over_temperature Landroid/graphics/drawable/AnimationDrawable;
+    const                    v2, 2131230969
+    invoke-virtual           v1, v2, Lcom/zddz/app/sicn/activity/AlarmActivity;->findViewById(I)Landroid/view/View;
+    move-result-object       v2
+    check-cast               v2, Landroid/widget/ImageView;
+    iput-object              v2, v1, Lcom/zddz/app/sicn/activity/AlarmActivity;->iv_alarm Landroid/widget/ImageView;
+    const                    v2, 2131230824
+    invoke-virtual           v1, v2, Lcom/zddz/app/sicn/activity/AlarmActivity;->findViewById(I)Landroid/view/View;
+    move-result-object       v2
+    check-cast               v2, Landroid/widget/TextView;
+    iput-object              v2, v1, Lcom/zddz/app/sicn/activity/AlarmActivity;->bt_confirm Landroid/widget/TextView;
+    new-instance             v0, Lcom/zddz/app/sicn/activity/AlarmActivity$1;
+    invoke-direct            v0, v1, Lcom/zddz/app/sicn/activity/AlarmActivity$1;-><init>(Lcom/zddz/app/sicn/activity/AlarmActivity;)V
+    invoke-virtual           v2, v0, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    const                    v2, 2131231259
+    invoke-virtual           v1, v2, Lcom/zddz/app/sicn/activity/AlarmActivity;->findViewById(I)Landroid/view/View;
+    move-result-object       v2
+    check-cast               v2, Landroid/widget/TextView;
+    iput-object              v2, v1, Lcom/zddz/app/sicn/activity/AlarmActivity;->tv_prompt Landroid/widget/TextView;
+    const-string             v2, "vibrator"
+    invoke-virtual           v1, v2, Lcom/zddz/app/sicn/activity/AlarmActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    move-result-object       v2
+    check-cast               v2, Landroid/os/Vibrator;
+    iput-object              v2, v1, Lcom/zddz/app/sicn/activity/AlarmActivity;->mVibrator Landroid/os/Vibrator;
+    return-void              
+
+METHOD: public onNewIntent(Landroid/content/Intent;)V
+    invoke-super             v0, v1, Lcom/zddz/crash/CrashBaseActivity;->onNewIntent(Landroid/content/Intent;)V
+    invoke-virtual           v0, Lcom/zddz/app/sicn/activity/AlarmActivity;->getIntent()Landroid/content/Intent;
+    move-result-object       v1
+    invoke-direct            v0, v1, Lcom/zddz/app/sicn/activity/AlarmActivity;->initIntent(Landroid/content/Intent;)V
+    return-void              
+
+METHOD: public onStart()V
+    iget-object              v0, v3, Lcom/zddz/app/sicn/activity/AlarmActivity;->mVibrator Landroid/os/Vibrator;
+    const/4                  v1, 2
+    new-array                v1, v1, [J
+    fill-array-data          v1, +000000bh
+    const/4                  v2, 0
+    invoke-virtual           v0, v1, v2, Landroid/os/Vibrator;->vibrate([J I)V
+    invoke-super             v3, Lcom/zddz/crash/CrashBaseActivity;->onStart()V
+    return-void              
+    fill-array-data-payload  b'\x00\x00\x00\x00\x00\x00\x00\x00\xe8\x03\x00\x00\x00\x00\x00\x00' | \x00\x00\x00\x00\x00\x00\x00\x00\xe8\x03\x00\x00\x00\x00\x00\x00
+
+METHOD: public onStop()V
+    iget-object              v0, v1, Lcom/zddz/app/sicn/activity/AlarmActivity;->mVibrator Landroid/os/Vibrator;
+    invoke-virtual           v0, Landroid/os/Vibrator;->cancel()V
+    iget-object              v0, v1, Lcom/zddz/app/sicn/activity/AlarmActivity;->animation_over_temperature Landroid/graphics/drawable/AnimationDrawable;
+    invoke-virtual           v0, Landroid/graphics/drawable/AnimationDrawable;->stop()V
+    iget-object              v0, v1, Lcom/zddz/app/sicn/activity/AlarmActivity;->animation_power_off_when_leaving_water Landroid/graphics/drawable/AnimationDrawable;
+    invoke-virtual           v0, Landroid/graphics/drawable/AnimationDrawable;->stop()V
+    iget-object              v0, v1, Lcom/zddz/app/sicn/activity/AlarmActivity;->animation_probe_failure Landroid/graphics/drawable/AnimationDrawable;
+    invoke-virtual           v0, Landroid/graphics/drawable/AnimationDrawable;->stop()V
+    goto                     +5h
+    move-exception           v0
+    invoke-virtual           v0, Ljava/lang/Exception;->printStackTrace()V
+    invoke-super             v1, Lcom/zddz/crash/CrashBaseActivity;->onStop()V
+    return-void              

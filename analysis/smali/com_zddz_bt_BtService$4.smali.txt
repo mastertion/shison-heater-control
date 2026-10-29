@@ -1,0 +1,7 @@
+### CLASS Lcom/zddz/bt/BtService$4; (super=Landroid/bluetooth/BluetoothGattCallback;)
+FIELD: this$0 Lcom/zddz/bt/BtService; (access=final synthetic)
+
+METHOD: constructor <init>(Lcom/zddz/bt/BtService;)V
+    iput-object              v1, v0, Lcom/zddz/bt/BtService$4;->this$0 Lcom/zddz/bt/BtService;
+    invoke-direct            v0, Landroid/bluetooth/BluetoothGattCallback;-><init>()V
+    return-void              

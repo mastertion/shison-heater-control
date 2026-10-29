@@ -1,0 +1,10 @@
+'n' is not recognized as an internal or external command,
+operable program or batch file.
+'n_control.py' is not recognized as an internal or external command,
+operable program or batch file.
+'ython' is not recognized as an internal or external command,
+operable program or batch file.
+'https:' is not recognized as an internal or external command,
+operable program or batch file.
+'��任意键关闭窗口。' is not recognized as an internal or external command,
+operable program or batch file.

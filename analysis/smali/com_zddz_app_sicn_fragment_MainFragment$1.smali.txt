@@ -1,0 +1,58 @@
+### CLASS Lcom/zddz/app/sicn/fragment/MainFragment$1; (super=Ljava/lang/Object;)
+FIELD: this$0 Lcom/zddz/app/sicn/fragment/MainFragment;
+
+METHOD: constructor <init>(Lcom/zddz/app/sicn/fragment/MainFragment;)V
+    iput-object              v1, v0, Lcom/zddz/app/sicn/fragment/MainFragment$1;->this$0 Lcom/zddz/app/sicn/fragment/MainFragment;
+    invoke-direct            v0, Ljava/lang/Object;-><init>()V
+    return-void              
+
+METHOD: public run()V
+    sget-object              v0, Lcom/zddz/app/sicn/OrderSet;->write_target_temperature [B
+    iget-object              v1, v4, Lcom/zddz/app/sicn/fragment/MainFragment$1;->this$0 Lcom/zddz/app/sicn/fragment/MainFragment;
+    invoke-static            v1, Lcom/zddz/app/sicn/fragment/MainFragment;->access$000(Lcom/zddz/app/sicn/fragment/MainFragment;)Lcom/zddz/widget/UIImageView;
+    move-result-object       v1
+    invoke-virtual           v1, Lcom/zddz/widget/UIImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
+    move-result-object       v1
+    invoke-virtual           v1, Landroid/graphics/drawable/Drawable;->getLevel()I
+    move-result              v1
+    if-nez                   v1, +015h
+    iget-object              v1, v4, Lcom/zddz/app/sicn/fragment/MainFragment$1;->this$0 Lcom/zddz/app/sicn/fragment/MainFragment;
+    invoke-static            v1, Lcom/zddz/app/sicn/fragment/MainFragment;->access$100(Lcom/zddz/app/sicn/fragment/MainFragment;)Landroid/widget/SeekBar;
+    move-result-object       v1
+    invoke-virtual           v1, Landroid/widget/SeekBar;->getProgress()I
+    move-result              v1
+    mul-int/lit8             v1, v1, 5
+    add-int/lit16            v1, v1, 180
+    invoke-static            v1, Lcom/zddz/bt/Convert;->intToBytes4Little(I)[B
+    move-result-object       v1
+    goto                     +13h
+    iget-object              v1, v4, Lcom/zddz/app/sicn/fragment/MainFragment$1;->this$0 Lcom/zddz/app/sicn/fragment/MainFragment;
+    invoke-static            v1, Lcom/zddz/app/sicn/fragment/MainFragment;->access$100(Lcom/zddz/app/sicn/fragment/MainFragment;)Landroid/widget/SeekBar;
+    move-result-object       v1
+    invoke-virtual           v1, Landroid/widget/SeekBar;->getProgress()I
+    move-result              v1
+    mul-int/lit8             v1, v1, 10
+    add-int/lit16            v1, v1, 640
+    invoke-static            v1, Lcom/zddz/bt/Convert;->intToBytes4Little(I)[B
+    move-result-object       v1
+    const/4                  v2, 0
+    aget-byte                v2, v1, v2
+    const/4                  v3, 2
+    aput-byte                v2, v0, v3
+    const/4                  v2, 1
+    aget-byte                v1, v1, v2
+    const/4                  v2, 3
+    aput-byte                v1, v0, v2
+    iget-object              v1, v4, Lcom/zddz/app/sicn/fragment/MainFragment$1;->this$0 Lcom/zddz/app/sicn/fragment/MainFragment;
+    iget-object              v1, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->mIMain Lcom/zddz/app/sicn/fragment/IMain;
+    invoke-interface         v1, v0, Lcom/zddz/app/sicn/fragment/IMain;->writeData([B)Z
+    iget-object              v0, v4, Lcom/zddz/app/sicn/fragment/MainFragment$1;->this$0 Lcom/zddz/app/sicn/fragment/MainFragment;
+    invoke-static            v0, Lcom/zddz/app/sicn/fragment/MainFragment;->access$200(Lcom/zddz/app/sicn/fragment/MainFragment;)Z
+    move-result              v0
+    if-eqz                   v0, +00dh
+    iget-object              v0, v4, Lcom/zddz/app/sicn/fragment/MainFragment$1;->this$0 Lcom/zddz/app/sicn/fragment/MainFragment;
+    invoke-static            v0, Lcom/zddz/app/sicn/fragment/MainFragment;->access$300(Lcom/zddz/app/sicn/fragment/MainFragment;)Landroid/os/Handler;
+    move-result-object       v0
+    const-wide/16            v1, 200
+    invoke-virtual           v0, v4, v1, v2, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable; J)Z
+    return-void              

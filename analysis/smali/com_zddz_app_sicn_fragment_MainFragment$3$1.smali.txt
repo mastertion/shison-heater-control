@@ -1,0 +1,56 @@
+### CLASS Lcom/zddz/app/sicn/fragment/MainFragment$3$1; (super=Ljava/lang/Object;)
+FIELD: this$1 Lcom/zddz/app/sicn/fragment/MainFragment$3;
+
+METHOD: constructor <init>(Lcom/zddz/app/sicn/fragment/MainFragment$3;)V
+    iput-object              v1, v0, Lcom/zddz/app/sicn/fragment/MainFragment$3$1;->this$1 Lcom/zddz/app/sicn/fragment/MainFragment$3;
+    invoke-direct            v0, Ljava/lang/Object;-><init>()V
+    return-void              
+
+METHOD: public run()V
+    iget-object              v0, v4, Lcom/zddz/app/sicn/fragment/MainFragment$3$1;->this$1 Lcom/zddz/app/sicn/fragment/MainFragment$3;
+    iget-object              v0, v0, Lcom/zddz/app/sicn/fragment/MainFragment$3;->this$0 Lcom/zddz/app/sicn/fragment/MainFragment;
+    const/4                  v1, 0
+    invoke-static            v0, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->access$402(Lcom/zddz/app/sicn/fragment/MainFragment; Z)Z
+    sget-object              v0, Lcom/zddz/app/sicn/OrderSet;->write_target_temperature [B
+    iget-object              v2, v4, Lcom/zddz/app/sicn/fragment/MainFragment$3$1;->this$1 Lcom/zddz/app/sicn/fragment/MainFragment$3;
+    iget-object              v2, v2, Lcom/zddz/app/sicn/fragment/MainFragment$3;->this$0 Lcom/zddz/app/sicn/fragment/MainFragment;
+    invoke-static            v2, Lcom/zddz/app/sicn/fragment/MainFragment;->access$000(Lcom/zddz/app/sicn/fragment/MainFragment;)Lcom/zddz/widget/UIImageView;
+    move-result-object       v2
+    invoke-virtual           v2, Lcom/zddz/widget/UIImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
+    move-result-object       v2
+    invoke-virtual           v2, Landroid/graphics/drawable/Drawable;->getLevel()I
+    move-result              v2
+    if-nez                   v2, +017h
+    iget-object              v2, v4, Lcom/zddz/app/sicn/fragment/MainFragment$3$1;->this$1 Lcom/zddz/app/sicn/fragment/MainFragment$3;
+    iget-object              v2, v2, Lcom/zddz/app/sicn/fragment/MainFragment$3;->this$0 Lcom/zddz/app/sicn/fragment/MainFragment;
+    invoke-static            v2, Lcom/zddz/app/sicn/fragment/MainFragment;->access$100(Lcom/zddz/app/sicn/fragment/MainFragment;)Landroid/widget/SeekBar;
+    move-result-object       v2
+    invoke-virtual           v2, Landroid/widget/SeekBar;->getProgress()I
+    move-result              v2
+    mul-int/lit8             v2, v2, 5
+    add-int/lit16            v2, v2, 180
+    invoke-static            v2, Lcom/zddz/bt/Convert;->intToBytes4Little(I)[B
+    move-result-object       v2
+    goto                     +15h
+    iget-object              v2, v4, Lcom/zddz/app/sicn/fragment/MainFragment$3$1;->this$1 Lcom/zddz/app/sicn/fragment/MainFragment$3;
+    iget-object              v2, v2, Lcom/zddz/app/sicn/fragment/MainFragment$3;->this$0 Lcom/zddz/app/sicn/fragment/MainFragment;
+    invoke-static            v2, Lcom/zddz/app/sicn/fragment/MainFragment;->access$100(Lcom/zddz/app/sicn/fragment/MainFragment;)Landroid/widget/SeekBar;
+    move-result-object       v2
+    invoke-virtual           v2, Landroid/widget/SeekBar;->getProgress()I
+    move-result              v2
+    mul-int/lit8             v2, v2, 10
+    add-int/lit16            v2, v2, 640
+    invoke-static            v2, Lcom/zddz/bt/Convert;->intToBytes4Little(I)[B
+    move-result-object       v2
+    const/4                  v3, 2
+    aget-byte                v1, v2, v1
+    aput-byte                v1, v0, v3
+    const/4                  v1, 1
+    aget-byte                v1, v2, v1
+    const/4                  v2, 3
+    aput-byte                v1, v0, v2
+    iget-object              v1, v4, Lcom/zddz/app/sicn/fragment/MainFragment$3$1;->this$1 Lcom/zddz/app/sicn/fragment/MainFragment$3;
+    iget-object              v1, v1, Lcom/zddz/app/sicn/fragment/MainFragment$3;->this$0 Lcom/zddz/app/sicn/fragment/MainFragment;
+    iget-object              v1, v1, Lcom/zddz/app/sicn/fragment/MainFragment;->mIMain Lcom/zddz/app/sicn/fragment/IMain;
+    invoke-interface         v1, v0, Lcom/zddz/app/sicn/fragment/IMain;->writeData([B)Z
+    return-void              

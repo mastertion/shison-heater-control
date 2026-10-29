@@ -1,0 +1,19 @@
+### CLASS Lcom/zddz/bt/BtService$8; (super=Ljava/lang/Object;)
+FIELD: this$0 Lcom/zddz/bt/BtService;
+
+METHOD: constructor <init>(Lcom/zddz/bt/BtService;)V
+    iput-object              v1, v0, Lcom/zddz/bt/BtService$8;->this$0 Lcom/zddz/bt/BtService;
+    invoke-direct            v0, Ljava/lang/Object;-><init>()V
+    return-void              
+
+METHOD: public onLeScan(Landroid/bluetooth/BluetoothDevice; I [B)V
+    iget-object              v0, v7, Lcom/zddz/bt/BtService$8;->this$0 Lcom/zddz/bt/BtService;
+    invoke-static            v0, Lcom/zddz/bt/BtService;->access$200(Lcom/zddz/bt/BtService;)Lcom/zddz/bt/ScannerLiveData;
+    move-result-object       v1
+    const/4                  v3, 0
+    const/4                  v6, 0
+    move-object              v2, v8
+    move                     v4, v9
+    move-object              v5, v10
+    invoke-virtual/range     v1 ... v6, Lcom/zddz/bt/ScannerLiveData;->update(Landroid/bluetooth/BluetoothDevice; Landroid/bluetooth/le/ScanResult; I [B I)V
+    return-void              

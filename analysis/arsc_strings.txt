@@ -1,0 +1,6837 @@
+0	res/-1.xml
+1	res/-5.xml
+2	res/-7.xml
+3	res/-B.xml
+4	res/-p.xml
+5	res/-x.xml
+6	res/0C.xml
+7	res/0M.xml
+8	res/0r.xml
+9	res/0v.xml
+10	res/1G.mp3
+11	res/1N.xml
+12	res/1R.xml
+13	res/1h.xml
+14	res/1v.xml
+15	res/21.xml
+16	res/27.xml
+17	res/271.xml
+18	res/2F.xml
+19	res/2R.xml
+20	res/2f.xml
+21	res/2j.xml
+22	res/2n.xml
+23	res/2w.xml
+24	res/2x.xml
+25	res/35.xml
+26	res/38.xml
+27	res/3A.xml
+28	res/3K.xml
+29	res/3R.xml
+30	res/3T.xml
+31	res/3h.xml
+32	res/46.xml
+33	res/4B.xml
+34	res/4F.xml
+35	res/4H.xml
+36	res/4I.xml
+37	res/4Q.xml
+38	res/4S.xml
+39	res/4_.xml
+40	res/4j.xml
+41	res/4u.xml
+42	res/4x.xml
+43	res/51.xml
+44	res/59.xml
+45	res/5T.xml
+46	res/5Y.xml
+47	res/5l.xml
+48	res/5z.xml
+49	res/61.xml
+50	res/66.xml
+51	res/68.xml
+52	res/6Q.xml
+53	res/6x.xml
+54	res/7G.xml
+55	res/7H.xml
+56	res/7R.xml
+57	res/7s.xml
+58	res/7s1.xml
+59	res/80.xml
+60	res/8G.xml
+61	res/8K.xml
+62	res/8s.xml
+63	res/8y.xml
+64	res/9O.xml
+65	res/9P.xml
+66	res/9T.xml
+67	res/9T1.xml
+68	res/9T2.xml
+69	res/9V.xml
+70	res/9m.xml
+71	res/9p.xml
+72	res/9z.xml
+73	res/A0.xml
+74	res/A1.xml
+75	res/A4.xml
+76	res/A5.xml
+77	res/AB.xml
+78	res/Aa.xml
+79	res/B6.xml
+80	res/BJ.xml
+81	res/BJ1.xml
+82	res/BT.xml
+83	res/BT1.xml
+84	res/Bd.xml
+85	res/Be.xml
+86	res/By.xml
+87	res/By1.xml
+88	res/Cg.xml
+89	res/Cj.mp3
+90	res/D4.xml
+91	res/D5.xml
+92	res/D6.xml
+93	res/DG.xml
+94	res/DS.xml
+95	res/DV.mp3
+96	res/DV.xml
+97	res/DZ.xml
+98	res/EY.xml
+99	res/EZ.xml
+100	res/Ej.xml
+101	res/F8.xml
+102	res/F81.xml
+103	res/FS.xml
+104	res/FT.xml
+105	res/Fq.xml
+106	res/G2.xml
+107	res/GC.xml
+108	res/GD.xml
+109	res/GF.xml
+110	res/GQ.xml
+111	res/Gt.xml
+112	res/H4.xml
+113	res/HC.xml
+114	res/HQ.xml
+115	res/Ha.xml
+116	res/Hd.xml
+117	res/I3.xml
+118	res/IR.xml
+119	res/Ib.xml
+120	res/Id.xml
+121	res/In.xml
+122	res/In1.xml
+123	res/J7.xml
+124	res/JD.xml
+125	res/JD1.xml
+126	res/JQ.xml
+127	res/JT.xml
+128	res/JT1.xml
+129	res/JY.xml
+130	res/Jl.xml
+131	res/Jw.xml
+132	res/K2.xml
+133	res/K5.xml
+134	res/K51.xml
+135	res/KT.xml
+136	res/Ke.xml
+137	res/L-.xml
+138	res/LJ.xml
+139	res/LT.xml
+140	res/L_.xml
+141	res/Lf.xml
+142	res/Lt.xml
+143	res/Lv.xml
+144	res/M2.xml
+145	res/M5.xml
+146	res/M7.xml
+147	res/MO.xml
+148	res/MZ.xml
+149	res/Mp.xml
+150	res/Mt.xml
+151	res/N0.xml
+152	res/NF.xml
+153	res/NM.xml
+154	res/NN.xml
+155	res/Nu.xml
+156	res/Ny.xml
+157	res/OX.xml
+158	res/Of.xml
+159	res/Ol.xml
+160	res/PQ.xml
+161	res/PV.xml
+162	res/PX.xml
+163	res/QD.xml
+164	res/QH.xml
+165	res/QN.xml
+166	res/QN1.xml
+167	res/QP.xml
+168	res/QZ.xml
+169	res/QZ1.xml
+170	res/Qd.xml
+171	res/Qp.xml
+172	res/Qq.xml
+173	res/Qq1.xml
+174	res/Qt.xml
+175	res/Qu.xml
+176	res/Qy.xml
+177	res/R2.xml
+178	res/RD.xml
+179	res/RH.xml
+180	res/RI.xml
+181	res/RL.xml
+182	res/RM.xml
+183	res/Ro.xml
+184	res/S6.xml
+185	res/SG.xml
+186	res/SG1.xml
+187	res/SN.xml
+188	res/Sc.xml
+189	res/Sh.xml
+190	res/T4.xml
+191	res/TH.xml
+192	res/TJ.xml
+193	res/TW.xml
+194	res/Tf.xml
+195	res/Tn.xml
+196	res/U0.xml
+197	res/U7.xml
+198	res/U8.xml
+199	res/UE.xml
+200	res/UP.xml
+201	res/UX.xml
+202	res/Uf.xml
+203	res/V1.xml
+204	res/V3.xml
+205	res/VI.xml
+206	res/VM.xml
+207	res/VN.xml
+208	res/VT.xml
+209	res/WC.xml
+210	res/WK.xml
+211	res/WP.xml
+212	res/X6.xml
+213	res/XK.xml
+214	res/XW.xml
+215	res/Xe.xml
+216	res/Xf.xml
+217	res/Xl.xml
+218	res/Xx.xml
+219	res/Xz.xml
+220	res/Y-.xml
+221	res/YN.xml
+222	res/YR.xml
+223	res/YW.xml
+224	res/YW1.xml
+225	res/ZC.xml
+226	res/ZL.xml
+227	res/ZM.xml
+228	res/ZN.xml
+229	res/ZW.xml
+230	res/Zd.xml
+231	res/Zg.xml
+232	res/_G.xml
+233	res/_I.xml
+234	res/_M.xml
+235	res/_i.xml
+236	res/_o.xml
+237	res/_v.xml
+238	res/_y.xml
+239	res/a5.xml
+240	res/a7.xml
+241	res/aG.xml
+242	res/aJ.xml
+243	res/aM.xml
+244	res/aT.xml
+245	res/aW.xml
+246	res/ai.xml
+247	res/ay.xml
+248	res/bL.xml
+249	res/bT.xml
+250	res/bb.xml
+251	res/bm.xml
+252	res/bt.xml
+253	res/c0.xml
+254	res/c2.xml
+255	res/c5.xml
+256	res/c6.xml
+257	res/cA.xml
+258	res/cL.xml
+259	res/cV.xml
+260	res/cc.xml
+261	res/cm.xml
+262	res/color/abc_background_cache_hint_selector_material_dark.xml
+263	res/color/abc_background_cache_hint_selector_material_light.xml
+264	res/color/abc_btn_colored_borderless_text_material.xml
+265	res/color/abc_btn_colored_text_material.xml
+266	res/color/abc_hint_foreground_material_dark.xml
+267	res/color/abc_hint_foreground_material_light.xml
+268	res/color/abc_primary_text_disable_only_material_dark.xml
+269	res/color/abc_primary_text_disable_only_material_light.xml
+270	res/color/abc_primary_text_material_dark.xml
+271	res/color/abc_primary_text_material_light.xml
+272	res/color/abc_search_url_text.xml
+273	res/color/abc_secondary_text_material_dark.xml
+274	res/color/abc_secondary_text_material_light.xml
+275	res/color/abc_tint_btn_checkable.xml
+276	res/color/abc_tint_default.xml
+277	res/color/abc_tint_edittext.xml
+278	res/color/abc_tint_seek_thumb.xml
+279	res/color/abc_tint_spinner.xml
+280	res/color/abc_tint_switch_track.xml
+281	res/color/design_box_stroke_color.xml
+282	res/color/design_error.xml
+283	res/color/design_icon_tint.xml
+284	res/color/m3_appbar_overlay_color.xml
+285	res/color/m3_assist_chip_icon_tint_color.xml
+286	res/color/m3_assist_chip_stroke_color.xml
+287	res/color/m3_button_background_color_selector.xml
+288	res/color/m3_button_foreground_color_selector.xml
+289	res/color/m3_button_outline_color_selector.xml
+290	res/color/m3_button_ripple_color.xml
+291	res/color/m3_button_ripple_color_selector.xml
+292	res/color/m3_calendar_item_disabled_text.xml
+293	res/color/m3_calendar_item_stroke_color.xml
+294	res/color/m3_card_foreground_color.xml
+295	res/color/m3_card_ripple_color.xml
+296	res/color/m3_card_stroke_color.xml
+297	res/color/m3_checkbox_button_icon_tint.xml
+298	res/color/m3_checkbox_button_tint.xml
+299	res/color/m3_chip_assist_text_color.xml
+300	res/color/m3_chip_background_color.xml
+301	res/color/m3_chip_ripple_color.xml
+302	res/color/m3_chip_stroke_color.xml
+303	res/color/m3_chip_text_color.xml
+304	res/color/m3_dark_default_color_primary_text.xml
+305	res/color/m3_dark_default_color_secondary_text.xml
+306	res/color/m3_dark_highlighted_text.xml
+307	res/color/m3_dark_hint_foreground.xml
+308	res/color/m3_dark_primary_text_disable_only.xml
+309	res/color/m3_default_color_primary_text.xml
+310	res/color/m3_default_color_secondary_text.xml
+311	res/color/m3_efab_ripple_color_selector.xml
+312	res/color/m3_elevated_chip_background_color.xml
+313	res/color/m3_fab_efab_background_color_selector.xml
+314	res/color/m3_fab_efab_foreground_color_selector.xml
+315	res/color/m3_fab_ripple_color_selector.xml
+316	res/color/m3_filled_icon_button_container_color_selector.xml
+317	res/color/m3_highlighted_text.xml
+318	res/color/m3_hint_foreground.xml
+319	res/color/m3_icon_button_icon_color_selector.xml
+320	res/color/m3_navigation_bar_item_with_indicator_icon_tint.xml
+321	res/color/m3_navigation_bar_item_with_indicator_label_tint.xml
+322	res/color/m3_navigation_bar_ripple_color_selector.xml
+323	res/color/m3_navigation_item_background_color.xml
+324	res/color/m3_navigation_item_icon_tint.xml
+325	res/color/m3_navigation_item_ripple_color.xml
+326	res/color/m3_navigation_item_text_color.xml
+327	res/color/m3_navigation_rail_item_with_indicator_icon_tint.xml
+328	res/color/m3_navigation_rail_item_with_indicator_label_tint.xml
+329	res/color/m3_navigation_rail_ripple_color_selector.xml
+330	res/color/m3_popupmenu_overlay_color.xml
+331	res/color/m3_primary_text_disable_only.xml
+332	res/color/m3_radiobutton_button_tint.xml
+333	res/color/m3_radiobutton_ripple_tint.xml
+334	res/color/m3_selection_control_ripple_color_selector.xml
+335	res/color/m3_simple_item_ripple_color.xml
+336	res/color/m3_slider_active_track_color.xml
+337	res/color/m3_slider_halo_color.xml
+338	res/color/m3_slider_inactive_track_color.xml
+339	res/color/m3_slider_thumb_color.xml
+340	res/color/m3_switch_thumb_tint.xml
+341	res/color/m3_switch_track_tint.xml
+342	res/color/m3_tabs_icon_color.xml
+343	res/color/m3_tabs_icon_color_secondary.xml
+344	res/color/m3_tabs_ripple_color.xml
+345	res/color/m3_tabs_ripple_color_secondary.xml
+346	res/color/m3_tabs_text_color.xml
+347	res/color/m3_tabs_text_color_secondary.xml
+348	res/color/m3_text_button_background_color_selector.xml
+349	res/color/m3_text_button_foreground_color_selector.xml
+350	res/color/m3_text_button_ripple_color_selector.xml
+351	res/color/m3_textfield_filled_background_color.xml
+352	res/color/m3_textfield_indicator_text_color.xml
+353	res/color/m3_textfield_input_text_color.xml
+354	res/color/m3_textfield_label_color.xml
+355	res/color/m3_textfield_stroke_color.xml
+356	res/color/m3_timepicker_button_background_color.xml
+357	res/color/m3_timepicker_button_ripple_color.xml
+358	res/color/m3_timepicker_button_text_color.xml
+359	res/color/m3_timepicker_clock_text_color.xml
+360	res/color/m3_timepicker_display_background_color.xml
+361	res/color/m3_timepicker_display_ripple_color.xml
+362	res/color/m3_timepicker_display_text_color.xml
+363	res/color/m3_timepicker_secondary_text_button_ripple_color.xml
+364	res/color/m3_timepicker_secondary_text_button_text_color.xml
+365	res/color/m3_timepicker_time_input_stroke_color.xml
+366	res/color/m3_tonal_button_ripple_color_selector.xml
+367	res/color/material_cursor_color.xml
+368	res/color/material_divider_color.xml
+369	res/color/material_on_background_disabled.xml
+370	res/color/material_on_background_emphasis_high_type.xml
+371	res/color/material_on_background_emphasis_medium.xml
+372	res/color/material_on_primary_disabled.xml
+373	res/color/material_on_primary_emphasis_high_type.xml
+374	res/color/material_on_primary_emphasis_medium.xml
+375	res/color/material_on_surface_disabled.xml
+376	res/color/material_on_surface_emphasis_high_type.xml
+377	res/color/material_on_surface_emphasis_medium.xml
+378	res/color/material_on_surface_stroke.xml
+379	res/color/material_personalized__highlighted_text.xml
+380	res/color/material_personalized__highlighted_text_inverse.xml
+381	res/color/material_personalized_color_primary_text.xml
+382	res/color/material_personalized_color_primary_text_inverse.xml
+383	res/color/material_personalized_color_secondary_text.xml
+384	res/color/material_personalized_color_secondary_text_inverse.xml
+385	res/color/material_personalized_hint_foreground.xml
+386	res/color/material_personalized_hint_foreground_inverse.xml
+387	res/color/material_personalized_primary_inverse_text_disable_only.xml
+388	res/color/material_personalized_primary_text_disable_only.xml
+389	res/color/material_slider_active_tick_marks_color.xml
+390	res/color/material_slider_active_track_color.xml
+391	res/color/material_slider_halo_color.xml
+392	res/color/material_slider_inactive_tick_marks_color.xml
+393	res/color/material_slider_inactive_track_color.xml
+394	res/color/material_slider_thumb_color.xml
+395	res/color/material_timepicker_button_background.xml
+396	res/color/material_timepicker_button_stroke.xml
+397	res/color/material_timepicker_clock_text_color.xml
+398	res/color/material_timepicker_clockface.xml
+399	res/color/material_timepicker_modebutton_tint.xml
+400	res/color/mtrl_btn_bg_color_selector.xml
+401	res/color/mtrl_btn_ripple_color.xml
+402	res/color/mtrl_btn_stroke_color_selector.xml
+403	res/color/mtrl_btn_text_btn_bg_color_selector.xml
+404	res/color/mtrl_btn_text_btn_ripple_color.xml
+405	res/color/mtrl_btn_text_color_selector.xml
+406	res/color/mtrl_calendar_item_stroke_color.xml
+407	res/color/mtrl_calendar_selected_range.xml
+408	res/color/mtrl_card_view_foreground.xml
+409	res/color/mtrl_card_view_ripple.xml
+410	res/color/mtrl_chip_background_color.xml
+411	res/color/mtrl_chip_close_icon_tint.xml
+412	res/color/mtrl_chip_surface_color.xml
+413	res/color/mtrl_chip_text_color.xml
+414	res/color/mtrl_choice_chip_background_color.xml
+415	res/color/mtrl_choice_chip_ripple_color.xml
+416	res/color/mtrl_choice_chip_text_color.xml
+417	res/color/mtrl_error.xml
+418	res/color/mtrl_fab_bg_color_selector.xml
+419	res/color/mtrl_fab_icon_text_color_selector.xml
+420	res/color/mtrl_fab_ripple_color.xml
+421	res/color/mtrl_filled_background_color.xml
+422	res/color/mtrl_filled_icon_tint.xml
+423	res/color/mtrl_filled_stroke_color.xml
+424	res/color/mtrl_indicator_text_color.xml
+425	res/color/mtrl_navigation_bar_colored_item_tint.xml
+426	res/color/mtrl_navigation_bar_colored_ripple_color.xml
+427	res/color/mtrl_navigation_bar_item_tint.xml
+428	res/color/mtrl_navigation_bar_ripple_color.xml
+429	res/color/mtrl_navigation_item_background_color.xml
+430	res/color/mtrl_navigation_item_icon_tint.xml
+431	res/color/mtrl_navigation_item_text_color.xml
+432	res/color/mtrl_on_primary_text_btn_text_color_selector.xml
+433	res/color/mtrl_on_surface_ripple_color.xml
+434	res/color/mtrl_outlined_icon_tint.xml
+435	res/color/mtrl_outlined_stroke_color.xml
+436	res/color/mtrl_popupmenu_overlay_color.xml
+437	res/color/mtrl_switch_thumb_icon_tint.xml
+438	res/color/mtrl_switch_thumb_tint.xml
+439	res/color/mtrl_switch_track_decoration_tint.xml
+440	res/color/mtrl_switch_track_tint.xml
+441	res/color/mtrl_tabs_colored_ripple_color.xml
+442	res/color/mtrl_tabs_icon_color_selector.xml
+443	res/color/mtrl_tabs_icon_color_selector_colored.xml
+444	res/color/mtrl_tabs_legacy_text_color_selector.xml
+445	res/color/mtrl_tabs_ripple_color.xml
+446	res/color/mtrl_text_btn_text_color_selector.xml
+447	res/color/switch_thumb_material_dark.xml
+448	res/color/switch_thumb_material_light.xml
+449	res/cs.xml
+450	res/cv.xml
+451	res/cy.xml
+452	res/d2.xml
+453	res/d3.xml
+454	res/dC.xml
+455	res/dO.xml
+456	res/dS.xml
+457	res/df.xml
+458	res/df1.xml
+459	res/dj.xml
+460	res/dw.xml
+461	res/e0.xml
+462	res/eA.xml
+463	res/eG.xml
+464	res/eH.xml
+465	res/eH1.xml
+466	res/eK.xml
+467	res/eK1.xml
+468	res/eM.xml
+469	res/eW.xml
+470	res/eZ.xml
+471	res/ea.xml
+472	res/ec.xml
+473	res/ej.xml
+474	res/ex.xml
+475	res/ey.xml
+476	res/f6.xml
+477	res/fW.xml
+478	res/f_.xml
+479	res/fd.xml
+480	res/fg.xml
+481	res/fp.xml
+482	res/fu.xml
+483	res/gC.xml
+484	res/gD.xml
+485	res/gG.xml
+486	res/gR.xml
+487	res/gy.xml
+488	res/h4.xml
+489	res/hJ.xml
+490	res/hP.xml
+491	res/hP1.xml
+492	res/hc.xml
+493	res/hq.xml
+494	res/hu.xml
+495	res/hv.xml
+496	res/iC.xml
+497	res/iI.xml
+498	res/iZ.xml
+499	res/iZ1.xml
+500	res/iZ2.xml
+501	res/j3.xml
+502	res/jB.xml
+503	res/jO.mp3
+504	res/jp.xml
+505	res/k0.xml
+506	res/k9.xml
+507	res/kN.xml
+508	res/k_.xml
+509	res/kg.xml
+510	res/kh.xml
+511	res/kj.xml
+512	res/kn.xml
+513	res/kt.xml
+514	res/lE.xml
+515	res/lN.xml
+516	res/lR.xml
+517	res/lv.xml
+518	res/mA.xml
+519	res/mp.xml
+520	res/ms.xml
+521	res/mx.xml
+522	res/nL.xml
+523	res/nP.xml
+524	res/nT.xml
+525	res/nX.xml
+526	res/nl.xml
+527	res/nm.xml
+528	res/no.xml
+529	res/nq.xml
+530	res/nu.xml
+531	res/nz.xml
+532	res/oP.xml
+533	res/oY.xml
+534	res/oa.xml
+535	res/p0.xml
+536	res/pF.xml
+537	res/pn.xml
+538	res/pw.xml
+539	res/q6.xml
+540	res/qA.xml
+541	res/qG.xml
+542	res/qx.xml
+543	res/qz.xml
+544	res/rD.xml
+545	res/rI.xml
+546	res/rI1.xml
+547	res/rJ.xml
+548	res/rJ1.xml
+549	res/rW.xml
+550	res/rY.xml
+551	res/rd.xml
+552	res/rx.xml
+553	res/rz.xml
+554	res/sA.xml
+555	res/sO.xml
+556	res/sS.xml
+557	res/sX.xml
+558	res/sl.xml
+559	res/sn.xml
+560	res/sx.xml
+561	res/t8.xml
+562	res/tI.xml
+563	res/tS.xml
+564	res/tp.xml
+565	res/u01.xml
+566	res/uJ.xml
+567	res/uY.xml
+568	res/up.xml
+569	res/v-.xml
+570	res/v9.xml
+571	res/vG.xml
+572	res/vH.xml
+573	res/vJ.xml
+574	res/vR.xml
+575	res/vT.xml
+576	res/vZ.xml
+577	res/vf.xml
+578	res/vl.xml
+579	res/vq.xml
+580	res/w9.xml
+581	res/wL.xml
+582	res/wP.xml
+583	res/xa.xml
+584	res/xj.xml
+585	res/y-.xml
+586	res/y4.xml
+587	res/y5.xml
+588	res/yS.xml
+589	res/yT.xml
+590	res/yV.xml
+591	res/ya.xml
+592	res/ym.xml
+593	res/zG.xml
+594	res/zR.xml
+595	res/zc.xml
+596	res/zl.xml
+597	res/zp.xml
+598	res/zq.xml
+599	res/MU.xml
+600	res/n0.xml
+601	res/color-night-v8/material_timepicker_button_stroke.xml
+602	res/color-night-v8/material_timepicker_clockface.xml
+603	res/color-night-v8/material_timepicker_modebutton_tint.xml
+604	res/7N.xml
+605	res/Fu.xml
+606	res/GR.xml
+607	res/-Q.xml
+608	res/1Z.xml
+609	res/20.xml
+610	res/2i.xml
+611	res/7R1.xml
+612	res/Eg.xml
+613	res/Fg.xml
+614	res/GK.xml
+615	res/GT.xml
+616	res/Ix.xml
+617	res/Lo.xml
+618	res/NB.xml
+619	res/NN1.xml
+620	res/OH.xml
+621	res/S8.xml
+622	res/TB.xml
+623	res/Tm.xml
+624	res/WI.xml
+625	res/Ws.xml
+626	res/XY.xml
+627	res/Yc.xml
+628	res/a0.xml
+629	res/aa.xml
+630	res/bb1.xml
+631	res/color-v21/abc_btn_colored_borderless_text_material.xml
+632	res/iQ.xml
+633	res/pU.xml
+634	res/sq.xml
+635	res/tL.xml
+636	res/te.xml
+637	res/uN.xml
+638	res/ua.xml
+639	res/vz.xml
+640	res/xN.xml
+641	res/xQ.xml
+642	res/yO.xml
+643	res/z5.xml
+644	res/9a.xml
+645	res/FR.xml
+646	res/dX.xml
+647	res/eD.xml
+648	res/ti.xml
+649	res/u0.xml
+650	res/4P.xml
+651	res/4o.xml
+652	res/JF.xml
+653	res/Sr.xml
+654	res/V7.xml
+655	res/color-v23/abc_btn_colored_borderless_text_material.xml
+656	res/color-v23/abc_btn_colored_text_material.xml
+657	res/color-v23/abc_color_highlight_material.xml
+658	res/color-v23/abc_tint_btn_checkable.xml
+659	res/color-v23/abc_tint_default.xml
+660	res/color-v23/abc_tint_edittext.xml
+661	res/color-v23/abc_tint_seek_thumb.xml
+662	res/color-v23/abc_tint_spinner.xml
+663	res/color-v23/abc_tint_switch_track.xml
+664	res/g3.xml
+665	res/k81.xml
+666	res/qS.xml
+667	res/hb.xml
+668	res/k8.xml
+669	res/color-v31/m3_dynamic_dark_default_color_primary_text.xml
+670	res/color-v31/m3_dynamic_dark_default_color_secondary_text.xml
+671	res/color-v31/m3_dynamic_dark_highlighted_text.xml
+672	res/color-v31/m3_dynamic_dark_hint_foreground.xml
+673	res/color-v31/m3_dynamic_dark_primary_text_disable_only.xml
+674	res/color-v31/m3_dynamic_default_color_primary_text.xml
+675	res/color-v31/m3_dynamic_default_color_secondary_text.xml
+676	res/color-v31/m3_dynamic_highlighted_text.xml
+677	res/color-v31/m3_dynamic_hint_foreground.xml
+678	res/color-v31/m3_dynamic_primary_text_disable_only.xml
+679	res/color-v31/m3_ref_palette_dynamic_neutral12.xml
+680	res/color-v31/m3_ref_palette_dynamic_neutral17.xml
+681	res/color-v31/m3_ref_palette_dynamic_neutral22.xml
+682	res/color-v31/m3_ref_palette_dynamic_neutral24.xml
+683	res/color-v31/m3_ref_palette_dynamic_neutral4.xml
+684	res/color-v31/m3_ref_palette_dynamic_neutral6.xml
+685	res/color-v31/m3_ref_palette_dynamic_neutral87.xml
+686	res/color-v31/m3_ref_palette_dynamic_neutral92.xml
+687	res/color-v31/m3_ref_palette_dynamic_neutral94.xml
+688	res/color-v31/m3_ref_palette_dynamic_neutral96.xml
+689	res/color-v31/m3_ref_palette_dynamic_neutral98.xml
+690	res/a1.xml
+691	res/uR.xml
+692	res/xd.xml
+693	res/CD.png
+694	res/0c.9.png
+695	res/2d.png
+696	res/33.9.png
+697	res/8h.9.png
+698	res/BM.png
+699	res/C_.9.png
+700	res/D_.9.png
+701	res/EP.png
+702	res/H-.png
+703	res/K_.9.png
+704	res/Nk.9.png
+705	res/Nt.webp
+706	res/Pg.9.png
+707	res/SV.9.png
+708	res/Su.9.png
+709	res/Tj.9.png
+710	res/U-.9.png
+711	res/UE.9.png
+712	res/W4.9.png
+713	res/YG.9.png
+714	res/_q.png
+715	res/d2.webp
+716	res/eR.png
+717	res/fM.9.png
+718	res/gK.9.png
+719	res/hZ.9.png
+720	res/i6.9.png
+721	res/lP.png
+722	res/ps.9.png
+723	res/py.9.png
+724	res/qp.png
+725	res/s4.png
+726	res/tS.png
+727	res/ut.9.png
+728	res/vL.9.png
+729	res/vz.9.png
+730	res/w_.png
+731	res/xH.png
+732	res/xR.9.png
+733	res/yg.9.png
+734	res/yw.webp
+735	res/zE.png
+736	res/eT.9.png
+737	res/13.webp
+738	res/2K.9.png
+739	res/2P.png
+740	res/4k.png
+741	res/5D.9.png
+742	res/5U.png
+743	res/6t.png
+744	res/7I.9.png
+745	res/7i.png
+746	res/9X.9.png
+747	res/9n.9.png
+748	res/BG.9.png
+749	res/DL.9.png
+750	res/G2.9.png
+751	res/MO.webp
+752	res/Pa.9.png
+753	res/RV.png
+754	res/Wh.png
+755	res/Wz.png
+756	res/Yw.9.png
+757	res/ZN.9.png
+758	res/bX.9.png
+759	res/dY.png
+760	res/ej.9.png
+761	res/ev.9.png
+762	res/fq.webp
+763	res/gt.9.png
+764	res/h7.9.png
+765	res/hh.9.png
+766	res/iR.9.png
+767	res/je.9.png
+768	res/ku.png
+769	res/ly.png
+770	res/pY.png
+771	res/rj.9.png
+772	res/sA.9.png
+773	res/sg.9.png
+774	res/tU.9.png
+775	res/te.png
+776	res/uj.9.png
+777	res/v4.9.png
+778	res/wN.9.png
+779	res/mm.9.png
+780	res/-B.png
+781	res/-N.png
+782	res/0R.png
+783	res/0V.png
+784	res/0n.png
+785	res/0x.9.png
+786	res/1J.9.png
+787	res/2e.png
+788	res/3Y.png
+789	res/42.9.png
+790	res/5c.png
+791	res/65.9.png
+792	res/9N.9.png
+793	res/9Q.webp
+794	res/B7.png
+795	res/BL.9.png
+796	res/CK.9.png
+797	res/CX.png
+798	res/E2.png
+799	res/EQ.png
+800	res/IX.9.png
+801	res/If.png
+802	res/Ii.png
+803	res/JJ.9.png
+804	res/KH.9.png
+805	res/KS.png
+806	res/Ma.9.png
+807	res/NZ.9.png
+808	res/OW.png
+809	res/PH.png
+810	res/QJ.9.png
+811	res/Sv.png
+812	res/Th.png
+813	res/Uy.png
+814	res/V5.png
+815	res/WM.png
+816	res/Wr.png
+817	res/Wy.png
+818	res/Xa.png
+819	res/Yt.9.png
+820	res/aU.9.png
+821	res/ah.png
+822	res/ar.png
+823	res/d3.png
+824	res/dW.png
+825	res/ft.png
+826	res/fy.png
+827	res/g-.png
+828	res/iO.png
+829	res/io.9.png
+830	res/jS.9.png
+831	res/jS1.9.png
+832	res/kJ.9.png
+833	res/kl.png
+834	res/lP.9.png
+835	res/m0.png
+836	res/mJ.png
+837	res/nm.png
+838	res/o_.9.png
+839	res/o_.png
+840	res/pt.png
+841	res/qR.png
+842	res/qs.webp
+843	res/tZ.9.png
+844	res/u5.webp
+845	res/uL.9.png
+846	res/ue.png
+847	res/wj.png
+848	res/xa.9.png
+849	res/yH.9.png
+850	res/yt.png
+851	res/z-.9.png
+852	res/zO.png
+853	res/zw.png
+854	res/z9.9.png
+855	res/-g.png
+856	res/1I.9.png
+857	res/1e.9.png
+858	res/3u.9.png
+859	res/49.png
+860	res/62.9.png
+861	res/7_.png
+862	res/8o.png
+863	res/9e.png
+864	res/9s.png
+865	res/9z.png
+866	res/CP.png
+867	res/DS.png
+868	res/EA.9.png
+869	res/EA.png
+870	res/FW.png
+871	res/Gf.png
+872	res/H2.png
+873	res/Hc.png
+874	res/Kn.png
+875	res/Li.9.png
+876	res/NG.png
+877	res/No.9.png
+878	res/RE.png
+879	res/SP.png
+880	res/Sn.webp
+881	res/UR.png
+882	res/WK.png
+883	res/Wf.png
+884	res/X3.9.png
+885	res/X4.9.png
+886	res/Y7.9.png
+887	res/YZ.png
+888	res/Yg.png
+889	res/Z8.png
+890	res/Zu.png
+891	res/a5.png
+892	res/ap.png
+893	res/bf.png
+894	res/cK.png
+895	res/d5.9.png
+896	res/dq.png
+897	res/f8.png
+898	res/g4.png
+899	res/gZ.9.png
+900	res/gj.9.png
+901	res/iE.webp
+902	res/j8.png
+903	res/jW.png
+904	res/j_.webp
+905	res/kd.png
+906	res/kn.png
+907	res/kp.png
+908	res/nI.9.png
+909	res/nf.png
+910	res/o9.9.png
+911	res/op.9.png
+912	res/qD.9.png
+913	res/qz.png
+914	res/r2.png
+915	res/ra.png
+916	res/s0.png
+917	res/s3.9.png
+918	res/sk.png
+919	res/uu.9.png
+920	res/x3.9.png
+921	res/yY.9.png
+922	res/zV.9.png
+923	res/ze.png
+924	res/7o.9.png
+925	res/-6.webp
+926	res/5c.webp
+927	res/6Y.png
+928	res/7C.9.png
+929	res/7_.9.png
+930	res/8h.png
+931	res/Gt.9.png
+932	res/KM.png
+933	res/MF.9.png
+934	res/MQ.png
+935	res/NA.9.png
+936	res/Pb.png
+937	res/j4.png
+938	res/pk.png
+939	res/sK.webp
+940	res/tG.png
+941	res/u3.png
+942	res/wL.9.png
+943	res/Yk.xml
+944	res/9s.xml
+945	res/PF.xml
+946	res/0K.xml
+947	res/BW.xml
+948	%1$d%2$s
+949	%1$d/%2$d
+950	%1$s
+951	%1$s hours
+952	%1$s minutes
+953	%1$s o'clock
+954	%1$s – %2
+955	%1$s – End da
+956	%d new notification
+957	%d new notifications
+958	0
+959	24hour
+960	60minute
+961	999+
+962	:
+963	AM
+964	Agree and use
+965	Alt+
+966	App error, please pay attention to version update
+967	App needs Bluetooth ble support
+968	Apply
+969	Average
+970	Back
+971	Bluetooth is not supported
+972	Cancel
+973	Change to next month
+974	Change to previous month
+975	Character limit exceeded %1$d of %2$d
+976	Characters entered %1$d of %2$d
+977	Check failed, please contact the developer
+978	Check need network
+979	Check the latest version
+980	Checked
+981	Choose an app
+982	Clear query
+983	Clear text
+984	Close
+985	Collapse
+986	Collapse the bottom sheet
+987	Column of days: %1$s
+988	Confirm
+989	Connected
+990	Connecting
+991	Connecting error
+992	Cooling
+993	Ctrl+
+994	Current mode
+995	Current selection: %1$s
+996	Current temperature
+997	Current version:
+998	Date
+999	Device name not found
+1000	Dialog Icon
+1001	Disagree and exit
+1002	Disconnected
+1003	Do not use functions that require geographic location information
+1004	Done
+1005	Download failed
+1006	Downloading
+1007	Drag handle
+1008	Drag handle double-tapped
+1009	End date
+1010	End date %1$s
+1011	Error
+1012	Error: invalid
+1013	Example: %1$s
+1014	Exit
+1015	Exit APP?
+1016	Expand halfway
+1017	Expand the bottom sheet
+1018	Find a new version,whether need to update
+1019	For details, please refer to
+1020	Function
+1021	Function needs to allow access to all files
+1022	Function needs to allow display float window
+1023	Function needs to open WIFI
+1024	Function requires network
+1025	Function+
+1026	Heating
+1027	Heating rod list
+1028	Historical temperature curve
+1029	Hour
+1030	Install failed.Please uninstall and rescan the QR code to download
+1031	Install permission
+1032	Invalid format.
+1033	Invalid range.
+1034	KeepTemperature
+1035	Latest version:
+1036	LeavingWaterPowerOff
+1037	M 0,0 C 0.05, 0, 0.133333, 0.06, 0.166666, 0.4 C 0.208333, 0.82, 0.25, 1, 1, 1
+1038	M0,16 A11,11 0 0,1 11,5 H21 A11,11 0 0,1 21,27 H11 A11,11 0 0,1 0,16
+1039	M0,16 A16,16 0 0,1 16,0 H36 A16,16 0 0,1 36,32 H16 A16,16 0 0,1 0,16
+1040	M1,16 A15,15 0 0,1 16,1 H36 A15,15 0 0,1 36,31 H16 A15,15 0 0,1 1,16
+1041	M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z
+1042	M13.4,15 11,15 11,17 13.4,17 21,17 21,15z
+1043	M14,18.2 11.4,15.6 10,17 14,21 22,13 20.6,11.6z
+1044	M2,16 A14,14 0 0,1 16,2 H16 A14,14 0 0,1 16,30 H16 A14,14 0 0,1 2,16
+1045	M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z
+1046	M2,4.27 L2,4.27 L4.54,1.73 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z
+1047	M23,7H9C7.9,7,7,7.9,7,9v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V9C25,7.9,24.1,7,23,7z
+1048	M23,7H9C7.9,7,7,7.9,7,9v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V9C25,7.9,24.1,7,23,7z M23,23H9V9h14V23z
+1049	M3.27,4.27 L19.74,20.74
+1050	M4,16 A12,12 0 0,1 16,4 H16 A12,12 0 0,1 16,28 H16 A12,12 0 0,1 4,16
+1051	M8,16 A8,8 0 0,1 16,8 H16 A8,8 0 0,1 16,24 H16 A8,8 0 0,1 8,16
+1052	Max
+1053	Media connect fail
+1054	Media connected
+1055	Media connecting
+1056	Media disconnected
+1057	Menu+
+1058	Meta+
+1059	Min
+1060	Minute
+1061	More options
+1062	More than %1$d new notifications
+1063	Navigate home
+1064	Navigate to current year %1$d
+1065	Navigate to year %1$d
+1066	Navigate up
+1067	Need to open to allow installation of other unknown Apps
+1068	New notification
+1069	No longer prompt
+1070	Normal
+1071	Not checked
+1072	OFF
+1073	OK
+1074	ON
+1075	Out of range: %1$s
+1076	Over H1
+1077	Over temperature protection
+1078	OverTemperature
+1079	PM
+1080	Partially checked
+1081	Permission required
+1082	Please allow the required permissions
+1083	Please connect Bluetooth first
+1084	Please connect audio Bluetooth
+1085	Please connect the Bluetooth device first
+1086	Privacy policy
+1087	ProbeFailure
+1088	Range end
+1089	Range start
+1090	Remove %1$s
+1091	Run in Background?
+1092	SHISON HEATER
+1093	Save
+1094	Scanning Bluetooth devices requires location service to be enabled
+1095	Scanning the Bluetooth device function service (without using your geographic location information) requires location permission, and locating and retrieving the Bluetooth device function service requires obtaining your geographic location information
+1096	Scanning the Bluetooth device function service requires location permission, and this application will not use your geographic location information
+1097	Search
+1098	Search heating rod
+1099	Search query
+1100	Search�
+1101	See all
+1102	Select AM or PM
+1103	Select Date
+1104	Select Range
+1105	Select hour
+1106	Select minutes
+1107	Select time
+1108	Selected date
+1109	Send
+1110	Service agreement
+1111	Set target temperature
+1112	Share with
+1113	Share with %s
+1114	Shift+
+1115	Show dropdown menu
+1116	Show password
+1117	Side Sheet
+1118	Software upgrade need network
+1119	Start date
+1120	Start date %1$s
+1121	Start date selection: %1$s – End date selection: %2
+1122	Start date – %1
+1123	Start date – End da
+1124	Stop search
+1125	Submit query
+1126	Switch to calendar input mode
+1127	Switch to clock mode for the time input.
+1128	Switch to text input mode
+1129	Switch to text input mode for the time input.
+1130	Sym+
+1131	Tab
+1132	Tap to switch to Calendar view
+1133	Tap to switch to year view
+1134	The alarm function needs to allow background pop-up interfaces
+1135	The current version is the latest
+1136	This app places great importance on protecting your personal information. Please carefully read the User Agreement and Privacy Policy before using this app. Please make sure to fully read and understand all the contents of the agreement. If you agree, please click the button below to start using it
+1137	Tips
+1138	Today %1$s
+1139	Update
+1140	Update failed
+1141	Use: %1$s
+1142	Using Bluetooth functionality requires permission to connect to nearby devices
+1143	Value
+1144	Voice search
+1145	androidx.startup
+1146	button
+1147	button path
+1148	circle
+1149	circle_group
+1150	com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior
+1151	com.google.android.material.behavior.HideBottomViewOnScrollBehavior
+1152	com.google.android.material.bottomsheet.BottomSheetBehavior
+1153	com.google.android.material.search.SearchBar$ScrollingViewBehavior
+1154	com.google.android.material.sidesheet.SideSheetBehavior
+1155	com.google.android.material.theme.MaterialComponentsViewInflater
+1156	com.google.android.material.transformation.FabTransformationScrimBehavior
+1157	com.google.android.material.transformation.FabTransformationSheetBehavior
+1158	cubic-bezier(0, 0, 0, 1)
+1159	cubic-bezier(0, 0, 0.2, 1)
+1160	cubic-bezier(0, 0, 1, 1)
+1161	cubic-bezier(0.0, 0.0, 0.2, 1.0)
+1162	cubic-bezier(0.0, 0.0, 1.0, 1.0)
+1163	cubic-bezier(0.1, 0.7, 0.1, 1)
+1164	cubic-bezier(0.2, 0, 0, 1)
+1165	cubic-bezier(0.3, 0, 0.8, 0.2)
+1166	cubic-bezier(0.3, 0, 1, 1)
+1167	cubic-bezier(0.4, 0, 0.2, 1)
+1168	cubic-bezier(0.4, 0, 1, 1)
+1169	cubic-bezier(0.4, 0.0, 0.2, 1.0)
+1170	cubic-bezier(0.4, 0.0, 1.0, 1.0)
+1171	d
+1172	delete
+1173	enter
+1174	icon
+1175	icon path
+1176	m
+1177	none
+1178	null
+1179	path(M 0,0 C 0.05, 0, 0.133333, 0.06, 0.166666, 0.4 C 0.208333, 0.82, 0.25, 1, 1, 1)
+1180	sans-serif
+1181	sans-serif-light
+1182	sans-serif-medium
+1183	space
+1184	y
+1185	诗�
+1186	%1$s - %2$s
+1187	%1$s - data de finalitzaci�
+1188	%1$s en punt
+1189	%1$s hores
+1190	%1$s minut
+1191	%d notificacions nove
+1192	%d notificació no
+1193	ACTIVA
+1194	Ansa per arrossegar
+1195	Cancel·l
+1196	Canvia a l'any %1$s
+1197	Canvia al mes anterior
+1198	Canvia al mes següen
+1199	Canvia al mode d'introducció de dades del calendar
+1200	Canvia al mode d'introducció de tex
+1201	Canvia al mode d'introducció de text per introduir l'hora
+1202	Canvia al mode de rellotge per introduir l'hora.
+1203	Caràcters introduïts: %1$d de %2
+1204	Cerca
+1205	Cerca per veu
+1206	Cerca�
+1207	Columna de dies: %1$s
+1208	Comparteix amb
+1209	Comparteix amb %s
+1210	Consulta de cerca
+1211	DESACTIVA
+1212	Data
+1213	Data d'inici
+1214	Data d'inici - %1$s
+1215	Data d'inici - data de finalitzaci�
+1216	Data de finalitzaci�
+1217	Data seleccionada
+1218	Desa
+1219	Desplega el full inferior
+1220	Desplega fins a la meitat
+1221	D’aco
+1222	El format no és vàli
+1223	Envia la consulta
+1224	Esborra el text
+1225	Esborra la consulta
+1226	Espai
+1227	Exemple: %1$s
+1228	Fet
+1229	Funció
+1230	Has fet doble toc a l'ansa per arrossegar
+1231	Hora
+1232	Icona del quadre de diàle
+1233	L'interval no és vàli
+1234	La data està fora de l'interval: %1$
+1235	Maj+
+1236	Menú
+1237	Minut
+1238	Mostra el menú desplegabl
+1239	Mostra la contrasenya
+1240	Mostra-ho tot
+1241	Més de %1$d notificacions nov
+1242	Més opcion
+1243	Navega cap amunt
+1244	Navega fins a la pàgina d'inic
+1245	Notificació nov
+1246	Replega
+1247	Replega el full inferior
+1248	Retorn
+1249	S'ha superat el límit de caràcters (%1$d de %2$
+1250	Selecciona a. m. o p. 
+1251	Selecciona els minuts
+1252	Selecciona un interval
+1253	Selecciona una aplicaci�
+1254	Selecciona una data
+1255	Seleccioneu l'hora
+1256	Selecció actual: %1$
+1257	Selecció de l'hor
+1258	Supr
+1259	Suprimeix %1$s
+1260	Tabulador
+1261	Toca per canviar a la selecció de l'an
+1262	Toca per canviar a la selecció del di
+1263	Utilitza: %1$s
+1264	a
+1265	a. m.
+1266	p. m.
+1267	%1$s minutter
+1268	%1$s timer
+1269	%1$s – slutda
+1270	%d ny notifikation
+1271	%d nye notifikationer
+1272	Aktuelt valg: %1$s
+1273	Annuller
+1274	Brug: %1$s
+1275	Dato
+1276	Del med
+1277	Del med %s
+1278	Du har brugt %1$d tegn og dermed overskredet tegnbegrænsningen på %2$
+1279	Du har brugt %1$d ud af %2$d tegn
+1280	Du har trykket to gange på håndtag
+1281	Eksempel: %1$s
+1282	FRA
+1283	Fane
+1284	Fejl
+1285	Find hjem
+1286	Fjern %1$s
+1287	Flere end %1$d nye notifikationer
+1288	Flere valgmuligheder
+1289	Fn+
+1290	Gem
+1291	Gå o
+1292	Gå til år %1
+1293	Håndta
+1294	Ikon for dialogboks
+1295	Indsend forespørgse
+1296	Kolonne med dage: %1$s
+1297	Ny notifikation
+1298	Ryd forespørgse
+1299	Ryd tekst
+1300	Se alle
+1301	Skift til forrige måne
+1302	Skift til input-tilstand for kalender
+1303	Skift til input-tilstand for tekst
+1304	Skift til næste mån
+1305	Skift til teksttilstand for at angive klokkeslæt
+1306	Skift til urtilstand for at angive klokkeslæt
+1307	Skjul
+1308	Skjul feltet i bunden
+1309	Slutdato
+1310	Startdato
+1311	Startdato – %1
+1312	Startdato – slutda
+1313	Sø
+1314	Søgeforespørgs
+1315	Søg
+1316	TIL
+1317	Talesøgnin
+1318	Time
+1319	Tryk for at gå til valg af da
+1320	Tryk for at gå til valg af �
+1321	Uden for interval: %1$s
+1322	Udfø
+1323	Udvid feltet i bunden
+1324	Udvid halvdelen
+1325	Ugyldigt format.
+1326	Ugyldigt interval.
+1327	Valgt dato
+1328	Vis adgangskode
+1329	Vis rullemenuen
+1330	Vælg AM eller P
+1331	Vælg dat
+1332	Vælg en ap
+1333	Vælg interva
+1334	Vælg minutte
+1335	Vælg tidspunk
+1336	Vælg tim
+1337	e.m.
+1338	f.m.
+1339	klokken %1$s
+1340	mellemrum
+1341	slet
+1342	�
+1343	%1$s دق�
+1344	%1$s سا
+1345	%1$s – تاری�
+1346	%d اعلان
+1347	ارسال پ
+1348	ازهم بازکرد�
+1349	اعلان
+1350	انتخاب .ق.ظ.
+1351	انتخاب 
+1352	انتخاب
+1353	انتخاب
+1354	انتخا�
+1355	انتخا�
+1356	انتخاب 
+1357	انتخاب کن�
+1358	ب.
+1359	برای رفتن به حالت انت�
+1360	برای وارد کردن زمان، به حالت
+1361	برای وارد کردن زمان، به حالت ورود
+1362	برداشت
+1363	بر
+1364	بیش از %1$d اع�
+1365	تأ�
+1366	تا�
+1367	تاریخ ا
+1368	تاریخ
+1369	تاریخ شرو
+1370	تاریخ شروع – 
+1371	تاریخ 
+1372	تغییر به �
+1373	تغییر به �
+1374	تم
+1375	جس�
+1376	جستجوی 
+1377	جست�
+1378	جمع کردن ب
+1379	ح�
+1380	خارج از محد
+1381	خا�
+1382	خ�
+1383	درخواس�
+1384	دستگیره
+1385	دق�
+1386	دیدن
+1387	ذخ�
+1388	رفتن ب�
+1389	رفتن به حالت و�
+1390	رفتن به رفتن به حالت ان�
+1391	رفتن به روش و
+1392	رفتن به س
+1393	رو
+1394	روی دستگیره کشاند
+1395	سا
+1396	ساعت 
+1397	ستون رو�
+1398	فا�
+1399	ق.
+1400	قالب نامع
+1401	قالب: 
+1402	ل�
+1403	مثال: 
+1404	محدوده نام
+1405	محدودیت نویسه از حد مجاز %1$d �
+1406	من
+1407	نماد کاد
+1408	نمایش منوی
+1409	نمایش گ
+1410	نویسه‌های واردش
+1411	هم‌رس
+1412	هم‌رسا�
+1413	پاک کردن
+1414	پاک کردن 
+1415	پیمایش به �
+1416	کوچک 
+1417	گزینه‌ه
+1418	گسترده کرد
+1419	‎Alt
+1420	‎Ctrl
+1421	‎Function
+1422	‎Meta
+1423	‎Shift
+1424	‎Sym
+1425	%1$d 件以上
+1426	%1$s を削
+1427	%1$s 年�
+1428	%1$s �
+1429	%1$s�
+1430	%1$s�
+1431	%1$s～%2
+1432	%1$s～�
+1433	%d 件の�
+1434	%sと
+1435	Delete
+1436	Enter
+1437	Space
+1438	す�
+1439	その他
+1440	アプ
+1441	エ
+1442	カレンダー
+1443	キ�
+1444	タップすると�
+1445	タップすると�
+1446	�
+1447	ダイア�
+1448	テキ�
+1449	テキスト�
+1450	ドラッ
+1451	ドラッグ ハン�
+1452	パス�
+1453	プルダウ�
+1454	ホー
+1455	ボトム�
+1456	ボトム
+1457	下半
+1458	使用: 
+1459	例: %1
+1460	�
+1461	入力済み文字
+1462	�
+1463	�
+1464	分�
+1465	前�
+1466	前�
+1467	午前ま�
+1468	�
+1469	形式�
+1470	折�
+1471	文字数制限を超え�
+1472	新�
+1473	�
+1474	日付を�
+1475	時刻をテキスト�
+1476	時刻を時計で入
+1477	時刻を�
+1478	�
+1479	時�
+1480	曜日の�
+1481	期間を�
+1482	�
+1483	検
+1484	検索�
+1485	検索キ�
+1486	検索キ�
+1487	現在の�
+1488	範囲�
+1489	範囲外
+1490	終
+1491	翌�
+1492	選択
+1493	開
+1494	開始�
+1495	開始�
+1496	音�
+1497	%1$d-ზე მეტი ა�
+1498	%1$s - დასრუ�
+1499	%1$s ს�
+1500	%1$s წელზე
+1501	%1$s წ�
+1502	%1$s-ის �
+1503	%1$s-ის გა
+1504	%d ახალი �
+1505	%s-ით გ�
+1506	აირჩი�
+1507	აირ�
+1508	აირჩი�
+1509	აირ�
+1510	აირჩ�
+1511	აირჩ�
+1512	აირჩ�
+1513	ამჟამინდ�
+1514	არასწ�
+1515	არჩე�
+1516	ახალი �
+1517	გადაჭარბებულია ს�
+1518	გაზ�
+1519	გა�
+1520	გა�
+1521	�
+1522	დასრუ�
+1523	დაწყე
+1524	დაწყები�
+1525	დაწყების თარ�
+1526	დიალო
+1527	დიაპაზ�
+1528	დიაპაზო
+1529	დროის შეყვანისთ
+1530	დროის შეყვანისთვის 
+1531	დღეები�
+1532	ზემო�
+1533	თა
+1534	კალენდარში შ�
+1535	კ�
+1536	მაგა�
+1537	მზ
+1538	მთავა�
+1539	მოთხოვ�
+1540	მოთხოვნ
+1541	მოთხო
+1542	ნახევრა
+1543	ორმაგი შეხე�
+1544	პაროლ
+1545	ს�
+1546	სახელურ
+1547	სხვა �
+1548	ტექსტი�
+1549	ტექსტის შეყ�
+1550	ქვედა ფ
+1551	ქვედა ფ�
+1552	ყველ
+1553	შეეხეთ დღის �
+1554	შეეხეთ წლის �
+1555	შემდეგ �
+1556	შე�
+1557	შეყვანილია %
+1558	შე�
+1559	შო
+1560	ჩა�
+1561	ჩამოსაშლ�
+1562	ჩა�
+1563	ჩა
+1564	ძ�
+1565	ძი
+1566	�
+1567	�
+1568	წინა თვ
+1569	წ�
+1570	ხმოვ�
+1571	%1$d ਤੋਂ ਵੱਧ �
+1572	%1$s ਘ�
+1573	%1$s ਮ�
+1574	%1$s ਵ
+1575	%1$s ਹ�
+1576	%1$s – ਸਮਾ�
+1577	%2$d ਵਿੱਚੋਂ %1$d ਅੱਖਰ
+1578	%d ਨਵੀ�
+1579	%d ਨਵੀਆ�
+1580	%s ਨਾਲ ਸ
+1581	AM ਜਾਂ P
+1582	ਅਗਲੇ ਮ�
+1583	ਅਵਾ�
+1584	ਅਵੈਧ
+1585	ਅਵੈ�
+1586	ਅੱਖਰ-ਚਿੰਨ੍ਹ �
+1587	ਅੱਧ ਤੱ�
+1588	ਇਸ ਨਾਲ
+1589	ਇੱਕ �
+1590	ਉਦਾਹ
+1591	ਉੱ�
+1592	ਕੈਲੰਡਰ ਇਨ
+1593	ਖ
+1594	ਖੋਜ �
+1595	ਖ�
+1596	ਗ�
+1597	ਘਸੀਟਣ 
+1598	ਘਸੀਟਣ ਵਾਲੇ ਹੈ�
+1599	ਘ�
+1600	ਚ�
+1601	ਚੁਣੀ 
+1602	ਟ
+1603	ਠੀ
+1604	ਡ੍ਰੌਪ-ਡ�
+1605	ਤ�
+1606	ਤਾਰ�
+1607	ਦਿਨ ਦੀ ਚੋਣ '�
+1608	ਦਿਨਾਂ ਦ
+1609	ਨਵੀ�
+1610	ਪਾਸਵ
+1611	ਪਿਛਲੇ ਮ
+1612	ਪੁੱਛਗਿ
+1613	ਪੁੱਛਗਿ
+1614	ਬ
+1615	ਮ�
+1616	ਮ�
+1617	ਮਿੰ
+1618	ਮੌਜੂਦ�
+1619	ਰੇਂ
+1620	ਰੇਂਜ ਤੋ
+1621	ਰੱਖ�
+1622	ਰੱ�
+1623	ਲਿਖਤ ਇਨਪ�
+1624	ਲਿਖਤ �
+1625	ਵਰਤ�
+1626	ਵਿੰਡੋ
+1627	ਸਭ 
+1628	ਸਮਾਂ ਇਨਪੁੱਟ ਕਰਨ
+1629	ਸਮਾਂ ਇਨਪੁੱਟ ਕਰਨ ਲਈ 
+1630	ਸਮਾ
+1631	ਸਮਾਪ
+1632	ਸ�
+1633	ਸ਼ੁਰ�
+1634	ਸ਼ੁਰੂਆਤੀ ਤ�
+1635	ਸ਼ੁੁਰੂਆ�
+1636	ਸਾਲ %1$s 'ਤੇ �
+1637	ਸਾਲ ਦੀ ਚੋਣ '�
+1638	ਹੇਠਲੀ ਸ਼�
+1639	ਹੇਠਲੀ ਸ�
+1640	ਹੋ
+1641	ਹੋਮ '
+1642	ਹੋਰ
+1643	%1$d+ புதிய �
+1644	%1$s ஆம் ஆண்ட�
+1645	%1$s நிம�
+1646	%1$s ம
+1647	%1$s மண�
+1648	%1$s – முட�
+1649	%1$sஐ அ�
+1650	%1$sஐப் பய
+1651	%2$d இல் %1$d எழுத்த�
+1652	%2$d இல் %1$d எழுத்து�
+1653	%d புதிய
+1654	%d புதிய �
+1655	%s மூல�
+1656	AM அல்லது PMமைத் 
+1657	Alt மற�
+1658	Ctrl மற�
+1659	Function மற�
+1660	Menu மற�
+1661	Meta மற�
+1662	Shift மற�
+1663	Sym மற�
+1664	அடுத்த ம�
+1665	அனைத்த
+1666	�
+1667	ஆ�
+1668	ஆண்டைத் தேர்வ�
+1669	ஆ
+1670	ஆப்ஸைத�
+1671	இதி�
+1672	இழுப்பத
+1673	இழுப்பதற்கான ஹ�
+1674	உதார�
+1675	உரை உள்ளீட்டிற்கா�
+1676	உரை உள்ளீட்
+1677	உரைய�
+1678	உரையை
+1679	எல்லைக்கு �
+1680	கடவுச்ச
+1681	கீழ் தோன்றல் �
+1682	கீழ்ப்புறச�
+1683	கீழ்ப்புறச�
+1684	குர�
+1685	கேலெண்டர் உள்
+1686	ச
+1687	சுர�
+1688	ச�
+1689	தற்போதை
+1690	தவறா�
+1691	தவறா�
+1692	த�
+1693	த�
+1694	தேடல
+1695	தே
+1696	தே
+1697	த�
+1698	தேதியைத் �
+1699	தேர்ந்தெ
+1700	தொடக�
+1701	தொடக்கத் த�
+1702	தொடக்க�
+1703	�
+1704	நாட்களின�
+1705	நாளைத் தேர்வு�
+1706	நிமிடத்தை�
+1707	நி�
+1708	நேர உள்ளீட்டிற்கா�
+1709	நேரத்தைத்
+1710	பாதியளவ
+1711	ப�
+1712	புதிய
+1713	மணிநேரத்தைத
+1714	மண�
+1715	�
+1716	முகப்பி�
+1717	முட
+1718	முடி�
+1719	முந்தைய �
+1720	மேலும் 
+1721	மேலே 
+1722	ரத்
+1723	வரம்பைத் �
+1724	வினவல�
+1725	வினவலைச�
+1726	%1$d av %2$d tegn er skrevet inn
+1727	%1$s null-null
+1728	%1$s – sluttda
+1729	%1$s–%2
+1730	%d nye varsler
+1731	%d nytt varsel
+1732	AV
+1733	Angi minutter
+1734	Avbryt
+1735	Bruk: %1$s
+1736	Bytt til kalenderinndatamodus
+1737	Bytt til klokkemodus for tidsinndata.
+1738	Bytt til tekstinndatamodus
+1739	Bytt til tekstinndatamodus for tidsinndata.
+1740	Dialogboksikon
+1741	Dobbelttrykket på håndtak
+1742	Endre til forrige måne
+1743	Endre til neste måne
+1744	Feil
+1745	Ferdig
+1746	Fjern teksten
+1747	Flere alternativer
+1748	Flere enn %1$d nye varsler
+1749	Funksjon+
+1750	Gjeldende valg: %1$s
+1751	Gå op
+1752	Håndta
+1753	Kolonne for dager: %1$s
+1754	Lagre
+1755	Meny+
+1756	Minutt
+1757	Naviger hjem
+1758	Naviger til år %1$
+1759	Nytt varsel
+1760	P�
+1761	Skjul feltet nederst
+1762	Slett søke
+1763	Sluttdato
+1764	Startdato–sluttda
+1765	Sø
+1766	Søkeor
+1767	Talesø
+1768	Tegngrensen er overskredet – %1$d av %2
+1769	Trykk for å bytte til å velge d
+1770	Trykk for å bytte til å velge 
+1771	Ugyldig format.
+1772	Ugyldig område
+1773	Utenfor rekkevidde: %1$s
+1774	Utfør søk
+1775	Velg AM eller PM
+1776	Velg dato
+1777	Velg en app
+1778	Velg periode
+1779	Velg tidspunkt
+1780	Velg time
+1781	Vis feltet nederst
+1782	Vis halve feltet nederst
+1783	Vis passordet
+1784	Vis rullegardinmenyen
+1785	mellomrom
+1786	slett
+1787	%1$s г�
+1788	%1$s �
+1789	%1$s – %
+1790	%1$s – дата з�
+1791	%d новага ап
+1792	%d новае ап�
+1793	%d новых апа
+1794	%d новыя ап�
+1795	Alt 
+1796	Ctrl 
+1797	Fn 
+1798	Meta 
+1799	Shift 
+1800	Sym 
+1801	Абагулі
+1802	Абагуліць праз 
+1803	Абмежаванне колькасці сімвал
+1804	Адправі�
+1805	Ачысціц
+1806	Бягучае вылу
+1807	ВЫ�
+1808	Выберыце AM (да паўдня) аб�
+1809	Выберыце
+1810	Выберы�
+1811	Выберыце ды
+1812	Выберыце 
+1813	Выберыце
+1814	Выберы
+1815	Выбран�
+1816	Выдалі�
+1817	Выдаліц
+1818	Гад�
+1819	Галасав
+1820	Гат
+1821	Дадатковыя
+1822	Дакраніцеся, каб перакл
+1823	Дакраніцеся, каб перак�
+1824	Да
+1825	Дата зак
+1826	Дата п�
+1827	Дата пачат
+1828	Дата пачатку – �
+1829	Заха
+1830	Згар
+1831	Згарнуць н�
+1832	Значок дыяло
+1833	Колькасць новых апавяшч
+1834	Маркер пер
+1835	Маркер перацягванн�
+1836	Мен
+1837	Неабходны ф�
+1838	Новае апа
+1839	Няправільн�
+1840	Няправіль�
+1841	О
+1842	Па-за межамі ды�
+1843	Паказаць вы�
+1844	Паказац�
+1845	Паказа
+1846	Пам�
+1847	Перайсці да нас�
+1848	Перайсці да папя
+1849	Перайсці на гал�
+1850	Перайсці ў
+1851	Перайсц
+1852	Пераключыцца на рэжым гадз
+1853	Пераключыцца на рэжым тэ
+1854	Пераключыцца ў рэжы�
+1855	Пераключыцца ў рэж
+1856	По�
+1857	Пошукав
+1858	Пош
+1859	Пра
+1860	Прыкла�
+1861	Разгарнуц�
+1862	Разгарнуць �
+1863	Скас�
+1864	Слупок дз
+1865	УК
+1866	Уведзена сімвал�
+1867	Укл�
+1868	Хві�
+1869	�
+1870	�
+1871	�
+1872	%1$s entfernen
+1873	%1$s Minute
+1874	%1$s Stunde
+1875	%1$s Uh
+1876	%1$s – Endda
+1877	%d neue Benachrichtigun
+1878	%d neue Benachrichtigunge
+1879	AN
+1880	AUS
+1881	Abbrechen
+1882	Aktuelle Auswahl: %1$s
+1883	Alle anzeigen
+1884	Anfrage senden
+1885	Ansicht am unteren Rand maximieren
+1886	Ansicht am unteren Rand minimieren
+1887	App auswähle
+1888	Auf Ziehpunkt doppelt getippt
+1889	Ausgewähltes Datu
+1890	Außerhalb des Bereichs: %1$
+1891	Beispiel: %1$s
+1892	Datum
+1893	Datum auswähle
+1894	Dialogfeldsymbol
+1895	Drop-down-Menü anzeige
+1896	Eingabetaste
+1897	Eingegebene Zeichen: %1$d von %2$d
+1898	Enddatum
+1899	Fehler
+1900	Fertig
+1901	Format: %1$s
+1902	Funktionstaste 
+1903	In den Kalendereingabemodus wechseln
+1904	In den Texteingabemodus wechseln
+1905	In den Texteingabemodus wechseln, um die Uhrzeit einzugeben.
+1906	In den Uhrzeitmodus wechseln, um die Uhrzeit einzugeben.
+1907	J
+1908	Leertaste
+1909	Lösche
+1910	M
+1911	Mehr als %1$d neue Benachrichtigunge
+1912	Menütaste�
+1913	Meta-Taste 
+1914	Minimieren
+1915	Minuten auswähle
+1916	Mit %s teilen
+1917	Nach oben
+1918	Neue Benachrichtigung
+1919	Passwort anzeigen
+1920	Spalte "Wochentag": %1$s
+1921	Speichern
+1922	Sprachsuche
+1923	Startdatum
+1924	Startdatum – %
+1925	Startdatum – Endda
+1926	Strg 
+1927	Stunde
+1928	Stunde auswähle
+1929	Suchanfrage
+1930	Suchanfrage lösche
+1931	Suche
+1932	Suchen�
+1933	Sym-Taste 
+1934	T
+1935	Teilen mit
+1936	Text lösche
+1937	Tippen, um zur Jahresauswahl zu wechseln
+1938	Tippen, um zur Tagesauswahl zu wechseln
+1939	Uhrzeit auswähle
+1940	Umschalttaste 
+1941	Ungültiger Bereich
+1942	Ungültiges Format
+1943	Vormittags oder Nachmittags auswähle
+1944	Weitere Optionen
+1945	Zeichenbeschränkung überschritten: %1$d/%2
+1946	Zeitraum auswähle
+1947	Ziehpunkt
+1948	Zum Jahr %1$s wechsel
+1949	Zum nächsten Monat wechsel
+1950	Zum vorherigen Monat wechseln
+1951	Zur Hälfte maximiere
+1952	Zur Startseite
+1953	%1$d भन्दा बढ�
+1954	%1$s घ�
+1955	%1$s प्रयो�
+1956	%1$s ब
+1957	%1$s म�
+1958	%1$s हटा�
+1959	%1$s – अन्त�
+1960	%2$d मध्ये %1$d वर्
+1961	%2$d मध्ये %1$d वर
+1962	%d नया�
+1963	%d नयाँ 
+1964	%s मार्फत �
+1965	Calendar को इनपुट �
+1966	अघिल्लो म�
+1967	अन्त्�
+1968	अप�
+1969	अमान�
+1970	अमान�
+1971	अर्को मह�
+1972	आधा ठुल
+1973	आवाजमा
+1974	उदाह
+1975	एउटा ए�
+1976	कुनै दिन चयन गर्ने व�
+1977	कुनै वर्ष चयन गर्ने �
+1978	क्वेरी �
+1979	क्वेरी �
+1980	ख
+1981	खोज 
+1982	खोज�
+1983	घन्टा च
+1984	घन
+1985	चयन ग�
+1986	ट�
+1987	ठ�
+1988	ड्रपडाउन 
+1989	ड्र्य�
+1990	ड्र्याग ह्या
+1991	त्
+1992	थप व�
+1993	दायरा च
+1994	दायराभन्
+1995	दिनहरूक
+1996	नया�
+1997	निष
+1998	पाठ खा�
+1999	पाठको इनपु
+2000	पासवर्�
+2001	पुछारको पान�
+2002	पुछारको पान�
+2003	पूर्वाह्न वा
+2004	माथि नेभ
+2005	म�
+2006	मिति च�
+2007	म�
+2008	मिनेट च
+2009	यसमार्फ�
+2010	रद्द �
+2011	वर्ष %1$s म
+2012	संक्षि�
+2013	संवा
+2014	सक
+2015	सबै ह�
+2016	समय इनपुट गर्न �
+2017	समय इनपुट गर्न पा�
+2018	समय चय�
+2019	सम्�
+2020	सुरक�
+2021	सुरु �
+2022	सुरु हु�
+2023	सुरु हुने मि�
+2024	हालको
+2025	होम पे�
+2026	९�
+2027	%1$d కంటే ఎక్కువ 
+2028	%1$s అవ�
+2029	%1$s గ�
+2030	%1$s ని�
+2031	%1$s – ముగ�
+2032	%1$sసంవత్సరాని�
+2033	%2$dలో %1$d అక్షరాల
+2034	%d కొత్త �
+2035	%d కొత్త న�
+2036	%sతో షేర�
+2037	'రోజును ఎంపిక చేస
+2038	'సంవత్సరాన్ని ఎంపి�
+2039	(%1$s)ని తీస
+2040	AM లేదా PMన�
+2041	అక్షర పరిధి %2$d�
+2042	అన్న
+2043	ఆ
+2044	ఆ
+2045	ఇలా ఉపయ�
+2046	ఉదాహ
+2047	ఎంచు�
+2048	ఎర
+2049	కుద�
+2050	కొత్త �
+2051	క్యాలెండర్ ఇన�
+2052	గ
+2053	గంటను
+2054	చెల్�
+2055	ట్
+2056	డైలా�
+2057	డ్రాప్‌�
+2058	త�
+2059	తేదీన�
+2060	దిగువున ఉన్�
+2061	దిగువున ఉన్న 
+2062	ని
+2063	నిమిషా�
+2064	�
+2065	పరిధి వె�
+2066	పరిధి�
+2067	పాస్‌వ
+2068	పూర�
+2069	పైకి నావ�
+2070	ప్రశ్నన�
+2071	ప్రశ్నన�
+2072	ప్రస్త�
+2073	ప్రారంభ త�
+2074	ప్రా
+2075	ప్రారం�
+2076	ఫార్మ�
+2077	మరిన్�
+2078	ముగి
+2079	మునుపటి న
+2080	యాప్‌�
+2081	రద్ద
+2082	రద్�
+2083	రాసినదా�
+2084	�
+2085	రోజుల ని�
+2086	లాగే �
+2087	లాగే హ్యాండిల
+2088	వచన ఇన్‌పుట�
+2089	వచ్చే నె�
+2090	వాయి�
+2091	వీరితో �
+2092	�
+2093	సగాన్ని �
+2094	సమయాన్
+2095	సమయాన్ని నమోదు చే�
+2096	సమయాన్ని నమోదు చేయ�
+2097	స
+2098	సె
+2099	సెర్�
+2100	సెర్�
+2101	సేవ
+2102	స్
+2103	హోమ్‌కు న�
+2104	%1$s minute
+2105	%1$s uur
+2106	%1$s – Einddat
+2107	%1$s-%2$s
+2108	%1$s-uur
+2109	%d nuwe kennisgewing
+2110	%d nuwe kennisgewings
+2111	AAN
+2112	AF
+2113	Begindatum
+2114	Begindatum – %1
+2115	Begindatum – Einddat
+2116	Buite reeks: %1$s
+2117	Deel met
+2118	Deel met %s
+2119	Dialoogikoon
+2120	Dien navraag in
+2121	Einddatum
+2122	Fout
+2123	Funksie+
+2124	Gaan na jaar %1$s
+2125	Gaan na tuisskerm
+2126	Gaan op
+2127	Gebruik: %1$s
+2128	Gekose datum
+2129	Het op sleephandvatsel gedubbeltik
+2130	Huidige keuse: %1$s
+2131	Kanselleer
+2132	Karakterlimiet oorskry %1$d van %2$d
+2133	Karakters ingevoer: %1$d van %2$d
+2134	Kies 'n program
+2135	Kies datum
+2136	Kies datumreeks
+2137	Kies minute
+2138	Kies tyd
+2139	Kies uur
+2140	Kies vm. of nm.
+2141	Kieslys+
+2142	Klaar
+2143	Kolom van dae: %1$s
+2144	Meer as %1$d nuwe kennisgewings
+2145	Minuut
+2146	NM.
+2147	Nog opsies
+2148	Nuwe kennisgewing
+2149	Ongeldige formaat.
+2150	Ongeldige reeks.
+2151	Oortjie
+2152	Sien alles
+2153	Simbool+
+2154	Skakel oor na horlosiemodus vir die tydinvoer.
+2155	Skakel oor na kalenderinvoermodus
+2156	Skakel oor na teksinvoermodus
+2157	Skakel oor na teksmodus vir die tydinvoer.
+2158	Sleephandvatsel
+2159	Soek
+2160	Soek �
+2161	Soektognavraag
+2162	Stemsoektog
+2163	Stoor
+2164	Tik om oor te skakel na die kies van 'n dag
+2165	Tik om oor te skakel na die kies van 'n jaar
+2166	Uur
+2167	VM.
+2168	Vee navraag uit
+2169	Vee teks uit
+2170	Verander na volgende maand
+2171	Verander na vorige maand
+2172	Verwyder %1$s
+2173	Voorbeeld: %1$s
+2174	Vou die onderste blad in
+2175	Vou die onderste blad uit
+2176	Vou halfpad uit
+2177	Vou in
+2178	Wys aftrekkieslys
+2179	Wys wagwoord
+2180	j
+2181	spasiebalk
+2182	%1$s ча
+2183	%1$s – край�
+2184	%1$s ми�
+2185	%1$s ч�
+2186	%d нови из
+2187	%d ново из
+2188	ВК
+2189	Въведени знаци:
+2190	Гласово 
+2191	Гот
+2192	Гре
+2193	Двукратно докосване на манипулат
+2194	Докоснете, за да превключит�
+2195	Докоснете, за да превключи
+2196	Запа�
+2197	Заявка за
+2198	ИЗ�
+2199	Изберете A
+2200	Изберете п
+2201	Избере
+2202	Избиране
+2203	Избиране �
+2204	Избиране на пе�
+2205	Избор �
+2206	Избран
+2207	Извън диапа
+2208	Използва�
+2209	Изпращане н
+2210	Изчистване �
+2211	Изчистване
+2212	Икона за диало
+2213	Колона за �
+2214	Крайн�
+2215	Максималният брой знаци е над�
+2216	Манипулатор за прем�
+2217	Мин
+2218	Навигиране 
+2219	Навигиране към �
+2220	Навигира�
+2221	Началн
+2222	Начална да
+2223	Начална дата �
+2224	Невалиден 
+2225	Ново из
+2226	От�
+2227	Още о
+2228	Повече от %1$d но
+2229	Показване на п
+2230	Показване н
+2231	Превключване към режим �
+2232	Превключване към режим н�
+2233	Превключете към режима за въвеждане
+2234	Превключете към режима за часо
+2235	Преглед н
+2236	Премахван
+2237	Преминаване към �
+2238	Преминаване към �
+2239	Пример
+2240	Разгъване на 
+2241	Разгъване �
+2242	Раз
+2243	Сви�
+2244	Свиване на д
+2245	Споделя
+2246	Споделян�
+2247	Текущ изб
+2248	Тър�
+2249	Търс
+2250	Форматът е �
+2251	Ч�
+2252	клавиша за
+2253	%1$s ชั�
+2254	%1$s น�
+2255	%1$s นา
+2256	%1$s – วัน�
+2257	ก�
+2258	การเลือก
+2259	การแจ�
+2260	การแจ้งเ�
+2261	การแจ้งเตือ�
+2262	ขยาย Bott
+2263	ขยายรา�
+2264	ข้อ�
+2265	คอลัมน�
+2266	คำ�
+2267	ค�
+2268	ค้นห�
+2269	ค้
+2270	ชั�
+2271	ช่วง�
+2272	�
+2273	ดูท
+2274	ต�
+2275	ตัวอ�
+2276	ตัวเ
+2277	น�
+2278	นำ %1$s
+2279	นำทา�
+2280	บั
+2281	�
+2282	ป
+2283	ป้อนอักขระ�
+2284	ยก
+2285	ย
+2286	ยุบ Bottom
+2287	รูปแบ�
+2288	�
+2289	ล้า�
+2290	ล้า�
+2291	�
+2292	วั
+2293	วันท�
+2294	วันท�
+2295	วันท�
+2296	วันที่เ
+2297	วันที่เริ่
+2298	วันที่ไม่อย�
+2299	สลับไปโหม�
+2300	สลับไปโหมดป�
+2301	สลับไปใช้โ
+2302	สลับไปใช้�
+2303	ส่ง�
+2304	เกินจำนวนอั�
+2305	เปลี่ยนไ�
+2306	เปลี่ยน�
+2307	เ�
+2308	เ�
+2309	เลือก 
+2310	เลือ
+2311	เลื
+2312	เลื
+2313	เลื�
+2314	เลื
+2315	เล�
+2316	เ�
+2317	แช�
+2318	แชร�
+2319	แตะเพื่อส
+2320	แตะเพื่อส�
+2321	แตะแฮนเด
+2322	แ�
+2323	แสดง
+2324	แสดงเม�
+2325	แฮนเ�
+2326	ใช้
+2327	ไปที
+2328	ไอคอน�
+2329	24�
+2330	60�
+2331	APP出错，�
+2332	APP需要蓝
+2333	下�
+2334	不使用需�
+2335	不�
+2336	不同
+2337	不�
+2338	使用蓝牙功�
+2339	停�
+2340	�
+2341	�
+2342	功能需�
+2343	功能需要
+2344	功能需�
+2345	功能
+2346	�
+2347	加�
+2348	历史
+2349	发现新�
+2350	�
+2351	�
+2352	同�
+2353	后�
+2354	安装失败,请�
+2355	安�
+2356	已
+2357	平�
+2358	当前�
+2359	当�
+2360	当�
+2361	当�
+2362	�
+2363	扫描ble蓝牙设备功能服务(不使用您的地理位
+2364	扫描ble蓝牙设备功能服�
+2365	扫描蓝牙�
+2366	探�
+2367	�
+2368	搜�
+2369	�
+2370	更�
+2371	最�
+2372	最�
+2373	最�
+2374	服�
+2375	未找�
+2376	未
+2377	本应用十分重视保护您的个人信息，请你在使用本应用前仔�
+2378	查看
+2379	正�
+2380	正�
+2381	�
+2382	�
+2383	离�
+2384	警报功能�
+2385	设置
+2386	详�
+2387	请允�
+2388	请先
+2389	请先�
+2390	请连�
+2391	�
+2392	超�
+2393	超�
+2394	软件�
+2395	连
+2396	连�
+2397	�
+2398	退出
+2399	�
+2400	隐�
+2401	需要打开�
+2402	需�
+2403	音�
+2404	音�
+2405	音�
+2406	音频
+2407	验证失败
+2408	验证
+2409	%1$d/%2$d merkkiä kirjoitet
+2410	%1$s minuuttia
+2411	%1$s tuntia
+2412	%1$s – päättymisp
+2413	%d uusi ilmoitu
+2414	%d uutta ilmoitust
+2415	Aikavälin ulkop.: %1$
+2416	Alkamispäiv
+2417	Alkamispäivä – 
+2418	Alkamispäivä – päättymi
+2419	Esimerkki: %1$s
+2420	Haku
+2421	Hakukysely
+2422	Haku�
+2423	Jaa: %s
+2424	Jaa�
+2425	Käytä muotoa %1
+2426	Laajenna alapaneeli
+2427	Laajenna puolivälii
+2428	Lisäasetukse
+2429	Lähetä kyse
+2430	Merkkiraja ylitetty: %1$d/%2$d
+2431	Minuutti
+2432	Nykyinen valinta: %1$s
+2433	Näytä avattava valik
+2434	Näytä kaik
+2435	Näytä salasa
+2436	POIS PÄÄL
+2437	Peru
+2438	Poista %1$s
+2439	Puhehaku
+2440	PÄÄL
+2441	Päivämä
+2442	Päiväsarake: %1
+2443	Päättymispä
+2444	Siirry etusivulle
+2445	Siirry päivän valintaan napauttamal
+2446	Siirry vuoden valintaan napauttamalla
+2447	Siirry vuoteen %1$s
+2448	Siirry ylö
+2449	Tallenna
+2450	Tiivist�
+2451	Tiivistä alapaneel
+2452	Tunnit
+2453	Tyhjennä kysel
+2454	Tyhjennä tekst
+2455	Uusi ilmoitus
+2456	Vaihda ajan syöttämiseen kellotilass
+2457	Vaihda ajan syöttämiseen tekstitilass
+2458	Vaihda edelliseen kuukauteen
+2459	Vaihda seuraavaan kuukauteen
+2460	Vaihda syöttötavaksi kalente
+2461	Vaihto+
+2462	Valikko+
+2463	Valintaikkunan kuvake
+2464	Valitse AP tai IP
+2465	Valitse aika
+2466	Valitse jakso
+2467	Valitse minuutit
+2468	Valitse päivämä
+2469	Valitse sovellus
+2470	Valitse syöttötavaksi teks
+2471	Valitse tunti
+2472	Valittu päivämä
+2473	Valmis
+2474	Vetokahva
+2475	Vetokahvaa kaksoisnapautettu
+2476	Virhe
+2477	Virheellinen alue
+2478	Virheellinen muoto
+2479	Välileht
+2480	Yli %1$d uutta ilmoitusta
+2481	ap
+2482	ip
+2483	k
+2484	klo %1$s
+2485	p
+2486	v
+2487	välilyön
+2488	%1$d से ज़्य�
+2489	%1$s का इस्
+2490	%1$s घ�
+2491	%1$s म�
+2492	%1$s ह�
+2493	%1$s – खत्म ह
+2494	%2$d वर्णों में से
+2495	%d नई स
+2496	%s से श�
+2497	'दिन चुनना' पर स्
+2498	'साल चुनना' पर स्
+2499	AM या PM �
+2500	अगले म�
+2501	अभी %1$d वर्ण हैं जबकि %2$
+2502	इससे �
+2503	कैलेंडर के इ�
+2504	कोई ऐप्
+2505	क्वेर�
+2506	क्‍व�
+2507	खत्म ह�
+2508	खींचकर छ�
+2509	खींचकर छोड़ने वाल�
+2510	ख�
+2511	खो
+2512	गलत �
+2513	ग�
+2514	घ�
+2515	घंट�
+2516	च�
+2517	चुनी 
+2518	छोट
+2519	ज़्य�
+2520	टेक्स्ट के इ�
+2521	टेक्�
+2522	ट
+2523	ठी
+2524	डायलॉ
+2525	ड्रॉपडा�
+2526	त�
+2527	तारीख की मान�
+2528	तार�
+2529	तारीखों �
+2530	दिनों क
+2531	नई �
+2532	पासव�
+2533	पिछले म
+2534	पूरी त�
+2535	पूर
+2536	फ़िलहाल, यह
+2537	ब
+2538	बॉटम शी�
+2539	बॉटम शी�
+2540	बोल�
+2541	म�
+2542	मिन�
+2543	रद्
+2544	रें�
+2545	वाप
+2546	शुरू ह�
+2547	शुरू होने
+2548	शुरू होने की ता
+2549	सभी
+2550	समय इनपुट के �
+2551	समय इनपुट के लि
+2552	समय
+2553	सर्�
+2554	साल %1$s �
+2555	से�
+2556	हो
+2557	होम प�
+2558	%1$s ඉවත�
+2559	%1$s වසරට ස�
+2560	%1$s – නිම�
+2561	%1$s�
+2562	%s සමඟ බ
+2563	අඩක් �
+2564	අනුලකුණු %2$dන්
+2565	අනුලකුණු සීමා
+2566	අවලංග�
+2567	අවලං
+2568	අවලංග
+2569	ආරම�
+2570	ආරම්භක
+2571	ආරම්භක දි�
+2572	ඇදීම් හැඬල�
+2573	ඉහළට ස�
+2574	උදාහ�
+2575	කලින් මා�
+2576	ක
+2577	ක්‍ර�
+2578	ක්‍රි
+2579	ට�
+2580	තවත�
+2581	තේර
+2582	�
+2583	දින ත�
+2584	දින දර්ශන ආද�
+2585	ද�
+2586	දින�
+2587	දිනයක් තේරීම�
+2588	ද�
+2589	නව ද�
+2590	නව දැනුම�
+2591	නව දැන�
+2592	නිමා
+2593	පතන මෙ�
+2594	පරාස
+2595	පරාසයෙ�
+2596	�
+2597	පහළම පත්
+2598	පහළම පත
+2599	ප
+2600	පැය 
+2601	පැය 
+2602	පෙරවරු හ�
+2603	ප
+2604	පෙළ ආදාන ප�
+2605	පෙළ හ�
+2606	භාවි
+2607	�
+2608	ම�
+2609	මි�
+2610	මිනිත
+2611	මිනිත
+2612	මුරපද
+2613	මුල් පිටු
+2614	යෙදු�
+2615	ලබන මාස�
+2616	�
+2617	වත්මන්
+2618	වසරක් තේරීමට
+2619	විමසු�
+2620	විමසු�
+2621	වේලා ආදානය සඳහා ආ
+2622	වේලා ආදානය සඳහා ඔ�
+2623	වේලා
+2624	සංවා�
+2625	සමග බ
+2626	සියල
+2627	සු�
+2628	ස�
+2629	සෙවු�
+2630	සොය
+2631	හක�
+2632	හඬ �
+2633	හ
+2634	හැඬල
+2635	%1$s gi�
+2636	%1$s phú
+2637	%1$s – Ngày kết
+2638	%d thông báo m
+2639	Biểu tượng hộ
+2640	B�
+2641	CH
+2642	Chia sẻ v
+2643	Chia sẻ vớ
+2644	Chuyển sang chế độ nh
+2645	Chuyển sang chế độ nhậ
+2646	Chuyển sang chế độ nhập văn bản để 
+2647	Chuyển sang chế độ đồng hồ để 
+2648	Chuyển sang tháng tiếp
+2649	Chuyển tới năm
+2650	Chuyển về tháng 
+2651	Chỉ đường 
+2652	Chọn SA hoặ
+2653	Chọn d�
+2654	Chọn g
+2655	Chọn một ứn
+2656	Chọn ng
+2657	Chọn ph
+2658	Chọn thời 
+2659	Cột ngày: %
+2660	Di chuyển l
+2661	Gi�
+2662	Gửi truy v
+2663	Hiển thị menu thả
+2664	Hiện mật 
+2665	Hu�
+2666	Hơn %1$d thông báo 
+2667	H�
+2668	Lư
+2669	L�
+2670	Lựa chọn hiện t�
+2671	Mở rộng bảng dư
+2672	Mở rộng m�
+2673	Ngà
+2674	Ngày bắt 
+2675	Ngày bắt đầu 
+2676	Ngày bắt đầu – Ngày
+2677	Ngày kết t
+2678	Ngày đã c
+2679	Nhấn để chuyển sang chế độ c
+2680	Nhấn để chuyển sang chế độ 
+2681	Nút k�
+2682	Nằm ngoài phạm vi:
+2683	Phú
+2684	Phạm vi không hợ
+2685	SA
+2686	Sử dụng: 
+2687	Thu g�
+2688	Thu gọn bảng dư�
+2689	Thông báo m
+2690	Th�
+2691	Truy vấn tìm k
+2692	Tìm ki�
+2693	Tìm kiếm bằng gi�
+2694	Tìm ki�
+2695	Tùy chọn k
+2696	T�
+2697	Ví dụ: %
+2698	Xem tất 
+2699	Xong
+2700	Xóa %1$
+2701	Xóa truy v�
+2702	Xóa văn b
+2703	Đã nhấn đúp n
+2704	Đã nhập %1$d trong số %2$d
+2705	Đã vượt quá giới hạn ký t
+2706	Định dạng không h
+2707	"AM" немесе "PM" форм�
+2708	%1$d санынан көп жаң�
+2709	%1$d/%2$d таңба ен
+2710	%1$s жылына
+2711	%1$s мазмұны
+2712	%1$s ми�
+2713	%1$s – аяқта
+2714	%d жаңа хаба
+2715	%s қолданбасы
+2716	Mин
+2717	Із�
+2718	Іздеу �
+2719	Ізд
+2720	Алдыңғы �
+2721	Аралықт�
+2722	Ауқым жа
+2723	Ауқымнан �
+2724	Ашылмалы мәз�
+2725	Аяқтал
+2726	Ағымдағы та
+2727	Барлығ�
+2728	Бас т
+2729	Бастал
+2730	Басталу кү
+2731	Басталу күні –
+2732	Басқа о�
+2733	Бөл
+2734	Да�
+2735	Дауыспе
+2736	Диалог б�
+2737	Жар�
+2738	Жарамды фор
+2739	Жартылай
+2740	Жаңа хаба
+2741	Ж�
+2742	Жоғары қ�
+2743	Жылды таңдауға ауы�
+2744	Келесі а
+2745	Күндер бағ
+2746	Күнді �
+2747	Күнді таңдауға ауы�
+2748	Күнтізбенің енгіз
+2749	Кү
+2750	Минут �
+2751	Мысал: 
+2752	Мәтін енгізу р�
+2753	Мәтінд�
+2754	Негізгі б
+2755	Са�
+2756	Сағат:
+2757	Сағатты
+2758	Сақ
+2759	Сүйрейт�
+2760	Сүйрейтін тетік е�
+2761	Сұрауды
+2762	Сұрауд�
+2763	Таңба саны шегінен
+2764	Таңдал�
+2765	Төменгі пар
+2766	Төменгі пар
+2767	Уақытты енгізу үшін мәтін �
+2768	Уақытты енгізу үшін са�
+2769	Уақытты
+2770	Формат ж�
+2771	�
+2772	бос �
+2773	�
+2774	�
+2775	ҚО
+2776	Қа
+2777	Қой�
+2778	Қолданба�
+2779	Құпия сөзд
+2780	ӨШ�
+2781	%1$s - краен 
+2782	%1$s мин
+2783	%1$s ча�
+2784	%d нови изв�
+2785	%d ново изв�
+2786	ВКЛУ
+2787	Внесени се %1$d од
+2788	Во �
+2789	Гласовно п�
+2790	Да�
+2791	Движи се �
+2792	Движи се
+2793	Допрете за да се префрли�
+2794	Допрете за да се префрл
+2795	Зач�
+2796	ИСКЛ�
+2797	Изберет
+2798	Изберет
+2799	Изберет
+2800	Изберете претпла�
+2801	Избери ап
+2802	Избери 
+2803	Избран
+2804	Избриши г�
+2805	Икона за 
+2806	Испрати
+2807	Исчисти
+2808	Карт
+2809	Колона со де
+2810	Користе�
+2811	Краен 
+2812	Над %1$d нови из
+2813	Надвор од о�
+2814	Неважечк�
+2815	Ново изв�
+2816	Ограничувањето на знацит
+2817	Оди на %1$s �
+2818	Отк
+2819	Отстра�
+2820	Повеќе
+2821	Погреше�
+2822	Почете�
+2823	Почетен да�
+2824	Почетен датум -
+2825	Преб
+2826	Пребара�
+2827	Пребар
+2828	Префрлете се на режимот за внесува
+2829	Префрлете се на режимот за час�
+2830	Префрли на режим за вне�
+2831	Префрли на режим за
+2832	Прикажи 
+2833	Прикажи па�
+2834	Прикажи ја 
+2835	Промени на прет
+2836	Промени на сл�
+2837	Проширете го �
+2838	Прошири до
+2839	Рачка за 
+2840	Рачката за влечење �
+2841	Соберете го д
+2842	Соб
+2843	Споде
+2844	Сподел�
+2845	Тековен из
+2846	все�
+2847	изб�
+2848	п�
+2849	п�
+2850	%1$s – dátum ukonč
+2851	%1$s hod�
+2852	%1$s mi
+2853	%d nové upozornen
+2854	%d nové upozornen
+2855	%d nových upozorne
+2856	Ak chcete zadať čas, prepnite na režim hod
+2857	Ak chcete zadať čas, prepnite na textový režim vs
+2858	Aktuálny výber: %1
+2859	Bol prekročený povolený počet znakov (%1$d z 
+2860	Chyba
+2861	Dvojité klepnutie na presúvad
+2862	Dátu
+2863	Dátum ukončen
+2864	Dátum začat
+2865	Dátum začatia – 
+2866	Dátum začatia – dátum ukon
+2867	Hlasové vyhľadáva
+2868	Hodina
+2869	Hotovo
+2870	Hľada
+2871	Ikona dialógového ok
+2872	Klepnutím prepnete na výber d
+2873	Klepnutím prepnete na výber ro
+2874	Mimo rozsahu: %1$s
+2875	Minút
+2876	Neplatný formá
+2877	Neplatný rozsah
+2878	Nové upozorneni
+2879	Odoslať dopy
+2880	Odstrániť položku %
+2881	Použite: %1$
+2882	Predchádzajúci mesi
+2883	Prejsť na ploch
+2884	Prejsť na rok %1$
+2885	Prejsť naho
+2886	Prepnúť na kalendárový režim v
+2887	Prepnúť na textový režim vs
+2888	Presúvadl
+2889	Príklad: %1$
+2890	Rozbaliť dolný há
+2891	Rozbaliť napol
+2892	Stĺpec dní: %1
+2893	Tabuláto
+2894	Uloži
+2895	VYP.
+2896	Viac než %1$d nových upozorn
+2897	Vyberte AM alebo PM
+2898	Vyberte dátu
+2899	Vyberte minút
+2900	Vyberte rozsah
+2901	Vyberte ča
+2902	Vybraný dát
+2903	Vybrať aplikác
+2904	Vybrať hodin
+2905	Vyhľada�
+2906	Vyhľadávací do
+2907	Vymazať dopy
+2908	Vymazať tex
+2909	ZAP.
+2910	Zadané znaky: %1$d z %2
+2911	Zbali�
+2912	Zbaliť dolný há
+2913	Zdieľať
+2914	Zdieľať s aplikácio
+2915	Zobraziť hesl
+2916	Zobraziť rozbaľovaciu ponu
+2917	Zobraziť všet
+2918	Zruši
+2919	medzerní
+2920	odstráni
+2921	r
+2922	Ďalšie možno
+2923	Ďalší mes
+2924	%1$s г�
+2925	%1$s х
+2926	%1$s – дата за
+2927	%d нове спо
+2928	%d нових сп
+2929	%d нового сп
+2930	%d нові спо
+2931	Більше
+2932	Введено символі
+2933	Введіть пошу�
+2934	Виберіть 
+2935	Вибері�
+2936	Виберіть ді
+2937	Виберіть
+2938	Вибері
+2939	Вибран
+2940	Вибрати
+2941	Вибрати �
+2942	Видали�
+2943	Видалит
+2944	Використов�
+2945	Вкл�
+2946	Год
+2947	Голосов�
+2948	Дата зав
+2949	Дата п�
+2950	Дата почат
+2951	Дата початку – д
+2952	ЗНИ
+2953	За межами діа�
+2954	Збер
+2955	Згор
+2956	Згорнути ни
+2957	Значок
+2958	Маркер пе�
+2959	Маркер переміщення актив�
+2960	Натисніть, щоб 
+2961	Натисніть, щоб
+2962	Наіслат
+2963	Недійсний 
+2964	Недійсни�
+2965	Нове спо
+2966	Нових сповіщень �
+2967	Очистит
+2968	Перевищено ліміт сим
+2969	Перейти в режим вве�
+2970	Перейти в режим в
+2971	Перейти в режим годинн�
+2972	Перейти в текстовий ре�
+2973	Перейт�
+2974	Перейти до 
+2975	Перейти до наст
+2976	Перейти до попер
+2977	Перейти н�
+2978	Поділитися чер
+2979	Поділ�
+2980	Показа
+2981	Показати с�
+2982	Показува�
+2983	Пом�
+2984	Поточний в�
+2985	Пошуков�
+2986	Прикла�
+2987	Розгорнути ни
+2988	Розгорнути н
+2989	Скас�
+2990	Стовпець із �
+2991	УВІ
+2992	Хви�
+2993	д
+2994	п
+2995	про
+2996	�
+2997	%1$s ακρ�
+2998	%1$s λε�
+2999	%1$s ώρ
+3000	%1$s – Ημερομη
+3001	%d νέα ειδ�
+3002	%d νέες ειδο
+3003	Ώ�
+3004	ΑΠΕΝΕΡΓ
+3005	Ακύ�
+3006	Αλλαγή στον ε
+3007	Αλλαγή στον προ
+3008	Ανάπτυξη μέ�
+3009	Ανάπτυξη του φύλ�
+3010	Αναζ�
+3011	Αναζή
+3012	Αποθή
+3013	Διαγραφή ε
+3014	Διαγραφή 
+3015	ΕΝΕΡΓΟ
+3016	Εικονίδιο παρα�
+3017	Εισήχθησαν %1$d από %2
+3018	Εκτός εύρ�
+3019	Εμφάνιση αναπτυ
+3020	Εμφάνιση κωδι�
+3021	Εμφάνι�
+3022	Εναλλαγή στη λειτουργία 
+3023	Εναλλαγή στη λειτουργί
+3024	Επιλέξτε μι
+3025	Επιλέξτε π.
+3026	Επιλέξ
+3027	Επιλεγμένη 
+3028	Επιλογή
+3029	Επιλογή ημ
+3030	Επιλογή
+3031	Επιλογ
+3032	Ερώτημα α�
+3033	Η λαβή μεταφοράς πα
+3034	Ημερο
+3035	Ημερομηνί
+3036	Ημερομηνία έν
+3037	Ημερομηνία έναρξης �
+3038	Ημερομην
+3039	Κάντε εναλλαγή στη λειτουργία εισαγωγής �
+3040	Κάντε εναλλαγή στη λειτουργία ρολογ
+3041	Καρ�
+3042	Κατάργη
+3043	Κοινοπο
+3044	Κοινοποίηση στ�
+3045	Λαβή με�
+3046	Λε�
+3047	Μ
+3048	Μη έγκυρ�
+3049	Μη έγκυρ�
+3050	Νέα ειδ�
+3051	Ο
+3052	Π
+3053	Πάνω από %1$d νέες �
+3054	Παράδειγ
+3055	Πατήστε για εναλλαγή γ�
+3056	Πατήστε για εναλλαγή γι
+3057	Περισσότερ�
+3058	Πλοήγηση πρ�
+3059	Πλοήγηση στην �
+3060	Πλοήγηση στ�
+3061	Στήλη ημε�
+3062	Σφά
+3063	Σύμπ
+3064	Σύμπτυξη του φύλ�
+3065	Τέ�
+3066	Τρέχουσα επ�
+3067	Υπέρβαση ορίου χαρακ�
+3068	Υποβολή ε�
+3069	Φωνητική �
+3070	Χρησιμοποι
+3071	διάσ
+3072	�
+3073	�
+3074	�
+3075	%1$s - data de finalizació
+3076	%1$s en punto
+3077	%1$s minutos
+3078	%1$s hora
+3079	%d notificación nov
+3080	%d notificacións nova
+3081	>999
+3082	ACTIVADO
+3083	Aceptar
+3084	Alt +
+3085	Borra a consulta
+3086	Borra texto
+3087	Busca a consulta
+3088	Busca por voz
+3089	Buscar
+3090	Busca�
+3091	Cambia ao modo de introdución de texto para introducir a hora
+3092	Cambiar ao mes anterior
+3093	Cambiar ao mes seguinte
+3094	Cambiar ao modo de entrada de calendario
+3095	Cambiar ao modo de introdución de text
+3096	Cambiar ao modo de reloxo para introducir a hora.
+3097	Cancelar
+3098	Columna de días: %1$
+3099	Comparte contido coa aplicación %
+3100	Comparte contido con
+3101	Contrae
+3102	Contrae o panel inferior
+3103	Controlador de arrastre
+3104	Controlador de arrastre tocado dúas vece
+3105	Ctrl +
+3106	DESACTIVADO
+3107	Data de finalizació
+3108	Data de inicio
+3109	Data de inicio - %1$s
+3110	Data de inicio - data de finalizació
+3111	Desprega o panel inferior
+3112	Despregar ata a metade
+3113	Envía a consult
+3114	Exemplo: %1$s
+3115	Feito
+3116	Función 
+3117	Gardar
+3118	Icona de cadro de diálog
+3119	Introducíronse %1$d caracteres de %2$
+3120	Introducíronse %1$d caracteres, pero o límite é de %
+3121	Ir ao ano %1$s
+3122	Maiús 
+3123	Menú 
+3124	Meta +
+3125	Minuto
+3126	Mostra o contrasinal
+3127	Mostra o menú despregabl
+3128	Máis de %1$d notificacións nov
+3129	Máis opció
+3130	Notificación nov
+3131	O formato non é válid
+3132	O intervalo de datas non é válid
+3133	Pestana
+3134	Produciuse un erro
+3135	Quita %1$s
+3136	Realiza buscas
+3137	Selecciona un intervalo de datas
+3138	Selecciona unha aplicació
+3139	Selecciona unha data
+3140	Seleccionar a.m. ou p.m.
+3141	Seleccionar hora
+3142	Seleccionar minutos
+3143	Selección actual: %1$
+3144	Sym +
+3145	Só se admiten datas do intervalo: %1$
+3146	Tocar para cambiar a selección de an
+3147	Tocar para cambiar a selección de d�
+3148	Usa este formato: %1$s
+3149	Vai ao inicio
+3150	Vai cara arriba
+3151	Ver todo
+3152	a.m.
+3153	eliminar
+3154	espazo
+3155	intro
+3156	p.m.
+3157	%1$d-ലധികം പു�
+3158	%1$s ഉപയേ
+3159	%1$s നീക്�
+3160	%1$s മ
+3161	%1$s മി�
+3162	%1$s വർഷത്തിലേക�
+3163	%1$s – അവസാന�
+3164	%2$d-ൽ %1$d പ്രത�
+3165	%d പുതിയ �
+3166	%d പുതിയ
+3167	%s എന്നതു�
+3168	AM അല്ലെങ്കി�
+3169	അക്ഷര പരിധി,
+3170	അടുത്ത മാസ
+3171	അവസാനി�
+3172	അസാധുവ�
+3173	അസാധു�
+3174	ആപ്പ് ത�
+3175	ആരംഭിക
+3176	ആരംഭിക്ക�
+3177	ആരംഭിക്കുന്ന ത
+3178	ഇനിപ്പറയു
+3179	ഇല്ല
+3180	ഉദാഹ�
+3181	എല്ല
+3182	ഓ
+3183	�
+3184	കലണ്ടർ ഇൻപു�
+3185	കൂടുത
+3186	ചുര
+3187	ചോദ്�
+3188	ചോദ്യ�
+3189	ചോദ്യം 
+3190	ട�
+3191	ടെക്‌സ്‌റ്റ് �
+3192	ടെക്‌സ്�
+3193	ഡയലോ
+3194	ഡ്രോപ്പ്‌ 
+3195	തിരഞ്ഞ
+3196	തി
+3197	തി�
+3198	ത�
+3199	തീയതി ത�
+3200	ദിവസം തിരഞ്ഞെടുക്�
+3201	ദിവസത്തി
+3202	നിലവിൽ തി�
+3203	പാസ്‌വ�
+3204	പ�
+3205	പുതിയ
+3206	പൂർ�
+3207	ഫംഗ
+3208	ബോട്ടം ഷ�
+3209	ബോട്ടം ഷീറ
+3210	മണി�
+3211	മണിക്കൂ�
+3212	മി�
+3213	മിനിറ്റ�
+3214	മുകളി�
+3215	മുമ്പത്തെ മ
+3216	മുഴുവനായ
+3217	മ�
+3218	മെ
+3219	റദ്�
+3220	വലിച്ചിട�
+3221	വലിച്ചിടുന്നതിന
+3222	വർഷം തിരഞ്ഞെടുക്ക�
+3223	ശ
+3224	ശ്രേണി �
+3225	ശ്രേണിക്�
+3226	സംരക
+3227	സംസാരത�
+3228	സമയം തി
+3229	സമയം നൽകുന്നതിന് ടെക�
+3230	സ്‌�
+3231	ഹോമില�
+3232	‌സമയം നൽകുന്നതി�
+3233	%1$d van %2$d tekens opgegeven
+3234	%1$s minuten
+3235	%1$s verwijderen
+3236	%1$s – einddat
+3237	%d nieuwe melding
+3238	%d nieuwe meldingen
+3239	Alles tonen
+3240	Annuleren
+3241	Delen met
+3242	Delen met %s
+3243	Dropdownmenu tonen
+3244	Dubbelgetikt op handgreep voor slepen
+3245	Een app selecteren
+3246	Functie +
+3247	Geselecteerde datum
+3248	Gesproken zoekopdracht
+3249	Half uitvouwen
+3250	Handgreep voor slepen
+3251	Het blad onderaan samenvouwen
+3252	Het blad onderaan uitvouwen
+3253	Huidige selectie: %1$s
+3254	Icoon voor dialoogvenster
+3255	Kolom met dagen: %1$s
+3256	Meer dan %1$d nieuwe meldingen
+3257	Meer opties
+3258	Menu +
+3259	Minuten selecteren
+3260	Naar jaar %1$s navigeren
+3261	Naar volgende maand gaan
+3262	Naar vorige maand gaan
+3263	Navigeren naar startpositie
+3264	Nieuwe melding
+3265	Omhoog navigeren
+3266	Ongeldig bereik.
+3267	Ongeldige indeling.
+3268	Opslaan
+3269	Overschakelen naar agenda-invoermodus
+3270	Overschakelen naar tekstinvoermodus
+3271	Samenvouwen
+3272	Schakel naar de klokmodus om de tijd in te voeren.
+3273	Schakel naar de tekstinvoermodus om de tijd in te voeren.
+3274	Selecteer a.m. of p.m.
+3275	Selecteer een datum
+3276	Selecteer een periode
+3277	Selecteer uur
+3278	Shift +
+3279	Startdatum - %1$s
+3280	Startdatum - einddatum
+3281	Tabblad
+3282	Tekenlimiet heeft %1$d van %2$d overschreden
+3283	Tekst wissen
+3284	Tijd selecteren
+3285	Tik om naar dagselectie te schakelen
+3286	Tik om naar jaarselectie te schakelen
+3287	UIT
+3288	Valt buiten bereik: %1$s
+3289	Wachtwoord tonen
+3290	Zoeken
+3291	Zoeken�
+3292	Zoekopdracht
+3293	Zoekopdracht verzenden
+3294	Zoekopdracht wissen
+3295	spatie
+3296	%1$d z %2$d znak�
+3297	%1$s – data zakończe
+3298	%1$s godz
+3299	%1$s minu
+3300	%d nowe powiadomieni
+3301	%d nowe powiadomieni
+3302	%d nowego powiadomieni
+3303	%d nowych powiadomie
+3304	Aby wprowadzić czas, włącz tryb wprowadzania teks
+3305	Aby wprowadzić czas, włącz tryb zega
+3306	Anuluj
+3307	Bieżący wybór: %
+3308	Bł�
+3309	Data rozpoczęci
+3310	Data rozpoczęcia – %
+3311	Data rozpoczęcia – data zakończ
+3312	Data zakończeni
+3313	Dwukrotnie kliknięto uchwyt do przeciągan
+3314	Funkcyjny+
+3315	Godzina
+3316	Gotowe
+3317	Ikona okna
+3318	Karta
+3319	Kliknij, by wybrać dzie
+3320	Kliknij, by wybrać ro
+3321	Kolumna z dniami: %1$
+3322	Liczba nowych powiadomień przekracza %1$
+3323	Minuta
+3324	Nieprawidłowy format
+3325	Nieprawidłowy zakres
+3326	Nowe powiadomienie
+3327	Określ cza
+3328	Pokaż has�
+3329	Pokaż men
+3330	Pokaż wszystk
+3331	Poza zakresem: %1$s
+3332	Przejdź do roku %1
+3333	Przejdź na stronę gł�
+3334	Przejdź wyż
+3335	Przekroczono limit znaków (%1$d z %2
+3336	Przykład: %1$
+3337	Rozwiń do poło
+3338	Rozwiń planszę dol
+3339	Szukaj
+3340	Szukaj�
+3341	Uchwyt do przeciągani
+3342	Udostępnij przez
+3343	Udostępnij przez: %
+3344	Usuń: (%1$s
+3345	Użyj formatu: %1$
+3346	WYŁ
+3347	Więcej opcj
+3348	Wybierz aplikacj�
+3349	Wybierz dat�
+3350	Wybierz godzin�
+3351	Wybierz minuty
+3352	Wybierz zakres
+3353	Wybierz: przed południem czy po połudn
+3354	Wybrana data
+3355	Wyczyść tek
+3356	Wyczyść zapytan
+3357	Wyszukiwanie głosow
+3358	Wyślij zapytani
+3359	WŁ
+3360	Włącz kalendarzowy tryb wprowadzan
+3361	Włącz tekstowy tryb wprowadzan
+3362	Zapisz
+3363	Zapytanie
+3364	Zmień na następny miesi
+3365	Zmień na poprzedni miesi�
+3366	Zwi�
+3367	Zwiń planszę dol
+3368	spacja
+3369	%1$s h
+3370	%1$s min
+3371	%1$s–končni da
+3372	%d nova obvestila
+3373	%d novi obvestili
+3374	%d novih obvestil
+3375	%d novo obvestilo
+3376	Deljenje z drugimi prek aplikacije %s
+3377	Deljenje z:
+3378	Dotik za preklop na izbiro dneva
+3379	Dotik za preklop na izbiro leta
+3380	Dvakrat dotaknjena ročica za vlečen
+3381	Fn +
+3382	Glasovno iskanje
+3383	IZKLOP
+3384	Ikona pogovornega okna
+3385	Iskalna poizvedba
+3386	Iskanje
+3387	Iskanje �
+3388	Izberite datum
+3389	Izberite dopoldanski ali popoldanski čas
+3390	Izberite minute
+3391	Izberite obseg
+3392	Izberite uro
+3393	Izbira aplikacije
+3394	Izbrani datum
+3395	Izbris besedila
+3396	Izbris poizvedbe
+3397	Končan
+3398	Končni datu
+3399	Krmarjenje na začete
+3400	Meni +
+3401	Napaka
+3402	Neveljaven razpon.
+3403	Neveljavna oblika.
+3404	Novo obvestilo
+3405	Odstranite %1$s
+3406	Omejitev števila znakov je presegla %1$d od %2$
+3407	Pokaži vs
+3408	Pomik na leto %1$s
+3409	Pomik navzgor
+3410	Pošiljanje poizvedb
+3411	Preklič
+3412	Preklop na način vnosa besedil
+3413	Preklop na način vnosa v koleda
+3414	Preklopite na način ure, da vnesete ča
+3415	Preklopite na način za vnašanje besedila, da vnesete č
+3416	Prikaz gesla
+3417	Prikaz spustnega menija
+3418	Primer: %1$s
+3419	Razširitev razdelka na dnu zaslon
+3420	Razširjanje na pol viši
+3421	Ročica za vlečen
+3422	Shrani
+3423	Spremeni na naslednji mesec
+3424	Spremeni na prejšnji mese
+3425	Stolpec dni: %1$s
+3426	Strnitev
+3427	Strnitev razdelka na dnu zaslona
+3428	Trenutna izbira: %1$s
+3429	Uporabite: %1$s
+3430	Ura
+3431	V redu
+3432	VKLOP
+3433	Več kot toliko novih obvestil: %1$
+3434	Več možnos
+3435	Zavihek
+3436	Začetni datu
+3437	Začetni datum–%
+3438	Začetni datum–končni d
+3439	Zunaj razpona: %1$s
+3440	dop.
+3441	l
+3442	pop.
+3443	preslednica
+3444	Število vnesenih znakov je %1$d od %2$
+3445	%1$s (na) minuto
+3446	%1$s (na) oras
+3447	%1$s – Petsa ng pagtatap
+3448	%d bagong notification
+3449	%d na bagong notification
+3450	Alisin ang %1$s
+3451	Bagong notification
+3452	Column ng mga araw: %1$s
+3453	Gamitin: %1$s
+3454	Halimbawa: %1$s
+3455	Higit pang opsyon
+3456	I-OFF
+3457	I-ON
+3458	I-clear ang query
+3459	I-clear ang text
+3460	I-collapse
+3461	I-collapse ang bottom sheet
+3462	I-drag ang handle
+3463	I-expand ang bottom sheet
+3464	I-expand hanggang gitna
+3465	I-save
+3466	I-tap para lumipat sa pagpili ng araw
+3467	I-tap para lumipat sa pagpili ng taon
+3468	Ibahagi gamit ang %s
+3469	Ibahagi sa/kay
+3470	Icon ng Dialog
+3471	Invalid na format.
+3472	Invalid na hanay.
+3473	Ipakita ang dropdown na menu
+3474	Ipakita ang password
+3475	Isumite ang query
+3476	Kanselahin
+3477	Kasalukuyang seleksyon: %1$s
+3478	Lumampas sa limitasyon sa bilang ng character %1$d sa %2$d
+3479	Lumipat sa mode ng orasan para sa input na oras.
+3480	Lumipat sa nakaraang buwan
+3481	Lumipat sa pamamaraan ng pag-input ng kalendaryo
+3482	Lumipat sa pamamaraan ng pag-input ng text
+3483	Lumipat sa pamamaraan ng pag-input ng text para sa input na oras.
+3484	Lumipat sa susunod na buwan
+3485	Mag-navigate pataas
+3486	Mag-navigate patungo sa taong %1$s
+3487	Mag-navigate sa home
+3488	Maghanap
+3489	Maghanap�
+3490	Mahigit %1$d (na) bagong notification
+3491	Mga character na nailagay %1$d sa %2$d
+3492	Na-double tap ang handle sa pag-drag
+3493	Oras
+3494	Paghahanap gamit ang boses
+3495	Petsa
+3496	Petsa ng pagsisimula
+3497	Petsa ng pagsisimula – %1
+3498	Petsa ng pagsisimula – Petsa ng pagtatap
+3499	Petsa ng pagtatapos
+3500	Piliin ang AM o PM
+3501	Piniling petsa
+3502	Pumili ng Petsa
+3503	Pumili ng Range
+3504	Pumili ng app
+3505	Pumili ng mga minuto
+3506	Pumili ng oras
+3507	Query sa paghahanap
+3508	Tapos na
+3509	Tingnan lahat
+3510	Wala sa sakop: %1$s
+3511	%1$s ሰ�
+3512	%1$s ሰ
+3513	%1$s ን �
+3514	%1$s ደ�
+3515	%1$s – መ�
+3516	%1$sን አ
+3517	%d አዲስ �
+3518	AM ወይም P
+3519	ሁሉን�
+3520	ለ%s �
+3521	ለጊዜ ግቤቱ ወ�
+3522	ለጊዜ ግቤቱ ወደ �
+3523	ልክ ያ�
+3524	ልክ ያ�
+3525	መነ�
+3526	መያ�
+3527	መያዣ ይጎት�
+3528	መጀ�
+3529	መጀመሪያ
+3530	መጠይ
+3531	መጠ�
+3532	ምሳሌ
+3533	ሰ
+3534	ሰ�
+3535	ሰ
+3536	ሰዓት
+3537	ስ�
+3538	�
+3539	�
+3540	ቀን 
+3541	ቁምፊዎች %1$d �
+3542	ተቆልቋ�
+3543	ተከ
+3544	ተጨማ�
+3545	�
+3546	አ�
+3547	አ
+3548	አንድ መ�
+3549	አዲስ
+3550	አ�
+3551	አ
+3552	�
+3553	ከ%1$d በላይ አ
+3554	ከ�
+3555	ከክልል 
+3556	ክል�
+3557	ክ�
+3558	ወደ �
+3559	ወደ ቀን መምረ�
+3560	ወደ ቀዳ�
+3561	ወደ ዓመ�
+3562	ወደ ዓመት መም�
+3563	ወደ የሚቀ
+3564	ወደ የቀን መቁ�
+3565	ወደ ጽሁፍ �
+3566	�
+3567	የመጀመሪያ �
+3568	የማ�
+3569	የቀኖች �
+3570	የቁምፊ ገደብ %
+3571	የተመ
+3572	የን�
+3573	የአሁኑ �
+3574	የይለ�
+3575	የድ�
+3576	የግርጌ �
+3577	የግርጌ 
+3578	የፍለ
+3579	ይ
+3580	ይ�
+3581	�
+3582	ደ
+3583	ደቂቃ�
+3584	ጊዜ
+3585	ግማሽ �
+3586	ጥ
+3587	ጽሑ�
+3588	ፍ
+3589	%1$s ន�
+3590	%1$s ម�
+3591	%1$s – កាលបរ�
+3592	ការជូ
+3593	ការជូន
+3594	ការជូនដំណឹ
+3595	ការជ្រើសរ�
+3596	កាល�
+3597	កាលបរិច្�
+3598	កាលបរិច្ឆ�
+3599	កាលបរិច្ឆេទ​ចា
+3600	កាល​បរិ�
+3601	កាល​បរ�
+3602	�
+3603	ចុច​ដើម្បីប�
+3604	ចុច​ដើម្បីប
+3605	ចែករំ
+3606	ចែក​រំ�
+3607	�
+3608	ជម្រ�
+3609	ជួរឈរ​�
+3610	ជួរ​មិ�
+3611	ជ្រើស�
+3612	ជ្រើ
+3613	ជ្រើសរ�
+3614	ជ្រើសរើ
+3615	ជ្រ�
+3616	ជ្រ�
+3617	ជ្រើស�
+3618	ដង
+3619	ដាក់ប�
+3620	ដែនកំណត់តួអ�
+3621	តួ​អក្សរ​បា
+3622	�
+3623	ទម្រង់ម�
+3624	ន�
+3625	នៅក្រ�
+3626	បង
+3627	បង្រួមស
+3628	បង្ហាញ
+3629	បង្ហាញ​�
+3630	ប�
+3631	បានប៉ះ
+3632	ប
+3633	ប
+3634	បោ
+3635	បោ�
+3636	ប្ដូរទ
+3637	ប្ដូរទៅ​រ�
+3638	ប្ដូរទៅ​�
+3639	ប្ដូរ​
+3640	ប្ដូ�
+3641	ប្តូរ​ទៅ​មុខងារ�
+3642	ប្តូរ​ទៅ​មុខងារ​ប�
+3643	ប្រ�
+3644	ផ្
+3645	ពង្រីកស
+3646	ពង្រី�
+3647	ព�
+3648	មើល�
+3649	ម�
+3650	ម៉ោ
+3651	យល�
+3652	រក�
+3653	រូប​ប�
+3654	រួ�
+3655	រំក�
+3656	ល
+3657	លុ�
+3658	ល�
+3659	សម្�
+3660	សម្អ
+3661	ស្�
+3662	ស្វែ�
+3663	ស្វែង�
+3664	ស្�
+3665	ឧទាហ�
+3666	​ទៅ�
+3667	%1$dটির বেশি 
+3668	%1$s ঘ�
+3669	%1$s ফর্ম্
+3670	%1$s ম�
+3671	%1$s সরি
+3672	%1$s – সমাপ
+3673	%1$sটা 
+3674	%2$dটির মধ্যে %1$dট
+3675	%dটি নতু�
+3676	%s-এর সাথে
+3677	AM অথবা PM 
+3678	অক্ষরের সীমা %1$d
+3679	অর্ধেক �
+3680	আগাম�
+3681	আগের 
+3682	আরও 
+3683	উদাহ
+3684	উপরে ন�
+3685	একটি অ্
+3686	কোয়ে
+3687	কোয়ের
+3688	ক্যালেন্ডা�
+3689	ঘ�
+3690	ঘণ্ট�
+3691	চাল
+3692	টেক্সট ইন�
+3693	টেক্
+3694	টেনে আন
+3695	টেনে আনার হ্যা�
+3696	ট�
+3697	ঠি�
+3698	ডায়
+3699	ড্রপ-ডা�
+3700	ত�
+3701	তারি�
+3702	তারি�
+3703	দিন বেছে নেওয়া�
+3704	নতুন �
+3705	নির্দিষ্ট �
+3706	নেভিগেট ক
+3707	পাসওয়
+3708	বছর বেছে নেওয়া�
+3709	বন�
+3710	বর্তমা�
+3711	বাত�
+3712	বেছে ন
+3713	ভয়েস 
+3714	ভুল ফ
+3715	ম�
+3716	মিনি�
+3717	ম�
+3718	রেঞ্�
+3719	শুর�
+3720	শুরুর তারি
+3721	শুরুর �
+3722	শেয�
+3723	সঙ্ক�
+3724	সপ্তাহের দ
+3725	সবগু
+3726	সময় 
+3727	সম
+3728	সমাপ�
+3729	সময় ইনপুট দেও
+3730	সময় ইনপুট দেওয়া�
+3731	সার�
+3732	সার�
+3733	সার্�
+3734	সে�
+3735	স্ক্রিনের নিচে 
+3736	স্ক্রিনের নিচ�
+3737	হয়
+3738	হোমে ন�
+3739	৯�
+3740	%1$s jam
+3741	%1$s menit
+3742	%1$s – Tanggal akh
+3743	%d notifikasi baru
+3744	AKTIF
+3745	Bagikan dengan
+3746	Bagikan dengan %s
+3747	Batal
+3748	Beralih ke mode jam untuk masukan waktu.
+3749	Beralih ke mode masukan kalender
+3750	Beralih ke mode masukan teks
+3751	Beralih ke mode masukan teks untuk masukan waktu.
+3752	Buka tahun %1$s
+3753	Ciutkan
+3754	Contoh: %1$s
+3755	Di luar rentang: %1$s
+3756	Format tidak valid.
+3757	Gunakan: %1$s
+3758	Handel geser
+3759	Handel geser diketuk dua kali
+3760	Hapus kueri
+3761	Ikon Dialog
+3762	Jam
+3763	Karakter yang dimasukkan %1$d dari %2$d
+3764	Kembali ke atas
+3765	Ketuk untuk beralih ke memilih hari
+3766	Ketuk untuk beralih ke memilih tahun
+3767	Kirim kueri
+3768	Kolom hari: %1$s
+3769	Lebih dari %1$d notifikasi baru
+3770	Lihat semua
+3771	Luaskan setengah
+3772	Melebihi batas karakter %1$d dari %2$d
+3773	Meluaskan sheet bawah
+3774	Menciutkan sheet bawah
+3775	Menghapus %1$s
+3776	Menghapus teks
+3777	Menit
+3778	NONAKTIF
+3779	Notifikasi baru
+3780	Oke
+3781	Opsi lain
+3782	Penelusuran suara
+3783	Pilih AM atau PM
+3784	Pilih Rentang
+3785	Pilih Tanggal
+3786	Pilih aplikasi
+3787	Pilih jam
+3788	Pilih menit
+3789	Pilih waktu
+3790	Pilihan saat ini: %1$s
+3791	Pukul %1$s
+3792	Rentang tidak valid.
+3793	Selesai
+3794	Simpan
+3795	Tampilkan menu dropdown
+3796	Tampilkan sandi
+3797	Tanggal
+3798	Tanggal akhir
+3799	Tanggal mulai
+3800	Tanggal mulai – %1
+3801	Tanggal mulai – Tanggal akh
+3802	Tanggal yang dipilih
+3803	Telusuri
+3804	Telusuri kueri
+3805	Telusuri...
+3806	Tunjukkan jalan ke rumah
+3807	Ubah ke bulan berikutnya
+3808	Ubah ke bulan sebelumnya
+3809	b
+3810	h
+3811	spasi
+3812	t
+3813	%1$d ಕ್ಕಿಂತ ಹೆಚ�
+3814	%1$s ಅನ್ನು 
+3815	%1$s ಗ�
+3816	%1$s ಗಂ�
+3817	%1$s ನಿ�
+3818	%1$s ವರ್ಷಕ್ಕೆ
+3819	%1$s – ಮುಕ್
+3820	%2$d ರಲ್ಲಿ %1$d ಅಕ್ಷ�
+3821	%d ಹೊಸ ಅ�
+3822	%s ನೊಂದಿಗ
+3823	ಅಕ್ಷರ ಮಿತಿಯು 
+3824	ಅಮಾನ�
+3825	ಅಮಾನ್ಯವ
+3826	ಅರ್ಧದಷ�
+3827	ಆ
+3828	ಆ
+3829	ಆ್ಯಪ್‌ವೊ
+3830	ಇದನ್ನ�
+3831	ಇನ್ನಷ�
+3832	ಇವರೊಂದ�
+3833	ಉದಾಹ�
+3834	ಉ�
+3835	ಎಲ್ಲ�
+3836	ಕು�
+3837	ಕೆಳಭಾಗದ ಶ�
+3838	ಕೆಳಭಾಗದ ಶೀ
+3839	ಕ್ಯಾಲೆಂಡರ್ ಇ
+3840	ಗ�
+3841	ಟ್
+3842	ಡೈಲಾ
+3843	ಡ್ರಾಪ್‌�
+3844	�
+3845	�
+3846	ದಿನಗಳ �
+3847	ದಿನವನ್ನು ಆಯ್ಕ�
+3848	ದಿ
+3849	ದಿನಾಂಕವನ�
+3850	ದಿನಾಂಕವ
+3851	ದ
+3852	ಧ್ವನ�
+3853	ನ�
+3854	ನಿಮಿಷಗಳ
+3855	ಪಠ್ಯ ಇನ್‌ಪ
+3856	ಪಠ್ಯ ತ
+3857	ಪಾಸ್‌�
+3858	ಪ್ರಶ್ನೆಯ
+3859	ಪ್ರಶ್ನ�
+3860	ಪ್ರಶ್ನ�
+3861	ಪ್ರಸ್ತ�
+3862	ಪ್ರಾ�
+3863	ಪ್ರಾರಂಭ
+3864	ಪ್ರಾರಂಭ ದಿನ
+3865	ಬೆಳಿಗ್ಗೆ ಅಥ�
+3866	ಮುಂದಿನ ತ
+3867	ಮುಕ್�
+3868	ಮು�
+3869	ಮೇಲಕ್ಕೆ �
+3870	ರದ್
+3871	�
+3872	ವರ್ಷವನ್ನು ಆಯ್�
+3873	ವ್ಯಾಪ್ತ�
+3874	ಶ್ರೇಣಿಯ
+3875	ಸಮಯವನ್
+3876	ಸಮಯವನ್ನು ನಮೂದಿ�
+3877	ಸಮಯವನ್ನು ನಮೂದ�
+3878	ಸ
+3879	ಹಿಂದಿನ ತ
+3880	ಹು
+3881	ಹು�
+3882	ಹೊಸ �
+3883	ಹೋಮ್‌ಗೆ �
+3884	ಹ್ಯಾಂಡಲ�
+3885	ಹ್ಯಾಂಡಲ್ ಡ್ರ್ಯಾಗ್ ಮ�
+3886	%1$d-с олон шинэ
+3887	%1$s он руу �
+3888	%1$s ц�
+3889	%1$s – Дууса
+3890	%1$s-г ус�
+3891	%2$d-н %1$d тэмдэгтий
+3892	%d шинэ мэ
+3893	%s-тай хув
+3894	Ал�
+3895	Аппыг �
+3896	Асуулга 
+3897	Асуулга
+3898	Ашиглах фо�
+3899	Бол
+3900	Буруу форм
+3901	Бусад с
+3902	Буу�
+3903	Бүгдий�
+3904	Дараагийн сар
+3905	Дараахтай 
+3906	Доод хүснэг�
+3907	Доод хүснэг�
+3908	Доош унадаг цэ�
+3909	Дуусах
+3910	Дуут �
+3911	Дээш ш
+3912	Жишээ н�
+3913	ИДЭВ
+3914	ИДЭВ
+3915	Календарийн орох �
+3916	Ме�
+3917	Ми�
+3918	Минут со�
+3919	Муж с�
+3920	Нууц үгийг
+3921	Нүүр хуудас �
+3922	Ог�
+3923	Огноо �
+3924	Огнооны хязгаа�
+3925	Одоогийн со�
+3926	Он сонгох руу сэлгэхи
+3927	Сонгосо
+3928	Т�
+3929	Текстийг
+3930	Текстийн орох го
+3931	Тэмдэгтийн хязгаар %2$d-
+3932	Фун
+3933	Хагас дэ�
+3934	Хадг
+3935	Ха
+3936	Хайх а�
+3937	Ха�
+3938	Харилцах цонхн
+3939	Хязгаараас хэ
+3940	Ц�
+3941	Цаг с�
+3942	Цагийг оруулахын тулд текст ор
+3943	Цагийг оруулахын тулд цаги
+3944	Цуц
+3945	Цэ
+3946	Чирэх �
+3947	Чирэх бариулы�
+3948	Шинэ мэ
+3949	Ши�
+3950	Эхлэх 
+3951	Эхлэх огн�
+3952	Эхлэх огноо – 
+3953	з�
+3954	ору�
+3955	�
+3956	уст
+3957	ҮӨ эсвэл ҮХ �
+3958	Өдрийн баг
+3959	Өдөр сонгох руу сэлгэх
+3960	Өмнөх сар л�
+3961	�
+3962	%1$s �
+3963	%1$s �
+3964	%1$s~%2$s
+3965	%1$s~종
+3966	%1$s년으
+3967	%1$s�
+3968	%1$s시 
+3969	%1$s�
+3970	%1$s은(는) 범위를 
+3971	%s과(와
+3972	�
+3973	검�
+3974	검
+3975	검색�
+3976	검색
+3977	공유
+3978	글자 수 제한이 초과�
+3979	기�
+3980	�
+3981	날짜 범위�
+3982	날�
+3983	�
+3984	다음 �
+3985	대화�
+3986	두 번 탭�
+3987	드래
+3988	드롭다�
+3989	반만
+3990	�
+3991	분 
+3992	비밀�
+3993	�
+3994	사�
+3995	새 
+3996	새 알림 %1
+3997	새 알�
+3998	선택
+3999	스�
+4000	�
+4001	시�
+4002	시간 입력을 위해
+4003	시간 입력을 위해 텍
+4004	시
+4005	시작�
+4006	시작�
+4007	앱 
+4008	예: %1
+4009	�
+4010	�
+4011	오전 또는 �
+4012	�
+4013	�
+4014	요일 열
+4015	�
+4016	위�
+4017	음�
+4018	이전 �
+4019	�
+4020	입력된 글자
+4021	�
+4022	전�
+4023	�
+4024	종
+4025	추�
+4026	�
+4027	캘린더 입
+4028	�
+4029	탭하여 연�
+4030	탭하여 요�
+4031	텍스
+4032	텍스트 입
+4033	하단 �
+4034	하단 �
+4035	현재 %1$s
+4036	형식이 �
+4037	홈으
+4038	�
+4039	%1$s ຊົ�
+4040	%1$s ນ�
+4041	%1$s ໂ
+4042	%1$s – ວັນ�
+4043	%d ການແຈ
+4044	ກັບໄ
+4045	ການເລືອ�
+4046	ການແຈ
+4047	ການແຈ້ງເຕືອ�
+4048	ຂະຫຍາ�
+4049	ຂະຫຍາຍ
+4050	ຂີດຈຳກັດຕົວອັ�
+4051	ຄຳສຳ�
+4052	ຊ�
+4053	ຊອກຫ
+4054	ຊອ
+4055	ຊົ�
+4056	ຍະ�
+4057	ຍົ�
+4058	�
+4059	ຕົ
+4060	ຕົວຢ�
+4061	ຕົວອັກສອນທີ່ປ້ອນ
+4062	ຕົວເລ�
+4063	ຖັນມ
+4064	ນ�
+4065	ບັ
+4066	ບ່ອ�
+4067	�
+4068	ປ
+4069	ປ່ຽນເປ
+4070	ປ່ຽນເປ�
+4071	ປ່ຽນເປັນໂ�
+4072	ປ່ຽນເປັນໂ�
+4073	ຜິ
+4074	ຢູ່ນອກຊ
+4075	ລ
+4076	ລຶບ %1
+4077	ລຶບຂໍ
+4078	ລຶບລ�
+4079	�
+4080	ວ�
+4081	ວັນທ
+4082	ວັນ�
+4083	ວັນທີເລ
+4084	ວັນທີເລີ່�
+4085	ສະຫຼັບໄປໃຊ້ໂໝດ
+4086	ສະຫຼັບໄປໃຊ້�
+4087	ສະແດ�
+4088	ສະແດງເ
+4089	ສົ່�
+4090	ຫຍໍ້ຊ�
+4091	ຫຍ�
+4092	ຮູບແບ�
+4093	ເບິ�
+4094	ເ�
+4095	ເລືອ
+4096	ເລື
+4097	ເລືອກຕອນ
+4098	ເລື�
+4099	ເລື�
+4100	ເລື�
+4101	ເລື
+4102	ເລື່�
+4103	ເລື່ອ
+4104	ແຕະບ່ອນຈ�
+4105	ແຕະເພື່ອ�
+4106	ແຕະເພື່ອປ
+4107	ແ
+4108	ແບ່�
+4109	ແບ່ງ�
+4110	ແ�
+4111	ໂມ�
+4112	ໂມ
+4113	ໃຊ້
+4114	ໄລຍະບ
+4115	ໄອຄອນ
+4116	%1$s ore
+4117	%1$s – data de închei
+4118	%d de notificări no
+4119	%d notificare nou�
+4120	%d notificări no
+4121	ACTIVAT
+4122	Afișați meniul drop-do
+4123	Afișați paro
+4124	Afișați t
+4125	Alegeți o aplicaț
+4126	Anulaț
+4127	Atingeți pentru a comuta la selectarea unei zil
+4128	Atingeți pentru a comuta la selectarea unui a
+4129	Caractere introduse: %1$d din %2$d
+4130	Coloana cu zile: %1$s
+4131	Comutați la modul de introducere a textulu
+4132	Comutați la modul introducere în calend
+4133	Căutare vocal
+4134	Căuta�
+4135	Căutaț
+4136	DEZACTIVAT
+4137	Data de începer
+4138	Data de începere – %
+4139	Data de începere – data de înche
+4140	Data de încheier
+4141	Data selectat�
+4142	Dat�
+4143	Eliminați %1$
+4144	Eroare
+4145	Exemplu: %1$s
+4146	Extinde pe ecran complet
+4147	Extindeți foaia din partea de jo
+4148	Fil�
+4149	Folosiți: %1$
+4150	Format nevalid.
+4151	Fără acoperire: %1
+4152	Gata
+4153	Ghidaj de tragere
+4154	Ghidaj de tragere atins de două or
+4155	Interval nevalid.
+4156	Limita de caractere a depășit %1$d din %2
+4157	Mai multe opțiun
+4158	Meniu+
+4159	Navigați la anul %1$
+4160	Navigați la ecranul de pornir
+4161	Navigați în s
+4162	Notificare nou�
+4163	Ora
+4164	Ora %1$s
+4165	Pentru a introduce ora, comutați la modul ceas
+4166	Pentru a introduce ora, comutați la modul de introducere a textului
+4167	Peste %1$d notificări no
+4168	Pictogramă de dialo
+4169	Restrânge�
+4170	Restrângeți foaia din partea de j
+4171	Salvaț
+4172	Selectați dat
+4173	Selectați intervalu
+4174	Selectați minutel
+4175	Selectați or
+4176	Selecția actuală: %1
+4177	Termen de căutar
+4178	Treceți la luna anterioar
+4179	Treceți la luna următoa
+4180	Trimiteți folosind %
+4181	Trimiteți interogare
+4182	Trimiteți l
+4183	z
+4184	Ștergeți interogar
+4185	Ștergeți text
+4186	%1$s fiks
+4187	%1$s minuta
+4188	%1$s or�
+4189	%1$s – data e përfundi
+4190	%d njoftim i ri
+4191	%d njoftime të rej
+4192	AKTIV
+4193	Anulo
+4194	Data e fillimit
+4195	Data e fillimit - data e përfundimi
+4196	Data e fillimit – %1
+4197	Data e përfundimi
+4198	Data e zgjedhur
+4199	Doreza e zvarritjes
+4200	Dërgo pyetje
+4201	Format i pavlefshëm
+4202	Funksioni+
+4203	Gabim
+4204	Gamë e pavlefshme
+4205	Hiq %1$s
+4206	Ikona e dialogut
+4207	JOAKTIV
+4208	Jashtë gamës: %1
+4209	Kalo te modaliteti i "Hyrjes së kalendarit
+4210	Kalo te modaliteti i "Hyrjes së tekstit
+4211	Kalo te modaliteti i hyrjes së tekstit për hyrjen e koh�
+4212	Kalo te modaliteti i orës për hyrjen e koh�
+4213	Karakteret e futura: %1$d nga %2$d
+4214	Kolona e ditëve: %1$
+4215	Kufiri i karaktereve është kaluar: %1$d nga %2
+4216	Kërkim me z
+4217	Kërk
+4218	Kërko pyetje
+4219	Kërko
+4220	Menyja+
+4221	Më shumë se %1$d njoftime të r
+4222	Navigo te viti %1$s
+4223	Ndaje me
+4224	Ndaje me %s
+4225	Ndrysho te muaji i ardhshë
+4226	Ndrysho te muaji i kaluar
+4227	Ngjitu lart
+4228	Njoftim i ri
+4229	Në rregul
+4230	Opsione të tjer
+4231	Orientohu për në sht�
+4232	PD
+4233	Palos
+4234	Palos fletën e poshtm
+4235	Pastro pyetjen
+4236	Pastro tekstin
+4237	Përdor: %1$
+4238	Përzgjidh minuta
+4239	Ruaj
+4240	Shembull: %1$s
+4241	Shfaq fjalëkalimi
+4242	Shfaq menynë me lëshim posh
+4243	Shfaq çdo gj
+4244	Te doreza e zvarritjes u trokit dy her�
+4245	Trokit për të kaluar te zgjedhja e një d
+4246	Trokit për të kaluar te zgjedhja e një v
+4247	U krye
+4248	Zgjedhja aktuale: %1$s
+4249	Zgjero fletën e poshtm
+4250	Zgjeroje deri në gjysm
+4251	Zgjidh datë
+4252	Zgjidh gamë
+4253	Zgjidh një aplikacio
+4254	Zgjidh orë
+4255	Zgjidh paradite ose pasdite
+4256	hapësir
+4257	%1$s دق�
+4258	%1$s سا
+4259	%1$s – تاريخ �
+4260	%d إشعار
+4261	%d إشعارا�
+4262	%d إشعارًا
+4263	إرسال طل
+4264	إزالة
+4265	إشعار
+4266	إشعار جديد 
+4267	إشعاران جد
+4268	إل�
+4269	إي�
+4270	اختيار
+4271	اختيار
+4272	استخدا�
+4273	الاختيار ال
+4274	ال�
+4275	الت�
+4276	التاريخ �
+4277	التبديل إلى وضع
+4278	التبديل إلى وضع "الإ
+4279	التغيير إلى ا
+4280	التغيير إلى ا
+4281	التنسيق �
+4282	التنقل إ
+4283	التنقل إلى �
+4284	التوجه إل
+4285	الس
+4286	الساع�
+4287	القا
+4288	النطاق غ
+4289	انقر للتبديل إ�
+4290	انقر للتبديل إ�
+4291	بحث �
+4292	بح
+4293	تاريخ ا�
+4294	تاريخ 
+4295	تاريخ البدء - تا
+4296	تاريخ الب�
+4297	تجاوز عدد الأحرف المسم
+4298	تحديد ا
+4299	تحديد �
+4300	تص�
+4301	تصغير البطا
+4302	ت
+4303	تم النقر مرّتين ع
+4304	تمّ إدخال %1$d حرف من
+4305	توسيع البطا
+4306	حس�
+4307	ح�
+4308	خارج النط
+4309	خ�
+4310	خيارا�
+4311	دق�
+4312	رمز مربع
+4313	�
+4314	�
+4315	صبا
+4316	طلب 
+4317	عرض القائم�
+4318	عرض �
+4319	عرض كلمة
+4320	علامة 
+4321	عمود الأي
+4322	فض
+4323	محو �
+4324	محو طلب
+4325	مس�
+4326	مشار�
+4327	مشاركة
+4328	مفع
+4329	مقبض �
+4330	�
+4331	يبلغ عدد الإشعارات ال�
+4332	يُرجى اختي
+4333	يُرجى اختيار صب�
+4334	يُرجى اختيار
+4335	يُرجى التبديل إلى وضع إدخ
+4336	يُرجى التبديل إلى وضع ا
+4337	%1$s – Date de f
+4338	%1$s 
+4339	%1$s heure
+4340	%d nouvelle notificatio
+4341	%d nouvelles notification
+4342	A appuyé deux fois sur la poignée de déplacem
+4343	Accéder à l'année %
+4344	Afficher le menu déroulan
+4345	Afficher le mot de passe
+4346	Annuler
+4347	Appuyer pour sélectionner un jou
+4348	Appuyer pour sélectionner une ann�
+4349	Autres options
+4350	Caractères saisis %1$d sur %2
+4351	Colonne du jour de la semaine : %1$
+4352	Date de débu
+4353	Date de début – %
+4354	Date de début – Date de 
+4355	Date de fin
+4356	Date sélectionn�
+4357	Développer en entie
+4358	Développer la bottom shee
+4359	Effacer la requêt
+4360	Effacer le texte
+4361	Enregistrer
+4362	Envoyer la requêt
+4363	Erreur
+4364	Exemple : %1$
+4365	Fonction+
+4366	Format incorrect.
+4367	Heure
+4368	Hors limite : %1$
+4369	Icône de la boîte de dialog
+4370	Méta
+4371	NON
+4372	Nombre maximal de caractères dépassé : %1$d sur�
+4373	Nouvelle notification
+4374	OUI
+4375	Partager avec
+4376	Partager avec %s
+4377	Passer au mode de saisie Agenda
+4378	Passer au mode de saisie Texte
+4379	Passer au mois précéde
+4380	Passer au mois suivant
+4381	Passer en mode horloge pour la saisie de l'heure.
+4382	Passer en mode saisie de texte pour la saisie de l'heure.
+4383	Plage non valide.
+4384	Plus de %1$d nouvelles notification
+4385	Poignée de déplaceme
+4386	Recherche vocale
+4387	Rechercher
+4388	Rechercher�
+4389	Requête de recherch
+4390	Revenir en haut de la page
+4391	Revenir à l'accuei
+4392	Réduir
+4393	Réduire la bottom shee
+4394	Supprimer %1$s
+4395	Sélection actuelle : %1
+4396	Sélectionner des minute
+4397	Sélectionner l'heur
+4398	Sélectionner le format AM ou P
+4399	Sélectionner une applicatio
+4400	Sélectionnez une dat
+4401	Sélectionnez une heur
+4402	Sélectionnez une pério
+4403	Tabulation
+4404	Tout afficher
+4405	Utiliser %1$s
+4406	entré
+4407	espace
+4408	supprimer
+4409	%1$s – datum završe
+4410	%d nova obavijest
+4411	%d nove obavijesti
+4412	%d novih obavijesti
+4413	Brisanje teksta
+4414	Datum početk
+4415	Datum početka – %
+4416	Datum početka – datum završ
+4417	Datum završetk
+4418	Dijeli putem aplikacije %s
+4419	Dijeli s
+4420	Dodirnite za prijelaz na odabir dana
+4421	Dodirnite za prijelaz na odabir godine
+4422	Dvaput dodirnut marker za povlačenj
+4423	Glasovno pretraživanj
+4424	Gotovo
+4425	ISKLJUČEN
+4426	Idi na početn
+4427	Ikona dijaloga
+4428	Izbriši upi
+4429	Izvan raspona: %1$s
+4430	Kartica
+4431	Koristi format: %1$s
+4432	Marker za povlačenj
+4433	Natrag
+4434	Nevažeći forma
+4435	Nova obavijest
+4436	Odaberite datum
+4437	Odaberite minute
+4438	Odaberite prijepodne ili poslijepodne
+4439	Odaberite raspon
+4440	Odaberite sat
+4441	Odabir aplikacije
+4442	Odabir vremena
+4443	Odabrani datum
+4444	Odustani
+4445	Pogrešk
+4446	Pomicanje na prethodni mjesec
+4447	Pošalji upi
+4448	Premašeno je ograničenje broja znakova: %1$d od %2
+4449	Pretraž
+4450	Pretražite
+4451	Prijelaz na godinu %1$s
+4452	Prijelaz na način unosa tekst
+4453	Prijelaz na način unosa u Kalendar
+4454	Prijelaz na sljedeći mjese
+4455	Prijeđite na način rada sata da biste unijeli vrijem
+4456	Prijeđite na način unosa teksta da biste unijeli vrijem
+4457	Prikaži padajući izborn
+4458	Prikaži sv
+4459	Prikaži zapork
+4460	Primjer: %1$s
+4461	Proširi donju polovic
+4462	Proširite donju tablic
+4463	Raspon nije važeć
+4464	Sat
+4465	Sažm
+4466	Sažmite donju tablic
+4467	Spremi
+4468	Stupac s danima: %1$s
+4469	Trenutačan odabir: %1$
+4470	U redu
+4471	UKLJUČEN
+4472	Ukloni %1$s
+4473	Uneseno znakova: %1$d od %2$d
+4474	Upit za pretraživanj
+4475	Više od %1$d novih obavijest
+4476	Više opcij
+4477	g
+4478	svemir
+4479	%1$d पेक्षा अ
+4480	%1$s त
+4481	%1$s मि
+4482	%1$s वर्षावर
+4483	%1$s व�
+4484	%1$s – संपण�
+4485	%1$s: व�
+4486	%2$d पैकी %1$d वर्�
+4487	%2$d पैकी %1$d वर्णम
+4488	%d नवी�
+4489	%s सह श�
+4490	AM किंव�
+4491	अ‍ॅ�
+4492	आणख�
+4493	एं�
+4494	ए
+4495	ओ
+4496	काढून
+4497	कॅलेंडर इन�
+4498	कोल�
+4499	क्वेर�
+4500	क्‍वे
+4501	घराकडे �
+4502	चुकी�
+4503	चुकी�
+4504	ट
+4505	डाय�
+4506	ड्र�
+4507	ड्रॅग हॅंडल�
+4508	ड्रॉपड�
+4509	तळाशी असले
+4510	तळाशी असलेल�
+4511	तार�
+4512	त
+4513	�
+4514	दिवस निवडण्या�
+4515	दिवसां�
+4516	नवी�
+4517	निवड�
+4518	पासव�
+4519	पुढील म�
+4520	पूर�
+4521	पूर्णप�
+4522	�
+4523	मजकूर इनप�
+4524	मजकू�
+4525	मागील म�
+4526	म�
+4527	मिनि
+4528	म�
+4529	यांच्य�
+4530	रद�
+4531	रें�
+4532	रेंजच्�
+4533	�
+4534	वर नेव�
+4535	वर्ष निवडण्या�
+4536	वेळ इनपुटसाठी म�
+4537	वेळ
+4538	वेळेच्या इनपुट�
+4539	व्ह�
+4540	श
+4541	शोध 
+4542	श�
+4543	श�
+4544	संपण्
+4545	सध्याच
+4546	सर�
+4547	स�
+4548	सुरू हो
+4549	सुरू होण्�
+4550	सुरू होण्याची
+4551	सेव
+4552	ह�
+4553	%1$s କାଢ଼�
+4554	%2$d ର %1$d ଅକ୍ଷ�
+4555	%s ସହ ସେୟ�
+4556	Navigate to year %1$s
+4557	Tap to switch to selecting a day
+4558	Tap to switch to selecting a year
+4559	ଅଧି�
+4560	ଉପରକୁ ନ�
+4561	ଏଣ
+4562	ଏହାଙ୍କ ସ�
+4563	କ୍ୱେରୀ
+4564	କ୍ୱେରୀ
+4565	ଗୋଟିଏ �
+4566	ଚା�
+4567	ଡିଲି�
+4568	ପାସ୍‍ୱ�
+4569	ବ�
+4570	ଭଏସ୍
+4571	ମିନିଟ୍
+4572	ମ�
+4573	ସଂକୁ�
+4574	ସନ୍ଧ�
+4575	ସବୁ �
+4576	ସମୟ ଇନପୁଟ୍‍ ପା�
+4577	ସମୟ ଇନପୁଟ୍‍ ପାଇଁ 
+4578	ସର୍ଚ�
+4579	ସର୍ଚ�
+4580	ସ୍�
+4581	ହୋ
+4582	ହୋମ୍ ପେଜ୍‌
+4583	%1$s м�
+4584	%1$s �
+4585	%1$s – Датум з
+4586	%d нова оба
+4587	%d нових об�
+4588	%d ново оба
+4589	Још о�
+4590	Актуелни и�
+4591	Гласовна 
+4592	Датум за
+4593	Датум п
+4594	Датум поче�
+4595	Датум почетка – �
+4596	Делите 
+4597	Делите помоћу �
+4598	Додирните да бисте пре
+4599	Додирните да бисте пр
+4600	ИСКЉ�
+4601	Идентификатор за превлач
+4602	Идите на го
+4603	Идите на 
+4604	Идите �
+4605	Изаберите �
+4606	Изабери�
+4607	Изабери�
+4608	Изаберит
+4609	Изаберит
+4610	Изаберите пре под
+4611	Изабер�
+4612	Изабран
+4613	Изван пери
+4614	Икона д�
+4615	Кар�
+4616	Колона са да
+4617	Користи�
+4618	Неважећи
+4619	Нових обавештењ�
+4620	Ново оба
+4621	Обриши
+4622	Обриши�
+4623	Пот�
+4624	Пошаљи�
+4625	Прекорачено је ограничење бр
+4626	Претр
+4627	Претраж�
+4628	Претр�
+4629	Пређите на пре
+4630	Пређите на режи�
+4631	Пређите на режим у�
+4632	Пређите на сл
+4633	Пређите у режим сата р
+4634	Пређите у режим уноса текс
+4635	Прикажи 
+4636	Прикажи пад
+4637	Прика�
+4638	Проширит�
+4639	Проширите д
+4640	Ручица за п
+4641	С�
+4642	Сач�
+4643	Ск�
+4644	Скупите до
+4645	УКЉУ
+4646	Уклони�
+4647	Унети знакови: 
+4648	Формат је �
+4649	тастер з�
+4650	%1$s s
+4651	%1$s – Datum završe
+4652	%d nova obaveštenj
+4653	%d novih obaveštenj
+4654	%d novo obaveštenj
+4655	Aktuelni izbor: %1$s
+4656	Datum početka – Datum završ
+4657	Delite pomoć
+4658	Delite pomoću aplikacije %
+4659	Dodirnite da biste prešli na izbor dan
+4660	Dodirnite da biste prešli na izbor godin
+4661	Format je nevažeć
+4662	Glasovna pretraga
+4663	Grešk
+4664	Identifikator za prevlačenje je dvaput dodirnu
+4665	Idite na godinu %1$s
+4666	Idite na početn
+4667	Idite nagore
+4668	Izaberite aplikaciju
+4669	Izaberite datum
+4670	Izaberite minute
+4671	Izaberite period
+4672	Izaberite pre podne ili po podne
+4673	Izaberite sat
+4674	Izaberite vreme
+4675	Izabrani datum
+4676	Izvan perioda: %1$s
+4677	Još opcij
+4678	Kolona sa danima: %1$s
+4679	Koristite: %1$s
+4680	Nevažeći perio
+4681	Novih obaveštenja: više od %1
+4682	Novo obaveštenj
+4683	Obriši teks
+4684	Obrišite upi
+4685	Otkaž
+4686	Potvrdi
+4687	Pošaljite upi
+4688	Prekoračeno je ograničenje broja znakova: %1$d od %2
+4689	Pretražit
+4690	Pretražite upi
+4691	Pređite na prethodni mese
+4692	Pređite na režim unosa teks
+4693	Pređite na režim unosa u Kalenda
+4694	Pređite na sledeći mes
+4695	Pređite u režim sata radi unosa vremen
+4696	Pređite u režim unosa teksta radi unosa vremen
+4697	Prikaži lozink
+4698	Prikaži padajući me
+4699	Proširite do pol
+4700	Proširite donju tabel
+4701	Ručica za prevlačen
+4702	Sačuva
+4703	Skupi
+4704	Skupite donju tabelu
+4705	Uklonite %1$s
+4706	Uneti znakovi: %1$d od %2$d
+4707	taster za razmak
+4708	%1$d adetten fazla yeni bildirim
+4709	%1$s dakika
+4710	%1$s içeriğini kald
+4711	%1$s saat
+4712	%1$s yılına g
+4713	%1$s – Bitiş tar
+4714	%d yeni bildirim
+4715	%s ile payla�
+4716	Alt sayfayı daral
+4717	Alt sayfayı genişl
+4718	Ara
+4719	Aralık Seç
+4720	Arama sorgusu
+4721	Ara�
+4722	A�
+4723	Açılır menüyü g
+4724	Başlangıç tar
+4725	Başlangıç tarihi - Bitiş ta
+4726	Başlangıç tarihi –
+4727	Bir uygulama seçi
+4728	Bitiş tarih
+4729	Bitti
+4730	Dakika
+4731	Dakikayı seç
+4732	Daralt
+4733	Diğer seçenekl
+4734	Eve gidiş yolunu göst
+4735	Geçerli seçim: %1
+4736	Geçersiz aralı
+4737	Geçersiz biçi
+4738	Girilen karakter: %1$d / %2$d
+4739	Gün seçmeye geçmek için dok
+4740	Gün sütunu: %1
+4741	Hata
+4742	KAPAT
+4743	Karakter sınırı aşıldı %1$d 
+4744	Kaydet
+4745	Menü
+4746	Metin giriş moduna ge
+4747	Metni temizle
+4748	Saat
+4749	Saat %1$s
+4750	Saat seçi
+4751	Sekme
+4752	Sesli arama
+4753	Seçilen tari
+4754	Sonraki aya değişt
+4755	Sorguyu gönde
+4756	Sorguyu temizle
+4757	Sürükleme tutama
+4758	Sürükleme tutamacına iki kez dokunu
+4759	Takvim giriş moduna ge
+4760	Tamam
+4761	Tarih
+4762	Tarih Seçi
+4763	Tarih biçimi: %1$
+4764	Tümünü gö
+4765	Yarım genişl
+4766	Yeni bildirim
+4767	Yukarı gi
+4768	Yıl seçmeye geçmek için dok
+4769	Zaman girişi için metin girişi moduna ge�
+4770	Zaman girişi için saat moduna geç
+4771	Zamanı seç
+4772	boşlu
+4773	sil
+4774	Önceki aya değiş
+4775	Örnek: %1$
+4776	ÖÖ veya ÖS'yi se
+4777	Üst Karakter
+4778	İletişim kutusu simge
+4779	İpta
+4780	İzin verilen aralığın dışınd
+4781	Şifreyi göst
+4782	Şununla payla�
+4783	%1$d سے زیادہ نئ
+4784	%1$s استعما
+4785	%1$s ب�
+4786	%1$s سال پر نیو�
+4787	%1$s م�
+4788	%1$s کو ہٹ
+4789	%1$s گھ�
+4790	%1$s – تاریخ
+4791	%2$d میں سے %1$d حروف د
+4792	%d نئی ا
+4793	%d نئی اط
+4794	%s کے ساتھ اش�
+4795	+999
+4796	AM یا PM منتخ
+4797	Alt+�
+4798	Ctrl+�
+4799	Function+�
+4800	Menu+�
+4801	Meta+�
+4802	Shift+�
+4803	Sym+�
+4804	آ
+4805	آ
+4806	اس کے ساتھ ا�
+4807	استفسار ج�
+4808	استفسار �
+4809	اوپر نیوی
+4810	اگلے مہینہ می�
+4811	ایک ایپ من
+4812	تاریخ
+4813	تاریخ آغاز - ت�
+4814	تاریخ آغا
+4815	تاریخ �
+4816	تاریخ من�
+4817	تلاش کا �
+4818	تلاش 
+4819	تلاش �
+4820	حد سے باہ
+4821	حروف کی تعداد کی حد %2$d �
+4822	خر�
+4823	دن کو منتخب کرنے کے ليے 
+4824	دنوں کا کا
+4825	ر�
+4826	رینج منت
+4827	سال کو منتخب کرنے کے ليے
+4828	سبھی د
+4829	سکی
+4830	صوتی 
+4831	غلط ر
+4832	غلط فا
+4833	قبل از 
+4834	متنی ان پٹ وضع �
+4835	مثال: %
+4836	محفوظ
+4837	مزید اخ
+4838	منتخب کر�
+4839	منسوخ
+4840	م�
+4841	منٹ منت�
+4842	موجودہ انت
+4843	نئی ا
+4844	نصف تک پ�
+4845	نیچے کی شیٹ 
+4846	نیچے کی شیٹ ک
+4847	وقت ان پٹ کے لیے ٹیکسٹ ان �
+4848	وقت ان پٹ کے لیے گھڑی و
+4849	وقت منت�
+4850	ٹھی�
+4851	ٹ�
+4852	ٹیکسٹ ص�
+4853	پاس ورڈ �
+4854	ڈائیلاگ �
+4855	ڈراپ ڈاؤن می
+4856	کیلنڈر ان پٹ وضع
+4857	گزشتہ ماہ میں
+4858	گھر کی طرف نی
+4859	گھسیٹنے �
+4860	گھسیٹنے کے ہینڈل کو �
+4861	گھ�
+4862	گھنٹہ من�
+4863	ہو �
+4864	%1$sক আ�
+4865	%2$dটাৰ ভিতৰত %1$d�
+4866	%2$dটাৰ ভিতৰত %1$dটা ব�
+4867	%sৰ জৰিয়ত
+4868	অধি�
+4869	�
+4870	�
+4871	আটাই
+4872	ইয়াৰ জৰি�
+4873	ওপৰ�
+4874	কণ্ঠধ্বন
+4875	কোনো এ�
+4876	গৃহ পৃ�
+4877	পাছৱৰ�
+4878	প্ৰশ্�
+4879	মিনিট
+4880	সংক�
+4881	সন
+4882	সন্�
+4883	সন্�
+4884	সন্ধা�
+4885	সন্ধান �
+4886	সম্�
+4887	সময়ৰ ইনপুটৰ 
+4888	সময়ৰ ইনপুটৰ বা�
+4889	%d nova obavještenj
+4890	%d novih obavještenj
+4891	%d novo obavještenj
+4892	Broj novih obavještenja: više od %1
+4893	Dijeli sa
+4894	Dodirnite da prebacite na odabir dana
+4895	Dodirnite da prebacite na odabir godine
+4896	Idi gore
+4897	Izvan opsega: %1$s
+4898	Kolona za dane: %1$s
+4899	Koristi: %1$s
+4900	Nevažeći opse
+4901	Novo obavještenj
+4902	Obriši upi
+4903	Odaberite aplikaciju
+4904	Odlazak na %1$s. godinu
+4905	Ograničenje broja znakova premašuje %1$d od %2
+4906	Prebacite u način rada kao sat za unos vremena
+4907	Prebacite u način unosa teksta za unos vremena
+4908	Prebacivanje na način unosa kalendar
+4909	Prebacivanje na način unosa tekst
+4910	Pretraži upi
+4911	Pretražite..
+4912	Prikaži padajući me
+4913	Promijeni na prethodni mjesec
+4914	Promijeni na sljedeći mjese
+4915	Proširivanje donje tabel
+4916	Proširivanje dopol
+4917	Ručica za prevlačenje je dvaput dodirnu
+4918	Suzi
+4919	Sužavanje donje tabel
+4920	Trenutni izbor: %1$s
+4921	Uredu
+4922	Vratite se na početnu stranic
+4923	ikona dijaloškog okvir
+4924	razmak
+4925	%1$s – datum ukonč
+4926	%1$s hodi
+4927	%d nová oznám
+4928	%d nové oznám
+4929	%d nového oznám
+4930	%d nových oznám
+4931	Aktuální výběr: 
+4932	Byl překročen povolený počet znaků (%1$d z�
+4933	Chcete-li zadat čas, přepněte na režim ho
+4934	Chcete-li zadat čas, přepněte na režim te
+4935	Další možno
+4936	Datum ukončen
+4937	Datum zahájen
+4938	Datum zahájení – 
+4939	Datum zahájení – datum ukon
+4940	Dotaz pro vyhledává
+4941	Dvakrát jste klepli na úchyt pro přeta�
+4942	Hlasové vyhledáv�
+4943	Hledat
+4944	Ikona dialogového okn
+4945	Klepnutím přepnete na výběr
+4946	Klepnutím přepnete na výběr 
+4947	Mimo rozsah: %1$s
+4948	Nové oznáme
+4949	Odeslat dotaz
+4950	Odstranit položku %1$
+4951	Použijte: %1$
+4952	Přejít na další m
+4953	Přejít na ploc
+4954	Přejít na předchozí m
+4955	Přejít na rok %1
+4956	Přejít naho
+4957	Přepnout na režim zadávání do kale
+4958	Přepnout na režim zadávání 
+4959	Příklad: %1
+4960	Rozbalit napů
+4961	Rozbalit spodní tabulk
+4962	Sbalit
+4963	Sbalit spodní tabulk
+4964	Sdílet 
+4965	Sdílet s aplikací
+4966	Sloupec dnů: %1$
+4967	Smazat dotaz
+4968	Uloži
+4969	VYP
+4970	Vyberte AM nebo PM
+4971	Vyberte datum
+4972	Vyberte hodinu
+4973	Vybrané datu
+4974	Vybrat aplikaci
+4975	Vyhledat�
+4976	Vymazat text
+4977	Více než %1$d nových ozná
+4978	ZAP
+4979	Zobrazit heslo
+4980	Zobrazit rozbalovací nabíd
+4981	Zobrazit vš
+4982	Zruši
+4983	Zvolte minuty
+4984	mezerní
+4985	Úchyt pro přetaž
+4986	%1$s horas
+4987	%1$s minuto
+4988	%1$s–Fecha de finalizaci
+4989	%d notificaciones nueva
+4990	%d notificación nue
+4991	A.M.
+4992	Borrar consulta
+4993	Borrar texto
+4994	Buscar�
+4995	Búsqueda por vo
+4996	Cambia al modo de introducción de texto para escribir la hora
+4997	Cambia al modo de reloj para escribir la hora.
+4998	Cambiar al mes anterior
+4999	Cambiar al mes siguiente
+5000	Cambiar al modo de introducción Calendari
+5001	Cambiar al modo de introducción Text
+5002	Caracteres introducidos: %1$d de %2$d
+5003	Compartir con
+5004	Compartir con %s
+5005	Consulta de búsqued
+5006	Controlador de arrastre tocado dos veces
+5007	Desplazarse hacia arriba
+5008	Desplegar hasta la mitad
+5009	Ejemplo: %1$s
+5010	El periodo no es válido
+5011	Enviar consulta
+5012	Espacio
+5013	Fecha
+5014	Fecha de finalizació
+5015	Fecha de inicio
+5016	Fecha de inicio–%1
+5017	Fecha de inicio–Fecha de finalizaci
+5018	Fecha seleccionada
+5019	Formato no válido
+5020	Fuera del periodo válido: %1$
+5021	Función�
+5022	Guardar
+5023	Hecho
+5024	Icono del cuadro de diálog
+5025	Intro
+5026	Ir a inicio
+5027	Ir al año %1$
+5028	Límite de caracteres superado (%1$d de %2$d
+5029	Mayús�
+5030	Menú�
+5031	Mostrar contraseñ
+5032	Mostrar la hoja inferior
+5033	Mostrar menú desplegabl
+5034	Más de %1$d notificaciones nuev
+5035	Más opcione
+5036	Notificación nuev
+5037	Ocultar
+5038	Ocultar la hoja inferior
+5039	P.M.
+5040	Pestañ
+5041	Retirar %1$s
+5042	Selecciona AM o PM
+5043	Selecciona un periodo
+5044	Selecciona una fecha
+5045	Seleccionar la hora
+5046	Seleccionar una aplicació
+5047	Suprimir
+5048	Toca para seleccionar un añ
+5049	Toca para seleccionar un dí
+5050	Usar: %1$s
+5051	%1$s klst.
+5052	%1$s mínút
+5053	%1$s – lokadag
+5054	%d ný tilkynnin
+5055	%d nýjar tilkynninga
+5056	Aðgerðarlykil
+5057	Breyta í fyrri mán
+5058	Breyta í næsta má
+5059	Dagsetning
+5060	Deila me�
+5061	Deila með %
+5062	Dragkl�
+5063	Dálkur með dögum: %
+5064	Dæmi: %1$
+5065	Fara heim
+5066	Fara upp
+5067	Fara í árið %
+5068	Fjarlægja %1$
+5069	Fleiri valkostir
+5070	Flipi
+5071	Gluggaták
+5072	Hreinsa fyrirspurn
+5073	Hreinsa texta
+5074	Hætta vi
+5075	Innslegnir stafir %1$d af %2$d
+5076	KVEIKT
+5077	Klukkustund
+5078	Leit
+5079	Leitarfyrirspurn
+5080	Leita�
+5081	Lokadagur
+5082	Loki�
+5083	Minnka
+5084	Minnka blað neð
+5085	Mínú
+5086	Nota: %1$s
+5087	Núverandi val: %1$
+5088	Ný tilkynnin
+5089	Raddleit
+5090	SLÖKK
+5091	Senda fyrirspurn
+5092	Sjá all
+5093	Skipta yfir í innfærsluaðferð fyrir dag
+5094	Skipta yfir í innfærsluaðferð fyrir t
+5095	Skipta yfir í klukkustillingu til að færa inn t�
+5096	Skipta yfir í textastillingu til að færa inn t�
+5097	Stækka blað ne�
+5098	Stækka til hál
+5099	Sýna aðgangso
+5100	Sýna fellivalmyn
+5101	Upphafsdagur
+5102	Upphafsdagur – %1
+5103	Upphafsdagur – lokadag
+5104	Utan sviðs: %1$
+5105	Valin dagsetning
+5106	Valmynd+
+5107	Veldu dagsetningu
+5108	Veldu forrit
+5109	Veldu mínút
+5110	Veldu tím
+5111	Veldu tímabi
+5112	Velja f.h. eða e.h
+5113	Velja tím
+5114	Villa
+5115	Vista
+5116	Yfir %1$d nýjar tilkynninga
+5117	Yfir hámarksstafafjölda, %1$d af %2
+5118	bilsl�
+5119	e.h.
+5120	eyð
+5121	f.h.
+5122	klukkan %1$s
+5123	Í lag
+5124	Ógilt sni�
+5125	Ógilt svi�
+5126	Ýtt tvisvar á dragk
+5127	Ýttu til að skipta yfir í að velja
+5128	Ýttu til að skipta yfir í að velj
+5129	�
+5130	%1$s minit
+5131	%1$s – Tarikh tam
+5132	%d pemberitahuan baharu
+5133	Aksara dimasukkan %1$d daripada %2$d
+5134	Alih keluar %1$s
+5135	Beralih ke mod input teks untuk input masa.
+5136	Beralih ke mod jam untuk input masa.
+5137	Beralih kepada mod input kalendar
+5138	Beralih kepada mod input teks
+5139	Cari
+5140	Carian suara
+5141	Cari�
+5142	Di luar julat: %1$s
+5143	Format tidak sah.
+5144	Fungsi+
+5145	HIDUP
+5146	Julat tidak sah.
+5147	Kembangkan helaian bawah
+5148	Ketik untuk beralih kepada pemilihan hari
+5149	Ketik untuk beralih kepada pemilihan tahun
+5150	Kongsi dengan
+5151	Kongsi dengan %s
+5152	Kosongkan pertanyaan
+5153	Kosongkan teks
+5154	Kuncupkan helaian bawah
+5155	Lagi pilihan
+5156	Lajur hari: %1$s
+5157	Lebih daripada %1$d pemberitahuan baharu
+5158	MATI
+5159	Melebihi had aksara %1$d daripada %2$d
+5160	Minit
+5161	Navigasi ke atas
+5162	Navigasi ke tahun %1$s
+5163	Navigasi laman utama
+5164	P/M
+5165	PG
+5166	Pemberitahuan baharu
+5167	Pemegang seret
+5168	Pemegang seret diketik dua kali
+5169	Pertanyaan carian
+5170	Pilih Julat
+5171	Pilih Tarikh
+5172	Pilih apl
+5173	Pilih masa
+5174	Pilih minit
+5175	Pilihan semasa: %1$s
+5176	Ralat
+5177	Runtuhkan
+5178	Serah pertanyaan
+5179	Tarikh
+5180	Tarikh dipilih
+5181	Tarikh mula
+5182	Tarikh mula – %1
+5183	Tarikh mula – Tarikh tam
+5184	Tarikh tamat
+5185	Tukar kepada bulan sebelumnya
+5186	Tukar kepada bulan seterusnya
+5187	Tunjukkan kata laluan
+5188	Tunjukkan menu lungsur
+5189	ruang
+5190	%1$s minutit
+5191	%1$s tundi
+5192	%1$s – lõppkuup
+5193	%d uus märguann
+5194	%d uut märguanne
+5195	Ahendamine
+5196	Aja valimine
+5197	Aktiveerige kellaaja sisestamiseks kellarežiim
+5198	Aktiveerige kellaaja sisestamiseks tekstisisestusrežiim
+5199	Alguskuupäe
+5200	Alguskuupäev – %
+5201	Alguskuupäev – lõppkuu
+5202	Alumise lehe ahendamine
+5203	Alumise lehe laiendamine
+5204	Dialoogi ikoon
+5205	Funktsiooniklahv +
+5206	Häälotsi
+5207	Jaga:
+5208	Jagamine rakendusega %s
+5209	Kasutage: %1$s
+5210	Kell %1$s
+5211	Kustuta tekst
+5212	Kuupäe
+5213	Kuva kõi
+5214	Kuva rippmenü
+5215	Laiendamine poolenisti
+5216	Liigu avalehele
+5217	Liigu üle
+5218	Lohistamispide
+5219	Lohistamispidet topeltpuudutati
+5220	Lõppkuupä
+5221	Lülitu kalendrisisestusrežiimi
+5222	Lülitu tekstisisestusrežiimi
+5223	Menüü
+5224	Mine aastasse %1$s
+5225	Minutite valimine
+5226	Näide: %1$
+5227	Otsige �
+5228	Otsing
+5229	Otsingupärin
+5230	Parooli kuvamine
+5231	Praegune valik: %1$s
+5232	Puudutage, et lülituda aasta valimisel
+5233	Puudutage, et lülituda päeva valimise
+5234	Päevade veerg: %1$
+5235	Päringu esitamin
+5236	Päringu tühistami
+5237	Rohkem kui %1$d uut märguanne
+5238	Rohkem valikuid
+5239	SEES
+5240	Salvesta
+5241	Sisestatud tähemärgid: %1$d/%2
+5242	Sobimatu vahemik.
+5243	Sobimatu vorming.
+5244	Tunnid
+5245	Tähemärgipiirang on ületatud: %1$d/%
+5246	Tõstuklahv 
+5247	Tühist
+5248	Uus märguann
+5249	Vaheleht
+5250	Vahemikust väljas: %1$
+5251	Vaheta eelmisele kuule
+5252	Vaheta järgmisele kuul
+5253	Valige AM või P
+5254	Valige kuupäe
+5255	Valige rakendus
+5256	Valige tund
+5257	Valige vahemik
+5258	Valitud kuupäe
+5259	Viga
+5260	VÄLJA
+5261	kustuta
+5262	sisestusklahv
+5263	tühi
+5264	Üksuse %1$s eemaldamin
+5265	%1$d caratteri inserirti su %2$d
+5266	%1$s - Data di fine
+5267	%1$s in punto
+5268	%1$s minuti
+5269	%d nuova notifica
+5270	%d nuove notifiche
+5271	ALT +
+5272	Altre opzioni
+5273	Annulla
+5274	CANC
+5275	CTRL +
+5276	Cancella query
+5277	Cancella testo
+5278	Colonna dei giorni: %1$s
+5279	Comprimi
+5280	Comprimi riquadro inferiore
+5281	Condividi con
+5282	Condividi tramite %s
+5283	Data di fine
+5284	Data di inizio
+5285	Data di inizio - %1$s
+5286	Data di inizio - Data di fine
+5287	Data selezionata
+5288	Doppio tocco su punto di trascinamento
+5289	Errore
+5290	Esempio: %1$s
+5291	Espandi a met�
+5292	Espandi riquadro inferiore
+5293	FUNZIONE +
+5294	Fine
+5295	Formato non valido.
+5296	INVIO
+5297	Icona della finestra di dialogo
+5298	Intervallo non valido.
+5299	Invia query
+5300	MAIUSC +
+5301	MENU +
+5302	META +
+5303	Mostra il menu a discesa
+5304	Mostra password
+5305	Mostra tutto
+5306	Non compresa nell'intervallo: %1$s
+5307	Nuova notifica
+5308	Passa al mese precedente
+5309	Passa al mese successivo
+5310	Passa alla modalità di immissione Calendari
+5311	Passa alla modalità di immissione Test
+5312	Passa alla modalità di immissione testo per inserire l'ora
+5313	Passa alla modalità orologio per inserire l'ora
+5314	Più di %1$d nuove notifich
+5315	Portami a casa
+5316	Punto di trascinamento
+5317	Query di ricerca
+5318	Ricerca vocale
+5319	Rimuovi %1$s
+5320	SPAZIO
+5321	SYM +
+5322	Salva
+5323	Scelta di un'app
+5324	Scheda
+5325	Seleziona AM o PM
+5326	Seleziona data
+5327	Seleziona i minuti
+5328	Seleziona intervallo
+5329	Seleziona l'ora
+5330	Selezione attuale: %1$s
+5331	Sono presenti %2$d caratteri in più rispetto al limite di %1$
+5332	Tocca per passare alla selezione di un anno
+5333	Tocca per passare alla selezione di un giorno
+5334	Torna indietro
+5335	Usa: %1$s
+5336	Vai all'anno %1$s
+5337	am
+5338	pm
+5339	%1$s min.
+5340	%1$s val.
+5341	%1$s–pabaigos da
+5342	%d naujas pranešima
+5343	%d nauji pranešima
+5344	%d naujo pranešim
+5345	%d naujų praneši
+5346	Atlikta
+5347	Atšaukt
+5348	Bendrinti naudojant programą „
+5349	Bendrinti su
+5350	Dabartinis pasirinkimas: %1$s
+5351	Daugiau parinkči
+5352	Dialogo lango piktograma
+5353	Dienų stulpelis: %1$
+5354	Eiti į %1$s metu
+5355	Eiti į pagrindinį pusla
+5356	Gerai
+5357	Ieškot
+5358	Ieškoti
+5359	IŠJUNGT
+5360	Išsaugot
+5361	Išskleisti apatinį la
+5362	Išskleisti iki pus�
+5363	Išvalyti tekst
+5364	Išvalyti užklau
+5365	Klaida
+5366	Laiko įvestį pateikti perjungus į laikrodžio re�
+5367	Laiko įvestį pateikti perjungus į teksto įvesties re�
+5368	Minut�
+5369	Naršyti aukšt
+5370	Naudoti: %1$s
+5371	Naujas pranešima
+5372	Naujų pranešimų: daugiau nei %
+5373	Nepatenka į diapazoną: %1
+5374	Netinkamas diapazonas.
+5375	Netinkamas formatas.
+5376	Pabaigos data
+5377	Paieška bals
+5378	Paieškos užklau
+5379	Pakeisti į ankstesnį mėn
+5380	Pakeisti į kitą mėn
+5381	Palieskite, kad perjungtumėte į dienos pasirinki
+5382	Palieskite, kad perjungtumėte į metų pasirink
+5383	Pasirinkite dat�
+5384	Pasirinkite diapazon�
+5385	Pasirinkite laik�
+5386	Pasirinkite minutes
+5387	Pasirinkite program�
+5388	Pasirinkite valand�
+5389	Pasirinkite „iki pietų“ arba „po
+5390	Pasirinkta data
+5391	Pateikti užklaus
+5392	Pavyzdys: %1$s
+5393	Pašalinti %1$
+5394	Perjungti į kalendoriaus įvesties rež
+5395	Perjungti į teksto įvesties rež
+5396	Pradžios dat
+5397	Pradžios data–%
+5398	Pradžios data–pabaigos d
+5399	Rodyti išskleidžiamąjį m
+5400	Rodyti slaptažod
+5401	Skirtukas
+5402	Sutraukti
+5403	Sutraukti apatinį lap
+5404	Valanda
+5405	Vilkimo rankenėl
+5406	Vilkimo rankenėlė dukart palies
+5407	Viršytas simbolių skaičius: %1$d iš 
+5408	ĮJUNGT
+5409	Įvesta simbolių: %1$d iš %
+5410	Žr. visk
+5411	„Alt�
+5412	„Ctrl�
+5413	„Function�
+5414	„Menu�
+5415	„Meta�
+5416	„Shift�
+5417	„Sym�
+5418	„delet
+5419	„ente
+5420	„spac
+5421	ATIVADO
+5422	Compartilhar com
+5423	Compartilhar com %s
+5424	Concluíd
+5425	Consulta de pesquisa
+5426	DESATIVADO
+5427	Limpar consulta
+5428	Mais opçõ
+5429	Navegar para a página inicia
+5430	Navegar para cima
+5431	Pesquisa por voz
+5432	Pesquisar
+5433	Pesquisar�
+5434	Recolher
+5435	Selecionar um app
+5436	Ver tudo
+5437	espaç
+5438	%1$d jakinarazpen berri baino gehiago
+5439	%1$d/%2$d karaktere idatzi dira
+5440	%1$s – Amaiera-da
+5441	%1$s(r)ak dira
+5442	%1$s minut
+5443	%1$s ord
+5444	%d jakinarazpen berri
+5445	AKTIBATU
+5446	Adibidea: %1$s
+5447	Ados
+5448	Ahozko bilaketa
+5449	Aldatu aurreko hilabetera
+5450	Aldatu egutegiaren idazketa-metodora
+5451	Aldatu erloju modura ordua zehazteko.
+5452	Aldatu hurrengo hilabetera
+5453	Aldatu testua idazteko modura
+5454	Amaiera-data
+5455	Arrastatzeko kontrol-puntua
+5456	Aukera gehiago
+5457	Aukeratu aplikazio bat
+5458	Bidali kontsulta
+5459	Bilaketa-kontsulta
+5460	Bilatu
+5461	Bilatu�
+5462	Birritan sakatu da arrastatzeko kontrol-puntua
+5463	DESAKTIBATU
+5464	Eginda
+5465	Egunen zutabea:%1$s
+5466	Erabili: %1$s
+5467	Erakutsi goitibeherako menua
+5468	Erakutsi pasahitza
+5469	Errorea
+5470	Fitxa
+5471	Formatuak ez du balio.
+5472	Funtzioa +
+5473	Garbitu kontsulta
+5474	Garbitu testua
+5475	Gorde
+5476	Hasiera-data
+5477	Hasiera-data - Amaiera-data
+5478	Hasiera-data – %1
+5479	Hautatu AM edo PM
+5480	Hautatu barrutia
+5481	Hautatu data
+5482	Hautatu minutuak
+5483	Hautatu ordua
+5484	Hautatutako data
+5485	Ikusi guztiak
+5486	Jakinarazpen berria
+5487	Joan %1$s. urtera
+5488	Joan gora
+5489	Joan orri nagusira
+5490	Karaktere-muga gainditu da: %1$d/%2$d
+5491	Kendu %1$s
+5492	Ktrl +
+5493	Leihoko ikonoa
+5494	Maius +
+5495	Menua +
+5496	Minutua
+5497	Onartutako barrutitik kanpo: %1$s
+5498	Oraingo hautapena: %1$s
+5499	Ordua
+5500	Ordua idazteko, aldatu testua idazteko metodora.
+5501	Partekatu %s aplikazioarekin
+5502	Partekatu honekin
+5503	Sakatu eguna hautatzeko modura aldatzeko
+5504	Sakatu urtea hautatzeko modura aldatzeko
+5505	Tarteak ez du balio.
+5506	Tolestu
+5507	Tolestu pantailaren behealdean ainguratutako orria
+5508	Utzi
+5509	Zabaldu erdiraino
+5510	Zabaldu pantailaren behealdean ainguratutako orria
+5511	e
+5512	ezabatu
+5513	sartu
+5514	u
+5515	zuriunea
+5516	%1$dથી વધુ ન�
+5517	%1$s ક�
+5518	%1$s કાઢ
+5519	%1$s મ�
+5520	%1$s વાગ
+5521	%1$s – સમાપ�
+5522	%1$sના વર્ષ �
+5523	%2$dમાંથી %1$d અક�
+5524	%2$dમાંથી %1$dની વર્�
+5525	%d નવા ન�
+5526	%d નવું �
+5527	%sની સા�
+5528	AM અથવા PM 
+5529	અડધે સુ
+5530	અમાન્
+5531	અમાન�
+5532	આ શ્રેણી�
+5533	આગલા મ�
+5534	આની સા
+5535	આનો ઉપય
+5536	ઉદાહ
+5537	ઉપર ન�
+5538	ઍપ્લિક
+5539	ઑબ્જેક્ટ ખેંચવા�
+5540	ઑબ્જેક્ટ 
+5541	ઓ
+5542	ક�
+5543	કૅલેન્ડર ઇન
+5544	ક્વેર�
+5545	ક્વે�
+5546	ઘરનો ર
+5547	ચ�
+5548	ટ
+5549	ટેક્સ્ટ ઇન�
+5550	ટેક્સ
+5551	ડ્રૉપડ�
+5552	ત�
+5553	તારી�
+5554	થઈ 
+5555	દિવસની પસંદગી �
+5556	દિવસોન
+5557	નવું �
+5558	પસંદ ક
+5559	પાછલા મ
+5560	પાસવ�
+5561	બ
+5562	બધ�
+5563	બોટમ શ�
+5564	બોટમ શ�
+5565	ભ
+5566	મ�
+5567	મિનિ�
+5568	રદ
+5569	વધુ �
+5570	વર્ષની પસંદગી �
+5571	વૉ�
+5572	શરૂ કર
+5573	શરૂ કરવા�
+5574	શરૂ કરવાની ત�
+5575	શોધ 
+5576	શ�
+5577	શ�
+5578	શ્રેણ
+5579	સંક�
+5580	સંવા�
+5581	સમય દાખલ કરવા મા�
+5582	સમય દાખલ કરવા માટે �
+5583	સમય �
+5584	સમાપ્
+5585	સ�
+5586	હાલની �
+5587	%1$s perc
+5588	%1$s ór
+5589	%1$s – Befejezés dá
+5590	%d új értesí
+5591	Az alsó lap kibontá
+5592	Az alsó lap összecsuk�
+5593	Az összes megtekinté
+5594	BE
+5595	Befejezés dátu
+5596	Begépelt karakterszám: %2$d/%1
+5597	Csúszk
+5598	Duplán koppintott a csúszk�
+5599	Eltávolítás (%1
+5600	Fel
+5601	H
+5602	Hangalapú keres�
+5603	Használja ezt: %1$
+5604	Hiba
+5605	Időbevitelhez váltson szövegbeviteli mó
+5606	Időbevitelhez váltson óramó
+5607	Időpont kiválaszt�
+5608	Jelenleg kiválasztva: %1$
+5609	Jelszó megjelenít�
+5610	KI
+5611	Keresé
+5612	Keresési lekérdez
+5613	Keresés
+5614	Kezdés dátu
+5615	Kezdés dátuma – 
+5616	Kezdés dátuma – Befejezés d
+5617	Kibontás fél
+5618	Kiválasztott dát
+5619	Koppintson a nap kiválasztásá
+5620	Koppintson az év kiválasztás�
+5621	Kés
+5622	Lap
+5623	Legördülő menü megjelen�
+5624	Lekérdezés küld
+5625	Lekérdezés törl
+5626	Maximális karakterszám túllépve: %2$d/
+5627	Megosztás a következő alkalmazással
+5628	Megosztás a következőv
+5629	Menté
+5630	Mégs
+5631	N
+5632	Napok oszlopa: %1$s
+5633	Perc
+5634	Perc kiválasztá
+5635	Párbeszédpanel ikon
+5636	Példa: %1$
+5637	Szók�
+5638	Szöveg törl�
+5639	Tartományon kívül: %
+5640	További lehetősé
+5641	Több mint %1$d új értes�
+5642	Ugrás a főoldal
+5643	Ugrás ehhez az évhez: %1
+5644	Válassza ki, hogy délelőtt vagy dél
+5645	Válasszon alkalmazá
+5646	Válasszon dátum
+5647	Válasszon dátumtartomá
+5648	Váltás a következő hó
+5649	Váltás az előző hó
+5650	Váltás naptárbeviteli m�
+5651	Váltás szövegbeviteli m�
+5652	de.
+5653	du.
+5654	�
+5655	Érvénytelen formát
+5656	Érvénytelen tartomá
+5657	Ór
+5658	Óra kiválaszt�
+5659	Összecsuk�
+5660	Új értesí
+5661	%1$s ми
+5662	%1$s ч
+5663	%1$s – дата о
+5664	%d нового ув�
+5665	%d новое уве
+5666	%d новых уве
+5667	%d новых уве
+5668	В�
+5669	ВЫ
+5670	Введено символо�
+5671	Введите
+5672	Вв
+5673	Вне диапаз
+5674	Выберите AM (до полудня) ил�
+5675	Выбери�
+5676	Выберите ди
+5677	Выберит�
+5678	Выберите п
+5679	Выбери
+5680	Выбор в
+5681	Выбранн
+5682	Выбранный эл
+5683	Голосов�
+5684	Дата н
+5685	Дата нача�
+5686	Дата начала – �
+5687	Дата ок�
+5688	Двойное нажатие на м
+5689	Е�
+5690	Значок диало
+5691	Использу�
+5692	Маркер пе�
+5693	Мин
+5694	Нажмите, чтобы пере�
+5695	Нажмите, чтобы пере
+5696	Недействител
+5697	Недопустимы
+5698	Новое уве
+5699	Новых уведомлен
+5700	Отм
+5701	Отправит
+5702	Очистить тек
+5703	Оши
+5704	Перейти в режим
+5705	Перейти в режи�
+5706	Перейт�
+5707	Перейти к %
+5708	Перейти к преды
+5709	Перейти к след�
+5710	Перейти на гл
+5711	Поделиться
+5712	Поделиться с
+5713	По�
+5714	Поисковы
+5715	Показа
+5716	Показат�
+5717	Показать раскр�
+5718	Превышено ограничение на количе
+5719	Про
+5720	Развернуть 
+5721	Развернуть н
+5722	Свер
+5723	Свернуть ни
+5724	Сохр�
+5725	Столбец со дням�
+5726	Удалить
+5727	Удалить
+5728	Чтобы ввести время, перейди�
+5729	Чтобы ввести время, пере
+5730	%1$s ezimpondweni
+5731	%1$s – Idethi yokuphe
+5732	%d izaziso ezintsha
+5733	Bonisa imenyu yokudonsela phansi
+5734	Bonisa iphasiwedi
+5735	Buka konke
+5736	Ezinye izinketho
+5737	Goqa
+5738	Goqa ishidi eliphansi
+5739	Hudula isibambi
+5740	Hudula isibambi esithephwe kabili
+5741	Ibanga elingavumelekile.
+5742	Idethi
+5743	Idethi yokuphela
+5744	Idethi yokuqala
+5745	Idethi yokuqala – %1
+5746	Idethi yokuqala – Idethi yokuphe
+5747	Ifomethi engavumelekile.
+5748	Ihora
+5749	Ikholomu yezinsuku: %1$s
+5750	Ikude kubanga: %1$s
+5751	Imenyu+
+5752	Iminithi
+5753	Iphutha
+5754	Isaziso esisha
+5755	Isibonelo: %1$s
+5756	Isithonjana sebhokisi
+5757	Ithebhu
+5758	Izaziso ezintsha ezingaphezu kokungu-%1$d
+5759	Izinhlamvu ezifakiwe ezingu-%1$d zokungu-%2$d
+5760	KULUNGILE
+5761	Khansela
+5762	Khetha Ibanga
+5763	Khetha Idethi
+5764	Khetha amaminithi
+5765	Khetha idethi
+5766	Khetha ihora
+5767	Khetha insiza
+5768	Khetha isikhathi
+5769	Khetha u-AM noma u-PM
+5770	Kwenziwe
+5771	Londoloza
+5772	Nweba ishidi eliphansi
+5773	Nweba phakathi
+5774	Sebenzisa: %1$s
+5775	Sesha
+5776	Sesha umbuzo
+5777	Sesha�
+5778	Shintshela kumodi yewashi ngokufakwa kwesikhathi.
+5779	Shintshela kumodi yokufaka umbhalo ngokufaka isikhathi.
+5780	Shintshela kunyanga edlule
+5781	Shintshela kunyanga elandelayo
+5782	Shintshela kwimodi yokufaka yekhalenda
+5783	Shintshela kwimodi yokufaka yombhalo
+5784	Sula inkinga
+5785	Sula umbhalo
+5786	Susa i-%1$s
+5787	Thepha ukuze ushintshe ekukhetheni usuku
+5788	Thepha ukuze ushintshele ekukhetheni unyaka
+5789	Thumela umbuzo
+5790	Ukukhetha kwamanje: %1$s
+5791	Ukusesha ngezwi
+5792	Umkhawulo wezinhlamvu udlule u-%1$d kokungu-%2$d
+5793	VALA
+5794	VULA
+5795	Yabelana ne-%s
+5796	Yabelana no
+5797	Zulazulela ekhaya
+5798	Zulazulela phezulu
+5799	Zulela onyakeni %1$s
+5800	amahora angu-%1$s
+5801	amaminithi angu-%1$s
+5802	%1$s stunda
+5803	%1$s–beigu datu
+5804	%d jauni paziņoju
+5805	%d jauns paziņoju
+5806	%d jaunu paziņoju
+5807	Alternēšanas taustiņ
+5808	Atcelt
+5809	Atlasiet datumu
+5810	Atlasiet diapazonu
+5811	Atlasiet minūtes
+5812	Atlasiet stundu
+5813	Atlasiet “AM” (priekšpusdienā) vai “PM” (pē
+5814	Atlasītais datum
+5815	Beigu datums
+5816	Cilne
+5817	Citas opcijas
+5818	Datums
+5819	Dialoglodziņa ikon
+5820	Dienu sleja: %1$s
+5821	Funkcijas taustiņš
+5822	Gatavs
+5823	IESLĒG
+5824	IZSLĒG
+5825	Iesniegt vaicājum
+5826	Ievadītās rakstzīmes: %1$d no�
+5827	Izmantojiet: %1$s
+5828	Izvēlieties lietotn
+5829	Izvērst ekrāna apakšdaļas 
+5830	Izvērst līdz pus
+5831	Jauns paziņojum
+5832	Kopīgot ar lietojumprogrammu %
+5833	Kopīgot ar
+5834	Kļū
+5835	Labi
+5836	Lai ievadītu laiku, ieslēdziet pulksteņa rež
+5837	Lai ievadītu laiku, ieslēdziet teksta ievades rež�
+5838	Laika atlasīša
+5839	Meklējiet
+5840	Meklē
+5841	Meklēt ar bals
+5842	Meklēšanas vaicāj
+5843	Meta taustiņš
+5844	Minūt
+5845	Nederīgs diapazons
+5846	Nederīgs formāt
+5847	Notīrīt teks
+5848	Notīrīt vaicāj
+5849	Noņemt: %1$
+5850	Pašreizējā atlase: %
+5851	Piemērs: %1$
+5852	Pieskarties, lai pārslēgtos uz dienas atlasī�
+5853	Pieskarties, lai pārslēgtos uz gada atlasī�
+5854	Poga Izvēlne�
+5855	Pāriet uz iepriekšējo mē
+5856	Pāriet uz nākamo mēn
+5857	Pāriet uz šo gadu: %1
+5858	Pārslēgties uz kalendāra ievades re�
+5859	Pārslēgties uz teksta ievades rež
+5860	Pārslēgšanas tausti�
+5861	Pārsniegts rakstzīmju skaita ierobežojums (%1$d no 
+5862	Pārvietoties uz aug�
+5863	Pārvietoties uz sākuma ekr�
+5864	Rādīt nolaižamo izv�
+5865	Rādīt paro
+5866	Saglabā
+5867	Sakļau
+5868	Sakļaut ekrāna apakšdaļas 
+5869	Simbolu taustiņš
+5870	Skatīt vis
+5871	Stunda
+5872	Sākuma datum
+5873	Sākuma datums–%
+5874	Sākuma datums–beigu dat
+5875	Tika veikts dubultskāriens uz vilkšanas tu
+5876	Vadīšanas taustiņ
+5877	Vairāk nekā %1$d jauni paziņo
+5878	Vilkšanas turi
+5879	atstarpes taustiņ
+5880	dzēšanas tausti
+5881	ievadīšanas tausti
+5882	plkst. %1$
+5883	Ārpus diapazona: %1$
+5884	%1$d av %2$d tecken har angetts
+5885	%1$s minuter
+5886	%1$s timmar
+5887	%1$s–slutdat
+5888	%d ny avisering
+5889	%d nya aviseringar
+5890	Aktuellt val: %1$s
+5891	Alt +
+5892	Ange timme
+5893	Använd %1$
+5894	Byt till att välja en dag genom att tryck
+5895	Byt till att välja ett år genom att tryc
+5896	Byt till kalender som inmatningsläg
+5897	Byt till klockläget och ange tid
+5898	Byt till text som inmatningsläg
+5899	Byt till textinmatningsläget och ange tid
+5900	Ctrl +
+5901	Dela med
+5902	Dela med %s
+5903	Dialogikon
+5904	Du tryckte snabbt två gånger på handta
+5905	EM
+5906	Exempel: %1$s
+5907	FM
+5908	Fler alternativ
+5909	Fler än %1$d nya aviseringa
+5910	Flik
+5911	Funktion +
+5912	Handtag
+5913	Klar
+5914	Klockan %1$s
+5915	Kolumn med dagar: %1$s
+5916	Komprimera
+5917	Komprimera arket på nedre delen av skärm
+5918	Meny +
+5919	Meta +
+5920	Navigera hem
+5921	Navigera till år %1$
+5922	Navigera uppå
+5923	Ny avisering
+5924	Ogiltigt format.
+5925	Ogiltigt intervall.
+5926	Rensa text
+5927	Röstsökni
+5928	Skicka fråg
+5929	Skift +
+5930	Slutdatum
+5931	Spara
+5932	Startdatum–%1
+5933	Startdatum–slutdat
+5934	Symbol +
+5935	Sö
+5936	Sök 
+5937	Sökfrå
+5938	Ta bort (%1$s)
+5939	Ta bort fråga
+5940	Teckengränsen har överskridits: %1$d av %2
+5941	Timme
+5942	Utanför intervallet: %1$
+5943	Utöka arket på nedre delen av skär
+5944	Utöka till hälft
+5945	Valt datum
+5946	Visa alla
+5947	Visa lösenor
+5948	Visa rullgardinsmenyn
+5949	Välj datu
+5950	Välj en ap
+5951	Välj interval
+5952	Välj mellan FM och E
+5953	Välj minute
+5954	Välj ti
+5955	blanksteg
+5956	retur
+5957	Ändra till föregående m�
+5958	Ändra till nästa må
+5959	%1$s דק
+5960	%1$s שע
+5961	%1$s – תארי
+5962	%d התראות
+5963	אי�
+5964	בוצעה הקשה כפולה על נ�
+5965	בחירת א�
+5966	בחר �
+5967	בחר 
+5968	בי�
+5969	דוגמה:
+5970	ד�
+5971	הבחירה הנו�
+5972	הוזנו %1$d תווים
+5973	החלפה לשיטת �
+5974	החלפה לשיטת �
+5975	הסרה ש�
+5976	העבר למצב קלט טקסט 
+5977	העבר למצב שעון ל�
+5978	הצגת 
+5979	הצגת התפר
+5980	הצגת �
+5981	הרחבה ע�
+5982	הרחבת הגיל�
+5983	השעה 
+5984	התאריך
+5985	התראה
+5986	התראה חדשה
+5987	�
+5988	חי�
+5989	חיפוש
+5990	חיפ
+5991	טווח לא
+5992	�
+5993	יותר מ-%1$d התר�
+5994	יש לבחור ב-AM
+5995	יש לבחו
+5996	יש לבחו�
+5997	יש להקיש כדי להח�
+5998	יש להקיש כדי להח�
+5999	יש להשתמש בפ
+6000	כב
+6001	כי�
+6002	כיווץ הגיל�
+6003	מגבלת התווים חורגת 
+6004	מו�
+6005	מחוץ לטו�
+6006	מח�
+6007	מחיקת 
+6008	מחיקת ה
+6009	מעבר לח�
+6010	מעבר לחו�
+6011	מקש 
+6012	ניווט ל�
+6013	ניווט 
+6014	ניווט לש
+6015	נקודת אחי�
+6016	סי
+6017	סמל לתיב�
+6018	עוד אפ�
+6019	עמודה של י�
+6020	פורמט ל�
+6021	רו
+6022	�
+6023	שאילתת
+6024	שג�
+6025	שיתו
+6026	שיתוף 
+6027	שליחת �
+6028	שמ�
+6029	ש�
+6030	תא�
+6031	תאריך 
+6032	תאריך התחלה - 
+6033	תאריך התח�
+6034	תאריך
+6035	תפר
+6036	%1$s – Tarehe ya mwis
+6037	Aikoni ya Kidirisha
+6038	Aikoni ya buruta
+6039	Aikoni ya buruta imeguswa mara mbili
+6040	Angalia zote
+6041	Arifa %d mpya
+6042	Arifa mpya
+6043	Badilisha iwe katika hali ya maandishi wakati wa kuweka muda.
+6044	Badilisha umbo liwe la saa ya mishale wakati wa kuweka muda.
+6045	Chagua AM au PM
+6046	Chagua Kipindi cha Tarehe
+6047	Chagua Tarehe
+6048	Chagua dakika
+6049	Chagua programu
+6050	Chagua saa
+6051	Chagua wakati
+6052	Chaguo zaidi
+6053	Dakika %1$s
+6054	Futa hoja
+6055	Futa maandishi
+6056	Ghairi
+6057	Gusa ili uende kwenye sehemu ya kuchagua mwaka
+6058	Gusa ili uende kwenye sehemu ya kuchagua siku
+6059	Hifadhi
+6060	Hitilafu
+6061	Hoja ya utafutaji
+6062	IMEWASHWA
+6063	IMEZIMWA
+6064	Kichupo
+6065	Kipindi si sahihi.
+6066	Kunja
+6067	Kunja safu ya chini
+6068	Kutafuta kwa kutamka
+6069	Mfano: %1$s
+6070	Muundo si sahihi
+6071	Nenda kwenye mwezi unaofuata
+6072	Nenda mwanzo
+6073	Nimemaliza
+6074	Nje ya kipindi: %1$s
+6075	Ondoa %1$s
+6076	Onyesha menyu kunjuzi
+6077	Onyesha nenosiri
+6078	Panua nusu
+6079	Panua safu ya chini
+6080	Rudi kwenye mwezi uliotangulia
+6081	Saa
+6082	Saa %1$s
+6083	Saa %1$s kamili
+6084	Safu wima ya siku: %1$s
+6085	Sawa
+6086	Shiriki na
+6087	Shiriki ukitumia %s
+6088	Sogeza juu
+6089	Sogeza kwenye mwaka wa %1$s
+6090	Tafuta
+6091	Tafuta�
+6092	Tarehe
+6093	Tarehe uliyochagua
+6094	Tarehe ya kuanza
+6095	Tarehe ya kuanza – %1
+6096	Tarehe ya kuanza – Tarehe ya mwis
+6097	Tarehe ya mwisho
+6098	Tumia programu ya kuingiza data kwenye kalenda
+6099	Tumia programu ya kuingiza data ya maandishi
+6100	Tumia: %1$s
+6101	Umepitisha idadi ya juu ya herufi %1$d kati ya %2$d
+6102	Umeweka herufi %1$d kati ya %2$d
+6103	Uteuzi wa sasa: %1$s
+6104	Wasilisha hoja
+6105	Zaidi ya arifa %1$d mpya
+6106	%1$s ժ�
+6107	%1$s րո
+6108	%1$s – Ավարտի 
+6109	%d նոր ծան
+6110	ԱՆՋ�
+6111	Ամս�
+6112	Այլ ընտ�
+6113	Անցնել %1$s 
+6114	Անցնել գլ
+6115	Անցնել հա�
+6116	Անցնել նա�
+6117	Անցնե�
+6118	Անցնել տեքստի մու�
+6119	Անցնել օրացույցի մ
+6120	Ավարտի ա
+6121	Ավելի քան %1$d նո�
+6122	Եղ
+6123	Երկխոսության պատ
+6124	Ընդգրկույթից �
+6125	Ընդգրկույթն
+6126	Ընտրել AM 
+6127	Ընտրե�
+6128	Ընտրել հ
+6129	Ընտրեք ա
+6130	Ընտրեք ըն�
+6131	Ընտրեք
+6132	Ընտրված �
+6133	Ժ�
+6134	Ժամանակի ը�
+6135	Ժամը %1
+6136	Ժամը մուտքագրելու համար մի�
+6137	Ժամը մուտքագրելու համար միացրե�
+6138	Ծա�
+6139	Ծալել ներք
+6140	Ծավալել կ
+6141	Ծավալել ներ
+6142	Կիսվել %s հավել�
+6143	Կիս�
+6144	Կրկնակի հպում տե�
+6145	Հեռացնե�
+6146	Հպեք՝ տարեթվի ընտութ�
+6147	Հպեք՝ օրվա ընտությա
+6148	Ձայնային
+6149	Ձևաչափը 
+6150	ՄԻԱ�
+6151	Մեկնարկի 
+6152	Մեկնարկի ամս�
+6153	Մեկնարկի ամսաթիվը �
+6154	Մուտքագրված նի�
+6155	Ներ
+6156	Ներկայիս ընտրո
+6157	Նիշերի առավելագույն քանակը �
+6158	Նոր ծան
+6159	Որո
+6160	Որոնման 
+6161	Որոն
+6162	Ուղարկել 
+6163	Չեղա
+6164	Պա�
+6165	Պատր�
+6166	Ջնջել հ�
+6167	Ջնջել �
+6168	Սխ
+6169	Տեղափոխ�
+6170	Տեսնել 
+6171	Րո
+6172	Ցույց տալ իջնո
+6173	Ցուցադրել �
+6174	Օգտագործ
+6175	Օրերի սյու
+6176	Օրինակ
+6177	�
+6178	բա�
+6179	�
+6180	�
+6181	%1$d ашуун жаңы
+6182	%1$s мү�
+6183	%1$s са
+6184	%1$s формтын к
+6185	%1$s – Аякт�
+6186	%1$s-жылга
+6187	%2$d ичинен %1$d симво�
+6188	%d жаңы би
+6189	%s аркылуу 
+6190	Айтып 
+6191	Баарын
+6192	Башкы бетк�
+6193	Башто�
+6194	Баштоо кү�
+6195	Баштоо күнү –
+6196	Бү�
+6197	Дагы пар�
+6198	Даталар диапа
+6199	Диалог с�
+6200	Диапазондон т
+6201	Жар
+6202	Жараксыз �
+6203	Жараксыз
+6204	Жарымын жай�
+6205	Жаңы би
+6206	Жокко ч
+6207	Жыйыш
+6208	Жыл тандоо үчүн 
+6209	Жылнаамага иш-чара кирги�
+6210	Изделге
+6211	Из�
+6212	Изд
+6213	Ка
+6214	Качан а
+6215	Кийинки айг
+6216	Колдонм�
+6217	КҮ�
+6218	К�
+6219	Күн т�
+6220	Күн тандоо үчүн 
+6221	Күндөр тил�
+6222	Мазмунду алып 
+6223	Мисалы
+6224	Мурунку айг
+6225	Мурунку эк�
+6226	Мү�
+6227	Мүнөттөрд�
+6228	Са
+6229	Саат 
+6230	Саат т
+6231	Сак
+6232	Символдордун саны коюлган %2$d чеги�
+6233	Сурам т�
+6234	Сурамды
+6235	Сырсөздү 
+6236	Тандал�
+6237	Тандоо: AM
+6238	Текст киргизүү ре�
+6239	Текстти 
+6240	Тизменин керектүү ж�
+6241	Түрүлмө меню
+6242	Төмөнкү мен
+6243	Убакыт 
+6244	Убакытты дубал саатынын 
+6245	Убакытты текст киргизүү 
+6246	Учурдагы та
+6247	Ылдыйкы экранды 
+6248	Ылдыйкы экран�
+6249	Эки жолу таптап, тизменин кер�
+6250	бош
+6251	ӨЧ
+6252	Өт�
+6253	%1$s ကို ဖ�
+6254	%1$s န�
+6255	%1$s မ�
+6256	%1$s သု�
+6257	%1$s – ပြီ
+6258	%s ဖြင့�
+6259	AM (သို့) PM
+6260	စကားဝ�
+6261	စတ�
+6262	စတင်�
+6263	စတင်ရက်
+6264	စာလုံးရေ %2$d တွင
+6265	စာလုံးရေအကန့်အသတ်
+6266	စာသား ထည့်သွင
+6267	စာသား 
+6268	ဆွဲချမ�
+6269	ည
+6270	တစ်ဝ�
+6271	တ
+6272	ဒိုင်ယာ
+6273	န�
+6274	နာရီ
+6275	နောက်ထ�
+6276	နောက်လသ
+6277	န�
+6278	နှင့�
+6279	နှစ် %1$s သို
+6280	နှစ်ရွေးချယ်ခ
+6281	ပယ်�
+6282	ပ�
+6283	ပြက္ခဒိန် ထည့်�
+6284	ပြီ�
+6285	ပြ�
+6286	ဖိဆ�
+6287	ဖိဆွဲအထိန်
+6288	ဖော်မက�
+6289	ဖ�
+6290	မလု
+6291	မ�
+6292	မိနစ်�
+6293	မူလနေရာ�
+6294	ယခင်လသ�
+6295	ရက်ကေ
+6296	ရက
+6297	ရက်စ�
+6298	ရက်ရွေးချယ်ခ�
+6299	ရက်အပိုင်
+6300	ရက်အပိုင
+6301	ရွေးထာ
+6302	ရှာဖွေစရာ အ�
+6303	ရှာ
+6304	ရှာဖွေမ�
+6305	ရှာဖွေ
+6306	ရှာ�
+6307	ရှ
+6308	လက်ရှိ ရ�
+6309	လျှ�
+6310	သိ�
+6311	အက်ပ်တစ
+6312	အကြောင�
+6313	အကြောင်းကြာ
+6314	အကြောင်း�
+6315	အချိန်ထည့်သွင်း�
+6316	အချိန်ထည့်သွင်းရန် 
+6317	အချိ
+6318	အပိုင်�
+6319	အပေါ်သ
+6320	အ�
+6321	အသံဖြ
+6322	အားလု�
+6323	အောက်ခြေအပိုဆေ�
+6324	အောက်ခြေအပိုဆေ�
+6325	ဥပမ�
+6326	၉�
+6327	%1$d/%2$d simvol daxil edilib
+6328	%1$s dəqiq
+6329	%1$s ilinə keç
+6330	%1$s istifadə edi
+6331	%1$s silin
+6332	%1$s – Bitmə tar
+6333	%1$s: %2$s
+6334	%d yeni bildiri�
+6335	%s ilə paylaş
+6336	AKTİ
+6337	Aralıq seç
+6338	Axtarı
+6339	Axtarış sorğ
+6340	Axtarış.
+6341	Açılan menyunu göst�
+6342	Aşağıdakı vərəqi genişl
+6343	Aşağıdakı vərəqi yığcam
+6344	Başlama tarix
+6345	Başlama tarixi - Bitmə tari
+6346	Başlama tarixi – %
+6347	Bitmə tarix
+6348	Cari seçim: %1$
+6349	DEAKTİ
+6350	Dialoq ikonas�
+6351	Digər seçiml
+6352	Dəqiq
+6353	Dəqiqə se�
+6354	Dəst�
+6355	Dəstəyə iki dəfə to
+6356	Funksiya+
+6357	Gün seçiminə keçmək üçün
+6358	Gündüz və ya axşam s
+6359	G�
+6360	Hamısına bax
+6361	Hazırd�
+6362	Ləğv ed
+6363	Menyu+
+6364	Minimum %1$d yeni bildiri�
+6365	Mətn daxiletmə rejiminə ke
+6366	Mətni sili
+6367	Növbəti aya dəyi
+6368	Nümunə: %1
+6369	Parolu göstər
+6370	Paylaş�
+6371	Saatı seç
+6372	Saxlayı
+6373	Seçilmiş tar
+6374	Simvol limiti %1$d/%2$d dəyərini ke�
+6375	Sorğunu göndə
+6376	Sorğunu sili
+6377	Səsli axtar�
+6378	Tam genişləndir
+6379	Tarix
+6380	Tarix seçi
+6381	Təqvim daxiletmə rejiminə ke
+6382	Tətbiq seç
+6383	Vaxt seçi
+6384	Xət
+6385	Yanlış diapazo
+6386	Yanlış forma
+6387	Yeni bildiri�
+6388	Yuxarı keç
+6389	Yığcamlaşd�
+6390	Zamanı daxil etmək üçün mətnlə daxiletmə rejimi
+6391	Zamanı daxil etmək üçün saat rejiminə
+6392	ay
+6393	daxil olun
+6394	gü
+6395	il
+6396	silin
+6397	İl seçiminə keçmək üçün
+6398	Əhatə dairəsindən kənar:
+6399	Əsas səhifəyə k
+6400	Əvvəlki aya dəyi
+6401	%1$d/%2$d ta belgi kiritildi
+6402	%1$s daqiqa
+6403	%1$s soat
+6404	%1$s – Tugash sana
+6405	%d ta yangi bildirishnoma
+6406	%s orqali ulashish
+6407	Avvalgi oyga oʻzgartiris
+6408	Bekor qilish
+6409	Boshiga o‘ti
+6410	Boshlanish sanasi
+6411	Boshlanish sanasi – %1
+6412	Boshlanishi – Tugas
+6413	Chegaradan tashqari: %1$s
+6414	Daqiqa
+6415	Daqiqalarni tanlash
+6416	Hammasi
+6417	Harflar soni (%1$d) cheklovdan (%2$d) oshib ketdi
+6418	Ilovani tanlang
+6419	Ishlatish: %1$s
+6420	Joriy tanlov: %1$s
+6421	Keyingi oyga oʻzgartiris
+6422	Kunlar ustuni: %1$s
+6423	Kunni tanlash uchun bosing
+6424	Masalan: %1$s
+6425	Matn kiritish rejimiga oʻtis
+6426	Matnni tozalash
+6427	Muloqot ikonkasi
+6428	Olib tashlash: %1$s
+6429	Oraliqni tanlang
+6430	Ovozli qidiruv
+6431	Parol ochiq tursin
+6432	Pastga ochiluvchi menyuni ochish
+6433	Probel
+6434	Qidirish�
+6435	Qidiruv
+6436	Qidiruv so‘ro
+6437	Quyi ekranni kengaytirish
+6438	Quyi ekranni yigʻis
+6439	Sana
+6440	Sanani tanlang
+6441	Saqlash
+6442	Soat
+6443	Soatni tanlang
+6444	So‘rov yarati
+6445	So‘rovni o‘chi
+6446	Surish dastagi
+6447	Surish dastagi ikki marta bosildi
+6448	Tab : Varaq
+6449	Tanlangan sana
+6450	Taqvim kiritish rejimiga oʻtis
+6451	Tugash sanasi
+6452	Tushdan oldin yoki keyinligini tanlang
+6453	Ulashish
+6454	Vaqtni kiritish uchun matn kiritish rejimiga o‘tin
+6455	Vaqtni kiritish uchun soat rejimiga o‘tin
+6456	Vaqtni tanlang
+6457	Xato
+6458	YONIQ
+6459	YOQILMAGAN
+6460	Yana
+6461	Yana %1$d dan ortiq bildirishnoma
+6462	Yangi bildirishnoma
+6463	Yarmiga kengaytirish
+6464	Yaroqsiz format.
+6465	Yaroqsiz oraliq.
+6466	Yig‘i
+6467	Yilga nazar solish: %1$s
+6468	Yilni tanlash uchun bosing
+6469	Yopish
+6470	o
+6471	%1$s - fecha de finalizació
+6472	%1$s en punt
+6473	%d notificaciones nuevas
+6474	%d notificación nuev
+6475	Cambia al modo de entrada de texto para ingresar la hora.
+6476	Cambia al modo de reloj para ingresar la hora.
+6477	Cambiar al modo de entrada de calendario
+6478	Cambiar al modo de entrada de texto
+6479	Caracteres ingresados: %1$d de %2$d
+6480	Contraer la hoja inferior
+6481	El control de arrastre se presionó dos vece
+6482	El rango no es válido
+6483	Expandir hasta la mitad
+6484	Expandir la hoja inferior
+6485	Fecha de inicio - %1$s
+6486	Fecha de inicio - fecha de finalizació
+6487	Formato no válid
+6488	Fuera de rango: %1$s
+6489	Más de %1$d notificaciones nueva
+6490	Navegar al año %1$
+6491	Presiona para seleccionar un añ
+6492	Presiona para seleccionar un dí
+6493	Quitar %1$s
+6494	Se excedió en %1$d el límite de caracteres de %2
+6495	Selecciona a.m. o p.m.
+6496	Selecciona un períod
+6497	Seleccionar fecha
+6498	Seleccione la hora.
+6499	Ícono de diálo
+6500	%1$s heure(s
+6501	%1$s minute
+6502	ACTIVER
+6503	Caractères entrés : %1$d sur %
+6504	Colonne des jours : %1$
+6505	Du %1$s au %2$s
+6506	Du %1$s au (date de fin)
+6507	Du (date de début) au %1$
+6508	Du (date de début) au (date de fin
+6509	DÉSACTIVE
+6510	Développer la zone de contenu dans le bas de l'écr
+6511	Développer à moit
+6512	Faire glisser la poigné
+6513	Format incorrect
+6514	Hors de la plage : %1$
+6515	Icône de boîte de dialog
+6516	Limite de caractère dépassée : %1$d sur 
+6517	Naviguer vers l'année %1$
+6518	Onglet
+6519	Passer au mode Entrée de texte pour entrer l'heure
+6520	Passer au mode Horloge pour entrer l'heure.
+6521	Passer au mode d'entrée Agend
+6522	Passer au mode d'entrée Text
+6523	Plage incorrecte.
+6524	Plus de %1$d nouvelles notifications
+6525	Poignée de déplacement touchée deux f
+6526	Revenir en arrièr
+6527	Réduire la zone de contenu dans le bas de l'écr
+6528	Sélectionner AM ou P
+6529	Sélectionnez la dat
+6530	Sélectionnez la plag
+6531	Sélectionnez les minute
+6532	Termin�
+6533	Touchez pour passer à la sélection d'ann
+6534	Touchez pour passer à la sélection de jo
+6535	Utiliser : %1$
+6536	Dialogue Icon
+6537	Select a.m. or p.m.
+6538	Select date
+6539	Select range
+6540	Show drop-down menu
+6541	‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‎‏‎‎‏‎‎‎‎‏‏‏‏‎‏‏‏‎‏
+6542	‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‎‏‎‎‏‎‎‎‎‏‏‏‏‏‎‎‏‎‎‏�
+6543	‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‎‏‎‎‏‎‎‎‎‏‏‏‏‏‎‎‏‎�
+6544	‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‎‏‎‎‏‎‎‎‎‏‏‏‏‏‎‎‏
+6545	‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‎‏‎‎‏‎‎‎‎‏‏‏‏‏‎‏‏‎‎
+6546	‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‎‏‎‎‏‎‎‎‎‏‏‏‏‏‎‏‏‎‏‎�
+6547	‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‎‏‎‎‏‎‎‎‎‏‏‏‏‏‎‏‏‎‏�
+6548	‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‎‏‎‎‏‎‎‎‎‏‏‏‏‏‎‏‏‏‏‏‎
+6549	‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‎‏‎‎‏‎‎‎‎‏‏‏‏‏‎‏‏‏�
+6550	‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‎‏‎‎‏‎‎‎‎‏‏‏‏‏‎‏‏‏‏‏�
+6551	‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‎‏‎‎‏‎‎‎‎‏‏‏‏‏‏‎‏‎‏
+6552	‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‎‏‎‎‏‎‎‎‎‏‏‏‏‏‏‎‏‏‎‎�
+6553	‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‎‏‎‎‏‎‎‎‎‏‏‏‏‏‏‎‏‏‎‏‏
+6554	‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‎‏‎‎‏‎‎‎‎‏‏‏‏‏‏‎‏‏�
+6555	‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‎‏‎‎‏‎‎‎‎‏‏‏‏‏‏‎‏‏
+6556	‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‎‏‎‎‏‎‎‎‎‏‏‏‏‏‏‏‏‎�
+6557	‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‎‏‎‎‏‎‎‎‎‏‏‏‏‏‏‏‏‎‎�
+6558	‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‎‏‎‎‏‎‎‎‎‏‏‏‏‏‏‏‏‎‎
+6559	‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‎‏‎‎‏‎‎‎‎‏‏‏‏‏‏‏‏‎‎
+6560	‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‎‏‎‎‏‎‎‎‎‏‏‏‏‏‏‏‏‎‏‎‎�
+6561	‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‎‏‎‎‏‎‎‎‎‏‏‏‏‏‏‏‏‎�
+6562	‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‎‏‎‎‏‎‎‎‎‏‏‏‏‏‏‏‏‎‏�
+6563	‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‎‏‎‎‏‎‎‎‎‏‏‏‏‏‏‏‏‎�
+6564	‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‎‏‎‎‏‎‎‎‎‏‏‏‏‏‏‏‏‏‎�
+6565	‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‎‏‎‎‏‎‎‎‎‏‏‏‏‏‏‏‏‏‎
+6566	‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‎‏‎‎‏‎‎‎‎‏‏‏‏‏‏‏‏‏‏‎‏
+6567	‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‎‏‎‎‏‎‎‎‎‏‏‏‏‏‏‏‏‏�
+6568	‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‎‏‎‎‏‎‎‎‎‏‏‏‏‏‏‏‏‏‏‏�
+6569	‎‏‎‎‎‎‎‏‎‏‏‏‎‎‎‎‎‎‏‎‎‏‎‎‎‎‏‏‏‏‏‏‏‏‏‏‏‏‎‏‏‎‏�
+6570	%1$s – �
+6571	%1$s �
+6572	%1$s �
+6573	%1$s �
+6574	%d 個�
+6575	Enter �
+6576	㩒咗�
+6577	使用�
+6578	使用�
+6579	例如�
+6580	�
+6581	分�
+6582	�
+6583	�
+6584	切換至
+6585	切換至文字�
+6586	切換至
+6587	切換至時�
+6588	�
+6589	向�
+6590	�
+6591	對�
+6592	�
+6593	展�
+6594	展開
+6595	已輸入 %1$d 個字�
+6596	已�
+6597	�
+6598	拖�
+6599	提�
+6600	�
+6601	搜
+6602	搜�
+6603	�
+6604	收合
+6605	新
+6606	�
+6607	�
+6608	日期�
+6609	更�
+6610	�
+6611	查�
+6612	格�
+6613	清�
+6614	清�
+6615	瀏�
+6616	瀏覽至 
+6617	目前選
+6618	�
+6619	移除�
+6620	空
+6621	範�
+6622	結�
+6623	語�
+6624	請�
+6625	請�
+6626	變更
+6627	變更
+6628	超出字元限制 %1$d 個�
+6629	超出範
+6630	超過 %1$d 
+6631	輕按以�
+6632	輕按以�
+6633	選�
+6634	選�
+6635	選�
+6636	選擇�
+6637	選擇
+6638	�
+6639	�
+6640	開�
+6641	開始日�
+6642	開始日�
+6643	�
+6644	顯示�
+6645	顯�
+6646	%1$s – �
+6647	%1$s �
+6648	%1$s �
+6649	%d 条�
+6650	Delete �
+6651	Enter �
+6652	�
+6653	�
+6654	不在允许�
+6655	与%s
+6656	分�
+6657	�
+6658	切换到文字
+6659	切换到�
+6660	切换到
+6661	切换到时�
+6662	对�
+6663	�
+6664	展开�
+6665	展开�
+6666	�
+6667	开�
+6668	开始日�
+6669	开始日�
+6670	当前的�
+6671	拖�
+6672	拖动手
+6673	提�
+6674	�
+6675	搜
+6676	搜�
+6677	�
+6678	收起�
+6679	显示
+6680	显�
+6681	更�
+6682	有 %1$d 条�
+6683	标
+6684	格�
+6685	清�
+6686	点按即�
+6687	点按即�
+6688	示例�
+6689	移除
+6690	空
+6691	结�
+6692	范�
+6693	表示周�
+6694	语�
+6695	请�
+6696	请�
+6697	超出字符数限制（共 
+6698	转到 %1
+6699	转到
+6700	转�
+6701	转�
+6702	转�
+6703	输入了 %1$d 个字符
+6704	选�
+6705	选择�
+6706	选�
+6707	选�
+6708	选�
+6709	选�
+6710	�
+6711	%1$s em ponto
+6712	%1$s – Data de térm
+6713	%d nova notificaç�
+6714	%d novas notificaçõ
+6715	Abrir a página inferio
+6716	Alterar para o mês anterio
+6717	Alterar para o próximo m�
+6718	Alternar para o modo de entrada da agenda
+6719	Alternar para o modo de entrada de texto
+6720	Alterne para o modo de entrada de texto para informar o horário
+6721	Alterne para o modo de relógio para informar o horári
+6722	Alça de arrasta
+6723	Alça de arrastar tocada duas veze
+6724	Caracteres inseridos: %1$d de %2$d
+6725	Coluna de dias: %1$s
+6726	Data de iníci
+6727	Data de início – %
+6728	Data de início – Data de tér
+6729	Data de términ
+6730	Data selecionada
+6731	Erro
+6732	Exibir senha
+6733	Expandir até a metad
+6734	Fechar a página inferio
+6735	Fora do intervalo: %1$s
+6736	Formato inválido
+6737	Guia
+6738	Intervalo inválido
+6739	Ir para o ano %1$s
+6740	Limite de %2$d caracteres excedido em %1$d
+6741	Limpar texto
+6742	Mais de %1$d novas notificaçõ
+6743	Mostrar menu suspenso
+6744	Nova notificaç�
+6745	Remover %1$s
+6746	Salvar
+6747	Selecionar AM ou PM
+6748	Selecionar data
+6749	Selecionar horári
+6750	Selecionar intervalo
+6751	Selecione os minutos
+6752	Seleção atual: %1
+6753	Toque para alternar para a seleção de um a
+6754	Toque para alternar para a seleção de um d
+6755	Usar %1$s
+6756	Ícone de caixa de diálo
+6757	ACTIVAR
+6758	Búsqued
+6759	Contraer
+6760	DESACTIVAR
+6761	Elegir una app
+6762	Función
+6763	Listo
+6764	Mayúscula
+6765	Navegar a la página principa
+6766	Navegar hacia arriba
+6767	Ver todas
+6768	borrar
+6769	espacio
+6770	%1$s hora(s)
+6771	%1$s – Data de conclus
+6772	Carateres introduzidos: %1$d de %2$d
+6773	Data de conclusã
+6774	Data de início – Data de conclu
+6775	Dois toques no indicador para arrastar
+6776	Escolher uma app
+6777	Expanda a secção inferi
+6778	Expandir até metad
+6779	Função
+6780	Indicador para arrastar
+6781	Limite de carateres excedido: %1$d de %2$d
+6782	Mais de %1$d notificações nov
+6783	Mostrar menu pendente
+6784	Mostrar palavra-passe
+6785	Mudar para o modo de introdução de calendá
+6786	Mudar para o modo de introdução de tex
+6787	Mudar para o mês anterio
+6788	Mudar para o mês seguint
+6789	Mude para o modo de introdução de texto para a introdução da h
+6790	Mude para o modo de relógio para a introdução da ho
+6791	Navegar para casa
+6792	Navegue para o ano %1$s
+6793	Partilhar com
+6794	Partilhar com a app %s
+6795	Reduza a secção inferi
+6796	Reduzir
+6797	Selecionar hora
+6798	Selecionar minutos
+6799	Selecione a data
+6800	Selecione o intervalo
+6801	Separador
+6802	Toque para mudar para a seleção do a
+6803	Toque para mudar para a seleção do d
+6804	Utilize: %1$s
+6805	%1$s �
+6806	%d 則�
+6807	Delete �
+6808	分�
+6809	切換至文字
+6810	切換至時�
+6811	前往 %1
+6812	對話
+6813	展開�
+6814	已輕觸
+6815	已輸入 %1$d 個字元 (�
+6816	所�
+6817	收合�
+6818	日期�
+6819	星期幾�
+6820	瀏�
+6821	移除 
+6822	空
+6823	範例�
+6824	與「%
+6825	請�
+6826	變更
+6827	變更
+6828	超出日�
+6829	超過字元限制 (共 %1$d 
+6830	輕觸即�
+6831	輕觸即可
+6832	選取�
+6833	選�
+6834	選�
+6835	選�
+6836	開始日�

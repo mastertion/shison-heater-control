@@ -1,0 +1,379 @@
+### CLASS Lcom/zddz/app/sicn/MainActivity; (super=Lcom/zddz/update/UpdateActivity;)
+FIELD: bt_close Landroid/widget/TextView; (access=private)
+FIELD: ll_state Landroid/widget/LinearLayout; (access=private)
+FIELD: mBaseViewModel Lcom/zddz/app/sicn/fragment/BaseViewModel; (access=private)
+FIELD: mBroadcastReceiver Landroid/content/BroadcastReceiver; (access=private)
+FIELD: mBtService Lcom/zddz/bt/BtService; (access=private)
+FIELD: mBtServiceConnection Landroid/content/ServiceConnection; (access=private final)
+FIELD: mHandler Landroid/os/Handler; (access=private)
+FIELD: mMainFragment Lcom/zddz/app/sicn/fragment/MainFragment; (access=private)
+FIELD: mPermissionRepository Lcom/zddz/permission/PermissionRepository; (access=private)
+FIELD: mScanFragment Lcom/zddz/app/sicn/fragment/ScanFragment; (access=private)
+FIELD: pv_prompt Lcom/zddz/widget/ProgressView; (access=private)
+FIELD: tv_prompt Landroid/widget/TextView; (access=private)
+
+METHOD: public constructor <init>()V
+    invoke-direct            v1, Lcom/zddz/update/UpdateActivity;-><init>()V
+    new-instance             v0, Lcom/zddz/app/sicn/MainActivity$4;
+    invoke-direct            v0, v1, Lcom/zddz/app/sicn/MainActivity$4;-><init>(Lcom/zddz/app/sicn/MainActivity;)V
+    iput-object              v0, v1, Lcom/zddz/app/sicn/MainActivity;->mBtServiceConnection Landroid/content/ServiceConnection;
+    return-void              
+
+METHOD: static synthetic access$000(Lcom/zddz/app/sicn/MainActivity;)Lcom/zddz/app/sicn/fragment/BaseViewModel;
+    iget-object              v0, v0, Lcom/zddz/app/sicn/MainActivity;->mBaseViewModel Lcom/zddz/app/sicn/fragment/BaseViewModel;
+    return-object            v0
+
+METHOD: static synthetic access$100(Lcom/zddz/app/sicn/MainActivity;)Lcom/zddz/bt/BtService;
+    iget-object              v0, v0, Lcom/zddz/app/sicn/MainActivity;->mBtService Lcom/zddz/bt/BtService;
+    return-object            v0
+
+METHOD: static synthetic access$1000(Lcom/zddz/app/sicn/MainActivity;)Landroid/content/BroadcastReceiver;
+    iget-object              v0, v0, Lcom/zddz/app/sicn/MainActivity;->mBroadcastReceiver Landroid/content/BroadcastReceiver;
+    return-object            v0
+
+METHOD: static synthetic access$102(Lcom/zddz/app/sicn/MainActivity; Lcom/zddz/bt/BtService;)Lcom/zddz/bt/BtService;
+    iput-object              v1, v0, Lcom/zddz/app/sicn/MainActivity;->mBtService Lcom/zddz/bt/BtService;
+    return-object            v1
+
+METHOD: static synthetic access$200(Lcom/zddz/app/sicn/MainActivity;)Lcom/zddz/app/sicn/fragment/ScanFragment;
+    iget-object              v0, v0, Lcom/zddz/app/sicn/MainActivity;->mScanFragment Lcom/zddz/app/sicn/fragment/ScanFragment;
+    return-object            v0
+
+METHOD: static synthetic access$300(Lcom/zddz/app/sicn/MainActivity;)Lcom/zddz/app/sicn/fragment/MainFragment;
+    iget-object              v0, v0, Lcom/zddz/app/sicn/MainActivity;->mMainFragment Lcom/zddz/app/sicn/fragment/MainFragment;
+    return-object            v0
+
+METHOD: static synthetic access$400(Lcom/zddz/app/sicn/MainActivity;)Landroid/widget/LinearLayout;
+    iget-object              v0, v0, Lcom/zddz/app/sicn/MainActivity;->ll_state Landroid/widget/LinearLayout;
+    return-object            v0
+
+METHOD: static synthetic access$500(Lcom/zddz/app/sicn/MainActivity;)Landroid/widget/TextView;
+    iget-object              v0, v0, Lcom/zddz/app/sicn/MainActivity;->tv_prompt Landroid/widget/TextView;
+    return-object            v0
+
+METHOD: static synthetic access$600(Lcom/zddz/app/sicn/MainActivity;)Lcom/zddz/widget/ProgressView;
+    iget-object              v0, v0, Lcom/zddz/app/sicn/MainActivity;->pv_prompt Lcom/zddz/widget/ProgressView;
+    return-object            v0
+
+METHOD: static synthetic access$700(Lcom/zddz/app/sicn/MainActivity;)Landroid/widget/TextView;
+    iget-object              v0, v0, Lcom/zddz/app/sicn/MainActivity;->bt_close Landroid/widget/TextView;
+    return-object            v0
+
+METHOD: static synthetic access$800(Lcom/zddz/app/sicn/MainActivity;)Landroid/os/Handler;
+    iget-object              v0, v0, Lcom/zddz/app/sicn/MainActivity;->mHandler Landroid/os/Handler;
+    return-object            v0
+
+METHOD: static synthetic access$900(Lcom/zddz/app/sicn/MainActivity;)V
+    invoke-direct            v0, Lcom/zddz/app/sicn/MainActivity;->initBleCallbackReceiver()V
+    return-void              
+
+METHOD: private checkBleNeed(I)V
+    sget                     v0, Lcom/zddz/bt/BtService;->BLE_NEED_LOCATION_SERVICE I
+    if-ne                    v0, v5, +011h
+    iget-object              v5, v4, Lcom/zddz/app/sicn/MainActivity;->mPermissionRepository Lcom/zddz/permission/PermissionRepository;
+    invoke-virtual           v5, Lcom/zddz/permission/PermissionRepository;->getLocationServiceNeedListData()Landroidx/lifecycle/MutableLiveData;
+    move-result-object       v5
+    const/4                  v0, 1
+    invoke-static            v0, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    move-result-object       v0
+    invoke-virtual           v5, v0, Landroidx/lifecycle/MutableLiveData;->postValue(Ljava/lang/Object;)V
+    goto                     +6eh
+    sget                     v0, Lcom/zddz/bt/BtService;->BLE_NEED_BLUETOOTH_PERMISSION I
+    const-string             v1, "android.permission.BLUETOOTH_CONNECT"
+    const/high16             v2, 67108864
+    if-ne                    v0, v5, +025h
+    new-instance             v5, Lcom/zddz/permission/PermissionItem;
+    const-string             v0, "android.permission.BLUETOOTH_SCAN"
+    const-string             v3, "android.permission.BLUETOOTH_ADVERTISE"
+    filled-new-array         v0, v1, v3, [Ljava/lang/String;
+    move-result-object       v0
+    invoke-direct            v5, v0, Lcom/zddz/permission/PermissionItem;-><init>([Ljava/lang/String;)V
+    invoke-virtual           v5, v4, Lcom/zddz/permission/PermissionItem;->setPermissionId(Landroid/content/Context;)V
+    iget-object              v0, v4, Lcom/zddz/app/sicn/MainActivity;->mPermissionRepository Lcom/zddz/permission/PermissionRepository;
+    invoke-virtual           v0, v5, Lcom/zddz/permission/PermissionRepository;->addPermissionItem(Lcom/zddz/permission/PermissionItem;)V
+    new-instance             v5, Landroid/content/Intent;
+    const-class              v0, Lcom/zddz/permission/PermissionActivity;
+    invoke-direct            v5, v4, v0, Landroid/content/Intent;-><init>(Landroid/content/Context; Ljava/lang/Class;)V
+    invoke-virtual           v5, v2, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+    invoke-virtual           v4, v5, Lcom/zddz/app/sicn/MainActivity;->startActivity(Landroid/content/Intent;)V
+    goto                     +43h
+    sget                     v0, Lcom/zddz/bt/BtService;->BLE_NEED_LOCATION_PERMISSION I
+    if-ne                    v0, v5, +023h
+    new-instance             v5, Lcom/zddz/permission/PermissionItem;
+    const-string             v0, "android.permission.ACCESS_FINE_LOCATION"
+    filled-new-array         v0, [Ljava/lang/String;
+    move-result-object       v0
+    invoke-direct            v5, v0, Lcom/zddz/permission/PermissionItem;-><init>([Ljava/lang/String;)V
+    invoke-virtual           v5, v4, Lcom/zddz/permission/PermissionItem;->setPermissionId(Landroid/content/Context;)V
+    iget-object              v0, v4, Lcom/zddz/app/sicn/MainActivity;->mPermissionRepository Lcom/zddz/permission/PermissionRepository;
+    invoke-virtual           v0, v5, Lcom/zddz/permission/PermissionRepository;->addPermissionItem(Lcom/zddz/permission/PermissionItem;)V
+    new-instance             v5, Landroid/content/Intent;
+    const-class              v0, Lcom/zddz/permission/PermissionActivity;
+    invoke-direct            v5, v4, v0, Landroid/content/Intent;-><init>(Landroid/content/Context; Ljava/lang/Class;)V
+    invoke-virtual           v5, v2, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+    invoke-virtual           v4, v5, Lcom/zddz/app/sicn/MainActivity;->startActivity(Landroid/content/Intent;)V
+    goto                     +1eh
+    sget                     v0, Lcom/zddz/bt/BtService;->BLE_NEED_BLUETOOTH_ENABLE I
+    if-ne                    v0, v5, +01bh
+    new-instance             v5, Landroid/content/Intent;
+    const-string             v0, "android.bluetooth.adapter.action.REQUEST_ENABLE"
+    invoke-direct            v5, v0, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    invoke-virtual           v5, v2, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+    sget                     v0, Landroid/os/Build$VERSION;->SDK_INT I
+    const/16                 v2, 31
+    if-lt                    v0, v2, +008h
+    invoke-static            v4, v1, Landroidx/core/app/ActivityCompat;->checkSelfPermission(Landroid/content/Context; Ljava/lang/String;)I
+    move-result              v0
+    if-nez                   v0, +005h
+    invoke-virtual           v4, v5, Lcom/zddz/app/sicn/MainActivity;->startActivity(Landroid/content/Intent;)V
+    return-void              
+
+METHOD: private initBleCallbackReceiver()V
+    new-instance             v0, Lcom/zddz/app/sicn/MainActivity$1;
+    invoke-direct            v0, v2, Lcom/zddz/app/sicn/MainActivity$1;-><init>(Lcom/zddz/app/sicn/MainActivity;)V
+    iput-object              v0, v2, Lcom/zddz/app/sicn/MainActivity;->mBroadcastReceiver Landroid/content/BroadcastReceiver;
+    new-instance             v0, Landroid/content/IntentFilter;
+    invoke-direct            v0, Landroid/content/IntentFilter;-><init>()V
+    const-string             v1, "android.bluetooth.adapter.action.STATE_CHANGED"
+    invoke-virtual           v0, v1, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
+    iget-object              v1, v2, Lcom/zddz/app/sicn/MainActivity;->mBroadcastReceiver Landroid/content/BroadcastReceiver;
+    invoke-virtual           v2, v1, v0, Lcom/zddz/app/sicn/MainActivity;->registerReceiver(Landroid/content/BroadcastReceiver; Landroid/content/IntentFilter;)Landroid/content/Intent;
+    iget-object              v0, v2, Lcom/zddz/app/sicn/MainActivity;->mBtService Lcom/zddz/bt/BtService;
+    invoke-virtual           v0, Lcom/zddz/bt/BtService;->getScannerLiveData()Lcom/zddz/bt/ScannerLiveData;
+    move-result-object       v0
+    new-instance             v1, Lcom/zddz/app/sicn/MainActivity$2;
+    invoke-direct            v1, v2, Lcom/zddz/app/sicn/MainActivity$2;-><init>(Lcom/zddz/app/sicn/MainActivity;)V
+    invoke-virtual           v0, v2, v1, Lcom/zddz/bt/ScannerLiveData;->observe(Landroidx/lifecycle/LifecycleOwner; Landroidx/lifecycle/Observer;)V
+    new-instance             v0, Lcom/zddz/app/sicn/MainActivity$3;
+    invoke-static            Landroid/os/Looper;->myLooper()Landroid/os/Looper;
+    move-result-object       v1
+    invoke-direct            v0, v2, v1, Lcom/zddz/app/sicn/MainActivity$3;-><init>(Lcom/zddz/app/sicn/MainActivity; Landroid/os/Looper;)V
+    iput-object              v0, v2, Lcom/zddz/app/sicn/MainActivity;->mHandler Landroid/os/Handler;
+    return-void              
+
+METHOD: public closeScanDialog()V
+    invoke-virtual           v3, Lcom/zddz/app/sicn/MainActivity;->getSupportFragmentManager()Landroidx/fragment/app/FragmentManager;
+    move-result-object       v0
+    invoke-virtual           v0, Landroidx/fragment/app/FragmentManager;->beginTransaction()Landroidx/fragment/app/FragmentTransaction;
+    move-result-object       v0
+    invoke-virtual           v3, Lcom/zddz/app/sicn/MainActivity;->getSupportFragmentManager()Landroidx/fragment/app/FragmentManager;
+    move-result-object       v1
+    const-string             v2, "ScanFragment"
+    invoke-virtual           v1, v2, Landroidx/fragment/app/FragmentManager;->findFragmentByTag(Ljava/lang/String;)Landroidx/fragment/app/Fragment;
+    move-result-object       v1
+    instance-of              v1, v1, Lcom/zddz/app/sicn/fragment/ScanFragment;
+    if-eqz                   v1, +007h
+    iget-object              v1, v3, Lcom/zddz/app/sicn/MainActivity;->mScanFragment Lcom/zddz/app/sicn/fragment/ScanFragment;
+    invoke-virtual           v0, v1, Landroidx/fragment/app/FragmentTransaction;->remove(Landroidx/fragment/app/Fragment;)Landroidx/fragment/app/FragmentTransaction;
+    const/16                 v1, 4097
+    invoke-virtual           v0, v1, Landroidx/fragment/app/FragmentTransaction;->setTransition(I)Landroidx/fragment/app/FragmentTransaction;
+    const/4                  v1, 0
+    invoke-virtual           v0, v1, Landroidx/fragment/app/FragmentTransaction;->addToBackStack(Ljava/lang/String;)Landroidx/fragment/app/FragmentTransaction;
+    invoke-virtual           v0, Landroidx/fragment/app/FragmentTransaction;->commitAllowingStateLoss()I
+    return-void              
+
+METHOD: public connectBle(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)V
+    iget-object              v0, v1, Lcom/zddz/app/sicn/MainActivity;->mBtService Lcom/zddz/bt/BtService;
+    if-eqz                   v0, +009h
+    invoke-virtual           v0, v2, v3, v4, Lcom/zddz/bt/BtService;->connectBle(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)I
+    move-result              v2
+    invoke-direct            v1, v2, Lcom/zddz/app/sicn/MainActivity;->checkBleNeed(I)V
+    return-void              
+
+METHOD: public disconnectBle(Ljava/lang/String;)V
+    iget-object              v0, v1, Lcom/zddz/app/sicn/MainActivity;->mBtService Lcom/zddz/bt/BtService;
+    if-eqz                   v0, +005h
+    invoke-virtual           v0, v2, Lcom/zddz/bt/BtService;->disconnectBle(Ljava/lang/String;)V
+    return-void              
+
+METHOD: protected isAgree()V
+    new-instance             v0, Landroid/os/Handler;
+    invoke-static            Landroid/os/Looper;->myLooper()Landroid/os/Looper;
+    move-result-object       v1
+    invoke-static            v1, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object       v1
+    check-cast               v1, Landroid/os/Looper;
+    invoke-direct            v0, v1, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+    iput-object              v0, v4, Lcom/zddz/app/sicn/MainActivity;->mHandler Landroid/os/Handler;
+    new-instance             v0, Landroidx/lifecycle/ViewModelProvider;
+    invoke-direct            v0, v4, Landroidx/lifecycle/ViewModelProvider;-><init>(Landroidx/lifecycle/ViewModelStoreOwner;)V
+    const-class              v1, Lcom/zddz/app/sicn/fragment/BaseViewModel;
+    invoke-virtual           v0, v1, Landroidx/lifecycle/ViewModelProvider;->get(Ljava/lang/Class;)Landroidx/lifecycle/ViewModel;
+    move-result-object       v0
+    check-cast               v0, Lcom/zddz/app/sicn/fragment/BaseViewModel;
+    iput-object              v0, v4, Lcom/zddz/app/sicn/MainActivity;->mBaseViewModel Lcom/zddz/app/sicn/fragment/BaseViewModel;
+    invoke-static            Lcom/zddz/permission/PermissionRepository;->getInstance()Lcom/zddz/permission/PermissionRepository;
+    move-result-object       v0
+    iput-object              v0, v4, Lcom/zddz/app/sicn/MainActivity;->mPermissionRepository Lcom/zddz/permission/PermissionRepository;
+    invoke-virtual           v0, Lcom/zddz/permission/PermissionRepository;->getLocationServiceNeedListData()Landroidx/lifecycle/MutableLiveData;
+    move-result-object       v0
+    new-instance             v1, Lcom/zddz/app/sicn/MainActivity$5;
+    invoke-direct            v1, v4, Lcom/zddz/app/sicn/MainActivity$5;-><init>(Lcom/zddz/app/sicn/MainActivity;)V
+    invoke-virtual           v0, v4, v1, Landroidx/lifecycle/MutableLiveData;->observe(Landroidx/lifecycle/LifecycleOwner; Landroidx/lifecycle/Observer;)V
+    iget-object              v0, v4, Lcom/zddz/app/sicn/MainActivity;->mPermissionRepository Lcom/zddz/permission/PermissionRepository;
+    invoke-virtual           v0, Lcom/zddz/permission/PermissionRepository;->getOpenPermissionLiveData()Landroidx/lifecycle/MutableLiveData;
+    move-result-object       v0
+    new-instance             v1, Lcom/zddz/app/sicn/MainActivity$6;
+    invoke-direct            v1, v4, Lcom/zddz/app/sicn/MainActivity$6;-><init>(Lcom/zddz/app/sicn/MainActivity;)V
+    invoke-virtual           v0, v4, v1, Landroidx/lifecycle/MutableLiveData;->observe(Landroidx/lifecycle/LifecycleOwner; Landroidx/lifecycle/Observer;)V
+    sget                     v0, Landroid/os/Build$VERSION;->SDK_INT I
+    const/16                 v1, 31
+    if-lt                    v0, v1, +02bh
+    const-string             v0, "android.permission.INTERNET"
+    invoke-static            v4, v0, Lcom/zddz/permission/PermissionHelper;->checkPermission(Landroid/content/Context; Ljava/lang/String;)Z
+    move-result              v1
+    if-nez                   v1, +023h
+    new-instance             v1, Lcom/zddz/permission/PermissionItem;
+    filled-new-array         v0, [Ljava/lang/String;
+    move-result-object       v0
+    invoke-direct            v1, v0, Lcom/zddz/permission/PermissionItem;-><init>([Ljava/lang/String;)V
+    invoke-virtual           v1, v4, Lcom/zddz/permission/PermissionItem;->setPermissionId(Landroid/content/Context;)V
+    iget-object              v0, v4, Lcom/zddz/app/sicn/MainActivity;->mPermissionRepository Lcom/zddz/permission/PermissionRepository;
+    invoke-virtual           v0, v1, Lcom/zddz/permission/PermissionRepository;->addPermissionItem(Lcom/zddz/permission/PermissionItem;)V
+    new-instance             v0, Landroid/content/Intent;
+    const-class              v1, Lcom/zddz/permission/PermissionActivity;
+    invoke-direct            v0, v4, v1, Landroid/content/Intent;-><init>(Landroid/content/Context; Ljava/lang/Class;)V
+    const/high16             v1, 67108864
+    invoke-virtual           v0, v1, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+    invoke-virtual           v4, v0, Lcom/zddz/app/sicn/MainActivity;->startActivity(Landroid/content/Intent;)V
+    goto                     +4h
+    invoke-virtual           v4, Lcom/zddz/app/sicn/MainActivity;->checkUpdate()V
+    new-instance             v0, Lcom/zddz/app/sicn/fragment/MainFragment;
+    invoke-direct            v0, Lcom/zddz/app/sicn/fragment/MainFragment;-><init>()V
+    iput-object              v0, v4, Lcom/zddz/app/sicn/MainActivity;->mMainFragment Lcom/zddz/app/sicn/fragment/MainFragment;
+    invoke-virtual           v4, Lcom/zddz/app/sicn/MainActivity;->getSupportFragmentManager()Landroidx/fragment/app/FragmentManager;
+    move-result-object       v0
+    invoke-virtual           v0, Landroidx/fragment/app/FragmentManager;->beginTransaction()Landroidx/fragment/app/FragmentTransaction;
+    move-result-object       v0
+    iget-object              v1, v4, Lcom/zddz/app/sicn/MainActivity;->mMainFragment Lcom/zddz/app/sicn/fragment/MainFragment;
+    const-string             v2, "MainFragment"
+    const                    v3, 2131230931
+    invoke-virtual           v0, v3, v1, v2, Landroidx/fragment/app/FragmentTransaction;->add(I Landroidx/fragment/app/Fragment; Ljava/lang/String;)Landroidx/fragment/app/FragmentTransaction;
+    const/4                  v1, 0
+    invoke-virtual           v0, v1, Landroidx/fragment/app/FragmentTransaction;->addToBackStack(Ljava/lang/String;)Landroidx/fragment/app/FragmentTransaction;
+    invoke-virtual           v0, Landroidx/fragment/app/FragmentTransaction;->commitAllowingStateLoss()I
+    new-instance             v0, Lcom/zddz/app/sicn/fragment/ScanFragment;
+    invoke-direct            v0, Lcom/zddz/app/sicn/fragment/ScanFragment;-><init>()V
+    iput-object              v0, v4, Lcom/zddz/app/sicn/MainActivity;->mScanFragment Lcom/zddz/app/sicn/fragment/ScanFragment;
+    const                    v0, 2131230993
+    invoke-virtual           v4, v0, Lcom/zddz/app/sicn/MainActivity;->findViewById(I)Landroid/view/View;
+    move-result-object       v0
+    check-cast               v0, Landroid/widget/LinearLayout;
+    iput-object              v0, v4, Lcom/zddz/app/sicn/MainActivity;->ll_state Landroid/widget/LinearLayout;
+    const/16                 v1, 8
+    invoke-virtual           v0, v1, Landroid/widget/LinearLayout;->setVisibility(I)V
+    const                    v0, 2131231259
+    invoke-virtual           v4, v0, Lcom/zddz/app/sicn/MainActivity;->findViewById(I)Landroid/view/View;
+    move-result-object       v0
+    check-cast               v0, Landroid/widget/TextView;
+    iput-object              v0, v4, Lcom/zddz/app/sicn/MainActivity;->tv_prompt Landroid/widget/TextView;
+    const                    v0, 2131231100
+    invoke-virtual           v4, v0, Lcom/zddz/app/sicn/MainActivity;->findViewById(I)Landroid/view/View;
+    move-result-object       v0
+    check-cast               v0, Lcom/zddz/widget/ProgressView;
+    iput-object              v0, v4, Lcom/zddz/app/sicn/MainActivity;->pv_prompt Lcom/zddz/widget/ProgressView;
+    const                    v0, 2131230823
+    invoke-virtual           v4, v0, Lcom/zddz/app/sicn/MainActivity;->findViewById(I)Landroid/view/View;
+    move-result-object       v0
+    check-cast               v0, Landroid/widget/TextView;
+    iput-object              v0, v4, Lcom/zddz/app/sicn/MainActivity;->bt_close Landroid/widget/TextView;
+    new-instance             v1, Lcom/zddz/app/sicn/MainActivity$7;
+    invoke-direct            v1, v4, Lcom/zddz/app/sicn/MainActivity$7;-><init>(Lcom/zddz/app/sicn/MainActivity;)V
+    invoke-virtual           v0, v1, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    new-instance             v0, Landroid/content/Intent;
+    const-class              v1, Lcom/zddz/bt/BtService;
+    invoke-direct            v0, v4, v1, Landroid/content/Intent;-><init>(Landroid/content/Context; Ljava/lang/Class;)V
+    invoke-virtual           v4, Lcom/zddz/app/sicn/MainActivity;->getPackageName()Ljava/lang/String;
+    move-result-object       v1
+    invoke-virtual           v0, v1, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
+    iget-object              v1, v4, Lcom/zddz/app/sicn/MainActivity;->mBtServiceConnection Landroid/content/ServiceConnection;
+    const/4                  v2, 1
+    invoke-virtual           v4, v0, v1, v2, Lcom/zddz/app/sicn/MainActivity;->bindService(Landroid/content/Intent; Landroid/content/ServiceConnection; I)Z
+    return-void              
+
+METHOD: protected onCreate(Landroid/os/Bundle;)V
+    invoke-super             v2, v3, Lcom/zddz/update/UpdateActivity;->onCreate(Landroid/os/Bundle;)V
+    invoke-virtual           v2, Lcom/zddz/app/sicn/MainActivity;->getWindow()Landroid/view/Window;
+    move-result-object       v3
+    const/16                 v0, 128
+    invoke-virtual           v3, v0, v0, Landroid/view/Window;->setFlags(I I)V
+    const                    v3, 2131427357
+    invoke-virtual           v2, v3, Lcom/zddz/app/sicn/MainActivity;->setContentView(I)V
+    const-string             v3, "bluetooth"
+    invoke-virtual           v2, v3, Lcom/zddz/app/sicn/MainActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    move-result-object       v3
+    check-cast               v3, Landroid/bluetooth/BluetoothManager;
+    invoke-virtual           v2, Lcom/zddz/app/sicn/MainActivity;->getPackageManager()Landroid/content/pm/PackageManager;
+    move-result-object       v0
+    const-string             v1, "android.hardware.bluetooth_le"
+    invoke-virtual           v0, v1, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
+    move-result              v0
+    if-eqz                   v0, +004h
+    if-nez                   v3, +00bh
+    const                    v3, 2131755040
+    invoke-static            v3, Lcom/hjq/toast/ToastUtils;->show(I)V
+    invoke-virtual           v2, Lcom/zddz/app/sicn/MainActivity;->finish()V
+    invoke-virtual           v2, Lcom/zddz/app/sicn/MainActivity;->checkAgree()Z
+    move-result              v3
+    if-eqz                   v3, +005h
+    invoke-virtual           v2, Lcom/zddz/app/sicn/MainActivity;->isAgree()V
+    return-void              
+
+METHOD: public removeAlarm()V
+    return-void              
+
+METHOD: public showScanDialog()V
+    invoke-virtual           v4, Lcom/zddz/app/sicn/MainActivity;->getSupportFragmentManager()Landroidx/fragment/app/FragmentManager;
+    move-result-object       v0
+    invoke-virtual           v0, Landroidx/fragment/app/FragmentManager;->beginTransaction()Landroidx/fragment/app/FragmentTransaction;
+    move-result-object       v0
+    iget-object              v1, v4, Lcom/zddz/app/sicn/MainActivity;->mScanFragment Lcom/zddz/app/sicn/fragment/ScanFragment;
+    const-string             v2, "ScanFragment"
+    const                    v3, 2131230933
+    invoke-virtual           v0, v3, v1, v2, Landroidx/fragment/app/FragmentTransaction;->add(I Landroidx/fragment/app/Fragment; Ljava/lang/String;)Landroidx/fragment/app/FragmentTransaction;
+    const/16                 v1, 4097
+    invoke-virtual           v0, v1, Landroidx/fragment/app/FragmentTransaction;->setTransition(I)Landroidx/fragment/app/FragmentTransaction;
+    const/4                  v1, 0
+    invoke-virtual           v0, v1, Landroidx/fragment/app/FragmentTransaction;->addToBackStack(Ljava/lang/String;)Landroidx/fragment/app/FragmentTransaction;
+    invoke-virtual           v0, Landroidx/fragment/app/FragmentTransaction;->commitAllowingStateLoss()I
+    return-void              
+
+METHOD: public startScanDevice()V
+    iget-object              v0, v2, Lcom/zddz/app/sicn/MainActivity;->mBtService Lcom/zddz/bt/BtService;
+    if-eqz                   v0, +00ah
+    const/4                  v1, 0
+    invoke-virtual           v0, v1, Lcom/zddz/bt/BtService;->startScanDevice([Ljava/lang/String;)I
+    move-result              v0
+    invoke-direct            v2, v0, Lcom/zddz/app/sicn/MainActivity;->checkBleNeed(I)V
+    return-void              
+
+METHOD: public stopScanDevice()V
+    iget-object              v0, v1, Lcom/zddz/app/sicn/MainActivity;->mBtService Lcom/zddz/bt/BtService;
+    if-eqz                   v0, +005h
+    invoke-virtual           v0, Lcom/zddz/bt/BtService;->stopScanDevice()V
+    return-void              
+
+METHOD: public writeData([B)Z
+    iget-object              v0, v5, Lcom/zddz/app/sicn/MainActivity;->mBtService Lcom/zddz/bt/BtService;
+    const/4                  v1, 0
+    if-eqz                   v0, +022h
+    iget-object              v2, v5, Lcom/zddz/app/sicn/MainActivity;->mBaseViewModel Lcom/zddz/app/sicn/fragment/BaseViewModel;
+    invoke-virtual           v2, Lcom/zddz/app/sicn/fragment/BaseViewModel;->getBleAddress()Ljava/lang/String;
+    move-result-object       v2
+    invoke-virtual           v0, v2, Lcom/zddz/bt/BtService;->checkConnected(Ljava/lang/String;)Z
+    move-result              v0
+    if-eqz                   v0, +016h
+    iget-object              v0, v5, Lcom/zddz/app/sicn/MainActivity;->mBtService Lcom/zddz/bt/BtService;
+    iget-object              v2, v5, Lcom/zddz/app/sicn/MainActivity;->mBaseViewModel Lcom/zddz/app/sicn/fragment/BaseViewModel;
+    invoke-virtual           v2, Lcom/zddz/app/sicn/fragment/BaseViewModel;->getBleAddress()Ljava/lang/String;
+    move-result-object       v2
+    sget-object              v3, Lcom/zddz/app/sicn/OrderSet;->FFF0 Ljava/util/UUID;
+    sget-object              v4, Lcom/zddz/app/sicn/OrderSet;->FFF1 Ljava/util/UUID;
+    invoke-virtual           v0, v2, v3, v4, v6, Lcom/zddz/bt/BtService;->writeCharacteristic(Ljava/lang/String; Ljava/util/UUID; Ljava/util/UUID; [B)I
+    move-result              v6
+    if-nez                   v6, +003h
+    const/4                  v1, 1
+    return                   v1
+    const                    v6, 2131755061
+    invoke-static            v6, Lcom/hjq/toast/ToastUtils;->show(I)V
+    return                   v1

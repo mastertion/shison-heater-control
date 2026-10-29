@@ -1,0 +1,27 @@
+### CLASS Lcom/zddz/bt/BluetoothGattState; (super=Ljava/lang/Object;)
+FIELD: mBluetoothGatt Landroid/bluetooth/BluetoothGatt; (access=public)
+FIELD: mConnectState I (access=public)
+FIELD: mConnected Z (access=public)
+FIELD: mDiscoveryService Z (access=public)
+FIELD: mManufactureData Ljava/lang/String; (access=public)
+FIELD: mMtuCount I (access=public)
+FIELD: mMtuSwitch Z (access=public)
+FIELD: mName Ljava/lang/String; (access=public)
+
+METHOD: public constructor <init>(Landroid/bluetooth/BluetoothGatt; Ljava/lang/String; Ljava/lang/String; I Z Z)V
+    invoke-direct            v2, Ljava/lang/Object;-><init>()V
+    const/4                  v0, 0
+    iput-boolean             v0, v2, Lcom/zddz/bt/BluetoothGattState;->mConnected Z
+    const/16                 v1, 20
+    iput                     v1, v2, Lcom/zddz/bt/BluetoothGattState;->mMtuCount I
+    iput-object              v3, v2, Lcom/zddz/bt/BluetoothGattState;->mBluetoothGatt Landroid/bluetooth/BluetoothGatt;
+    iput-object              v4, v2, Lcom/zddz/bt/BluetoothGattState;->mName Ljava/lang/String;
+    iput                     v6, v2, Lcom/zddz/bt/BluetoothGattState;->mConnectState I
+    iput-boolean             v7, v2, Lcom/zddz/bt/BluetoothGattState;->mMtuSwitch Z
+    iput-boolean             v8, v2, Lcom/zddz/bt/BluetoothGattState;->mDiscoveryService Z
+    iput-object              v5, v2, Lcom/zddz/bt/BluetoothGattState;->mManufactureData Ljava/lang/String;
+    const/4                  v3, 2
+    if-ne                    v6, v3, +003h
+    const/4                  v0, 1
+    iput-boolean             v0, v2, Lcom/zddz/bt/BluetoothGattState;->mConnected Z
+    return-void              

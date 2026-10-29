@@ -1,0 +1,487 @@
+### CLASS Lcom/zddz/bt/ConnectListHelper; (super=Ljava/lang/Object;)
+FIELD: mGattStateList Ljava/util/List; (access=protected)
+
+METHOD: public constructor <init>()V
+    invoke-direct            v1, Ljava/lang/Object;-><init>()V
+    new-instance             v0, Ljava/util/ArrayList;
+    invoke-direct            v0, Ljava/util/ArrayList;-><init>()V
+    iput-object              v0, v1, Lcom/zddz/bt/ConnectListHelper;->mGattStateList Ljava/util/List;
+    return-void              
+
+METHOD: public checkConnectTimeout(Ljava/lang/String;)Z
+    iget-object              v0, v4, Lcom/zddz/bt/ConnectListHelper;->mGattStateList Ljava/util/List;
+    invoke-interface         v0, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    move-result-object       v0
+    invoke-interface         v0, Ljava/util/Iterator;->hasNext()Z
+    move-result              v1
+    const/4                  v2, 1
+    if-eqz                   v1, +026h
+    invoke-interface         v0, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object       v1
+    check-cast               v1, Lcom/zddz/bt/BluetoothGattState;
+    iget-object              v3, v1, Lcom/zddz/bt/BluetoothGattState;->mBluetoothGatt Landroid/bluetooth/BluetoothGatt;
+    invoke-virtual           v3, Landroid/bluetooth/BluetoothGatt;->getDevice()Landroid/bluetooth/BluetoothDevice;
+    move-result-object       v3
+    invoke-virtual           v3, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
+    move-result-object       v3
+    invoke-virtual           v3, v5, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result              v3
+    if-eqz                   v3, -01bh
+    iget-boolean             v5, v1, Lcom/zddz/bt/BluetoothGattState;->mConnected Z
+    if-eqz                   v5, +004h
+    const/4                  v5, 0
+    return                   v5
+    invoke-interface         v0, Ljava/util/Iterator;->remove()V
+    iget-object              v5, v1, Lcom/zddz/bt/BluetoothGattState;->mBluetoothGatt Landroid/bluetooth/BluetoothGatt;
+    invoke-virtual           v5, Landroid/bluetooth/BluetoothGatt;->close()V
+    return                   v2
+
+METHOD: public checkConnected(Ljava/lang/String;)Z
+    iget-object              v0, v4, Lcom/zddz/bt/ConnectListHelper;->mGattStateList Ljava/util/List;
+    invoke-interface         v0, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    move-result-object       v0
+    invoke-interface         v0, Ljava/util/Iterator;->hasNext()Z
+    move-result              v1
+    const/4                  v2, 0
+    if-eqz                   v1, +01eh
+    invoke-interface         v0, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object       v1
+    check-cast               v1, Lcom/zddz/bt/BluetoothGattState;
+    iget-object              v3, v1, Lcom/zddz/bt/BluetoothGattState;->mBluetoothGatt Landroid/bluetooth/BluetoothGatt;
+    invoke-virtual           v3, Landroid/bluetooth/BluetoothGatt;->getDevice()Landroid/bluetooth/BluetoothDevice;
+    move-result-object       v3
+    invoke-virtual           v3, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
+    move-result-object       v3
+    invoke-virtual           v3, v5, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result              v3
+    if-eqz                   v3, -01bh
+    iget-boolean             v5, v1, Lcom/zddz/bt/BluetoothGattState;->mConnected Z
+    if-eqz                   v5, +004h
+    const/4                  v5, 1
+    return                   v5
+    return                   v2
+
+METHOD: public checkConnected4ManufactureData(Ljava/lang/String;)Z
+    iget-object              v0, v2, Lcom/zddz/bt/ConnectListHelper;->mGattStateList Ljava/util/List;
+    invoke-interface         v0, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    move-result-object       v0
+    invoke-interface         v0, Ljava/util/Iterator;->hasNext()Z
+    move-result              v1
+    if-eqz                   v1, +012h
+    invoke-interface         v0, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object       v1
+    check-cast               v1, Lcom/zddz/bt/BluetoothGattState;
+    iget-object              v1, v1, Lcom/zddz/bt/BluetoothGattState;->mManufactureData Ljava/lang/String;
+    invoke-virtual           v1, v3, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result              v1
+    if-eqz                   v1, -012h
+    const/4                  v3, 1
+    return                   v3
+    const/4                  v3, 0
+    return                   v3
+
+METHOD: public checkConnecting(Ljava/lang/String;)Z
+    iget-object              v0, v2, Lcom/zddz/bt/ConnectListHelper;->mGattStateList Ljava/util/List;
+    invoke-interface         v0, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    move-result-object       v0
+    invoke-interface         v0, Ljava/util/Iterator;->hasNext()Z
+    move-result              v1
+    if-eqz                   v1, +01ah
+    invoke-interface         v0, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object       v1
+    check-cast               v1, Lcom/zddz/bt/BluetoothGattState;
+    iget-object              v1, v1, Lcom/zddz/bt/BluetoothGattState;->mBluetoothGatt Landroid/bluetooth/BluetoothGatt;
+    invoke-virtual           v1, Landroid/bluetooth/BluetoothGatt;->getDevice()Landroid/bluetooth/BluetoothDevice;
+    move-result-object       v1
+    invoke-virtual           v1, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
+    move-result-object       v1
+    invoke-virtual           v1, v3, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result              v1
+    if-eqz                   v1, -01ah
+    const/4                  v3, 1
+    return                   v3
+    const/4                  v3, 0
+    return                   v3
+
+METHOD: public closeAllBle()V
+    iget-object              v0, v3, Lcom/zddz/bt/ConnectListHelper;->mGattStateList Ljava/util/List;
+    invoke-interface         v0, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    move-result-object       v0
+    invoke-interface         v0, Ljava/util/Iterator;->hasNext()Z
+    move-result              v1
+    if-eqz                   v1, +01bh
+    invoke-interface         v0, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object       v1
+    check-cast               v1, Lcom/zddz/bt/BluetoothGattState;
+    invoke-interface         v0, Ljava/util/Iterator;->remove()V
+    iget-object              v2, v1, Lcom/zddz/bt/BluetoothGattState;->mBluetoothGatt Landroid/bluetooth/BluetoothGatt;
+    invoke-virtual           v2, Landroid/bluetooth/BluetoothGatt;->disconnect()V
+    iget-object              v2, v1, Lcom/zddz/bt/BluetoothGattState;->mBluetoothGatt Landroid/bluetooth/BluetoothGatt;
+    invoke-static            v2, Lcom/zddz/bt/BtMethod;->refreshGatt(Landroid/bluetooth/BluetoothGatt;)Z
+    iget-object              v1, v1, Lcom/zddz/bt/BluetoothGattState;->mBluetoothGatt Landroid/bluetooth/BluetoothGatt;
+    invoke-virtual           v1, Landroid/bluetooth/BluetoothGatt;->close()V
+    goto                     -1eh
+    return-void              
+
+METHOD: public disconnectBle(Ljava/lang/String;)Z
+    iget-object              v0, v3, Lcom/zddz/bt/ConnectListHelper;->mGattStateList Ljava/util/List;
+    invoke-interface         v0, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    move-result-object       v0
+    invoke-interface         v0, Ljava/util/Iterator;->hasNext()Z
+    move-result              v1
+    if-eqz                   v1, +022h
+    invoke-interface         v0, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object       v1
+    check-cast               v1, Lcom/zddz/bt/BluetoothGattState;
+    iget-object              v2, v1, Lcom/zddz/bt/BluetoothGattState;->mBluetoothGatt Landroid/bluetooth/BluetoothGatt;
+    invoke-virtual           v2, Landroid/bluetooth/BluetoothGatt;->getDevice()Landroid/bluetooth/BluetoothDevice;
+    move-result-object       v2
+    invoke-virtual           v2, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
+    move-result-object       v2
+    invoke-virtual           v2, v4, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result              v2
+    if-eqz                   v2, -01ah
+    invoke-interface         v0, Ljava/util/Iterator;->remove()V
+    iget-object              v4, v1, Lcom/zddz/bt/BluetoothGattState;->mBluetoothGatt Landroid/bluetooth/BluetoothGatt;
+    invoke-virtual           v4, Landroid/bluetooth/BluetoothGatt;->disconnect()V
+    const/4                  v4, 1
+    return                   v4
+    const/4                  v4, 0
+    return                   v4
+
+METHOD: public disconnectOther(Ljava/lang/String;)V
+    iget-object              v0, v3, Lcom/zddz/bt/ConnectListHelper;->mGattStateList Ljava/util/List;
+    invoke-interface         v0, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    move-result-object       v0
+    invoke-interface         v0, Ljava/util/Iterator;->hasNext()Z
+    move-result              v1
+    if-eqz                   v1, +02bh
+    invoke-interface         v0, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object       v1
+    check-cast               v1, Lcom/zddz/bt/BluetoothGattState;
+    iget-object              v2, v1, Lcom/zddz/bt/BluetoothGattState;->mBluetoothGatt Landroid/bluetooth/BluetoothGatt;
+    invoke-virtual           v2, Landroid/bluetooth/BluetoothGatt;->getDevice()Landroid/bluetooth/BluetoothDevice;
+    move-result-object       v2
+    invoke-virtual           v2, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
+    move-result-object       v2
+    invoke-virtual           v2, v4, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result              v2
+    if-nez                   v2, -01ah
+    invoke-interface         v0, Ljava/util/Iterator;->remove()V
+    iget-object              v2, v1, Lcom/zddz/bt/BluetoothGattState;->mBluetoothGatt Landroid/bluetooth/BluetoothGatt;
+    invoke-virtual           v2, Landroid/bluetooth/BluetoothGatt;->disconnect()V
+    iget-object              v2, v1, Lcom/zddz/bt/BluetoothGattState;->mBluetoothGatt Landroid/bluetooth/BluetoothGatt;
+    invoke-static            v2, Lcom/zddz/bt/BtMethod;->refreshGatt(Landroid/bluetooth/BluetoothGatt;)Z
+    iget-object              v1, v1, Lcom/zddz/bt/BluetoothGattState;->mBluetoothGatt Landroid/bluetooth/BluetoothGatt;
+    invoke-virtual           v1, Landroid/bluetooth/BluetoothGatt;->close()V
+    goto                     -2eh
+    return-void              
+
+METHOD: public discoverServices(Ljava/lang/String;)Z
+    iget-object              v0, v3, Lcom/zddz/bt/ConnectListHelper;->mGattStateList Ljava/util/List;
+    invoke-interface         v0, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    move-result-object       v0
+    invoke-interface         v0, Ljava/util/Iterator;->hasNext()Z
+    move-result              v1
+    if-eqz                   v1, +01fh
+    invoke-interface         v0, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object       v1
+    check-cast               v1, Lcom/zddz/bt/BluetoothGattState;
+    iget-object              v2, v1, Lcom/zddz/bt/BluetoothGattState;->mBluetoothGatt Landroid/bluetooth/BluetoothGatt;
+    invoke-virtual           v2, Landroid/bluetooth/BluetoothGatt;->getDevice()Landroid/bluetooth/BluetoothDevice;
+    move-result-object       v2
+    invoke-virtual           v2, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
+    move-result-object       v2
+    invoke-virtual           v2, v4, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result              v2
+    if-eqz                   v2, -01ah
+    iget-object              v4, v1, Lcom/zddz/bt/BluetoothGattState;->mBluetoothGatt Landroid/bluetooth/BluetoothGatt;
+    invoke-virtual           v4, Landroid/bluetooth/BluetoothGatt;->discoverServices()Z
+    move-result              v4
+    return                   v4
+    const/4                  v4, 0
+    return                   v4
+
+METHOD: public getBluetoothGatt(Ljava/lang/String;)Landroid/bluetooth/BluetoothGatt;
+    iget-object              v0, v3, Lcom/zddz/bt/ConnectListHelper;->mGattStateList Ljava/util/List;
+    invoke-interface         v0, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    move-result-object       v0
+    invoke-interface         v0, Ljava/util/Iterator;->hasNext()Z
+    move-result              v1
+    if-eqz                   v1, +01bh
+    invoke-interface         v0, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object       v1
+    check-cast               v1, Lcom/zddz/bt/BluetoothGattState;
+    iget-object              v2, v1, Lcom/zddz/bt/BluetoothGattState;->mBluetoothGatt Landroid/bluetooth/BluetoothGatt;
+    invoke-virtual           v2, Landroid/bluetooth/BluetoothGatt;->getDevice()Landroid/bluetooth/BluetoothDevice;
+    move-result-object       v2
+    invoke-virtual           v2, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
+    move-result-object       v2
+    invoke-virtual           v2, v4, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result              v2
+    if-eqz                   v2, -01ah
+    iget-object              v4, v1, Lcom/zddz/bt/BluetoothGattState;->mBluetoothGatt Landroid/bluetooth/BluetoothGatt;
+    return-object            v4
+    const/4                  v4, 0
+    return-object            v4
+
+METHOD: public getBluetoothGattState(Ljava/lang/String;)Lcom/zddz/bt/BluetoothGattState;
+    iget-object              v0, v3, Lcom/zddz/bt/ConnectListHelper;->mGattStateList Ljava/util/List;
+    invoke-interface         v0, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    move-result-object       v0
+    invoke-interface         v0, Ljava/util/Iterator;->hasNext()Z
+    move-result              v1
+    if-eqz                   v1, +019h
+    invoke-interface         v0, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object       v1
+    check-cast               v1, Lcom/zddz/bt/BluetoothGattState;
+    iget-object              v2, v1, Lcom/zddz/bt/BluetoothGattState;->mBluetoothGatt Landroid/bluetooth/BluetoothGatt;
+    invoke-virtual           v2, Landroid/bluetooth/BluetoothGatt;->getDevice()Landroid/bluetooth/BluetoothDevice;
+    move-result-object       v2
+    invoke-virtual           v2, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
+    move-result-object       v2
+    invoke-virtual           v2, v4, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result              v2
+    if-eqz                   v2, -01ah
+    return-object            v1
+    const/4                  v4, 0
+    return-object            v4
+
+METHOD: public getConnectedSize()I
+    iget-object              v0, v3, Lcom/zddz/bt/ConnectListHelper;->mGattStateList Ljava/util/List;
+    invoke-interface         v0, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    move-result-object       v0
+    const/4                  v1, 0
+    invoke-interface         v0, Ljava/util/Iterator;->hasNext()Z
+    move-result              v2
+    if-eqz                   v2, +00fh
+    invoke-interface         v0, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object       v2
+    check-cast               v2, Lcom/zddz/bt/BluetoothGattState;
+    iget-boolean             v2, v2, Lcom/zddz/bt/BluetoothGattState;->mConnected Z
+    if-eqz                   v2, -00eh
+    add-int/lit8             v1, v1, 1
+    goto                     -12h
+    return                   v1
+
+METHOD: public getGattStateList()Ljava/util/List;
+    iget-object              v0, v1, Lcom/zddz/bt/ConnectListHelper;->mGattStateList Ljava/util/List;
+    return-object            v0
+
+METHOD: public requestMtu(Ljava/lang/String; I)Z
+    sget                     v0, Landroid/os/Build$VERSION;->SDK_INT I
+    const/16                 v1, 21
+    if-lt                    v0, v1, +02bh
+    iget-object              v0, v3, Lcom/zddz/bt/ConnectListHelper;->mGattStateList Ljava/util/List;
+    invoke-interface         v0, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    move-result-object       v0
+    invoke-interface         v0, Ljava/util/Iterator;->hasNext()Z
+    move-result              v1
+    if-eqz                   v1, +01fh
+    invoke-interface         v0, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object       v1
+    check-cast               v1, Lcom/zddz/bt/BluetoothGattState;
+    iget-object              v2, v1, Lcom/zddz/bt/BluetoothGattState;->mBluetoothGatt Landroid/bluetooth/BluetoothGatt;
+    invoke-virtual           v2, Landroid/bluetooth/BluetoothGatt;->getDevice()Landroid/bluetooth/BluetoothDevice;
+    move-result-object       v2
+    invoke-virtual           v2, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
+    move-result-object       v2
+    invoke-virtual           v2, v4, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result              v2
+    if-eqz                   v2, -01ah
+    iget-object              v4, v1, Lcom/zddz/bt/BluetoothGattState;->mBluetoothGatt Landroid/bluetooth/BluetoothGatt;
+    invoke-static            v4, v5, Lcom/zddz/bt/BtService$$ExternalSyntheticApiModelOutline0;->m(Landroid/bluetooth/BluetoothGatt; I)Z
+    move-result              v4
+    return                   v4
+    const/4                  v4, 0
+    return                   v4
+
+METHOD: public updateBluetoothGattConnectState(Landroid/bluetooth/BluetoothGatt; Ljava/lang/String; Ljava/lang/String; I)V
+    invoke-virtual           v9, Landroid/bluetooth/BluetoothGatt;->getDevice()Landroid/bluetooth/BluetoothDevice;
+    move-result-object       v0
+    invoke-virtual           v0, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
+    move-result-object       v0
+    iget-object              v1, v8, Lcom/zddz/bt/ConnectListHelper;->mGattStateList Ljava/util/List;
+    invoke-interface         v1, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    move-result-object       v1
+    invoke-interface         v1, Ljava/util/Iterator;->hasNext()Z
+    move-result              v2
+    if-eqz                   v2, +060h
+    invoke-interface         v1, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object       v2
+    check-cast               v2, Lcom/zddz/bt/BluetoothGattState;
+    iget-object              v3, v2, Lcom/zddz/bt/BluetoothGattState;->mBluetoothGatt Landroid/bluetooth/BluetoothGatt;
+    invoke-virtual           v3, Landroid/bluetooth/BluetoothGatt;->getDevice()Landroid/bluetooth/BluetoothDevice;
+    move-result-object       v3
+    invoke-virtual           v3, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
+    move-result-object       v3
+    invoke-virtual           v3, v0, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result              v3
+    if-eqz                   v3, -01ah
+    iput                     v12, v2, Lcom/zddz/bt/BluetoothGattState;->mConnectState I
+    iget-object              v9, v2, Lcom/zddz/bt/BluetoothGattState;->mManufactureData Ljava/lang/String;
+    invoke-static            v9, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    move-result              v9
+    if-eqz                   v9, +00ah
+    invoke-static            v11, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    move-result              v9
+    if-nez                   v9, +004h
+    iput-object              v11, v2, Lcom/zddz/bt/BluetoothGattState;->mManufactureData Ljava/lang/String;
+    const/4                  v9, 2
+    if-ne                    v12, v9, +004h
+    const/4                  v9, 1
+    goto                     +2h
+    const/4                  v9, 0
+    iput-boolean             v9, v2, Lcom/zddz/bt/BluetoothGattState;->mConnected Z
+    iget-boolean             v9, v2, Lcom/zddz/bt/BluetoothGattState;->mConnected Z
+    if-eqz                   v9, +02bh
+    const-string             v9, "address = ?"
+    filled-new-array         v9, v0, [Ljava/lang/String;
+    move-result-object       v9
+    invoke-static            v9, Lorg/litepal/LitePal;->where([Ljava/lang/String;)Lorg/litepal/FluentQuery;
+    move-result-object       v9
+    const-class              v10, Lcom/zddz/bt/DeviceRecord;
+    invoke-virtual           v9, v10, Lorg/litepal/FluentQuery;->findFirst(Ljava/lang/Class;)Ljava/lang/Object;
+    move-result-object       v9
+    check-cast               v9, Lcom/zddz/bt/DeviceRecord;
+    if-nez                   v9, +00ch
+    new-instance             v9, Lcom/zddz/bt/DeviceRecord;
+    iget-object              v10, v2, Lcom/zddz/bt/BluetoothGattState;->mName Ljava/lang/String;
+    iget-object              v11, v2, Lcom/zddz/bt/BluetoothGattState;->mManufactureData Ljava/lang/String;
+    invoke-direct            v9, v0, v10, v11, Lcom/zddz/bt/DeviceRecord;-><init>(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)V
+    goto                     +9h
+    iget-object              v10, v2, Lcom/zddz/bt/BluetoothGattState;->mName Ljava/lang/String;
+    iput-object              v10, v9, Lcom/zddz/bt/DeviceRecord;->name Ljava/lang/String;
+    iget-object              v10, v2, Lcom/zddz/bt/BluetoothGattState;->mManufactureData Ljava/lang/String;
+    iput-object              v10, v9, Lcom/zddz/bt/DeviceRecord;->manufacture_data Ljava/lang/String;
+    invoke-virtual           v9, Lcom/zddz/bt/DeviceRecord;->save()Z
+    return-void              
+    new-instance             v7, Lcom/zddz/bt/BluetoothGattState;
+    const/4                  v5, 0
+    const/4                  v6, 0
+    move-object              v0, v7
+    move-object              v1, v9
+    move-object              v2, v10
+    move-object              v3, v11
+    move                     v4, v12
+    invoke-direct/range      v0 ... v6, Lcom/zddz/bt/BluetoothGattState;-><init>(Landroid/bluetooth/BluetoothGatt; Ljava/lang/String; Ljava/lang/String; I Z Z)V
+    iget-object              v9, v8, Lcom/zddz/bt/ConnectListHelper;->mGattStateList Ljava/util/List;
+    invoke-interface         v9, v7, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    return-void              
+
+METHOD: public updateBluetoothGattConnected(Ljava/lang/String; Z)V
+    iget-object              v0, v4, Lcom/zddz/bt/ConnectListHelper;->mGattStateList Ljava/util/List;
+    invoke-interface         v0, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    move-result-object       v0
+    invoke-interface         v0, Ljava/util/Iterator;->hasNext()Z
+    move-result              v1
+    if-eqz                   v1, +04dh
+    invoke-interface         v0, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object       v1
+    check-cast               v1, Lcom/zddz/bt/BluetoothGattState;
+    iget-object              v2, v1, Lcom/zddz/bt/BluetoothGattState;->mBluetoothGatt Landroid/bluetooth/BluetoothGatt;
+    invoke-virtual           v2, Landroid/bluetooth/BluetoothGatt;->getDevice()Landroid/bluetooth/BluetoothDevice;
+    move-result-object       v2
+    invoke-virtual           v2, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
+    move-result-object       v2
+    invoke-virtual           v2, v5, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result              v2
+    if-eqz                   v2, -01ah
+    iput-boolean             v6, v1, Lcom/zddz/bt/BluetoothGattState;->mConnected Z
+    if-eqz                   v6, +02fh
+    const/4                  v2, 2
+    iput                     v2, v1, Lcom/zddz/bt/BluetoothGattState;->mConnectState I
+    const-string             v2, "address = ?"
+    filled-new-array         v2, v5, [Ljava/lang/String;
+    move-result-object       v2
+    invoke-static            v2, Lorg/litepal/LitePal;->where([Ljava/lang/String;)Lorg/litepal/FluentQuery;
+    move-result-object       v2
+    const-class              v3, Lcom/zddz/bt/DeviceRecord;
+    invoke-virtual           v2, v3, Lorg/litepal/FluentQuery;->findFirst(Ljava/lang/Class;)Ljava/lang/Object;
+    move-result-object       v2
+    check-cast               v2, Lcom/zddz/bt/DeviceRecord;
+    if-nez                   v2, +00ch
+    new-instance             v2, Lcom/zddz/bt/DeviceRecord;
+    iget-object              v3, v1, Lcom/zddz/bt/BluetoothGattState;->mName Ljava/lang/String;
+    iget-object              v1, v1, Lcom/zddz/bt/BluetoothGattState;->mManufactureData Ljava/lang/String;
+    invoke-direct            v2, v5, v3, v1, Lcom/zddz/bt/DeviceRecord;-><init>(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)V
+    goto                     +9h
+    iget-object              v3, v1, Lcom/zddz/bt/BluetoothGattState;->mName Ljava/lang/String;
+    iput-object              v3, v2, Lcom/zddz/bt/DeviceRecord;->name Ljava/lang/String;
+    iget-object              v1, v1, Lcom/zddz/bt/BluetoothGattState;->mManufactureData Ljava/lang/String;
+    iput-object              v1, v2, Lcom/zddz/bt/DeviceRecord;->manufacture_data Ljava/lang/String;
+    invoke-virtual           v2, Lcom/zddz/bt/DeviceRecord;->save()Z
+    goto                     -4ch
+    const/4                  v2, 0
+    iput                     v2, v1, Lcom/zddz/bt/BluetoothGattState;->mConnectState I
+    goto                     -50h
+    return-void              
+
+METHOD: public synchronized updateBluetoothGattStateDiscoveryService(Landroid/bluetooth/BluetoothGatt; Z)V
+    monitor-enter            v3
+    invoke-virtual           v4, Landroid/bluetooth/BluetoothGatt;->getDevice()Landroid/bluetooth/BluetoothDevice;
+    move-result-object       v4
+    invoke-virtual           v4, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
+    move-result-object       v4
+    iget-object              v0, v3, Lcom/zddz/bt/ConnectListHelper;->mGattStateList Ljava/util/List;
+    invoke-interface         v0, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    move-result-object       v0
+    invoke-interface         v0, Ljava/util/Iterator;->hasNext()Z
+    move-result              v1
+    if-eqz                   v1, +01ch
+    invoke-interface         v0, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object       v1
+    check-cast               v1, Lcom/zddz/bt/BluetoothGattState;
+    iget-object              v2, v1, Lcom/zddz/bt/BluetoothGattState;->mBluetoothGatt Landroid/bluetooth/BluetoothGatt;
+    invoke-virtual           v2, Landroid/bluetooth/BluetoothGatt;->getDevice()Landroid/bluetooth/BluetoothDevice;
+    move-result-object       v2
+    invoke-virtual           v2, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
+    move-result-object       v2
+    invoke-virtual           v2, v4, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result              v2
+    if-eqz                   v2, -01ah
+    iput-boolean             v5, v1, Lcom/zddz/bt/BluetoothGattState;->mDiscoveryService Z
+    monitor-exit             v3
+    return-void              
+    monitor-exit             v3
+    return-void              
+    move-exception           v4
+    monitor-exit             v3
+    goto                     +2h
+    throw                    v4
+    goto                     -1h
+
+METHOD: public synchronized updateBluetoothGattStateMtuSwitch(Landroid/bluetooth/BluetoothGatt; I Z)V
+    monitor-enter            v3
+    invoke-virtual           v4, Landroid/bluetooth/BluetoothGatt;->getDevice()Landroid/bluetooth/BluetoothDevice;
+    move-result-object       v4
+    invoke-virtual           v4, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
+    move-result-object       v4
+    iget-object              v0, v3, Lcom/zddz/bt/ConnectListHelper;->mGattStateList Ljava/util/List;
+    invoke-interface         v0, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    move-result-object       v0
+    invoke-interface         v0, Ljava/util/Iterator;->hasNext()Z
+    move-result              v1
+    if-eqz                   v1, +01eh
+    invoke-interface         v0, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object       v1
+    check-cast               v1, Lcom/zddz/bt/BluetoothGattState;
+    iget-object              v2, v1, Lcom/zddz/bt/BluetoothGattState;->mBluetoothGatt Landroid/bluetooth/BluetoothGatt;
+    invoke-virtual           v2, Landroid/bluetooth/BluetoothGatt;->getDevice()Landroid/bluetooth/BluetoothDevice;
+    move-result-object       v2
+    invoke-virtual           v2, Landroid/bluetooth/BluetoothDevice;->getAddress()Ljava/lang/String;
+    move-result-object       v2
+    invoke-virtual           v2, v4, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result              v2
+    if-eqz                   v2, -01ah
+    iput-boolean             v6, v1, Lcom/zddz/bt/BluetoothGattState;->mMtuSwitch Z
+    iput                     v5, v1, Lcom/zddz/bt/BluetoothGattState;->mMtuCount I
+    monitor-exit             v3
+    return-void              
+    monitor-exit             v3
+    return-void              
+    move-exception           v4
+    monitor-exit             v3
+    goto                     +2h
+    throw                    v4
+    goto                     -1h

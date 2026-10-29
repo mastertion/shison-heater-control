@@ -1,0 +1,31 @@
+### CLASS Lcom/zddz/bt/BtService$11; (super=Ljava/lang/Object;)
+FIELD: this$0 Lcom/zddz/bt/BtService;
+
+METHOD: constructor <init>(Lcom/zddz/bt/BtService;)V
+    iput-object              v1, v0, Lcom/zddz/bt/BtService$11;->this$0 Lcom/zddz/bt/BtService;
+    invoke-direct            v0, Ljava/lang/Object;-><init>()V
+    return-void              
+
+METHOD: public onLocationChanged(Landroid/location/Location;)V
+    invoke-static            Landroid/os/Message;->obtain()Landroid/os/Message;
+    move-result-object       v0
+    const/16                 v1, 9
+    iput                     v1, v0, Landroid/os/Message;->what I
+    iput-object              v3, v0, Landroid/os/Message;->obj Ljava/lang/Object;
+    iget-object              v3, v2, Lcom/zddz/bt/BtService$11;->this$0 Lcom/zddz/bt/BtService;
+    invoke-static            v3, Lcom/zddz/bt/BtService;->access$100(Lcom/zddz/bt/BtService;)Landroid/os/Messenger;
+    move-result-object       v3
+    invoke-virtual           v3, v0, Landroid/os/Messenger;->send(Landroid/os/Message;)V
+    goto                     +5h
+    move-exception           v3
+    invoke-virtual           v3, Ljava/lang/Exception;->printStackTrace()V
+    return-void              
+
+METHOD: public onProviderDisabled(Ljava/lang/String;)V
+    return-void              
+
+METHOD: public onProviderEnabled(Ljava/lang/String;)V
+    return-void              
+
+METHOD: public onStatusChanged(Ljava/lang/String; I Landroid/os/Bundle;)V
+    return-void              

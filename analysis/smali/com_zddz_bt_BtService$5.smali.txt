@@ -1,0 +1,12 @@
+### CLASS Lcom/zddz/bt/BtService$5; (super=Ljava/lang/Object;)
+FIELD: this$0 Lcom/zddz/bt/BtService; (access=final synthetic)
+
+METHOD: constructor <init>(Lcom/zddz/bt/BtService;)V
+    iput-object              v1, v0, Lcom/zddz/bt/BtService$5;->this$0 Lcom/zddz/bt/BtService;
+    invoke-direct            v0, Ljava/lang/Object;-><init>()V
+    return-void              
+
+METHOD: public run()V
+    iget-object              v0, v1, Lcom/zddz/bt/BtService$5;->this$0 Lcom/zddz/bt/BtService;
+    invoke-virtual           v0, Lcom/zddz/bt/BtService;->stopScanDevice()V
+    return-void              

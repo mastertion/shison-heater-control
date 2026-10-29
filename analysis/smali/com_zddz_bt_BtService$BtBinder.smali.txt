@@ -1,0 +1,11 @@
+### CLASS Lcom/zddz/bt/BtService$BtBinder; (super=Landroid/os/Binder;)
+FIELD: this$0 Lcom/zddz/bt/BtService; (access=final synthetic)
+
+METHOD: public constructor <init>(Lcom/zddz/bt/BtService;)V
+    iput-object              v1, v0, Lcom/zddz/bt/BtService$BtBinder;->this$0 Lcom/zddz/bt/BtService;
+    invoke-direct            v0, Landroid/os/Binder;-><init>()V
+    return-void              
+
+METHOD: public getService()Lcom/zddz/bt/BtService;
+    iget-object              v0, v1, Lcom/zddz/bt/BtService$BtBinder;->this$0 Lcom/zddz/bt/BtService;
+    return-object            v0

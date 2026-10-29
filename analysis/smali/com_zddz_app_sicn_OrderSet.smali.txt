@@ -1,0 +1,76 @@
+### CLASS Lcom/zddz/app/sicn/OrderSet; (super=Ljava/lang/Object;)
+FIELD: FFF0 Ljava/util/UUID; (access=public static)
+FIELD: FFF1 Ljava/util/UUID; (access=public static)
+FIELD: instance Lcom/zddz/app/sicn/OrderSet; (access=private static)
+FIELD: notice_current_temperature Ljava/lang/String; (access=public static)
+FIELD: notice_hour_data Ljava/lang/String; (access=public static)
+FIELD: notice_minute_data Ljava/lang/String; (access=public static)
+FIELD: notice_target_temperature Ljava/lang/String; (access=public static)
+FIELD: write_change_temperature_type [B (access=public static)
+FIELD: write_hour_data [B (access=public static)
+FIELD: write_minute_data [B (access=public static)
+FIELD: write_synchronize [B (access=public static)
+FIELD: write_target_temperature [B (access=public static)
+
+METHOD: static constructor <clinit>()V
+    const-string             v0, "0000fff0-0000-1000-8000-00805f9b34fb"
+    invoke-static            v0, Ljava/util/UUID;->fromString(Ljava/lang/String;)Ljava/util/UUID;
+    move-result-object       v0
+    sput-object              v0, Lcom/zddz/app/sicn/OrderSet;->FFF0 Ljava/util/UUID;
+    const-string             v0, "0000fff1-0000-1000-8000-00805f9b34fb"
+    invoke-static            v0, Ljava/util/UUID;->fromString(Ljava/lang/String;)Ljava/util/UUID;
+    move-result-object       v0
+    sput-object              v0, Lcom/zddz/app/sicn/OrderSet;->FFF1 Ljava/util/UUID;
+    const/4                  v0, 2
+    new-array                v1, v0, [B
+    fill-array-data          v1, +0000033h
+    sput-object              v1, Lcom/zddz/app/sicn/OrderSet;->write_synchronize [B
+    const/4                  v1, 4
+    new-array                v1, v1, [B
+    fill-array-data          v1, +0000031h
+    sput-object              v1, Lcom/zddz/app/sicn/OrderSet;->write_target_temperature [B
+    new-array                v1, v0, [B
+    fill-array-data          v1, +0000030h
+    sput-object              v1, Lcom/zddz/app/sicn/OrderSet;->write_change_temperature_type [B
+    new-array                v1, v0, [B
+    fill-array-data          v1, +000002fh
+    sput-object              v1, Lcom/zddz/app/sicn/OrderSet;->write_minute_data [B
+    new-array                v0, v0, [B
+    fill-array-data          v0, +000002eh
+    sput-object              v0, Lcom/zddz/app/sicn/OrderSet;->write_hour_data [B
+    const-string             v0, "3001"
+    sput-object              v0, Lcom/zddz/app/sicn/OrderSet;->notice_current_temperature Ljava/lang/String;
+    const-string             v0, "3002"
+    sput-object              v0, Lcom/zddz/app/sicn/OrderSet;->notice_minute_data Ljava/lang/String;
+    const-string             v0, "3003"
+    sput-object              v0, Lcom/zddz/app/sicn/OrderSet;->notice_hour_data Ljava/lang/String;
+    const-string             v0, "3101"
+    sput-object              v0, Lcom/zddz/app/sicn/OrderSet;->notice_target_temperature Ljava/lang/String;
+    return-void              
+    fill-array-data-payload  b'\x01\x03' | \x01\x03
+    nop                      
+    fill-array-data-payload  b'1\x01\x00\x00' | \x31\x01\x00\x00
+    fill-array-data-payload  b'1\x02' | \x31\x02
+    nop                      
+    fill-array-data-payload  b'1\x03' | \x31\x03
+    nop                      
+    fill-array-data-payload  b'1\x04' | \x31\x04
+
+METHOD: public constructor <init>()V
+    invoke-direct            v0, Ljava/lang/Object;-><init>()V
+    return-void              
+
+METHOD: public static synchronized getInstance()Lcom/zddz/app/sicn/OrderSet;
+    const-class              v0, Lcom/zddz/app/sicn/OrderSet;
+    monitor-enter            v0
+    sget-object              v1, Lcom/zddz/app/sicn/OrderSet;->instance Lcom/zddz/app/sicn/OrderSet;
+    if-nez                   v1, +009h
+    new-instance             v1, Lcom/zddz/app/sicn/OrderSet;
+    invoke-direct            v1, Lcom/zddz/app/sicn/OrderSet;-><init>()V
+    sput-object              v1, Lcom/zddz/app/sicn/OrderSet;->instance Lcom/zddz/app/sicn/OrderSet;
+    sget-object              v1, Lcom/zddz/app/sicn/OrderSet;->instance Lcom/zddz/app/sicn/OrderSet;
+    monitor-exit             v0
+    return-object            v1
+    move-exception           v1
+    monitor-exit             v0
+    throw                    v1

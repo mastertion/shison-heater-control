@@ -1,0 +1,44 @@
+### CLASS Lcom/zddz/app/sicn/MainActivity$1; (super=Landroid/content/BroadcastReceiver;)
+FIELD: this$0 Lcom/zddz/app/sicn/MainActivity; (access=final synthetic)
+
+METHOD: constructor <init>(Lcom/zddz/app/sicn/MainActivity;)V
+    iput-object              v1, v0, Lcom/zddz/app/sicn/MainActivity$1;->this$0 Lcom/zddz/app/sicn/MainActivity;
+    invoke-direct            v0, Landroid/content/BroadcastReceiver;-><init>()V
+    return-void              
+
+METHOD: public onReceive(Landroid/content/Context; Landroid/content/Intent;)V
+    invoke-virtual           v3, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    move-result-object       v2
+    const-string             v0, "android.bluetooth.adapter.action.STATE_CHANGED"
+    invoke-virtual           v0, v2, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result              v2
+    if-eqz                   v2, +03bh
+    const-string             v2, "android.bluetooth.adapter.extra.STATE"
+    const/16                 v0, 10
+    invoke-virtual           v3, v2, v0, Landroid/content/Intent;->getIntExtra(Ljava/lang/String; I)I
+    move-result              v2
+    iget-object              v3, v1, Lcom/zddz/app/sicn/MainActivity$1;->this$0 Lcom/zddz/app/sicn/MainActivity;
+    invoke-static            v3, Lcom/zddz/app/sicn/MainActivity;->access$000(Lcom/zddz/app/sicn/MainActivity;)Lcom/zddz/app/sicn/fragment/BaseViewModel;
+    move-result-object       v3
+    invoke-virtual           v3, Lcom/zddz/app/sicn/fragment/BaseViewModel;->getBleAddress()Ljava/lang/String;
+    move-result-object       v3
+    const/16                 v0, 12
+    if-ne                    v0, v2, +008h
+    iget-object              v2, v1, Lcom/zddz/app/sicn/MainActivity$1;->this$0 Lcom/zddz/app/sicn/MainActivity;
+    invoke-virtual           v2, Lcom/zddz/app/sicn/MainActivity;->startScanDevice()V
+    goto                     +1eh
+    iget-object              v2, v1, Lcom/zddz/app/sicn/MainActivity$1;->this$0 Lcom/zddz/app/sicn/MainActivity;
+    invoke-static            v2, Lcom/zddz/app/sicn/MainActivity;->access$100(Lcom/zddz/app/sicn/MainActivity;)Lcom/zddz/bt/BtService;
+    move-result-object       v2
+    if-eqz                   v2, +017h
+    iget-object              v2, v1, Lcom/zddz/app/sicn/MainActivity$1;->this$0 Lcom/zddz/app/sicn/MainActivity;
+    invoke-static            v2, Lcom/zddz/app/sicn/MainActivity;->access$100(Lcom/zddz/app/sicn/MainActivity;)Lcom/zddz/bt/BtService;
+    move-result-object       v2
+    invoke-virtual           v2, v3, Lcom/zddz/bt/BtService;->checkConnected(Ljava/lang/String;)Z
+    move-result              v2
+    if-eqz                   v2, +00bh
+    iget-object              v2, v1, Lcom/zddz/app/sicn/MainActivity$1;->this$0 Lcom/zddz/app/sicn/MainActivity;
+    invoke-static            v2, Lcom/zddz/app/sicn/MainActivity;->access$100(Lcom/zddz/app/sicn/MainActivity;)Lcom/zddz/bt/BtService;
+    move-result-object       v2
+    invoke-virtual           v2, v3, Lcom/zddz/bt/BtService;->disconnectBle(Ljava/lang/String;)V
+    return-void              

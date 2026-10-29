@@ -1,0 +1,98 @@
+### CLASS Lcom/zddz/app/sicn/fragment/HistoryDialog$1; (super=Ljava/lang/Object;)
+FIELD: this$0 Lcom/zddz/app/sicn/fragment/HistoryDialog;
+
+METHOD: constructor <init>(Lcom/zddz/app/sicn/fragment/HistoryDialog;)V
+    iput-object              v1, v0, Lcom/zddz/app/sicn/fragment/HistoryDialog$1;->this$0 Lcom/zddz/app/sicn/fragment/HistoryDialog;
+    invoke-direct            v0, Ljava/lang/Object;-><init>()V
+    return-void              
+
+METHOD: public onClick(Landroid/view/View;)V
+    invoke-virtual           v5, Landroid/view/View;->getId()I
+    move-result              v5
+    const                    v0, 2131231270
+    if-ne                    v5, v0, +009h
+    iget-object              v5, v4, Lcom/zddz/app/sicn/fragment/HistoryDialog$1;->this$0 Lcom/zddz/app/sicn/fragment/HistoryDialog;
+    invoke-virtual           v5, Lcom/zddz/app/sicn/fragment/HistoryDialog;->dismiss()V
+    goto/16                  +0b3h
+    const                    v0, 2131230867
+    const/4                  v1, 0
+    const/4                  v2, 1
+    const-string             v3, "0.0"
+    if-ne                    v5, v0, +05ch
+    iget-object              v5, v4, Lcom/zddz/app/sicn/fragment/HistoryDialog$1;->this$0 Lcom/zddz/app/sicn/fragment/HistoryDialog;
+    invoke-static            v5, Lcom/zddz/app/sicn/fragment/HistoryDialog;->access$000(Lcom/zddz/app/sicn/fragment/HistoryDialog;)Landroid/widget/CheckedTextView;
+    move-result-object       v5
+    invoke-virtual           v5, v2, Landroid/widget/CheckedTextView;->setChecked(Z)V
+    iget-object              v5, v4, Lcom/zddz/app/sicn/fragment/HistoryDialog$1;->this$0 Lcom/zddz/app/sicn/fragment/HistoryDialog;
+    invoke-static            v5, Lcom/zddz/app/sicn/fragment/HistoryDialog;->access$100(Lcom/zddz/app/sicn/fragment/HistoryDialog;)Landroid/widget/CheckedTextView;
+    move-result-object       v5
+    invoke-virtual           v5, v1, Landroid/widget/CheckedTextView;->setChecked(Z)V
+    iget-object              v5, v4, Lcom/zddz/app/sicn/fragment/HistoryDialog$1;->this$0 Lcom/zddz/app/sicn/fragment/HistoryDialog;
+    iget-object              v5, v5, Lcom/zddz/app/sicn/fragment/HistoryDialog;->mBaseViewModel Lcom/zddz/app/sicn/fragment/BaseViewModel;
+    invoke-virtual           v5, v1, Lcom/zddz/app/sicn/fragment/BaseViewModel;->setHistoryTimeType(I)V
+    iget-object              v5, v4, Lcom/zddz/app/sicn/fragment/HistoryDialog$1;->this$0 Lcom/zddz/app/sicn/fragment/HistoryDialog;
+    invoke-static            v5, Lcom/zddz/app/sicn/fragment/HistoryDialog;->access$200(Lcom/zddz/app/sicn/fragment/HistoryDialog;)Ljava/util/List;
+    move-result-object       v5
+    invoke-interface         v5, Ljava/util/List;->clear()V
+    new-instance             v5, Landroid/text/format/Time;
+    invoke-direct            v5, Landroid/text/format/Time;-><init>()V
+    invoke-virtual           v5, Landroid/text/format/Time;->setToNow()V
+    iget-object              v0, v4, Lcom/zddz/app/sicn/fragment/HistoryDialog$1;->this$0 Lcom/zddz/app/sicn/fragment/HistoryDialog;
+    iget                     v5, v5, Landroid/text/format/Time;->hour I
+    add-int/2addr            v5, v2
+    invoke-static            v0, v5, Lcom/zddz/app/sicn/fragment/HistoryDialog;->access$302(Lcom/zddz/app/sicn/fragment/HistoryDialog; I)I
+    iget-object              v5, v4, Lcom/zddz/app/sicn/fragment/HistoryDialog$1;->this$0 Lcom/zddz/app/sicn/fragment/HistoryDialog;
+    iget-object              v5, v5, Lcom/zddz/app/sicn/fragment/HistoryDialog;->mIMain Lcom/zddz/app/sicn/fragment/IMain;
+    sget-object              v0, Lcom/zddz/app/sicn/OrderSet;->write_hour_data [B
+    invoke-interface         v5, v0, Lcom/zddz/app/sicn/fragment/IMain;->writeData([B)Z
+    move-result              v5
+    if-eqz                   v5, +06ch
+    iget-object              v5, v4, Lcom/zddz/app/sicn/fragment/HistoryDialog$1;->this$0 Lcom/zddz/app/sicn/fragment/HistoryDialog;
+    invoke-static            v5, Lcom/zddz/app/sicn/fragment/HistoryDialog;->access$400(Lcom/zddz/app/sicn/fragment/HistoryDialog;)Landroid/widget/TextView;
+    move-result-object       v5
+    invoke-virtual           v5, v3, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    iget-object              v5, v4, Lcom/zddz/app/sicn/fragment/HistoryDialog$1;->this$0 Lcom/zddz/app/sicn/fragment/HistoryDialog;
+    invoke-static            v5, Lcom/zddz/app/sicn/fragment/HistoryDialog;->access$500(Lcom/zddz/app/sicn/fragment/HistoryDialog;)Landroid/widget/TextView;
+    move-result-object       v5
+    invoke-virtual           v5, v3, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    iget-object              v5, v4, Lcom/zddz/app/sicn/fragment/HistoryDialog$1;->this$0 Lcom/zddz/app/sicn/fragment/HistoryDialog;
+    invoke-static            v5, Lcom/zddz/app/sicn/fragment/HistoryDialog;->access$600(Lcom/zddz/app/sicn/fragment/HistoryDialog;)Landroid/widget/TextView;
+    move-result-object       v5
+    invoke-virtual           v5, v3, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    goto                     +4fh
+    const                    v0, 2131230868
+    if-ne                    v5, v0, +04bh
+    iget-object              v5, v4, Lcom/zddz/app/sicn/fragment/HistoryDialog$1;->this$0 Lcom/zddz/app/sicn/fragment/HistoryDialog;
+    invoke-static            v5, Lcom/zddz/app/sicn/fragment/HistoryDialog;->access$000(Lcom/zddz/app/sicn/fragment/HistoryDialog;)Landroid/widget/CheckedTextView;
+    move-result-object       v5
+    invoke-virtual           v5, v1, Landroid/widget/CheckedTextView;->setChecked(Z)V
+    iget-object              v5, v4, Lcom/zddz/app/sicn/fragment/HistoryDialog$1;->this$0 Lcom/zddz/app/sicn/fragment/HistoryDialog;
+    invoke-static            v5, Lcom/zddz/app/sicn/fragment/HistoryDialog;->access$100(Lcom/zddz/app/sicn/fragment/HistoryDialog;)Landroid/widget/CheckedTextView;
+    move-result-object       v5
+    invoke-virtual           v5, v2, Landroid/widget/CheckedTextView;->setChecked(Z)V
+    iget-object              v5, v4, Lcom/zddz/app/sicn/fragment/HistoryDialog$1;->this$0 Lcom/zddz/app/sicn/fragment/HistoryDialog;
+    iget-object              v5, v5, Lcom/zddz/app/sicn/fragment/HistoryDialog;->mBaseViewModel Lcom/zddz/app/sicn/fragment/BaseViewModel;
+    invoke-virtual           v5, v2, Lcom/zddz/app/sicn/fragment/BaseViewModel;->setHistoryTimeType(I)V
+    iget-object              v5, v4, Lcom/zddz/app/sicn/fragment/HistoryDialog$1;->this$0 Lcom/zddz/app/sicn/fragment/HistoryDialog;
+    invoke-static            v5, Lcom/zddz/app/sicn/fragment/HistoryDialog;->access$200(Lcom/zddz/app/sicn/fragment/HistoryDialog;)Ljava/util/List;
+    move-result-object       v5
+    invoke-interface         v5, Ljava/util/List;->clear()V
+    iget-object              v5, v4, Lcom/zddz/app/sicn/fragment/HistoryDialog$1;->this$0 Lcom/zddz/app/sicn/fragment/HistoryDialog;
+    iget-object              v5, v5, Lcom/zddz/app/sicn/fragment/HistoryDialog;->mIMain Lcom/zddz/app/sicn/fragment/IMain;
+    sget-object              v0, Lcom/zddz/app/sicn/OrderSet;->write_minute_data [B
+    invoke-interface         v5, v0, Lcom/zddz/app/sicn/fragment/IMain;->writeData([B)Z
+    move-result              v5
+    if-eqz                   v5, +01dh
+    iget-object              v5, v4, Lcom/zddz/app/sicn/fragment/HistoryDialog$1;->this$0 Lcom/zddz/app/sicn/fragment/HistoryDialog;
+    invoke-static            v5, Lcom/zddz/app/sicn/fragment/HistoryDialog;->access$400(Lcom/zddz/app/sicn/fragment/HistoryDialog;)Landroid/widget/TextView;
+    move-result-object       v5
+    invoke-virtual           v5, v3, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    iget-object              v5, v4, Lcom/zddz/app/sicn/fragment/HistoryDialog$1;->this$0 Lcom/zddz/app/sicn/fragment/HistoryDialog;
+    invoke-static            v5, Lcom/zddz/app/sicn/fragment/HistoryDialog;->access$500(Lcom/zddz/app/sicn/fragment/HistoryDialog;)Landroid/widget/TextView;
+    move-result-object       v5
+    invoke-virtual           v5, v3, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    iget-object              v5, v4, Lcom/zddz/app/sicn/fragment/HistoryDialog$1;->this$0 Lcom/zddz/app/sicn/fragment/HistoryDialog;
+    invoke-static            v5, Lcom/zddz/app/sicn/fragment/HistoryDialog;->access$600(Lcom/zddz/app/sicn/fragment/HistoryDialog;)Landroid/widget/TextView;
+    move-result-object       v5
+    invoke-virtual           v5, v3, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    return-void              

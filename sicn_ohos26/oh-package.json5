@@ -1,0 +1,8 @@
+{
+  "modelVersion": "6.0.0",
+  "description": "SHISON Heater BLE control app",
+  "dependencies": {},
+  "devDependencies": {
+    "@ohos/hvigor-ohos-plugin": "6.26.8"
+  }
+}

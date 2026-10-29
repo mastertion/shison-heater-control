@@ -1,0 +1,181 @@
+### CLASS Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter; (super=Landroidx/recyclerview/widget/RecyclerView$Adapter;)
+FIELD: mList Ljava/util/List; (access=private)
+FIELD: mListener Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter$OnItemClickListener; (access=private)
+
+METHOD: public constructor <init>()V
+    invoke-direct            v1, Landroidx/recyclerview/widget/RecyclerView$Adapter;-><init>()V
+    new-instance             v0, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter$2;
+    invoke-direct            v0, v1, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter$2;-><init>(Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;)V
+    iput-object              v0, v1, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;->mListener Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter$OnItemClickListener;
+    new-instance             v0, Ljava/util/ArrayList;
+    invoke-direct            v0, Ljava/util/ArrayList;-><init>()V
+    iput-object              v0, v1, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;->mList Ljava/util/List;
+    return-void              
+
+METHOD: static synthetic access$000(Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;)Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter$OnItemClickListener;
+    iget-object              v0, v0, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;->mListener Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter$OnItemClickListener;
+    return-object            v0
+
+METHOD: public clear()V
+    iget-object              v0, v1, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;->mList Ljava/util/List;
+    invoke-interface         v0, Ljava/util/List;->clear()V
+    invoke-virtual           v1, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;->notifyDataSetChanged()V
+    return-void              
+
+METHOD: public getItem(I)Lcom/zddz/bt/DeviceItem;
+    iget-object              v0, v1, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;->mList Ljava/util/List;
+    invoke-interface         v0, Ljava/util/List;->size()I
+    move-result              v0
+    if-ge                    v2, v0, +00bh
+    iget-object              v0, v1, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;->mList Ljava/util/List;
+    invoke-interface         v0, v2, Ljava/util/List;->get(I)Ljava/lang/Object;
+    move-result-object       v2
+    check-cast               v2, Lcom/zddz/bt/DeviceItem;
+    return-object            v2
+    const/4                  v2, 0
+    return-object            v2
+
+METHOD: public getItemCount()I
+    iget-object              v0, v1, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;->mList Ljava/util/List;
+    invoke-interface         v0, Ljava/util/List;->size()I
+    move-result              v0
+    return                   v0
+
+METHOD: public bridge synthetic onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder; I)V
+    check-cast               v1, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter$DeviceItemViewHolder;
+    invoke-virtual           v0, v1, v2, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;->onBindViewHolder(Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter$DeviceItemViewHolder; I)V
+    return-void              
+
+METHOD: public onBindViewHolder(Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter$DeviceItemViewHolder; I)V
+    iget-object              v0, v5, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;->mList Ljava/util/List;
+    invoke-interface         v0, v7, Ljava/util/List;->get(I)Ljava/lang/Object;
+    move-result-object       v0
+    check-cast               v0, Lcom/zddz/bt/DeviceItem;
+    iget-object              v1, v0, Lcom/zddz/bt/DeviceItem;->mName Ljava/lang/String;
+    invoke-static            v1, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    move-result              v1
+    if-nez                   v1, +00ah
+    iget-object              v1, v6, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter$DeviceItemViewHolder;->ctv_name Landroid/widget/CheckedTextView;
+    iget-object              v2, v0, Lcom/zddz/bt/DeviceItem;->mName Ljava/lang/String;
+    invoke-virtual           v1, v2, Landroid/widget/CheckedTextView;->setText(Ljava/lang/CharSequence;)V
+    goto                     +9h
+    iget-object              v1, v6, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter$DeviceItemViewHolder;->ctv_name Landroid/widget/CheckedTextView;
+    const                    v2, 2131755077
+    invoke-virtual           v1, v2, Landroid/widget/CheckedTextView;->setText(I)V
+    iget                     v1, v0, Lcom/zddz/bt/DeviceItem;->mState I
+    const/4                  v2, 2
+    const/4                  v3, 1
+    const/4                  v4, 0
+    if-ne                    v1, v2, +015h
+    iget-object              v0, v6, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter$DeviceItemViewHolder;->ctv_name Landroid/widget/CheckedTextView;
+    invoke-virtual           v0, v3, Landroid/widget/CheckedTextView;->setChecked(Z)V
+    iget-object              v0, v6, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter$DeviceItemViewHolder;->tv_state Landroid/widget/TextView;
+    const                    v1, 2131755074
+    invoke-virtual           v0, v1, Landroid/widget/TextView;->setText(I)V
+    iget-object              v0, v6, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter$DeviceItemViewHolder;->tv_state Landroid/widget/TextView;
+    invoke-virtual           v0, v4, Landroid/widget/TextView;->setVisibility(I)V
+    goto                     +24h
+    iget                     v0, v0, Lcom/zddz/bt/DeviceItem;->mState I
+    if-ne                    v0, v3, +015h
+    iget-object              v0, v6, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter$DeviceItemViewHolder;->ctv_name Landroid/widget/CheckedTextView;
+    invoke-virtual           v0, v4, Landroid/widget/CheckedTextView;->setChecked(Z)V
+    iget-object              v0, v6, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter$DeviceItemViewHolder;->tv_state Landroid/widget/TextView;
+    const                    v1, 2131755075
+    invoke-virtual           v0, v1, Landroid/widget/TextView;->setText(I)V
+    iget-object              v0, v6, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter$DeviceItemViewHolder;->tv_state Landroid/widget/TextView;
+    invoke-virtual           v0, v4, Landroid/widget/TextView;->setVisibility(I)V
+    goto                     +dh
+    iget-object              v0, v6, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter$DeviceItemViewHolder;->ctv_name Landroid/widget/CheckedTextView;
+    invoke-virtual           v0, v4, Landroid/widget/CheckedTextView;->setChecked(Z)V
+    iget-object              v0, v6, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter$DeviceItemViewHolder;->tv_state Landroid/widget/TextView;
+    const/16                 v1, 8
+    invoke-virtual           v0, v1, Landroid/widget/TextView;->setVisibility(I)V
+    iget-object              v0, v6, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter$DeviceItemViewHolder;->itemView Landroid/view/View;
+    new-instance             v1, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter$1;
+    invoke-direct            v1, v5, v6, v7, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter$1;-><init>(Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter; Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter$DeviceItemViewHolder; I)V
+    invoke-virtual           v0, v1, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    return-void              
+
+METHOD: public bridge synthetic onCreateViewHolder(Landroid/view/ViewGroup; I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
+    invoke-virtual           v0, v1, v2, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;->onCreateViewHolder(Landroid/view/ViewGroup; I)Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter$DeviceItemViewHolder;
+    move-result-object       v1
+    return-object            v1
+
+METHOD: public onCreateViewHolder(Landroid/view/ViewGroup; I)Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter$DeviceItemViewHolder;
+    invoke-virtual           v3, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
+    move-result-object       v4
+    invoke-static            v4, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+    move-result-object       v4
+    const                    v0, 2131427378
+    const/4                  v1, 0
+    invoke-virtual           v4, v0, v3, v1, Landroid/view/LayoutInflater;->inflate(I Landroid/view/ViewGroup; Z)Landroid/view/View;
+    move-result-object       v3
+    new-instance             v4, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter$DeviceItemViewHolder;
+    invoke-direct            v4, v2, v3, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter$DeviceItemViewHolder;-><init>(Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter; Landroid/view/View;)V
+    return-object            v4
+
+METHOD: public setList(Ljava/util/List;)V
+    iput-object              v1, v0, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;->mList Ljava/util/List;
+    invoke-virtual           v0, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;->notifyDataSetChanged()V
+    return-void              
+
+METHOD: public setOnItemClickListener(Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter$OnItemClickListener;)V
+    iput-object              v1, v0, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;->mListener Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter$OnItemClickListener;
+    return-void              
+
+METHOD: public updateItem(Lcom/zddz/bt/DeviceItem;)V
+    const/4                  v0, 0
+    iget-object              v1, v4, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;->mList Ljava/util/List;
+    invoke-interface         v1, Ljava/util/List;->size()I
+    move-result              v1
+    if-ge                    v0, v1, +02bh
+    iget-object              v1, v4, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;->mList Ljava/util/List;
+    invoke-interface         v1, v0, Ljava/util/List;->get(I)Ljava/lang/Object;
+    move-result-object       v1
+    check-cast               v1, Lcom/zddz/bt/DeviceItem;
+    iget-object              v2, v1, Lcom/zddz/bt/DeviceItem;->mAddress Ljava/lang/String;
+    iget-object              v3, v5, Lcom/zddz/bt/DeviceItem;->mAddress Ljava/lang/String;
+    invoke-virtual           v2, v3, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result              v2
+    if-eqz                   v2, +016h
+    iget-object              v2, v1, Lcom/zddz/bt/DeviceItem;->mName Ljava/lang/String;
+    invoke-static            v2, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    move-result              v2
+    if-eqz                   v2, +006h
+    iget-object              v2, v5, Lcom/zddz/bt/DeviceItem;->mName Ljava/lang/String;
+    iput-object              v2, v1, Lcom/zddz/bt/DeviceItem;->mName Ljava/lang/String;
+    iget                     v5, v5, Lcom/zddz/bt/DeviceItem;->mState I
+    iput                     v5, v1, Lcom/zddz/bt/DeviceItem;->mState I
+    invoke-virtual           v4, v0, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;->notifyItemChanged(I)V
+    return-void              
+    add-int/lit8             v0, v0, 1
+    goto                     -30h
+    iget-object              v0, v4, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;->mList Ljava/util/List;
+    invoke-interface         v0, v5, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    iget-object              v5, v4, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;->mList Ljava/util/List;
+    invoke-interface         v5, Ljava/util/List;->size()I
+    move-result              v5
+    add-int/lit8             v5, v5, -1
+    invoke-virtual           v4, v5, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;->notifyItemChanged(I)V
+    return-void              
+
+METHOD: public updateItem(Ljava/lang/String; I)V
+    const/4                  v0, 0
+    iget-object              v1, v3, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;->mList Ljava/util/List;
+    invoke-interface         v1, Ljava/util/List;->size()I
+    move-result              v1
+    if-ge                    v0, v1, +01bh
+    iget-object              v1, v3, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;->mList Ljava/util/List;
+    invoke-interface         v1, v0, Ljava/util/List;->get(I)Ljava/lang/Object;
+    move-result-object       v1
+    check-cast               v1, Lcom/zddz/bt/DeviceItem;
+    iget-object              v2, v1, Lcom/zddz/bt/DeviceItem;->mAddress Ljava/lang/String;
+    invoke-virtual           v2, v4, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result              v2
+    if-eqz                   v2, +008h
+    iput                     v5, v1, Lcom/zddz/bt/DeviceItem;->mState I
+    invoke-virtual           v3, v0, Lcom/zddz/app/sicn/adapter/DeviceItemRAdapter;->notifyItemChanged(I)V
+    return-void              
+    add-int/lit8             v0, v0, 1
+    goto                     -20h
+    return-void              

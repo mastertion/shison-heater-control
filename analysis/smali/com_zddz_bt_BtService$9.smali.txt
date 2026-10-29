@@ -1,0 +1,61 @@
+### CLASS Lcom/zddz/bt/BtService$9; (super=Ljava/lang/Object;)
+FIELD: this$0 Lcom/zddz/bt/BtService;
+
+METHOD: constructor <init>(Lcom/zddz/bt/BtService;)V
+    iput-object              v1, v0, Lcom/zddz/bt/BtService$9;->this$0 Lcom/zddz/bt/BtService;
+    invoke-direct            v0, Ljava/lang/Object;-><init>()V
+    return-void              
+
+METHOD: public run()V
+    iget-object              v0, v6, Lcom/zddz/bt/BtService$9;->this$0 Lcom/zddz/bt/BtService;
+    invoke-static            v0, Lcom/zddz/bt/BtService;->access$300(Lcom/zddz/bt/BtService;)Ljava/util/Queue;
+    move-result-object       v0
+    invoke-interface         v0, Ljava/util/Queue;->isEmpty()Z
+    move-result              v0
+    if-nez                   v0, +047h
+    iget-object              v0, v6, Lcom/zddz/bt/BtService$9;->this$0 Lcom/zddz/bt/BtService;
+    invoke-static            v0, Lcom/zddz/bt/BtService;->access$300(Lcom/zddz/bt/BtService;)Ljava/util/Queue;
+    move-result-object       v0
+    invoke-interface         v0, Ljava/util/Queue;->poll()Ljava/lang/Object;
+    move-result-object       v0
+    check-cast               v0, Lcom/zddz/bt/WriteDataItem;
+    if-eqz                   v0, +050h
+    iget-object              v1, v0, Lcom/zddz/bt/WriteDataItem;->mData [B
+    if-eqz                   v1, +00fh
+    iget-object              v1, v6, Lcom/zddz/bt/BtService$9;->this$0 Lcom/zddz/bt/BtService;
+    iget-object              v2, v0, Lcom/zddz/bt/WriteDataItem;->mAddress Ljava/lang/String;
+    iget-object              v3, v0, Lcom/zddz/bt/WriteDataItem;->mService Ljava/util/UUID;
+    iget-object              v4, v0, Lcom/zddz/bt/WriteDataItem;->mWrite Ljava/util/UUID;
+    iget-object              v5, v0, Lcom/zddz/bt/WriteDataItem;->mData [B
+    invoke-virtual           v1, v2, v3, v4, v5, Lcom/zddz/bt/BtService;->writeCharacteristic(Ljava/lang/String; Ljava/util/UUID; Ljava/util/UUID; [B)I
+    iget-object              v1, v6, Lcom/zddz/bt/BtService$9;->this$0 Lcom/zddz/bt/BtService;
+    invoke-static            v1, Lcom/zddz/bt/BtService;->access$400(Lcom/zddz/bt/BtService;)J
+    move-result-wide         v2
+    iget-wide                v4, v0, Lcom/zddz/bt/WriteDataItem;->mTimeUse J
+    add-long/2addr           v2, v4
+    iget-object              v4, v6, Lcom/zddz/bt/BtService$9;->this$0 Lcom/zddz/bt/BtService;
+    invoke-static            v4, Lcom/zddz/bt/BtService;->access$500(Lcom/zddz/bt/BtService;)J
+    move-result-wide         v4
+    sub-long/2addr           v2, v4
+    invoke-static            v1, v2, v3, Lcom/zddz/bt/BtService;->access$402(Lcom/zddz/bt/BtService; J)J
+    iget-object              v1, v6, Lcom/zddz/bt/BtService$9;->this$0 Lcom/zddz/bt/BtService;
+    iget-wide                v2, v0, Lcom/zddz/bt/WriteDataItem;->mTimeUse J
+    invoke-static            v1, v2, v3, Lcom/zddz/bt/BtService;->access$502(Lcom/zddz/bt/BtService; J)J
+    iget-object              v1, v6, Lcom/zddz/bt/BtService$9;->this$0 Lcom/zddz/bt/BtService;
+    invoke-static            v1, Lcom/zddz/bt/BtService;->access$600(Lcom/zddz/bt/BtService;)Landroid/os/Handler;
+    move-result-object       v1
+    iget-wide                v2, v0, Lcom/zddz/bt/WriteDataItem;->mTimeUse J
+    invoke-virtual           v1, v6, v2, v3, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable; J)Z
+    goto                     +18h
+    iget-object              v0, v6, Lcom/zddz/bt/BtService$9;->this$0 Lcom/zddz/bt/BtService;
+    invoke-static            v0, Lcom/zddz/bt/BtService;->access$400(Lcom/zddz/bt/BtService;)J
+    move-result-wide         v1
+    iget-object              v3, v6, Lcom/zddz/bt/BtService$9;->this$0 Lcom/zddz/bt/BtService;
+    invoke-static            v3, Lcom/zddz/bt/BtService;->access$500(Lcom/zddz/bt/BtService;)J
+    move-result-wide         v3
+    sub-long/2addr           v1, v3
+    invoke-static            v0, v1, v2, Lcom/zddz/bt/BtService;->access$402(Lcom/zddz/bt/BtService; J)J
+    iget-object              v0, v6, Lcom/zddz/bt/BtService$9;->this$0 Lcom/zddz/bt/BtService;
+    const-wide/16            v1, 0
+    invoke-static            v0, v1, v2, Lcom/zddz/bt/BtService;->access$502(Lcom/zddz/bt/BtService; J)J
+    return-void              
