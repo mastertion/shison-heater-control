@@ -6,36 +6,43 @@
 
 ```
 esp32_ha_gateway/
-├── platformio.ini        # PlatformIO 工程配置 (ESP32 Arduino)
+├── esphome/
+│   └── sicn_heater.yaml     # ★ 推荐: ESPHome 配置 (BLE Client + 实体, HA 零插件自动发现)
 ├── src/
-│   └── main.cpp          # 固件: BLE 连接 + 协议解析 + MQTT 上报/命令 + HA Discovery
+│   └── main.cpp             # 备选: Arduino/PlatformIO 固件 (BLE + MQTT + Discovery)
+├── platformio.ini           # Arduino 备选方案工程配置
 └── ha/
-    └── README.md         # HA 侧接入说明 (MQTT 集成 + 实体 + 自动化示例)
+    └── README.md            # HA 侧接入说明 (MQTT 方案)
 ```
 
-## 原理
+## 两条路线
 
-- ESP32 作为 **BLE 客户端** 连接加热器（服务 `0000fff0-...` / 特征 `0000fff1-...`，协议与鸿蒙 App 逆向一致：无偏移编码，写目标 = 温度×10 小端 `31 01 LO HI`，切单位 `31 02`，刷新 `01 03`）
-- 解析 `3001`（当前温度/模式/单位）与 `3101`（目标温度），**统一换算为 ℃** 后经 MQTT 发布
-- 固件发送 **MQTT Discovery** 配置 → HA 自动创建实体，**零 YAML 自定义插件**
-- 订阅 `sicn/set/target`、`sicn/set/unit`、`sicn/set/refresh` 命令写回设备
-
-## 使用
-
-1. 编辑 `src/main.cpp` 顶部：WiFi 名/密码、HA 主机 IP（必改）
-2. PlatformIO 编译烧录（见 `ha/README.md` 第 2 步）
-3. HA 安装 Mosquitto + MQTT 集成 → 自动出现 4 个实体
-
-详细步骤、串口日志判断、自动化示例见 **[ha/README.md](ha/README.md)**。
-
-## 实体清单 (MQTT Discovery 自动)
-
-| 实体 | 类型 | 范围/步进 |
+| | **ESPHome (推荐, 你已刷)** | Arduino MQTT (备选) |
 |---|---|---|
-| 当前温度 | sensor | ℃（HA 单位设置可转 ℉） |
-| 目标温度 | number | 18~34 ℃ / 0.5 |
-| 华氏单位 | switch | 设备显示单位切换 |
-| 模式 | sensor | 加热/保温/待机/超温/离水/探头故障 |
+| 文件 | `esphome/sicn_heater.yaml` | `src/main.cpp` |
+| HA 集成 | 原生 ESPHome, 自动发现 | MQTT Discovery |
+| 改动量 | 只改 yaml 重编译 | 改 C++ 重编译 |
+| 维护 | ESPHome 生态, 官方更新 | 自维护 |
+
+## ESPHome 快速上手
+
+1. 把 `esphome/sicn_heater.yaml` 放入 ESPHome 配置目录（HAOS 的 `/config/esphome/`，或 ESPHome Dashboard config 目录）
+2. 改三处：`wifi.ssid` / `wifi.password` / `ble_client.mac_address`
+3. **MAC 是虚拟的会变**：先用手机 App 或 ESPHome 日志确认加热器当前地址（如 `A4:6D:33:B8:26:17`），烧录后若连不上再重查更新
+4. ESPHome Dashboard → Install → 编译上传
+5. HA → 设置 → 设备与服务 → 添加集成 **ESPHome** → 自动发现 **SICN 加热器网关**
+
+## ESPHome 实体 (自动)
+
+| 实体 | 类型 | 说明 |
+|---|---|---|
+| SICN 当前温度 | sensor | ℃（HA 单位设置可转 ℉） |
+| SICN 目标温度 | number | 18~34 ℃ / 步进 0.5 |
+| SICN 华氏单位 | switch | 设备显示单位切换（切后自动重写目标，防重置 28/83） |
+| SICN 模式 | text_sensor | 加热中/保温/待机/超温保护/离水断电/探头故障 |
+| SICN 连接状态 | binary_sensor | BLE 链路在线状态 |
+
+协议速查见下方；详细 HA 侧说明见 `ha/README.md`。
 
 ## 协议速查（与鸿蒙 App 实测一致）
 

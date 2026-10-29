@@ -1,0 +1,239 @@
+# ============================================================
+# SHISON 加热器 (SICN-HEATER-E84) — ESPHome 配置
+# ============================================================
+# 用法:
+#   1. 把本文件放入 ESPHome 配置目录
+#      (HAOS: /config/esphome/ 或 ESPHome Dashboard 的 config 目录)
+#   2. 改下方 wifi ssid / password
+#   3. 改 ble_client mac_address 为你加热器的当前地址
+#      (加热器 MAC 是虚拟的会变! 手机 App 扫描弹窗里能看到当前地址)
+#   4. ESPHome Dashboard 点 Install 编译上传 (USB 或 OTA)
+#
+# HA 侧: 安装 ESPHome 集成 (设置->设备与服务->添加集成->ESPHome)
+#        → 自动发现本设备, 实体自动出现, 无需写任何 YAML
+#
+# 协议 (逆向实测, 与鸿蒙 App 一致):
+#   3001 MODE UNIT T_LO T_HI  -> 温度=(byte5*256+byte4)/10, UNIT 0=℃ 1=℉
+#   3101 LO HI                -> 目标=(byte3*256+byte2)/10 (无偏移)
+#   写目标 [31 01 LO HI] 值=温度×10 小端;  切单位 [31 02];  刷新 [01 03]
+# ============================================================
+
+esphome:
+  name: sicn-heater-gw
+  friendly_name: SICN 加热器网关
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+# ==================== 配置区 (必改) ====================
+wifi:
+  ssid: "你的WiFi名"
+  password: "你的WiFi密码"
+  # 建议固定 IP, 防止 ESPHome 重启后地址漂移 (可选)
+  # manual_ip:
+  #   static_ip: 192.168.1.50
+  #   gateway: 192.168.1.1
+  #   subnet: 255.255.255.0
+
+# ==================== 加热器 BLE 地址 (必改) ====================
+ble_client:
+  - id: sicn
+    mac_address: "A4:6D:33:B8:26:17"
+    on_connect:
+      - lambda: 'id(g_connected) = 1; id(conn_sw).publish_state(true);'
+      - logger.log: "加热器 BLE 已连接"
+      - delay: 1s
+      - lambda: |-
+          // 首次握手: 写 01 03 触发设备推送状态
+          auto *svc = id(sicn)->get_service(BLEUUID::from_uint16(0xfff0));
+          if (svc != nullptr) {
+            auto *ch = svc->get_characteristic(BLEUUID::from_uint16(0xfff1));
+            if (ch != nullptr) ch->write_value(std::vector<uint8_t>{0x01, 0x03});
+          }
+    on_disconnect:
+      - lambda: 'id(g_connected) = 0; id(conn_sw).publish_state(false);'
+      - logger.log: "加热器 BLE 断开"
+
+esp32_ble_tracker:
+
+# ---------------- 全局状态 ----------------
+globals:
+  - id: g_connected    # 1=已连接
+    type: int
+    initial_value: '0'
+  - id: g_unit         # 0=℃ 1=℉ (跟随设备 3001)
+    type: int
+    initial_value: '0'
+  - id: g_cur_c        # 当前温度(℃)
+    type: float
+    initial_value: '0.0'
+  - id: g_target_c     # 目标温度(℃)
+    type: float
+    initial_value: '26.0'
+
+# ---------------- BLE 数据通道 (notify) ----------------
+sensor:
+  - platform: ble_client
+    type: characteristic
+    ble_client_id: sicn
+    service_uuid: "0000fff0-0000-1000-8000-00805f9b34fb"
+    characteristic_uuid: "0000fff1-0000-1000-8000-00805f9b34fb"
+    notify: true
+    name: "SICN 数据通道"
+    id: sicn_rx
+    on_value:
+      lambda: |-
+        auto &d = x;
+        if (d.size() < 2) return;
+        if (d[0] == 0x30 && d[1] == 0x01 && d.size() >= 6) {
+          // 3001 MODE UNIT T_LO T_HI [状态...]
+          int mode = d[2];
+          int unit = d[3];
+          float temp = (d[5] * 256 + d[4]) / 10.0f;
+          if (temp < -40.0f || temp > 200.0f) return;   // 防异常包
+          id(g_unit) = unit;
+          float c = (unit == 1) ? (temp - 32.0f) / 1.8f : temp;   // 统一 ℃
+          id(g_cur_c) = round(c * 10.0f) / 10.0f;
+          id(cur_temp).publish_state(id(g_cur_c));
+          std::string mt;
+          switch (mode) {
+            case 0: mt = "探头故障"; break;
+            case 1: mt = "离水断电"; break;
+            case 2: mt = "超温保护"; break;
+            case 3: mt = "加热中";   break;
+            case 4: mt = "保温";     break;
+            case 5: mt = "待机";     break;
+            default: mt = "未知";    break;
+          }
+          id(mode_text).publish_state(mt);
+          id(unit_sw).publish_state(unit == 1);
+        } else if (d[0] == 0x31 && d[1] == 0x01 && d.size() >= 4) {
+          // 3101 目标温度回显 (无偏移)
+          float t = (d[3] * 256 + d[2]) / 10.0f;
+          if (t < -40.0f || t > 300.0f) return;
+          float c = (id(g_unit) == 1) ? (t - 32.0f) / 1.8f : t;
+          id(g_target_c) = round(c * 10.0f) / 10.0f;
+          id(target_num).publish_state(id(g_target_c));
+        }
+
+# ---------------- HA 实体 ----------------
+sensor:
+  - platform: template
+    name: "SICN 当前温度"
+    id: cur_temp
+    unit_of_measurement: "°C"
+    device_class: temperature
+    state_class: measurement
+    lambda: 'return id(g_cur_c);'
+
+text_sensor:
+  - platform: template
+    name: "SICN 模式"
+    id: mode_text
+    icon: "mdi:heat-wave"
+    lambda: 'return {"待机"};'
+
+binary_sensor:
+  - platform: template
+    name: "SICN 连接状态"
+    id: conn_sw
+    device_class: connectivity
+    lambda: 'return id(g_connected) == 1;'
+
+number:
+  - platform: template
+    name: "SICN 目标温度"
+    id: target_num
+    unit_of_measurement: "°C"
+    device_class: temperature
+    min_value: 18
+    max_value: 34
+    step: 0.5
+    mode: box
+    lambda: 'return id(g_target_c);'
+    set_action:
+      - lambda: |-
+          float c = x;
+          if (c < 18.0f || c > 34.0f) return;
+          id(g_target_c) = round(c * 10.0f) / 10.0f;
+          if (id(g_connected) == 1) {
+            // 设备 ℉ 档时换算成 ℉ 再写 (无偏移编码 = 温度×10 小端)
+            float w = (id(g_unit) == 1) ? id(g_target_c) * 1.8f + 32.0f : id(g_target_c);
+            int v = (int)(w * 10.0f + 0.5f);
+            auto *svc = id(sicn)->get_service(BLEUUID::from_uint16(0xfff0));
+            if (svc != nullptr) {
+              auto *ch = svc->get_characteristic(BLEUUID::from_uint16(0xfff1));
+              if (ch != nullptr)
+                ch->write_value(std::vector<uint8_t>{(uint8_t)0x31, (uint8_t)0x01,
+                                                     (uint8_t)(v & 0xFF), (uint8_t)((v >> 8) & 0xFF)});
+            }
+          }
+
+switch:
+  - platform: template
+    name: "SICN 华氏单位"
+    id: unit_sw
+    icon: "mdi:thermometer"
+    optimistic: true
+    lambda: 'return id(g_unit) == 1;'
+    turn_on_action:   # ON = 设备显示℉
+      - lambda: 'id(g_unit) = 1;'
+      - lambda: |-
+          if (id(g_connected) == 1) {
+            auto *svc = id(sicn)->get_service(BLEUUID::from_uint16(0xfff0));
+            if (svc != nullptr) {
+              auto *ch = svc->get_characteristic(BLEUUID::from_uint16(0xfff1));
+              if (ch != nullptr) ch->write_value(std::vector<uint8_t>{0x31, 0x02});
+            }
+          }
+      - delay: 600ms
+      - lambda: |-
+          // 切单位后设备会把目标重置为默认, 立即重写当前目标 (℉)
+          if (id(g_connected) == 1) {
+            float w = id(g_target_c) * 1.8f + 32.0f;
+            int v = (int)(w * 10.0f + 0.5f);
+            auto *svc = id(sicn)->get_service(BLEUUID::from_uint16(0xfff0));
+            if (svc != nullptr) {
+              auto *ch = svc->get_characteristic(BLEUUID::from_uint16(0xfff1));
+              if (ch != nullptr)
+                ch->write_value(std::vector<uint8_t>{(uint8_t)0x31, (uint8_t)0x01,
+                                                     (uint8_t)(v & 0xFF), (uint8_t)((v >> 8) & 0xFF)});
+            }
+          }
+    turn_off_action:  # OFF = 设备显示℃
+      - lambda: 'id(g_unit) = 0;'
+      - lambda: |-
+          if (id(g_connected) == 1) {
+            auto *svc = id(sicn)->get_service(BLEUUID::from_uint16(0xfff0));
+            if (svc != nullptr) {
+              auto *ch = svc->get_characteristic(BLEUUID::from_uint16(0xfff1));
+              if (ch != nullptr) ch->write_value(std::vector<uint8_t>{0x31, 0x02});
+            }
+          }
+      - delay: 600ms
+      - lambda: |-
+          // 重写当前目标 (℃)
+          if (id(g_connected) == 1) {
+            int v = (int)(id(g_target_c) * 10.0f + 0.5f);
+            auto *svc = id(sicn)->get_service(BLEUUID::from_uint16(0xfff0));
+            if (svc != nullptr) {
+              auto *ch = svc->get_characteristic(BLEUUID::from_uint16(0xfff1));
+              if (ch != nullptr)
+                ch->write_value(std::vector<uint8_t>{(uint8_t)0x31, (uint8_t)0x01,
+                                                     (uint8_t)(v & 0xFF), (uint8_t)((v >> 8) & 0xFF)});
+            }
+          }
+
+# ---------------- 轮询刷新 (每 10 秒写 01 03 触发推送) ----------------
+interval:
+  - interval: 10s
+    lambda: |-
+      if (id(g_connected) == 1) {
+        auto *svc = id(sicn)->get_service(BLEUUID::from_uint16(0xfff0));
+        if (svc != nullptr) {
+          auto *ch = svc->get_characteristic(BLEUUID::from_uint16(0xfff1));
+          if (ch != nullptr) ch->write_value(std::vector<uint8_t>{0x01, 0x03});
+        }
+      }
