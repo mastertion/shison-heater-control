@@ -316,7 +316,7 @@ struct Index {
   private hourBase: number = 0;
   private histCtx: CanvasRenderingContext2D =
     new CanvasRenderingContext2D(new RenderingContextSettings(true));
-  @State logText: string = 'SICN v26.43 (build 2026-10-31) 启动。连接已加自动重试(3次)。点击"扫描设备"开始搜索加热器。';
+  @State logText: string = 'SICN v26.47 (build 2026-10-31) 启动。连接已加自动重试(3次)。点击"扫描设备"开始搜索加热器。';
   @State connectBusy: boolean = false;
   /** 已保存设备库(对应安卓 DeviceRecord, 多设备记忆 + 自动连接) */
   @State savedDevices: SavedDevice[] = [];
@@ -328,6 +328,10 @@ struct Index {
   private permissionOk: boolean = false;
   private scanGotAny: boolean = false;
   private gotNotify: boolean = false;
+  /** 扫描代次: 每开始/停止一轮扫描自增, 本轮的回调与定时器携带旧代次即失效 */
+  private scanSeq: number = 0;
+  /** 扫描弹窗是否处于打开状态 (避免重复 open 造成"关了又重开"的闪烁) */
+  private dialogOpen: boolean = false;
   /** 扫描设备弹窗 (对齐安卓 showScanDialog) */
   private dialogCtrl: CustomDialogController = new CustomDialogController({
     builder: ScanDialog({
@@ -335,7 +339,7 @@ struct Index {
       scanning: $scanning,
       savedDevices: $savedDevices,
       connect: (dev: DeviceItem) => {
-        this.dialogCtrl.close();
+        this.closeScanDialog();
         this.connectDevice(dev);
       },
       stopScan: () => {
@@ -351,7 +355,7 @@ struct Index {
         this.toggleAuto(dev);
       },
       onDismiss: () => {
-        this.stopScan();
+        this.onScanDialogDismissed();
       }
     }),
     autoCancel: true,
@@ -442,7 +446,7 @@ struct Index {
 
   /** 从已保存设备库直接连接 */
   private connectSaved(dev: SavedDevice): void {
-    this.dialogCtrl.close();
+    this.closeScanDialog();
     this.connectDevice(new DeviceItem(dev.address, dev.name, 0, true));
   }
 
@@ -482,25 +486,75 @@ struct Index {
   }
 
   // ---------- 扫描 ----------
+
+  /** 打开扫描弹窗 (已打开则跳过, 避免重复 open 造成弹窗闪烁) */
+  private openScanDialog(): void {
+    if (this.dialogOpen) {
+      return;
+    }
+    this.dialogOpen = true;
+    try {
+      this.dialogCtrl.open();
+    } catch (e) {
+      this.dialogOpen = false;
+      this.appendLog('弹窗打开失败: ' + JSON.stringify(e));
+    }
+  }
+
+  /** 关闭扫描弹窗 (关闭会触发 ScanDialog.aboutToDisappear -> onScanDialogDismissed) */
+  private closeScanDialog(): void {
+    if (!this.dialogOpen) {
+      return;
+    }
+    this.dialogOpen = false;
+    try {
+      this.dialogCtrl.close();
+    } catch (e) {
+      // 弹窗可能已关闭, 忽略
+    }
+  }
+
+  /**
+   * 弹窗被关闭(取消/点外部/选中设备)时的统一收尾。
+   *
+   * 只在"扫描仍在进行"时停扫: 连接流程会先自己停扫、再做连接前预扫描,
+   * 若这里无条件 stopScan(), 会把刚启动的预扫描掐断, 导致误判"目标不在附近"。
+   */
+  private onScanDialogDismissed(): void {
+    this.dialogOpen = false;
+    if (this.scanning) {
+      this.stopScan();
+    }
+  }
+
+  /** 从主页"扫描设备"进入: 打开弹窗 + 开始扫描 */
   startScan(): void {
     if (this.scanning) {
       return;
     }
+    this.openScanDialog();
+    this.beginScan();
+  }
+
+  /**
+   * 真正开始一轮扫描 (不动弹窗)。
+   * 每次自增 scanSeq, 本轮的回调与定时器都带 seq, 过期即丢弃 ——
+   * 这样上一轮残留的 15s 自动停止定时器不会把新一轮扫描停掉。
+   */
+  private beginScan(): void {
+    this.scanSeq++;
+    const seq: number = this.scanSeq;
     this.seenIds.clear();
     this.devices = [];
     this.scanning = true;
     this.scanGotAny = false;
     this.appendLog('开始扫描...');
     promptAction.showToast({ message: '正在扫描蓝牙设备...' });
-    // 打开设备选择弹窗
-    try {
-      this.dialogCtrl.open();
-    } catch (e) {
-      // 弹窗打开失败不阻断扫描
-      this.appendLog('弹窗打开失败: ' + JSON.stringify(e));
-    }
     // 扫描前先查权限真实状态 (诊断 + 自愈)
     BleService.checkPermission(this.context).then((grant: string) => {
+      if (seq !== this.scanSeq) {
+        return;
+      }
       this.appendLog('扫描前权限系统状态: ' + grant);
       if (grant !== 'granted') {
         this.appendLog('权限未授予, 尝试重新申请...');
@@ -513,6 +567,9 @@ struct Index {
       }
     });
     BleService.startScan((found: Array<ble.ScanResult>) => {
+      if (seq !== this.scanSeq) {
+        return;
+      }
       this.scanGotAny = true;
       for (const d of found) {
         if (this.seenIds.has(d.deviceId)) {
@@ -530,28 +587,35 @@ struct Index {
         this.appendLog('已发现 ' + this.devices.length + ' 台设备...');
       }
     }, (msg: string) => {
+      if (seq !== this.scanSeq) {
+        return;
+      }
       this.scanning = false;
       this.appendLog(msg);
       this.appendLog('若报错含 401/201: 请到 设置→应用→SICN加热器→权限, 手动开启"附近设备/蓝牙"权限后重试。');
       promptAction.showToast({ message: msg });
     }, (info: string) => {
+      if (seq !== this.scanSeq) {
+        return;
+      }
       this.appendLog(info);
     });
     // 3 秒无回报检测: 帮助区分"没设备广播"与"API/权限异常"
     setTimeout(() => {
-      if (this.scanning && !this.scanGotAny) {
+      if (seq === this.scanSeq && this.scanning && !this.scanGotAny) {
         this.appendLog('扫描已启动但 3 秒内无设备回报。请确认: 1)加热器通电开机 2)蓝牙已开启 3)若持续如此, 截图本日志区文字反馈。');
       }
     }, 3000);
     // 15 秒后自动停止
     setTimeout(() => {
-      if (this.scanning) {
+      if (seq === this.scanSeq && this.scanning) {
         this.stopScan();
       }
     }, 15000);
   }
 
   async stopScan(): Promise<void> {
+    this.scanSeq++;   // 作废本轮所有回调与定时器
     this.scanning = false;
     await BleService.stopScan();
     const n: number = this.devices.length;
@@ -559,14 +623,19 @@ struct Index {
     promptAction.showToast({ message: n > 0 ? ('发现 ' + n + ' 台设备') : '未发现设备' });
   }
 
-  /** 重新扫描: 先关闭当前弹窗(触发停扫), 再重新开始扫描并重新打开弹窗 */
-  restartScan(): void {
-    try {
-      this.dialogCtrl.close();
-    } catch (e) {
-      // 弹窗可能未打开, 忽略
-    }
-    this.startScan();
+  /**
+   * 重新扫描 (弹窗内按钮): 原地重启扫描, 不关闭弹窗。
+   *
+   * 旧实现是 close() + startScan(): 关闭会触发 aboutToDisappear -> stopScan(),
+   * 那条停扫链路是异步的 (await BleService.stopScan()), 会落在新扫描启动之后,
+   * 表现为"弹窗关了又重开、扫描立刻自动停止", 且旧 15s 定时器还会再停一次。
+   */
+  async restartScan(): Promise<void> {
+    this.scanSeq++;        // 先作废旧定时器
+    this.scanning = false;
+    await BleService.stopScan();   // 等蓝牙栈真正释放, 否则起扫会被拒
+    this.appendLog('重新扫描...');
+    this.beginScan();
   }
 
   // ---------- 连接 ----------

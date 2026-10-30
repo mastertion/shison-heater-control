@@ -1,1 +1,1 @@
-b4a70944d0780ae9ffa2070f7e749ea5b879bdb66226f15b44efd82100457791 *SICN-Heater-v26.46-unsigned.hap
+39dccf128817b9c82109ff215638769638cac882ae73fb0babb1b8d02d593a13 *SICN-Heater-v26.47-unsigned.hap
