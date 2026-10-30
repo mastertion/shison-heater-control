@@ -14,8 +14,18 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { SERVICE_UUID, CHAR_UUID } from './Protocol';
 
 const TAG = 'SICN-BLE';
-const CONNECT_TIMEOUT_MS = 15000;
+const CONNECT_TIMEOUT_MS = 12000;
 const GATT_TIMEOUT_MS = 8000;
+/** 连接重试次数: 升级/重装后系统侧常残留旧 GATT 连接, 首次 connect 会被拒或超时 */
+const CONNECT_MAX_ATTEMPT = 3;
+
+function delay(ms: number): Promise<void> {
+  return new Promise<void>((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, ms);
+  });
+}
 
 /** 给 Promise 加超时, 超时 reject, 避免 UI 无限等待 */
 function withTimeout<T>(p: Promise<T>, ms: number, what: string): Promise<T> {
@@ -124,6 +134,44 @@ export class BleService {
   }
 
   /**
+   * 把连接错误翻译成可操作的中文提示 (升级后连不上时, 用户需要知道该动哪里)。
+   * 只对已知错误码给结论, 其余一律给通用排查步骤, 不臆测含义。
+   */
+  static hintFor(e: object): string {
+    let msg: string = '';
+    let code: number = -1;
+    try {
+      const rec: Record<string, Object> = e as Record<string, Object>;
+      const mv: Object | undefined = rec['message'];
+      if (typeof mv === 'string') {
+        msg = mv;
+      }
+      const cv: Object | undefined = rec['code'];
+      if (typeof cv === 'number') {
+        code = cv as number;
+      }
+    } catch (err) {
+      // 取不到字段时按通用处理
+    }
+    if (msg.indexOf('timeout') >= 0) {
+      return '连接超时: 加热器已被其他手机/旧版 App 占用, 或不在范围内。请关开手机蓝牙、断电重启加热器后重试。';
+    }
+    if (code === 201 || code === 401) {
+      return '权限不足(201/401): 设置→应用→SICN加热器→权限, 打开"附近设备/蓝牙"。';
+    }
+    if (code === 2900003) {
+      return '系统蓝牙未开启或蓝牙服务异常: 关开一次手机蓝牙后重试。';
+    }
+    if (code === 2900001) {
+      return '蓝牙服务尚未就绪: 稍等 2 秒再点连接。';
+    }
+    if (code === 2900099 || code === 2901003 || code === 2901004) {
+      return '蓝牙栈忙/连接冲突: 多为旧版 App 的 GATT 连接未释放。请关开手机蓝牙(或重启加热器电源)后重试。';
+    }
+    return '请关开手机蓝牙后重试; 若仍失败, 断电重启加热器, 并确认没有其他手机连着它。';
+  }
+
+  /**
    * 开始扫描 (BleScanner, API 26 官方推荐方式; 失败自动回退旧 API startBLEScan).
    *
    * 过滤器降级链 (API 26 native 校验多变):
@@ -228,18 +276,18 @@ export class BleService {
     onError('启动扫描失败(兼容模式): 所有过滤器均被系统拒绝');
   }
 
-  /** 停止扫描并解绑事件 */
-  static stopScan(): void {
+  /**
+   * 停止扫描并等待蓝牙栈真正释放 (连接前必须 await)。
+   * 旧实现直接返回, 扫描仍占着栈, 紧接着 connect 会被系统拒绝或超时。
+   */
+  static async stopScan(): Promise<void> {
     const sc = BleService.scanner;
     if (sc) {
       try {
-        sc.stopScan().then(() => {
-          hilog.info(0x0000, TAG, 'scan stopped');
-        }).catch((e: object) => {
-          hilog.warn(0x0000, TAG, 'stopScan: %{public}s', JSON.stringify(e));
-        });
+        await sc.stopScan();
+        hilog.info(0x0000, TAG, 'scan stopped');
       } catch (e) {
-        hilog.warn(0x0000, TAG, 'stopScan throw: %{public}s', JSON.stringify(e));
+        hilog.warn(0x0000, TAG, 'stopScan: %{public}s', JSON.stringify(e));
       }
       try {
         sc.off('BLEDeviceFind');
@@ -259,20 +307,61 @@ export class BleService {
     } catch (e) {
       hilog.warn(0x0000, TAG, 'stopBLEScan: %{public}s', JSON.stringify(e));
     }
+    // 给系统一个释放 radio 的窗口, 否则 connect 常报蓝牙栈忙
+    await delay(250);
   }
 
   /**
-   * 连接并等待连接建立 (设备需具备 FFF0 服务).
-   * connect() 是同步调用, 结果由 BLEConnectionStateChange 事件给出.
+   * 连接并等待连接建立 (设备需具备 FFF0 服务)。
+   * connect() 是同步调用, 结果由 BLEConnectionStateChange 事件给出。
+   *
+   * 重试策略 (升级/重装后最常见故障是系统侧残留旧 GATT 连接):
+   *   每次尝试都用全新的 GattClientDevice, 失败后 disconnect+close 释放句柄,
+   *   间隔 1.5s/3s 再试, 共 3 次; 首次超时 12s, 后续 9s。
    */
   static async connect(deviceId: string): Promise<void> {
     await BleService.disconnect();
-    const gatt: ble.GattClientDevice = ble.createGattClientDevice(deviceId);
-    BleService.gatt = gatt;
-    await BleService.waitConnected(gatt);
+    await delay(200);
+    let lastMsg: string = 'unknown';
+    for (let attempt = 1; attempt <= CONNECT_MAX_ATTEMPT; attempt++) {
+      let gatt: ble.GattClientDevice | undefined = undefined;
+      try {
+        gatt = ble.createGattClientDevice(deviceId);
+        BleService.gatt = gatt;
+        BleService.diag('连接尝试 ' + attempt + '/' + CONNECT_MAX_ATTEMPT + ' -> ' + deviceId);
+        await BleService.waitConnected(gatt, attempt === 1 ? CONNECT_TIMEOUT_MS : 9000);
+        BleService.diag('连接成功 (第 ' + attempt + ' 次尝试)');
+        return;
+      } catch (e) {
+        lastMsg = BleService.describeError(e);
+        hilog.warn(0x0000, TAG, 'connect attempt %{public}d failed: %{public}s',
+          attempt, lastMsg);
+        BleService.diag('第 ' + attempt + ' 次连接失败: ' + lastMsg);
+        if (gatt !== undefined) {
+          try {
+            gatt.disconnect();
+          } catch (err) {
+            // 未连上时 disconnect 报错属正常
+          }
+          try {
+            gatt.close();
+          } catch (err) {
+            // 同上
+          }
+        }
+        BleService.gatt = undefined;
+        BleService.ch = undefined;
+        if (attempt < CONNECT_MAX_ATTEMPT) {
+          const waitMs: number = attempt === 1 ? 1500 : 3000;
+          BleService.diag('等待 ' + waitMs + 'ms 后重试...');
+          await delay(waitMs);
+        }
+      }
+    }
+    throw new Error('连接失败(已重试 ' + CONNECT_MAX_ATTEMPT + ' 次): ' + lastMsg);
   }
 
-  private static waitConnected(gatt: ble.GattClientDevice): Promise<void> {
+  private static waitConnected(gatt: ble.GattClientDevice, timeoutMs: number): Promise<void> {
     return new Promise<void>((resolve, reject) => {
       let settled: boolean = false;
       const timer: number = setTimeout(() => {
@@ -281,8 +370,8 @@ export class BleService {
         }
         settled = true;
         BleService.offState(gatt);
-        reject(new Error('connect timeout'));
-      }, CONNECT_TIMEOUT_MS);
+        reject(new Error('connect timeout (' + timeoutMs + 'ms)'));
+      }, timeoutMs);
 
       gatt.on('BLEConnectionStateChange', (state: ble.BLEConnectionChangeState) => {
         hilog.info(0x0000, TAG, 'conn state -> %{public}d', state.state);

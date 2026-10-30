@@ -271,7 +271,7 @@ struct Index {
   private hourBase: number = 0;
   private histCtx: CanvasRenderingContext2D =
     new CanvasRenderingContext2D(new RenderingContextSettings(true));
-  @State logText: string = 'SICN v26.40 (build 2026-10-30 05:3x) 启动。日志仅写文件, UI 已隐藏。点击"扫描设备"开始搜索加热器。';
+  @State logText: string = 'SICN v26.43 (build 2026-10-31) 启动。连接已加自动重试(3次)。点击"扫描设备"开始搜索加热器。';
   @State connectBusy: boolean = false;
   /** 已保存设备库(对应安卓 DeviceRecord, 多设备记忆 + 自动连接) */
   @State savedDevices: SavedDevice[] = [];
@@ -506,9 +506,9 @@ struct Index {
     }, 15000);
   }
 
-  stopScan(): void {
+  async stopScan(): Promise<void> {
     this.scanning = false;
-    BleService.stopScan();
+    await BleService.stopScan();
     const n: number = this.devices.length;
     this.appendLog('扫描停止, 共发现 ' + n + ' 台设备。');
     promptAction.showToast({ message: n > 0 ? ('发现 ' + n + ' 台设备') : '未发现设备' });
@@ -531,11 +531,11 @@ struct Index {
     }
     this.connectBusy = true;
     try {
-      // 连接前必须停扫: 扫描占着蓝牙栈会导致 GATT 服务发现卡死
-      if (this.scanning) {
-        this.stopScan();
-      }
-      this.appendLog('正在连接 ' + (dev.deviceName || dev.deviceId) + ' (' + dev.rssi + ' dBm)...');
+      // 连接前必须停扫并等蓝牙栈真正释放: 扫描占着 stack 会导致 connect 被拒或超时
+      this.scanning = false;
+      await BleService.stopScan();
+      this.appendLog('扫描已停止, 开始连接 ' + (dev.deviceName || dev.deviceId) +
+        ' (' + dev.rssi + ' dBm)...');
       await BleService.connect(dev.deviceId);
       this.appendLog('已连接, 使能通知...');
       await BleService.enableNotify((value: Uint8Array) => {
@@ -561,12 +561,16 @@ struct Index {
       this.syncLoop(6500);
       this.syncLoop(11500);
     } catch (e) {
-      hilog.error(0x0000, TAG, 'connect failed: %{public}s', JSON.stringify(e));
+      const detail: string = BleService.describeError(e);
+      hilog.error(0x0000, TAG, 'connect failed: %{public}s', detail);
       this.connected = false;
       this.stateText = '连接失败';
       this.stateColor = '#E5484D';
-      this.appendLog('连接失败: ' + JSON.stringify(e));
-      this.appendLog('提示: 若提示超时/服务发现失败, 请靠近加热器(1米内)重试, 或重启加热器电源。');
+      this.appendLog('连接失败: ' + detail);
+      this.appendLog('原因: ' + BleService.hintFor(e));
+      if (silent) {
+        this.appendLog('自动重连失败, 请点"扫描设备"手动连接。');
+      }
       if (!silent) {
         promptAction.showToast({ message: '连接失败, 请靠近设备重试' });
       }
