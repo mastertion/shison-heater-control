@@ -24,13 +24,13 @@ export function modeText(mode: number): string {
     case 1:
       return '离水断电';
     case 2:
-      return '超温保护';
+      return '超温';
     case 3:
-      return '加热中';
+      return '加热';
     case 4:
-      return '保温';
+      return '恒温';
     case 5:
-      return '待机';
+      return '降温';
     default:
       return '未知(' + mode + ')';
   }

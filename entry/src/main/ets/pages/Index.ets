@@ -621,6 +621,7 @@ struct Index {
       }
       this.currentTemp = cur.toFixed(1);
       this.stateText = data.stateText;
+      // 颜色: 加热(3)橙、故障/保护(0~2)红、恒温(4)/降温(5)绿
       this.stateColor = data.mode === 3 ? '#FF7A00' : (data.mode <= 2 ? '#E5484D' : '#22A06B');
       // 单位映射(安卓实测): byte3=1->℉, byte3=0->℃
       const oldUnit: string = this.unitText;
@@ -647,7 +648,7 @@ struct Index {
         }
         this.appendLog('设备确认单位 ' + this.unitText + ', 目标 ' + this.tempInput + this.unitText);
       }
-      // 警报提示 (对齐安卓 AlarmActivity: 0探头故障/1离水断电/2超温保护)
+      // 警报提示 (对齐安卓 AlarmActivity: 0探头故障/1离水断电/2超温; 报警页显示「超温保护」)
       if (data.mode >= 0 && data.mode <= 2 && this.lastMode !== data.mode) {
         promptAction.showToast({ message: '警报: ' + data.stateText });
         // 进入独立报警页(脉冲动画+震动), 同一报警只弹一次, 返回后由 onPageShow 复位
