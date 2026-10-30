@@ -525,6 +525,57 @@ struct Index {
   }
 
   // ---------- 连接 ----------
+
+  /**
+   * 连接前预扫描: 确认目标地址是否真的在附近, 并把附近"疑似加热器"的名称/地址/RSSI 写入日志。
+   *
+   * 连接超时有两种完全不同的原因, 必须区分:
+   *   a) 设备不在范围/没通电 -> 扫描根本发现不了它
+   *   b) 设备已被别的手机或旧连接占用 -> 扫描能发现, 但 connect 被拒/超时
+   * 旧版只记录"发现 N 台设备", 名称不落日志, 现场无法判断是哪一种。
+   *
+   * @returns 目标地址是否在本次预扫描中出现
+   */
+  private probeNearby(address: string): Promise<boolean> {
+    return new Promise<boolean>((resolve) => {
+      let found: boolean = false;
+      const seenAddr: Set<string> = new Set<string>();
+      let total: number = 0;
+      this.appendLog('连接前预扫描 5 秒, 确认设备是否在附近...');
+      BleService.startScan((list: Array<ble.ScanResult>) => {
+        for (const d of list) {
+          total++;
+          const nm: string = d.deviceName ?? '';
+          const cand: boolean = nm.toLowerCase().includes('sicn') ||
+            nm.toLowerCase().includes('heater') || hasFff0Service(d.data);
+          if (cand && !seenAddr.has(d.deviceId)) {
+            seenAddr.add(d.deviceId);
+            this.appendLog('附近候选: ' + (nm === '' ? '(无名)' : nm) + ' ' + d.deviceId +
+              ' rssi=' + d.rssi + (hasFff0Service(d.data) ? ' [含FFF0]' : ''));
+          }
+          if (d.deviceId.toUpperCase() === address.toUpperCase()) {
+            found = true;
+            if (!seenAddr.has('__target__')) {
+              seenAddr.add('__target__');
+              this.appendLog('目标设备已出现: ' + (nm === '' ? '(无名)' : nm) + ' rssi=' + d.rssi);
+            }
+          }
+        }
+      }, (msg: string) => {
+        this.appendLog('预扫描失败: ' + msg);
+      }, (info: string) => {
+        this.appendLog(info);
+      });
+      setTimeout(() => {
+        BleService.stopScan().then(() => {
+          this.appendLog('预扫描结束: 共 ' + total + ' 条广播, 候选 ' + seenAddr.size +
+            ' 台, 目标' + (found ? '在附近' : '未出现'));
+          resolve(found);
+        });
+      }, 5000);
+    });
+  }
+
   async connectDevice(dev: DeviceItem, silent: boolean = false): Promise<void> {
     if (this.connectBusy) {
       return;
@@ -534,9 +585,15 @@ struct Index {
       // 连接前必须停扫并等蓝牙栈真正释放: 扫描占着 stack 会导致 connect 被拒或超时
       this.scanning = false;
       await BleService.stopScan();
-      this.appendLog('扫描已停止, 开始连接 ' + (dev.deviceName || dev.deviceId) +
-        ' (' + dev.rssi + ' dBm)...');
-      await BleService.connect(dev.deviceId);
+      // 预扫描: 判断"不在范围"还是"被占用", 顺带记录附近加热器的名称/RSSI
+      const nearby: boolean = await this.probeNearby(dev.deviceId);
+      if (!nearby) {
+        this.appendLog('!! 目标设备未在预扫描中出现: 多半是加热器未通电/不在范围内。');
+        this.appendLog('提示: 通电后屏幕应亮起; 也有可能已被其他手机或旧版 App 占着连接。');
+      }
+      this.appendLog('开始连接 ' + (dev.deviceName || dev.deviceId) +
+        ' (' + dev.rssi + ' dBm), 最多尝试 ' + (nearby ? '3' : '1') + ' 次...');
+      await BleService.connect(dev.deviceId, nearby ? 3 : 1);
       this.appendLog('已连接, 使能通知...');
       await BleService.enableNotify((value: Uint8Array) => {
         this.onNotify(value);

@@ -319,16 +319,17 @@ export class BleService {
    *   每次尝试都用全新的 GattClientDevice, 失败后 disconnect+close 释放句柄,
    *   间隔 1.5s/3s 再试, 共 3 次; 首次超时 12s, 后续 9s。
    */
-  static async connect(deviceId: string): Promise<void> {
+  static async connect(deviceId: string, maxAttempt: number = CONNECT_MAX_ATTEMPT): Promise<void> {
     await BleService.disconnect();
     await delay(200);
+    const totalAttempt: number = Math.max(1, Math.min(maxAttempt, CONNECT_MAX_ATTEMPT));
     let lastMsg: string = 'unknown';
-    for (let attempt = 1; attempt <= CONNECT_MAX_ATTEMPT; attempt++) {
+    for (let attempt = 1; attempt <= totalAttempt; attempt++) {
       let gatt: ble.GattClientDevice | undefined = undefined;
       try {
         gatt = ble.createGattClientDevice(deviceId);
         BleService.gatt = gatt;
-        BleService.diag('连接尝试 ' + attempt + '/' + CONNECT_MAX_ATTEMPT + ' -> ' + deviceId);
+        BleService.diag('连接尝试 ' + attempt + '/' + totalAttempt + ' -> ' + deviceId);
         await BleService.waitConnected(gatt, attempt === 1 ? CONNECT_TIMEOUT_MS : 9000);
         BleService.diag('连接成功 (第 ' + attempt + ' 次尝试)');
         return;
@@ -351,14 +352,14 @@ export class BleService {
         }
         BleService.gatt = undefined;
         BleService.ch = undefined;
-        if (attempt < CONNECT_MAX_ATTEMPT) {
+        if (attempt < totalAttempt) {
           const waitMs: number = attempt === 1 ? 1500 : 3000;
           BleService.diag('等待 ' + waitMs + 'ms 后重试...');
           await delay(waitMs);
         }
       }
     }
-    throw new Error('连接失败(已重试 ' + CONNECT_MAX_ATTEMPT + ' 次): ' + lastMsg);
+    throw new Error('连接失败(已尝试 ' + totalAttempt + ' 次): ' + lastMsg);
   }
 
   private static waitConnected(gatt: ble.GattClientDevice, timeoutMs: number): Promise<void> {
