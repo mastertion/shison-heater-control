@@ -5,6 +5,10 @@ build/
 output/
 oh_modules/
 
+# dist/ 例外: 随版本入库的可侧载构建产物（未签名 hap）+ 校验文件
+!dist/
+!dist/*.hap
+
 # ===== 逆向中间产物（体积大且含二进制，不入库）=====
 sicn_extract/
 
