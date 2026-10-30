@@ -15,6 +15,10 @@
     {
       "name": "bluetooth_reason",
       "value": "用于扫描、连接和控制 SHISON 蓝牙加热器"
+    },
+    {
+      "name": "vibrate_reason",
+      "value": "报警时震动提醒用户"
     }
   ]
 }

@@ -2,7 +2,7 @@
  * SHISON 加热器 蓝牙控制面板 (鸿蒙)
  */
 import { common } from '@kit.AbilityKit';
-import { promptAction } from '@kit.ArkUI';
+import { promptAction, router } from '@kit.ArkUI';
 import { preferences } from '@kit.ArkData';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { ble } from '@kit.ConnectivityKit';
@@ -21,6 +21,7 @@ import {
   NotifyData
 } from '../common/Protocol';
 import { DeviceItem } from '../model/HeaterModels';
+import { DeviceStore, SavedDevice } from '../common/DeviceStore';
 
 const TAG = 'SICN-UI';
 
@@ -68,11 +69,18 @@ struct ScanDialog {
   controller: CustomDialogController;
   @Link devices: DeviceItem[];
   @Link scanning: boolean;
+  @Link savedDevices: SavedDevice[];
   connect: (dev: DeviceItem) => void = () => {
   };
   stopScan: () => void = () => {
   };
   restartScan: () => void = () => {
+  };
+  /** 从已保存设备库直接连接 */
+  connectSaved: (dev: SavedDevice) => void = () => {
+  };
+  /** 切换设备的自动连接标记 */
+  toggleAuto: (dev: SavedDevice) => void = () => {
   };
   /** 弹窗关闭(取消/点外部/连接后)时回调, 用于统一停止扫描 */
   onDismiss: () => void = () => {
@@ -95,6 +103,54 @@ struct ScanDialog {
           .fontColor(this.scanning ? '#3A86FF' : '#8A8F98')
       }
       .width('100%')
+
+      if (this.savedDevices.length > 0) {
+        Scroll() {
+          Column({ space: 4 }) {
+            Text('已保存设备 (开启"自动"后下次自动连接)')
+              .fontSize(12)
+              .fontColor('#8A8F98')
+              .width('100%')
+            ForEach(this.savedDevices, (d: SavedDevice) => {
+              Row({ space: 8 }) {
+                Column({ space: 2 }) {
+                  Text(d.name === '' ? '(无名称)' : d.name)
+                    .fontSize(14)
+                    .fontColor('#1D1D1F')
+                    .maxLines(1)
+                    .textOverflow({ overflow: TextOverflow.Ellipsis })
+                  Text(d.address)
+                    .fontSize(11)
+                    .fontColor('#8A8F98')
+                }
+                .layoutWeight(1)
+                .alignItems(HorizontalAlign.Start)
+                Button('连接')
+                  .height(32)
+                  .fontSize(13)
+                  .backgroundColor('#3A86FF')
+                  .onClick(() => {
+                    this.connectSaved(d);
+                  })
+                Toggle({ type: ToggleType.Switch, isOn: d.autoConnect })
+                  .width(44)
+                  .height(28)
+                  .onChange(() => {
+                    this.toggleAuto(d);
+                  })
+              }
+              .width('100%')
+              .padding(8)
+              .backgroundColor('#EAF1FB')
+              .borderRadius(8)
+            }, (d: SavedDevice) => d.address)
+          }
+          .width('100%')
+        }
+        .width('100%')
+        .maxHeight(120)
+        .scrollBar(BarState.Auto)
+      }
 
       if (this.devices.length === 0) {
         Column({ space: 6 }) {
@@ -143,7 +199,7 @@ struct ScanDialog {
           }, (dev: DeviceItem) => dev.deviceId)
         }
         .width('100%')
-        .height(240)
+        .height(200)
         .scrollBar(BarState.Auto)
       }
 
@@ -217,6 +273,10 @@ struct Index {
     new CanvasRenderingContext2D(new RenderingContextSettings(true));
   @State logText: string = 'SICN v26.40 (build 2026-10-30 05:3x) 启动。日志仅写文件, UI 已隐藏。点击"扫描设备"开始搜索加热器。';
   @State connectBusy: boolean = false;
+  /** 已保存设备库(对应安卓 DeviceRecord, 多设备记忆 + 自动连接) */
+  @State savedDevices: SavedDevice[] = [];
+  /** 报警页是否已弹出(同一报警只弹一次, onPageShow 复位) */
+  @State alarmShown: boolean = false;
   private context: common.UIAbilityContext = getContext(this) as common.UIAbilityContext;
   private seenIds: Set<string> = new Set<string>();
   private scroller: Scroller = new Scroller();
@@ -228,6 +288,7 @@ struct Index {
     builder: ScanDialog({
       devices: $devices,
       scanning: $scanning,
+      savedDevices: $savedDevices,
       connect: (dev: DeviceItem) => {
         this.dialogCtrl.close();
         this.connectDevice(dev);
@@ -237,6 +298,12 @@ struct Index {
       },
       restartScan: () => {
         this.restartScan();
+      },
+      connectSaved: (dev: SavedDevice) => {
+        this.connectSaved(dev);
+      },
+      toggleAuto: (dev: SavedDevice) => {
+        this.toggleAuto(dev);
       },
       onDismiss: () => {
         this.stopScan();
@@ -256,6 +323,7 @@ struct Index {
   }
 
   onPageShow(): void {
+    this.alarmShown = false;
     BleService.diagListener = (s: string): void => {
       this.appendLog(s);
     };
@@ -278,27 +346,37 @@ struct Index {
           this.appendLog('警告: 蓝牙未开启, 请打开系统蓝牙。');
         }
       });
+      // 加载已保存设备库
+      DeviceStore.load(this.context).then((list: SavedDevice[]) => {
+        this.savedDevices = list;
+      });
       // 自动重连上次连接的设备
       this.tryAutoReconnect();
     });
   }
 
-  /** 自动重连: 读取上次连接设备地址, 直接按地址连接 (不扫描) */
+  /** 自动重连: 优先连接设备库里标记 autoConnect 的设备, 否则回退旧版 last_addr */
   private async tryAutoReconnect(): Promise<void> {
     if (this.autoReconnectTried) {
       return;
     }
     this.autoReconnectTried = true;
     try {
-      const pref = await preferences.getPreferences(this.context, 'sicn_pref');
-      const addr: string = (await pref.get('last_addr', '')) as string;
-      if (addr === '') {
+      // 优先: 设备库里开启自动连接的设备(取 lastSeen 最新的一台)
+      const auto: SavedDevice | null = await DeviceStore.getAutoConnect(this.context);
+      if (auto !== null) {
+        this.appendLog('发现已开启自动连接的设备 ' + (auto.name || auto.address) + ', 自动重连...');
+        await this.connectDevice(new DeviceItem(auto.address, auto.name, 0, true), true);
+        return;
+      }
+      // 回退: 旧版 last_addr
+      const last: SavedDevice | null = await DeviceStore.getLastConnected(this.context);
+      if (last === null || last.address === '') {
         this.appendLog('无上次连接记录, 跳过自动重连。');
         return;
       }
-      const name: string = (await pref.get('last_name', '')) as string;
-      this.appendLog('发现上次连接设备 ' + (name || addr) + ', 自动重连...');
-      await this.connectDevice(new DeviceItem(addr, name, 0, true), true);
+      this.appendLog('发现上次连接设备 ' + (last.name || last.address) + ', 自动重连...');
+      await this.connectDevice(new DeviceItem(last.address, last.name, 0, true), true);
     } catch (e) {
       this.appendLog('自动重连失败: ' + JSON.stringify(e));
     }
@@ -315,6 +393,21 @@ struct Index {
     } catch (e) {
       this.appendLog('保存设备记录失败: ' + JSON.stringify(e));
     }
+  }
+
+  /** 从已保存设备库直接连接 */
+  private connectSaved(dev: SavedDevice): void {
+    this.dialogCtrl.close();
+    this.connectDevice(new DeviceItem(dev.address, dev.name, 0, true));
+  }
+
+  /** 切换设备的自动连接标记 (对应安卓 auto_connect) */
+  private toggleAuto(dev: SavedDevice): void {
+    const next: boolean = !dev.autoConnect;
+    DeviceStore.setAutoConnect(this.context, dev.address, next).then((list: SavedDevice[]) => {
+      this.savedDevices = list;
+      this.appendLog('已' + (next ? '开启' : '关闭') + ' ' + (dev.name || dev.address) + ' 的自动连接。');
+    });
   }
 
   appendLog(s: string): void {
@@ -456,6 +549,10 @@ struct Index {
       this.appendLog('特征: ' + BleService.describeChar());
       // 记住该设备, 下次启动自动重连
       this.saveLastDevice(dev.deviceId, dev.deviceName || '');
+      // 记录进设备库(多设备记忆, 支持自动连接)
+      DeviceStore.upsert(this.context, dev.deviceId, dev.deviceName || '').then((list: SavedDevice[]) => {
+        this.savedDevices = list;
+      });
       // UI 释放, 握手在后台进行, 不再卡"连接中"
       this.connectBusy = false;
       this.gotNotify = false;
@@ -553,6 +650,20 @@ struct Index {
       // 警报提示 (对齐安卓 AlarmActivity: 0探头故障/1离水断电/2超温保护)
       if (data.mode >= 0 && data.mode <= 2 && this.lastMode !== data.mode) {
         promptAction.showToast({ message: '警报: ' + data.stateText });
+        // 进入独立报警页(脉冲动画+震动), 同一报警只弹一次, 返回后由 onPageShow 复位
+        if (!this.alarmShown) {
+          this.alarmShown = true;
+          router.pushUrl({
+            url: 'pages/AlarmPage',
+            params: {
+              mode: data.mode,
+              temp: data.temp,
+              unit: data.unit === 'F' ? '℉' : '℃'
+            }
+          }).catch((e: Error) => {
+            this.appendLog('打开报警页失败: ' + JSON.stringify(e));
+          });
+        }
       }
       this.lastMode = data.mode;
       // 切单位过渡: 设备目标已被重置为默认, 用当前换算目标重写设备
