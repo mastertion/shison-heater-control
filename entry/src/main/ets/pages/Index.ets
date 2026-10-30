@@ -136,107 +136,150 @@ struct ScanDialog {
   }
 
   build() {
-    Column({ space: 8 }) {
-      Row() {
+    // 卡片自己负责圆角/白底/裁切 (controller 已设 customStyle, 系统不再叠一层底)
+    Column() {
+      // ---------- 标题栏 ----------
+      Row({ space: 8 }) {
         Text('选择设备')
-          .fontSize(17)
+          .fontSize(18)
           .fontWeight(FontWeight.Bold)
           .fontColor('#1D1D1F')
         Blank()
-        Text(this.scanning ? '扫描中...' : '扫描已停止')
-          .fontSize(12)
-          .fontColor(this.scanning ? '#3A86FF' : '#8A8F98')
+        Row({ space: 5 }) {
+          Circle({ width: 6, height: 6 })
+            .fill(this.scanning ? '#3A86FF' : '#C9CDD4')
+          Text(this.scanning ? '扫描中' : '已停止')
+            .fontSize(12)
+            .fontColor(this.scanning ? '#3A86FF' : '#98A0AC')
+        }
+        .padding({ left: 8, right: 10, top: 5, bottom: 5 })
+        .backgroundColor(this.scanning ? '#EAF1FB' : '#F2F3F5')
+        .borderRadius(20)
       }
       .width('100%')
+      .padding({ left: 20, right: 20, top: 18, bottom: 12 })
 
+      // ---------- 已保存设备 ----------
       if (this.savedDevices.length > 0) {
-        Scroll() {
-          Column({ space: 4 }) {
-            Text('已保存设备 (开启"自动"后下次自动连接)')
-              .fontSize(12)
-              .fontColor('#8A8F98')
-              .width('100%')
-            ForEach(this.savedDevices, (d: SavedDevice) => {
-              Row({ space: 8 }) {
-                Column({ space: 2 }) {
-                  Text(d.name === '' ? '(无名称)' : d.name)
-                    .fontSize(14)
-                    .fontColor('#1D1D1F')
-                    .maxLines(1)
-                    .textOverflow({ overflow: TextOverflow.Ellipsis })
-                  Text(d.address)
-                    .fontSize(11)
-                    .fontColor('#8A8F98')
+        Column({ space: 8 }) {
+          Text('已保存设备 · 打开"自动"后下次自动连接')
+            .fontSize(11)
+            .fontColor('#98A0AC')
+            .width('100%')
+          Scroll() {
+            Column({ space: 6 }) {
+              ForEach(this.savedDevices, (d: SavedDevice) => {
+                Row({ space: 6 }) {
+                  Column({ space: 2 }) {
+                    Text(d.name === '' ? '(无名称)' : d.name)
+                      .fontSize(14)
+                      .fontWeight(FontWeight.Medium)
+                      .fontColor('#1D1D1F')
+                      .maxLines(1)
+                      .textOverflow({ overflow: TextOverflow.Ellipsis })
+                    Text(d.address)
+                      .fontSize(11)
+                      .fontColor('#9AA1AB')
+                  }
+                  .layoutWeight(1)
+                  .alignItems(HorizontalAlign.Start)
+
+                  Button('连接')
+                    .height(30)
+                    .fontSize(13)
+                    .fontColor('#FFFFFF')
+                    .padding({ left: 18, right: 18 })
+                    .backgroundColor('#3A86FF')
+                    .borderRadius(15)
+                    .onClick(() => {
+                      this.connectSaved(d);
+                    })
+                  Toggle({ type: ToggleType.Switch, isOn: d.autoConnect })
+                    .width(42)
+                    .height(26)
+                    .onChange(() => {
+                      this.toggleAuto(d);
+                    })
                 }
-                .layoutWeight(1)
-                .alignItems(HorizontalAlign.Start)
-                Button('连接')
-                  .height(32)
-                  .fontSize(13)
-                  .backgroundColor('#3A86FF')
-                  .onClick(() => {
-                    this.connectSaved(d);
-                  })
-                Toggle({ type: ToggleType.Switch, isOn: d.autoConnect })
-                  .width(44)
-                  .height(28)
-                  .onChange(() => {
-                    this.toggleAuto(d);
-                  })
-              }
-              .width('100%')
-              .padding(8)
-              .backgroundColor('#EAF1FB')
-              .borderRadius(8)
-            }, (d: SavedDevice) => d.address)
+                .width('100%')
+                .padding({ left: 12, right: 10, top: 8, bottom: 8 })
+                .backgroundColor('#F4F8FE')
+                .borderRadius(12)
+              }, (d: SavedDevice) => d.address)
+            }
+            .width('100%')
           }
           .width('100%')
+          .height(this.savedDevices.length > 1 ? 114 : 58)
+          .scrollBar(BarState.Off)
         }
         .width('100%')
-        .height(120)
-        .scrollBar(BarState.Auto)
+        .padding({ left: 20, right: 20 })
       }
 
+      // 没有已保存设备时不要留一条孤立的分割线
+      if (this.savedDevices.length > 0) {
+        Divider()
+          .color('#EFF1F4')
+          .margin({ top: 14, bottom: 2 })
+      }
+
+      // ---------- 扫描结果 ----------
       if (this.devices.length === 0) {
-        Column({ space: 6 }) {
-          Text(this.scanning ? '正在搜索蓝牙设备...' : '未发现设备')
+        Column({ space: 8 }) {
+          Text(this.scanning ? '正在搜索附近的蓝牙设备…' : '未发现设备')
             .fontSize(14)
             .fontColor('#8A8F98')
-          Text('确认加热器已通电开机、靠近手机(1米内)')
+          Text('确认加热器已通电开机，并靠近手机(1 米内)')
             .fontSize(11)
-            .fontColor('#A0A4AB')
+            .fontColor('#B0B6BF')
         }
         .width('100%')
-        .height(200)
+        .height(190)
         .justifyContent(FlexAlign.Center)
       } else {
-        List({ space: 4 }) {
+        List() {
           ForEach(this.devices, (dev: DeviceItem) => {
             ListItem() {
-              Row({ space: 6 }) {
-                Text(dev.isHeater ? '★' : ' ')
-                  .fontSize(16)
-                  .fontColor('#FF7A00')
-                Column({ space: 2 }) {
-                  Text(dev.deviceName === '' ? '(无名称)' : dev.deviceName)
-                    .fontSize(15)
-                    .fontWeight(dev.isHeater ? FontWeight.Bold : FontWeight.Normal)
-                    .fontColor('#1D1D1F')
-                    .maxLines(1)
-                    .textOverflow({ overflow: TextOverflow.Ellipsis })
-                  Text(dev.deviceId + '  ' + dev.rssi + ' dBm' +
-                    (dev.isHeater ? '  [FFF0 加热器]' : ''))
+              Row({ space: 10 }) {
+                Text(dev.isHeater ? '★' : '')
+                  .fontSize(13)
+                  .fontColor('#FF9F0A')
+                  .width(16)
+                  .textAlign(TextAlign.Center)
+
+                Column({ space: 3 }) {
+                  Row({ space: 6 }) {
+                    Text(dev.deviceName === '' ? '(无名称)' : dev.deviceName)
+                      .fontSize(15)
+                      .fontWeight(dev.isHeater ? FontWeight.Medium : FontWeight.Normal)
+                      .fontColor('#1D1D1F')
+                      .maxLines(1)
+                      .textOverflow({ overflow: TextOverflow.Ellipsis })
+                    if (dev.isHeater) {
+                      Text('FFF0')
+                        .fontSize(10)
+                        .fontColor('#E8590C')
+                        .padding({ left: 5, right: 5, top: 1, bottom: 1 })
+                        .backgroundColor('#FFF0E6')
+                        .borderRadius(4)
+                    }
+                  }
+
+                  Text(dev.deviceId)
                     .fontSize(11)
-                    .fontColor('#8A8F98')
+                    .fontColor('#9AA1AB')
                 }
                 .layoutWeight(1)
                 .alignItems(HorizontalAlign.Start)
+
+                Text(dev.rssi + ' dBm')
+                  .fontSize(12)
+                  .fontColor('#B0B6BF')
               }
               .width('100%')
-              .padding(10)
-              .backgroundColor('#F5F7FA')
-              .borderRadius(8)
-              .shadow({ radius: 6, color: '#203A86FF', offsetY: 2 })
+              .height(58)
+              .padding({ left: 20, right: 20 })
               .onClick(() => {
                 this.connect(dev);
               })
@@ -244,15 +287,20 @@ struct ScanDialog {
           }, (dev: DeviceItem) => dev.deviceId)
         }
         .width('100%')
-        .height(200)
-        .scrollBar(BarState.Auto)
+        .height(210)
+        .divider({ strokeWidth: 0.5, color: '#EFF1F4', startMargin: 20, endMargin: 20 })
+        .scrollBar(BarState.Off)
       }
 
-      Row({ space: 8 }) {
+      // ---------- 底部按钮 ----------
+      Row({ space: 10 }) {
         Button(this.scanning ? '停止扫描' : '重新扫描')
           .layoutWeight(1)
+          .height(44)
+          .fontSize(15)
+          .fontColor('#FFFFFF')
           .backgroundColor('#3A86FF')
-          .shadow({ radius: 12, color: '#403A86FF', offsetY: 3 })
+          .borderRadius(22)
           .onClick(() => {
             if (this.scanning) {
               this.stopScan();
@@ -262,19 +310,24 @@ struct ScanDialog {
           })
         Button('取消')
           .layoutWeight(1)
-          .backgroundColor('#E5484D')
-          .shadow({ radius: 12, color: '#40E5484D', offsetY: 3 })
+          .height(44)
+          .fontSize(15)
+          .fontColor('#4E5969')
+          .backgroundColor('#F2F3F5')
+          .borderRadius(22)
           .onClick(() => {
             this.controller.close();
           })
       }
       .width('100%')
+      .padding({ left: 20, right: 20, top: 14, bottom: 18 })
     }
     .width('92%')
-    .padding(16)
+    .constraintSize({ maxWidth: 520 })
     .backgroundColor('#FFFFFF')
-    .borderRadius(14)
-    .shadow({ radius: 24, color: '#403A86FF', offsetY: 8 })
+    .borderRadius(20)
+    .clip(true)
+    .shadow({ radius: 28, color: '#1A1D212B', offsetY: 10 })
   }
 }
 
@@ -316,7 +369,7 @@ struct Index {
   private hourBase: number = 0;
   private histCtx: CanvasRenderingContext2D =
     new CanvasRenderingContext2D(new RenderingContextSettings(true));
-  @State logText: string = 'SICN v26.47 (build 2026-10-31) 启动。连接已加自动重试(3次)。点击"扫描设备"开始搜索加热器。';
+  @State logText: string = 'SICN v26.48 (build 2026-10-31) 启动。连接已加自动重试(3次)。点击"扫描设备"开始搜索加热器。';
   @State connectBusy: boolean = false;
   /** 已保存设备库(对应安卓 DeviceRecord, 多设备记忆 + 自动连接) */
   @State savedDevices: SavedDevice[] = [];
@@ -359,6 +412,9 @@ struct Index {
       }
     }),
     autoCancel: true,
+    // 关键: 用自定义样式去掉系统弹窗容器自带的圆角白底。
+    // 否则系统那一层会露在自定义卡片两侧, 形成"双层边框"的脏边。
+    customStyle: true,
     alignment: DialogAlignment.Center
   });
 
