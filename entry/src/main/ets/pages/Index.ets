@@ -148,7 +148,7 @@ struct ScanDialog {
           .width('100%')
         }
         .width('100%')
-        .maxHeight(120)
+        .height(120)
         .scrollBar(BarState.Auto)
       }
 

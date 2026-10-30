@@ -80,9 +80,9 @@ struct AlarmPage {
   /** 震动告警(对应安卓 Vibrator.vibrate) */
   private startVibrate(): void {
     try {
-      const attr: vibrator.VibrationAttribute = {
+      const attr: vibrator.VibrateAttribute = {
         id: 0,
-        usage: vibrator.VibrationUsage.ALARM
+        usage: 'alarm'
       };
       vibrator.startVibration({
         type: 'time',
