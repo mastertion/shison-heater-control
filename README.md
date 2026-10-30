@@ -75,7 +75,7 @@ sicn_ohos26/
 
 ```
 dist/
-├── SICN-Heater-v26.44-unsigned.hap   # 293579 B
+├── SICN-Heater-v26.45-unsigned.hap   # 304686 B
 └── SHA256SUMS.txt                    # 校验值，可用 sha256sum -c SHA256SUMS.txt 验证
 ```
 
