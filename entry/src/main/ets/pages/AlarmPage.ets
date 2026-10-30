@@ -1,10 +1,10 @@
 /**
  * 报警页 (对应安卓 AlarmActivity)
  *
- * 设备上报三类报警时进入此页:
- *   3001 MODE 0 = 探头故障
- *   3001 MODE 1 = 离水断电
- *   3001 MODE 2 = 超温保护
+ * 设备上报三类报警时进入此页 (MODE 数值越大故障越严重):
+ *   3001 MODE 3 = 超温     -> 本页显示「超温保护」(安卓 AlarmActivity 专用文案)
+ *   3001 MODE 4 = 离水断电
+ *   3001 MODE 5 = 探头故障
  * 播放脉冲报警动画 + 震动, 用户点"我知道了"返回主界面(router.back)。
  *
  * 通过 router 参数传入: { mode:number, temp:number, unit:string }
@@ -13,19 +13,19 @@ import { router } from '@kit.ArkUI';
 import { vibrator } from '@kit.SensorServiceKit';
 
 const MODE_TEXT: Record<number, string> = {
-  0: '探头故障',
-  1: '离水断电',
-  2: '超温保护'
+  3: '超温保护',
+  4: '离水断电',
+  5: '探头故障'
 };
 const MODE_COLOR: Record<number, string> = {
-  0: '#E5484D',
-  1: '#FF9F0A',
-  2: '#E5484D'
+  3: '#E5484D',
+  4: '#FF9F0A',
+  5: '#E5484D'
 };
 const MODE_TIP: Record<number, string> = {
-  0: '水温探头异常, 请检查探头连接或更换探头后再使用。',
-  1: '检测到离水, 已自动断电保护, 请将设备放回水中后恢复。',
-  2: '水温超过安全阈值, 已触发超温保护, 请立即远离并断电检查。'
+  3: '水温超过安全阈值, 已触发超温保护, 请立即远离并断电检查。',
+  4: '检测到离水, 已自动断电保护, 请将设备放回水中后恢复。',
+  5: '水温探头异常, 请检查探头连接或更换探头后再使用。'
 };
 
 function asInt(v: Object | undefined, def: number): number {

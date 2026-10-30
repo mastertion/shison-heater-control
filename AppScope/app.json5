@@ -2,8 +2,8 @@
   "app": {
     "bundleName": "com.zddz.app.sicn.ohos",
     "vendor": "sicn",
-    "versionCode": 1000045,
-    "versionName": "26.45",
+    "versionCode": 1000046,
+    "versionName": "26.46",
     "icon": "$media:app_icon",
     "label": "$string:app_name"
   }
