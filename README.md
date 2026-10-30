@@ -69,6 +69,20 @@ sicn_ohos26/
 3. 手机 USB 连接并开启 USB 调试，DevEco 识别设备后点 `Run ▶` 安装运行；
    或 `Build → Build Hap(s)`，签名产物位于 `entry/build/default/outputs/default/entry-default-signed.hap`。
 
+### 预先构建的安装包
+
+`dist/` 下按版本存放命令行构建的**未签名** HAP，供侧载验证，无需自己编译：
+
+```
+dist/
+├── SICN-Heater-v26.44-unsigned.hap   # 293579 B
+└── SHA256SUMS.txt                    # 校验值，可用 sha256sum -c SHA256SUMS.txt 验证
+```
+
+未签名包不能直接 `hdc install`（会报 `code:9568320 no signature file`），需先在 DevEco 的
+`Signing Configs` 里对同一工程签名，或将 `build-profile.json5` 的 `signingConfigs` 指向自己的证书后
+`hvigor assembleHap` 重新产出签名包。仅在已开启「无限安装」的设备上可直接侧载未签名包。
+
 ## 使用说明
 
 | 操作 | 说明 |
