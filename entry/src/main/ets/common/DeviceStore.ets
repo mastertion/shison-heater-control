@@ -108,6 +108,57 @@ export class DeviceStore {
     return list;
   }
 
+  /**
+   * 设备地址变更: 旧记录迁移到新地址, 保留 autoConnect 标记。
+   *
+   * 加热器换板/升级固件后 BLE 静态地址会变而设备名不变, 旧地址从此永远连不上
+   * (connect 超时且无任何状态回调)。连接前扫描到同名设备时调用本方法纠正记录。
+   */
+  static async migrate(context: common.UIAbilityContext, oldAddress: string,
+    newAddress: string, name: string): Promise<SavedDevice[]> {
+    const list: SavedDevice[] = await DeviceStore.load(context);
+    const oldKey: string = oldAddress.toUpperCase();
+    const newKey: string = newAddress.toUpperCase();
+    if (oldKey === newKey) {
+      return list;
+    }
+    let keepAuto: boolean = false;
+    const out: SavedDevice[] = [];
+    for (const d of list) {
+      const k: string = d.address.toUpperCase();
+      if (k === oldKey) {
+        keepAuto = keepAuto || d.autoConnect;
+        continue;
+      }
+      if (k === newKey) {
+        keepAuto = keepAuto || d.autoConnect;
+        if (name !== '') {
+          d.name = name;
+        }
+        d.lastSeen = Date.now();
+      }
+      out.push(d);
+    }
+    let exists: boolean = false;
+    for (const d of out) {
+      if (d.address.toUpperCase() === newKey) {
+        d.autoConnect = d.autoConnect || keepAuto;
+        exists = true;
+        break;
+      }
+    }
+    if (!exists) {
+      const n = new SavedDevice();
+      n.address = newAddress;
+      n.name = name;
+      n.autoConnect = keepAuto;
+      n.lastSeen = Date.now();
+      out.push(n);
+    }
+    await DeviceStore.save(context, out);
+    return out;
+  }
+
   /** 切换某设备的自动连接开关 */
   static async setAutoConnect(context: common.UIAbilityContext, address: string,
     on: boolean): Promise<SavedDevice[]> {

@@ -62,6 +62,51 @@ function hasFff0Service(raw: ArrayBuffer): boolean {
 }
 
 /**
+ * 设备名是否属于同一型号(忽略末段序列/固件后缀)。
+ * 例: "SICN-HEATER-E84" 与 "SICN-HEATER-A12" 视为同一型号, 用于地址变更后重新认领同一台设备。
+ */
+function sameModelName(a: string, b: string): boolean {
+  const x: string = a.trim().toLowerCase();
+  const y: string = b.trim().toLowerCase();
+  if (x === '' || y === '') {
+    return false;
+  }
+  if (x === y) {
+    return true;
+  }
+  const ix: number = x.lastIndexOf('-');
+  const iy: number = y.lastIndexOf('-');
+  const px: string = ix > 3 ? x.substring(0, ix) : x;
+  const py: string = iy > 3 ? y.substring(0, iy) : y;
+  return px === py && px.length > 3;
+}
+
+/**
+ * 连接目标解析结果。
+ *
+ * 保存的 MAC 可能已经失效: 加热器换过板/升级过固件后静态地址会变, 而设备名不变。
+ * 此时若仍拿旧地址去 connect, 会因为"该地址根本没有设备"而稳定超时,
+ * 且没有任何连接状态回调 —— 与"设备被占用"的表现完全一样, 极难区分。
+ * 所以连接前必须用实时扫描结果校正地址。
+ */
+class ResolvedTarget {
+  /** 最终用来连接的地址(可能是校正后的新地址) */
+  address: string = '';
+  /** 是否在扫描中确认到目标(按地址或按同名设备) */
+  found: boolean = false;
+  /** 地址与传入的不同 = 设备静态地址已变更 */
+  changed: boolean = false;
+  /** 扫描到的设备名 */
+  name: string = '';
+  /** 扫描到的信号强度 */
+  rssi: number = 0;
+  /** 本次扫描收到的广播总条数 */
+  total: number = 0;
+  /** 附近疑似加热器的台数(按地址去重) */
+  candidates: number = 0;
+}
+
+/**
  * 扫描结果弹窗: 对齐安卓原版 showScanDialog, 扫描到的设备实时列出, 点击即连
  */
 @CustomDialog
@@ -536,43 +581,97 @@ struct Index {
    *
    * @returns 目标地址是否在本次预扫描中出现
    */
-  private probeNearby(address: string): Promise<boolean> {
-    return new Promise<boolean>((resolve) => {
-      let found: boolean = false;
-      const seenAddr: Set<string> = new Set<string>();
-      let total: number = 0;
-      this.appendLog('连接前预扫描 5 秒, 确认设备是否在附近...');
+  /**
+   * 连接前解析目标地址: 扫 6 秒, 用实时广播校正保存的 MAC。
+   *
+   * 匹配优先级:
+   *   1. 地址完全一致            -> 直接连
+   *   2. 同名设备(忽略序列后缀)  -> 说明设备静态地址变了, 改用新地址
+   *   3. 广播含 FFF0 的加热器    -> 同上(设备名可能为空)
+   *   4. 都没有                  -> 目标确实不在范围, 只试 1 次
+   */
+  private resolveTarget(address: string, savedName: string): Promise<ResolvedTarget> {
+    return new Promise<ResolvedTarget>((done) => {
+      const res = new ResolvedTarget();
+      res.address = address;
+      const nameOf: Map<string, string> = new Map<string, string>();
+      const rssiOf: Map<string, number> = new Map<string, number>();
+      const heaterOf: Map<string, boolean> = new Map<string, boolean>();
+      const target: string = address.toUpperCase();
+      this.appendLog('连接前扫描 6 秒, 校正设备地址...');
       BleService.startScan((list: Array<ble.ScanResult>) => {
         for (const d of list) {
-          total++;
+          res.total++;
+          const key: string = d.deviceId.toUpperCase();
           const nm: string = d.deviceName ?? '';
-          const cand: boolean = nm.toLowerCase().includes('sicn') ||
-            nm.toLowerCase().includes('heater') || hasFff0Service(d.data);
-          if (cand && !seenAddr.has(d.deviceId)) {
-            seenAddr.add(d.deviceId);
-            this.appendLog('附近候选: ' + (nm === '' ? '(无名)' : nm) + ' ' + d.deviceId +
-              ' rssi=' + d.rssi + (hasFff0Service(d.data) ? ' [含FFF0]' : ''));
-          }
-          if (d.deviceId.toUpperCase() === address.toUpperCase()) {
-            found = true;
-            if (!seenAddr.has('__target__')) {
-              seenAddr.add('__target__');
-              this.appendLog('目标设备已出现: ' + (nm === '' ? '(无名)' : nm) + ' rssi=' + d.rssi);
+          const fff0: boolean = hasFff0Service(d.data);
+          const heater: boolean = nm.toLowerCase().includes('sicn') ||
+            nm.toLowerCase().includes('heater') || fff0;
+          if (nameOf.has(key)) {
+            rssiOf.set(key, d.rssi);
+            if (nm !== '') {
+              nameOf.set(key, nm);
             }
+            heaterOf.set(key, heaterOf.get(key) === true || heater);
+            continue;
+          }
+          nameOf.set(key, nm);
+          rssiOf.set(key, d.rssi);
+          heaterOf.set(key, heater);
+          if (heater) {
+            res.candidates++;
+            this.appendLog('附近加热器: ' + (nm === '' ? '(无名)' : nm) + ' ' + d.deviceId +
+              ' rssi=' + d.rssi + (fff0 ? ' [含FFF0]' : ''));
           }
         }
       }, (msg: string) => {
-        this.appendLog('预扫描失败: ' + msg);
+        this.appendLog('连接前扫描失败: ' + msg);
       }, (info: string) => {
         this.appendLog(info);
       });
       setTimeout(() => {
         BleService.stopScan().then(() => {
-          this.appendLog('预扫描结束: 共 ' + total + ' 条广播, 候选 ' + seenAddr.size +
-            ' 台, 目标' + (found ? '在附近' : '未出现'));
-          resolve(found);
+          // 1) 地址直击
+          if (nameOf.has(target)) {
+            res.found = true;
+            res.address = address;
+            res.name = nameOf.get(target) ?? savedName;
+            res.rssi = rssiOf.get(target) ?? 0;
+            this.appendLog('目标地址在附近: ' + address + ' rssi=' + res.rssi);
+          } else {
+            // 2) 同名设备(地址已变更) / 3) 含 FFF0 的加热器, 取信号最强的一台
+            let bestKey: string = '';
+            let bestRssi: number = -999;
+            nameOf.forEach((nm: string, key: string) => {
+              const usable: boolean = sameModelName(nm, savedName) || heaterOf.get(key) === true;
+              if (!usable) {
+                return;
+              }
+              const r: number = rssiOf.get(key) ?? -999;
+              if (bestKey === '' || r > bestRssi) {
+                bestKey = key;
+                bestRssi = r;
+              }
+            });
+            if (bestKey !== '') {
+              res.found = true;
+              res.address = bestKey;
+              res.name = nameOf.get(bestKey) ?? '';
+              res.rssi = bestRssi;
+              res.changed = bestKey !== target;
+              if (res.changed) {
+                this.appendLog('!! 设备地址已变更: 保存的 ' + address + ' -> 实际 ' + bestKey +
+                  '(' + (res.name === '' ? '(无名)' : res.name) + ' rssi=' + res.rssi + ')');
+              } else {
+                this.appendLog('目标设备在附近: rssi=' + res.rssi);
+              }
+            }
+          }
+          this.appendLog('扫描结束: 共 ' + res.total + ' 条广播, 疑似加热器 ' + res.candidates +
+            ' 台, 目标' + (res.found ? '已定位' : '未出现'));
+          done(res);
         });
-      }, 5000);
+      }, 6000);
     });
   }
 
@@ -585,29 +684,38 @@ struct Index {
       // 连接前必须停扫并等蓝牙栈真正释放: 扫描占着 stack 会导致 connect 被拒或超时
       this.scanning = false;
       await BleService.stopScan();
-      // 预扫描: 判断"不在范围"还是"被占用", 顺带记录附近加热器的名称/RSSI
-      const nearby: boolean = await this.probeNearby(dev.deviceId);
-      if (!nearby) {
-        this.appendLog('!! 目标设备未在预扫描中出现: 多半是加热器未通电/不在范围内。');
-        this.appendLog('提示: 通电后屏幕应亮起; 也有可能已被其他手机或旧版 App 占着连接。');
+      // 用实时扫描校正地址: 保存的 MAC 可能已失效(设备换板/升级固件后地址会变)
+      const target: ResolvedTarget = await this.resolveTarget(dev.deviceId, dev.deviceName);
+      if (!target.found) {
+        this.appendLog('!! 扫描未发现目标设备: 多半是加热器未通电/不在范围内。');
+        this.appendLog('提示: 通电后屏幕应亮起; 也可能已被其他手机/旧版 App 占着连接。');
+      } else if (target.changed) {
+        this.appendLog('已改用设备当前地址 ' + target.address + ' 连接, 并更新设备库。');
+        DeviceStore.migrate(this.context, dev.deviceId, target.address,
+          target.name || dev.deviceName).then((list: SavedDevice[]) => {
+          this.savedDevices = list;
+        });
       }
-      this.appendLog('开始连接 ' + (dev.deviceName || dev.deviceId) +
-        ' (' + dev.rssi + ' dBm), 最多尝试 ' + (nearby ? '3' : '1') + ' 次...');
-      await BleService.connect(dev.deviceId, nearby ? 3 : 1);
+      const addr: string = target.address;
+      const addrName: string = target.name !== '' ? target.name : dev.deviceName;
+      this.appendLog('开始连接 ' + (addrName || addr) +
+        ' (' + (target.found ? target.rssi : dev.rssi) + ' dBm), 最多尝试 ' +
+        (target.found ? '3' : '1') + ' 次...');
+      await BleService.connect(addr, target.found ? 3 : 1);
       this.appendLog('已连接, 使能通知...');
       await BleService.enableNotify((value: Uint8Array) => {
         this.onNotify(value);
       });
       this.connected = true;
-      this.connAddr = dev.deviceId;
-      this.connName = dev.deviceName || '';
+      this.connAddr = addr;
+      this.connName = addrName;
       this.stateText = '已连接, 等待设备数据...';
       this.stateColor = '#22A06B';
       this.appendLog('特征: ' + BleService.describeChar());
       // 记住该设备, 下次启动自动重连
-      this.saveLastDevice(dev.deviceId, dev.deviceName || '');
+      this.saveLastDevice(addr, addrName);
       // 记录进设备库(多设备记忆, 支持自动连接)
-      DeviceStore.upsert(this.context, dev.deviceId, dev.deviceName || '').then((list: SavedDevice[]) => {
+      DeviceStore.upsert(this.context, addr, addrName).then((list: SavedDevice[]) => {
         this.savedDevices = list;
       });
       // UI 释放, 握手在后台进行, 不再卡"连接中"
