@@ -123,3 +123,25 @@ SHISON 加热器是一款通过蓝牙（BLE）直连控制 SHISON 加热棒的�
 - **隐私政策 URL 国内可达性**：华为服务端在填入 URL 时提示「系统尝试访问以上 URL 时未获得成功响应」。本机 curl 两个网址均 200，但 GitHub Pages 在国内网络常不可达，可能影响审核。若被驳回，建议换成国内可访问的静态托管（或改用华为协议服务托管），再回填 URL。
 - **单机 APP 判定**：选「单机 APP」后页面提示「若识别到该应用存在联网场景，将无法通过审核」。工程确认只有 ACCESS_BLUETOOTH 与 VIBRATE 两个权限、无 INTERNET、无网络请求，风险低。
 - **硬件依赖**：完整温控功能需 SHISON 加热棒真机；已在自测说明中写明无硬件时的可验证范围。
+
+## 自有服务器托管（Lucky，已部署，暂未写入 AGC）
+
+2026-11-07 把两份隐私页面部署到 Unraid `Tower`（192.168.3.2）上的 Lucky 3.7.1：
+
+| 项 | 值 |
+|---|---|
+| 文件目录 | 宿主机 `/mnt/disk1/composes/projects/lucky/conf/www/shison/`，容器内 `/app/conf/www/shison/` |
+| Lucky 规则 | Web 服务 → 主规则 `HA-LAN-443`（:443 · IPv6 · HTTPS）→ 子规则「SHISON 隐私政策」，类型「文件服务」，前端域名 `shison.asahilee.top` |
+| 隐私政策 | `https://shison.asahilee.top/privacy.html`（200 / text/html / 6516B） |
+| 隐私权利 | `https://shison.asahilee.top/privacy-rights.html`（200 / text/html / 4152B） |
+| HTTPS 证书 | Lucky 已签发 `*.asahilee.top`（Let's Encrypt / 阿里云 DNS），有效至 2027-01-02；`*.asahilee.top` 泛解析生效 |
+| 验证 | 本机直连（`--noproxy '*'`）443 与 8444 均 200，正文与仓库 `docs/` 一致 |
+
+⚠️ **关键限制：`asahilee.top` 只有 AAAA（IPv6）记录，没有 IPv4 A 记录**，服务器也没有 IPv4 公网出口
+（出口 IPv4 查询为空，Unraid 仅有 192.168.3.2 内网地址）。GitHub Pages 与 jsDelivr 都是 A+AAAA 双栈。
+若华为服务端的 URL 探测走 IPv4-only，Lucky 地址会直接解析失败，**比现有 GitHub Pages 更不稳**。
+因此当前**不建议**把 AGC 的两个 URL 换成 Lucky 地址，除非补上 IPv4 入口（公网 IPv4 + A 记录、
+CDN 提供 IPv4 边缘、或 IPv6→IPv4 中转）。Lucky 部署先作为自有托管留存。
+
+另：AGC 已处于「预审中」，版本信息页为只读，任何 URL 变更都需要先「撤销发布」，会中断当前预审。
+建议等预审结果再决定是否更换。
