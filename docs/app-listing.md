@@ -55,8 +55,9 @@ SHISON 加热器是一款通过蓝牙（BLE）直连控制 SHISON 加热棒的�
 - 是否联网、是否有服务器：否，未申请 INTERNET 权限，属纯本机单机应用。
 - 权限用途：ACCESS_BLUETOOTH 用于扫描并连接加热器；VIBRATE 用于报警提醒。
 - 特殊设备依赖：需搭配 SHISON 加热棒真机。如审核环境无法提供，可提交演示录屏（建议在「版权信息 / 补充材料」处说明）。
-- 隐私政策网址：见 `docs/privacy.html` 托管后的公开 HTTPS 地址。
-- 隐私权利网址：见 `docs/privacy-rights.html` 托管后的公开 HTTPS 地址。
+- 隐私政策网址：https://mastertion.github.io/shison-heater-control/privacy.html
+- 隐私权利网址：https://mastertion.github.io/shison-heater-control/privacy-rights.html
+（GitHub Pages 已设为 main 分支 /docs 目录；首次构建需等几分钟生效。）
 
 ## 必交材料状态
 
