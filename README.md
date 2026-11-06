@@ -71,12 +71,13 @@ sicn_ohos26/
 
 ### 预先构建的安装包
 
-`dist/` 下按版本存放命令行构建的**未签名** HAP，供侧载验证，无需自己编译：
+`dist/` 下按版本存放命令行构建的安装包：未签名 HAP 供侧载验证，发布签名的 `.app` 用于华为应用市场上架，无需自己编译：
 
 ```
 dist/
-├── SICN-Heater-v26.48-unsigned.hap   # 315983 B
-└── SHA256SUMS.txt                    # 校验值，可用 sha256sum -c SHA256SUMS.txt 验证
+├── SICN-Heater-v26.48-unsigned.hap          # 315983 B，未签名 HAP（侧载验证用）
+├── SICN-Heater-v26.48-release-signed.app    # 85644 B，发布证书签名的 APP（AGC 上架用）
+└── SHA256SUMS.txt                           # 校验值，可用 sha256sum -c SHA256SUMS.txt 验证
 ```
 
 未签名包不能直接 `hdc install`（会报 `code:9568320 no signature file`），需先在 DevEco 的
