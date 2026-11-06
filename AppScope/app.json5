@@ -1,6 +1,6 @@
 {
   "app": {
-    "bundleName": "com.zddz.app.sicn.ohos",
+    "bundleName": "com.zddz.app.sicn",
     "vendor": "sicn",
     "versionCode": 1000048,
     "versionName": "26.48",

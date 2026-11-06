@@ -17,8 +17,11 @@ sicn_extract/
 *.p12
 *.cer
 *.pem
+*.csr
+*.p7b
 *.keystore
 *.jks
+signing/
 
 # ===== 日志与临时文件 =====
 *.log

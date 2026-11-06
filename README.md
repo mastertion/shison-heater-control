@@ -26,8 +26,8 @@
 
 | 项 | 值 |
 |---|---|
-| bundleName | `com.zddz.app.sicn.ohos` |
-| versionName / versionCode | `1.0.0` / `1000000` |
+| bundleName | `com.zddz.app.sicn`（与华为 AGC 应用包名一致）|
+| versionName / versionCode | `26.48` / `1000048` |
 | 应用显示名 | 诗彦加热棒（SHISON HEATER）|
 | compatibleSdk / targetSdk | `26.0.0` |
 | 应用模型 | Stage 模型（stageMode）|
@@ -75,7 +75,7 @@ sicn_ohos26/
 
 ```
 dist/
-├── SICN-Heater-v26.46-unsigned.hap   # 305019 B
+├── SICN-Heater-v26.48-unsigned.hap   # 315983 B
 └── SHA256SUMS.txt                    # 校验值，可用 sha256sum -c SHA256SUMS.txt 验证
 ```
 

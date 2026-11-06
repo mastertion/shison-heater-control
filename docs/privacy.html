@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>隐私政策 - SHISON 加热器</title>
+<style>
+  :root { color-scheme: light; }
+  body { margin: 0; padding: 32px 20px 64px; background: #f6f7f9; color: #1f2329;
+         font: 16px/1.8 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+  main { max-width: 820px; margin: 0 auto; background: #fff; padding: 40px 44px;
+         border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+  h1 { font-size: 26px; margin: 0 0 6px; }
+  .meta { color: #6b7280; font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 19px; margin: 32px 0 10px; padding-left: 10px; border-left: 4px solid #f05a28; }
+  p, li { margin: 8px 0; }
+  ul { padding-left: 22px; }
+  .callout { background: #fff5f0; border: 1px solid #ffd9c7; border-radius: 8px;
+             padding: 14px 18px; margin: 20px 0; }
+  a { color: #d94a18; }
+  footer { max-width: 820px; margin: 20px auto 0; color: #6b7280; font-size: 14px; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; }
+  th, td { border: 1px solid #e5e7eb; padding: 10px 12px; text-align: left; font-size: 15px; }
+  th { background: #fafafa; }
+</style>
+</head>
+<body>
+<main>
+  <h1>SHISON 加热器 隐私政策</h1>
+  <div class="meta">应用包名：com.zddz.app.sicn　|　生效日期：2026 年 11 月 6 日　|　最近更新：2026 年 11 月 6 日</div>
+
+  <div class="callout">
+    <strong>一句话说明：</strong>本应用是纯本地的蓝牙设备控制工具，<strong>没有联网权限、没有服务器、不收集也不上传任何个人信息</strong>。所有数据都只保存在您手机本机的应用沙箱内，卸载应用即全部删除。
+  </div>
+
+  <h2>一、我们是谁</h2>
+  <p>本应用「SHISON 加热器」（包名 <code>com.zddz.app.sicn</code>）由个人开发者独立开发，用于通过蓝牙低功耗（BLE）直连控制 SHISON 品牌加热棒 / 加热器。应用不提供账号注册、登录、云同步、支付、广告或任何在线服务。</p>
+
+  <h2>二、申请的系统权限及用途</h2>
+  <table>
+    <tr><th>权限</th><th>用途</th><th>是否可拒绝</th></tr>
+    <tr><td>ohos.permission.ACCESS_BLUETOOTH（附近设备 / 蓝牙）</td><td>扫描附近的加热器、建立 BLE 连接、读取温度与状态、下发目标温度与单位切换指令。仅在您主动使用扫描、连接、控温功能时调用。</td><td>可以。拒绝后应用无法连接设备，但应用仍可打开。</td></tr>
+    <tr><td>ohos.permission.VIBRATE（震动）</td><td>设备上报超温保护、离水断电、探头故障时，在报警页进行震动提醒。</td><td>可以，不影响控温功能。</td></tr>
+  </table>
+  <p>应用<strong>未申请</strong>互联网访问（INTERNET）、定位、通讯录、相册、相机、麦克风、电话、短信、日历、生物识别等权限，也<strong>不接入</strong>任何第三方 SDK、广告、统计、推送或分析服务。</p>
+
+  <h2>三、本机存储的数据</h2>
+  <p>为方便您下次使用，应用会在<strong>本设备的应用私有沙箱</strong>中保存以下内容，这些数据不会离开您的设备：</p>
+  <ul>
+    <li><strong>设备偏好（preferences）：</strong>曾连接过的加热器蓝牙地址、设备名称、是否设为「自动连接」、最近连接时间，以及上次使用的温度单位与目标温度。</li>
+    <li><strong>诊断日志（filesDir/sicn_log.txt）：</strong>BLE 扫描结果、连接过程、GATT 服务与特征结构、错误码、设备上报的状态帧等，用于排查连接问题。日志仅写入本机应用沙箱，不会自动上传。</li>
+  </ul>
+  <p>应用不读取您的身份信息、账号、通讯录、位置、照片或任何其他应用的数据。</p>
+
+  <h2>四、数据的收集、使用与共享</h2>
+  <p>本应用<strong>不收集</strong>个人信息，<strong>不向开发者或任何第三方传输</strong>数据，<strong>不与第三方共享、转让或公开披露</strong>任何数据，也<strong>不存在</strong>数据出境、自动化决策或用户画像。温度、状态等数据仅在您的手机与加热器之间的蓝牙链路中传输。</p>
+
+  <h2>五、数据存储期限与删除方式</h2>
+  <p>上述本机数据会一直保留，直到您主动删除。您可以通过以下任一方式删除全部本机数据：</p>
+  <ul>
+    <li>系统「设置 → 应用和服务 → 应用管理 → SHISON 加热器 → 存储 → 清空缓存 / 清除数据」；</li>
+    <li>直接卸载本应用，系统会一并删除该应用的全部私有数据。</li>
+  </ul>
+  <p>应用不提供账号，因此不存在需要远程注销的账户或云端副本。</p>
+
+  <h2>六、您的权利</h2>
+  <p>由于我们不持有您的任何数据，您对本机数据拥有完全控制：可随时查看（在应用界面中）、更正（在设备库或设置中修改）、删除（清除应用数据或卸载）以及撤回权限授权（系统设置中关闭「附近设备 / 蓝牙」权限）。详情见<a href="privacy-rights.html">隐私权利说明</a>。</p>
+
+  <h2>七、未成年人保护</h2>
+  <p>本应用为工具类软件，不面向未成年人提供内容服务，不收集任何年龄或身份信息。若您是未成年人，请在监护人指导下使用，并由监护人管理设备权限。</p>
+
+  <h2>八、安全说明</h2>
+  <p>蓝牙通信为短距离本地链路，请您确保加热器放置在可控环境中。应用对全部蓝牙调用做了超时与异常处理，不会因设备离线而崩溃。我们建议您通过正规应用市场获取本应用并保持系统更新。</p>
+
+  <h2>九、政策更新</h2>
+  <p>如功能或权限发生变化，我们会在本页更新政策并调整应用内的说明，更新后的政策自公布之日起生效。重大变更会通过应用市场版本更新说明提示。</p>
+
+  <h2>十、联系我们</h2>
+  <p>如对本政策有疑问、建议或需要行使权利，可通过项目公开页面提交：
+    <a href="https://github.com/mastertion/shison-heater-control/issues">https://github.com/mastertion/shison-heater-control/issues</a>。
+    我们会在合理时间内回复。您也可以在应用市场的评价或客服渠道留言。</p>
+</main>
+<footer>© 2026 SHISON 加热器 · 本页托管于 GitHub Pages，可公开访问。</footer>
+</body>
+</html>
