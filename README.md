@@ -27,7 +27,7 @@
 | 项 | 值 |
 |---|---|
 | bundleName | `top.asahilee.app.sicn`（与华为 AGC 新建应用包名一致）|
-| versionName / versionCode | `26.48` / `1000048` |
+| versionName / versionCode | `26.49` / `1000049`（隐私合规整改版，见 `docs/app-listing.md`） |
 | 应用显示名 | 诗彦加热棒（SHISON HEATER）|
 | compatibleSdk / targetSdk | `26.0.0` |
 | 应用模型 | Stage 模型（stageMode）|
@@ -76,7 +76,8 @@ sicn_ohos26/
 ```
 dist/
 ├── SICN-Heater-v26.48-unsigned.hap          # 315983 B，未签名 HAP（侧载验证用）
-├── SICN-Heater-v26.48-release-signed.app    # 85644 B，发布证书签名的 APP（AGC 上架用）
+├── SICN-Heater-v26.48-release-signed.app    # 85644 B，旧包名签名包（已弃用）
+├── SICN-Heater-v26.49-release-signed.app    # 90354 B，新包名 + 隐私合规整改，AGC 上架用
 └── SHA256SUMS.txt                           # 校验值，可用 sha256sum -c SHA256SUMS.txt 验证
 ```
 
