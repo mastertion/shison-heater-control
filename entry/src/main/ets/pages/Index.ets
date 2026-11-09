@@ -1,13 +1,14 @@
 /**
  * SHISON 加热器 蓝牙控制面板 (鸿蒙)
  */
-import { common } from '@kit.AbilityKit';
+import { common, Want } from '@kit.AbilityKit';
 import { promptAction, router } from '@kit.ArkUI';
 import { preferences } from '@kit.ArkData';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { ble } from '@kit.ConnectivityKit';
 import { fileIo } from '@kit.CoreFileKit';
 import { BleService } from '../common/BleService';
+import { PrivacyConsent } from '../common/PrivacyConsent';
 import {
   SERVICE_UUID,
   CHAR_UUID,
@@ -24,6 +25,27 @@ import { DeviceItem, isAlarmMode } from '../model/HeaterModels';
 import { DeviceStore, SavedDevice } from '../common/DeviceStore';
 
 const TAG = 'SICN-UI';
+
+/** 完整隐私政策 (AGC 隐私声明所填地址, 弹窗内「查看完整」用系统浏览器打开) */
+const PRIVACY_URL: string = 'https://mastertion.github.io/shison-heater-control/privacy.html';
+
+/**
+ * 首次启动隐私政策弹窗内嵌正文 (离线可读, 不依赖网络)。
+ * 与线上 privacy.html 要点一致, 保证审核员在断网/URL 不可达时仍能阅读。
+ */
+const PRIVACY_SUMMARY: string =
+  'SHISON 加热器（包名 top.asahilee.app.sicn）由个人开发者独立开发，通过蓝牙低功耗（BLE）直连控制 SHISON 品牌加热棒 / 加热器。\n\n' +
+  '一、我们不收集个人信息\n' +
+  '本应用为纯单机应用，不申请联网权限（无 INTERNET），不提供账号注册、登录、云同步、支付、广告或任何在线服务；不会上传您的任何数据，也不接入第三方统计、推送或广告 SDK。\n\n' +
+  '二、权限及用途\n' +
+  '• 附近的设备 / 蓝牙（ohos.permission.ACCESS_BLUETOOTH）：仅在您主动点击「扫描设备」后，用于搜索附近的加热器、建立 BLE 连接、读取温度与状态、下发目标温度与单位切换指令。\n' +
+  '• 震动（ohos.permission.VIBRATE）：设备上报超温保护、离水断电、探头故障时，在报警页进行震动提醒。\n' +
+  '您可在系统设置中随时关闭上述权限；拒绝后应用仍可打开，但无法连接设备。\n\n' +
+  '三、本地数据\n' +
+  '应用仅在设备本地保存已连接加热器的地址 / 名称、自动连接偏好及运行诊断日志，用于下次启动快速连接与故障排查。这些数据不会离开您的设备，卸载应用即全部清除。\n\n' +
+  '四、您的权利\n' +
+  '您可随时撤回同意、关闭权限、清除本地数据或卸载应用。点击「查看完整隐私政策」可阅读完整版及隐私权利说明。\n\n' +
+  '点击「同意并继续」即表示您已阅读并同意上述内容；若不同意，可点击「不同意并退出」，应用将关闭且不会申请任何权限。';
 
 function sleep(ms: number): Promise<void> {
   return new Promise<void>((resolve) => {
@@ -334,6 +356,10 @@ struct ScanDialog {
 @Entry
 @Component
 struct Index {
+  /** 是否已同意隐私政策 (默认 false, 首次启动必弹弹窗) */
+  @State privacyAgreed: boolean = false;
+  /** 首次启动隐私政策弹窗是否显示 */
+  @State showPrivacyDialog: boolean = false;
   @State scanning: boolean = false;
   @State devices: DeviceItem[] = [];
   @State connected: boolean = false;
@@ -369,7 +395,7 @@ struct Index {
   private hourBase: number = 0;
   private histCtx: CanvasRenderingContext2D =
     new CanvasRenderingContext2D(new RenderingContextSettings(true));
-  @State logText: string = 'SICN v26.48 (build 2026-10-31) 启动。连接已加自动重试(3次)。点击"扫描设备"开始搜索加热器。';
+  @State logText: string = 'SICN v26.49 已启动。请阅读并同意隐私政策后，点击「扫描设备」连接加热器。';
   @State connectBusy: boolean = false;
   /** 已保存设备库(对应安卓 DeviceRecord, 多设备记忆 + 自动连接) */
   @State savedDevices: SavedDevice[] = [];
@@ -427,36 +453,73 @@ struct Index {
     }
   }
 
+  aboutToAppear(): void {
+    // 合规(审核指南 7.5): 首次启动主动、显著地提示用户阅读隐私政策。
+    // 偏好读取完成前 privacyAgreed 保持 false, 期间绝不申请任何权限。
+    PrivacyConsent.isAgreed(this.context).then((ok: boolean) => {
+      this.privacyAgreed = ok;
+      this.showPrivacyDialog = !ok;
+      this.appendLog(ok ? '已同意隐私政策。' : '首次启动, 请先阅读并同意隐私政策。');
+      if (ok) {
+        this.maybeAutoReconnect();
+      }
+    });
+  }
+
   onPageShow(): void {
     this.alarmShown = false;
     BleService.diagListener = (s: string): void => {
       this.appendLog(s);
     };
-    this.appendLog('检查蓝牙权限...');
-    BleService.requestPermission(this.context).then((ok: boolean) => {
-      this.permissionOk = ok;
-      if (!ok) {
-        this.appendLog('蓝牙权限未授权。点\"扫描设备\"时若失败, 请到 设置-应用-权限管理 开启蓝牙权限。');
+    // 合规(审核指南 7.5 / 7.17): 进入主页不得申请任何权限。
+    // 蓝牙权限只在「已同意隐私政策 + 用户主动点击扫描设备」之后申请 (见 startScan)。
+    BleService.isBluetoothOn().then((on: boolean) => {
+      this.appendLog(on ? '蓝牙已开启。' : '警告: 蓝牙未开启, 请打开系统蓝牙。');
+    });
+    // 加载已保存设备库 (纯本地读取, 不涉及权限)
+    DeviceStore.load(this.context).then((list: SavedDevice[]) => {
+      this.savedDevices = list;
+    });
+  }
+
+  /** 用户点击「同意并继续」: 持久化同意状态, 关闭弹窗 */
+  private onPrivacyAgreed(): void {
+    PrivacyConsent.agree(this.context).then(() => {
+      this.privacyAgreed = true;
+      this.showPrivacyDialog = false;
+      this.appendLog('已同意隐私政策。点击「扫描设备」开始搜索加热器。');
+      this.maybeAutoReconnect();
+    });
+  }
+
+  /** 打开完整隐私政策 (系统浏览器访问; 本应用无 INTERNET 权限, 由浏览器自行联网) */
+  private openPrivacyUrl(): void {
+    try {
+      const want: Want = {
+        action: 'ohos.want.action.viewData',
+        entities: ['entity.system.browsable'],
+        uri: PRIVACY_URL
+      };
+      this.context.startAbility(want).catch((e: Object) => {
+        this.appendLog('打开隐私政策失败: ' + JSON.stringify(e));
+      });
+    } catch (e) {
+      this.appendLog('打开隐私政策失败: ' + JSON.stringify(e));
+    }
+  }
+
+  /**
+   * 自动重连前置门禁: 仅在已同意隐私政策且权限已授予时执行。
+   * 这里只做 checkAccessToken 查询, 不会弹任何权限框,
+   * 避免「首次打开 APP 进入主页即提前申请权限」。
+   */
+  private maybeAutoReconnect(): void {
+    BleService.checkPermission(this.context).then((grant: string) => {
+      if (grant === 'granted') {
+        this.tryAutoReconnect();
       } else {
-        this.appendLog('蓝牙权限已授权。');
+        this.appendLog('尚未授予蓝牙权限, 已跳过自动重连。点「扫描设备」即可使用。');
       }
-      // 用系统接口复核权限真实授予状态 (诊断用)
-      BleService.checkPermission(this.context).then((grant: string) => {
-        this.appendLog('权限系统状态: ' + grant);
-      });
-      BleService.isBluetoothOn().then((on: boolean) => {
-        if (on) {
-          this.appendLog('蓝牙已开启。');
-        } else {
-          this.appendLog('警告: 蓝牙未开启, 请打开系统蓝牙。');
-        }
-      });
-      // 加载已保存设备库
-      DeviceStore.load(this.context).then((list: SavedDevice[]) => {
-        this.savedDevices = list;
-      });
-      // 自动重连上次连接的设备
-      this.tryAutoReconnect();
     });
   }
 
@@ -583,13 +646,33 @@ struct Index {
     }
   }
 
-  /** 从主页"扫描设备"进入: 打开弹窗 + 开始扫描 */
+  /**
+   * 从主页「扫描设备」进入: 打开弹窗 + 开始扫描。
+   *
+   * 合规(审核指南 7.5 / 7.17): 这是申请蓝牙权限的唯一入口,
+   * 必须同时满足 ①用户已同意隐私政策 ②用户主动点击扫描按钮。
+   * 首次启动 / 进入主页时绝不调用 requestPermission。
+   */
   startScan(): void {
     if (this.scanning) {
       return;
     }
-    this.openScanDialog();
-    this.beginScan();
+    if (!this.privacyAgreed) {
+      // 未同意隐私政策时不允许申请权限, 重新弹出隐私政策
+      this.showPrivacyDialog = true;
+      return;
+    }
+    BleService.requestPermission(this.context).then((ok: boolean) => {
+      this.permissionOk = ok;
+      if (!ok) {
+        this.appendLog('蓝牙权限未授权。请到 设置-应用-权限管理 开启「附近的设备」权限。');
+        promptAction.showToast({ message: '需开启「附近的设备」权限才能扫描加热器' });
+        return;
+      }
+      this.appendLog('蓝牙权限已授权。');
+      this.openScanDialog();
+      this.beginScan();
+    });
   }
 
   /**
@@ -1351,8 +1434,78 @@ struct Index {
   }
 
   // ---------- UI ----------
+
+  /**
+   * 首次启动隐私政策弹窗 (覆盖层, 不可点外部关闭)。
+   * 用条件渲染而非 CustomDialog: 避免 close() 异步收尾干扰扫描弹窗的 scanSeq 代次守卫。
+   */
+  @Builder
+  privacyDialog() {
+    Stack() {
+      Column({ space: 12 }) {
+        Text('隐私政策')
+          .fontSize(20)
+          .fontWeight(FontWeight.Bold)
+          .fontColor('#1D1D1F')
+        Text('SHISON 加热器 · 首次使用请阅读')
+          .fontSize(12)
+          .fontColor('#8A8F98')
+
+        Scroll() {
+          Text(PRIVACY_SUMMARY)
+            .fontSize(13)
+            .lineHeight(21)
+            .fontColor('#3C4149')
+            .width('100%')
+        }
+        .height(270)
+        .width('100%')
+        .padding({ left: 4, right: 4 })
+        .scrollBar(BarState.Auto)
+
+        Text('查看完整隐私政策')
+          .fontSize(13)
+          .fontColor('#3A86FF')
+          .onClick(() => {
+            this.openPrivacyUrl();
+          })
+
+        Row({ space: 10 }) {
+          Button('不同意并退出')
+            .fontSize(14)
+            .fontColor('#6B7280')
+            .backgroundColor('#F0F2F5')
+            .layoutWeight(1)
+            .onClick(() => {
+              this.context.terminateSelf().catch(() => {});
+            })
+          Button('同意并继续')
+            .fontSize(14)
+            .fontColor('#FFFFFF')
+            .backgroundColor('#3A86FF')
+            .layoutWeight(1)
+            .onClick(() => {
+              this.onPrivacyAgreed();
+            })
+        }
+        .width('100%')
+      }
+      .width('88%')
+      .padding(20)
+      .borderRadius(16)
+      .backgroundColor('#FFFFFF')
+      .shadow({ radius: 30, color: '#33000000', offsetY: 8 })
+      .onClick(() => {})
+    }
+    .width('100%')
+    .height('100%')
+    .backgroundColor('#99000000')
+    .onClick(() => {})
+  }
+
   build() {
-    Column({ space: 10 }) {
+    Stack() {
+      Column({ space: 10 }) {
       // ===== 顶栏: 连接状态 + 设备名 + 单位切换 =====
       Row() {
         Text(this.connected ? '● 已连接' : '● 未连接')
@@ -1602,14 +1755,21 @@ struct Index {
       }
       .width('100%')
       .padding({ left: 4, right: 4 })
+      }
+      .width('100%')
+      .height('100%')
+      .padding({ left: 12, right: 12, bottom: 12 })
+      .backgroundColor('#F5F7FA')
+      .linearGradient({
+        direction: GradientDirection.Bottom,
+        colors: [['#FFFFFF', 0.0], ['#F0F5FB', 1.0]]
+      })
+
+      if (this.showPrivacyDialog) {
+        this.privacyDialog();
+      }
     }
     .width('100%')
     .height('100%')
-    .padding({ left: 12, right: 12, bottom: 12 })
-    .backgroundColor('#F5F7FA')
-    .linearGradient({
-      direction: GradientDirection.Bottom,
-      colors: [['#FFFFFF', 0.0], ['#F0F5FB', 1.0]]
-    })
   }
 }

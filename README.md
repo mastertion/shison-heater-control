@@ -26,7 +26,7 @@
 
 | 项 | 值 |
 |---|---|
-| bundleName | `com.zddz.app.sicn`（与华为 AGC 应用包名一致）|
+| bundleName | `top.asahilee.app.sicn`（与华为 AGC 新建应用包名一致）|
 | versionName / versionCode | `26.48` / `1000048` |
 | 应用显示名 | 诗彦加热棒（SHISON HEATER）|
 | compatibleSdk / targetSdk | `26.0.0` |

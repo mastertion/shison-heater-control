@@ -1,2 +1,3 @@
 50b4c89741f14570323c319a9f1cd77cd32afcb1a755391b278833323d155215 *SICN-Heater-v26.48-unsigned.hap
 ea56a84f916d476d3b77702dbc7ef4585141bdeb6b25a85567f99b52c9d4de51 *SICN-Heater-v26.48-release-signed.app
+9eacacad5f1157a0b5f8fb551e470face67d3c5de4dcde53af75bcc60f5ffa8b *SICN-Heater-v26.49-release-signed.app

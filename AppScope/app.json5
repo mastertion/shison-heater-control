@@ -1,9 +1,9 @@
 {
   "app": {
-    "bundleName": "com.zddz.app.sicn",
+    "bundleName": "top.asahilee.app.sicn",
     "vendor": "sicn",
-    "versionCode": 1000048,
-    "versionName": "26.48",
+    "versionCode": 1000049,
+    "versionName": "26.49",
     "icon": "$media:app_icon",
     "label": "$string:app_name"
   }

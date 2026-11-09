@@ -3,13 +3,38 @@
 > 用于 AGC「应用信息」与「版本信息」填写，2026-11-06 整理。
 > 应用名称必须与软件包内 `app_name` 一致；应用图标必须与软件包内图标一致。
 
+## ⚠️ 换包名迁移（2026-11-09）
+
+用户决定将应用包名从 `com.zddz.app.sicn` 改为 `top.asahilee.app.sicn`。
+AGC 应用包名创建后**不可修改**，因此必须**新建 AGC 应用**（拿新 APP ID），
+旧应用（APP ID `6917621097144791270`，26.48 正在等待审核）需撤销审核并弃用。
+
+### 迁移清单（按顺序）
+
+1. **[用户] 撤销旧审核**：AGC 旧应用右上角「撤销审核」，停止该应用后续提交。
+2. **[用户] 新建应用**：在 AGC 新建 HarmonyOS 应用，包名填 `top.asahilee.app.sicn`，记下新 APP ID。
+3. **[用户] 证书/Profile**：在 AGC「证书、APP ID 和 Profile」把新 APP ID 加入现有发布证书
+   `sicn_release_2026`（或新建证书），并生成绑定新包名的**新发布 Profile**。
+4. **[本地] 代码包名已改**：`AppScope/app.json5` 的 bundleName 已改为 `top.asahilee.app.sicn`。
+5. **[本地] 重新签名打包**：用新 Profile 生成 `dist/SICN-Heater-v26.48-release-signed.app`
+   （其 bundleName 须与新 APP ID 完全一致，否则审核/安装被拒）。
+6. **[本地] 隐私页改包名**：本仓库 `docs/` 源码已改；但**线上部署须等旧审核撤销后**再推 GitHub Pages /
+   重新上传 Lucky，否则旧审核读到新包名会被驳回。
+7. **[用户] 新应用提交**：AGC 新应用上传新签名包，填应用信息 / 版本信息 / 隐私 URL / 截图 /
+   联系方式 / 备案 / 自测文件，重新提交审核。
+
+### 注意事项
+- 旧应用未撤销前，线上隐私页保持旧包名；撤销后方可更新线上隐私页。
+- versionCode 在新应用中独立计数，可沿用 1000048 或重置；本工程暂保持 1000048。
+- Lucky 托管的 IPv6-only 限制依旧（见文末），新应用隐私 URL 仍建议先用 GitHub Pages。
+
 ## 基础信息
 
 | 项 | 值 |
 |---|---|
 | 应用名称 | SHISON 加热器 |
-| 包名 | com.zddz.app.sicn |
-| APP ID | 6917621097144791270 |
+| 包名 | top.asahilee.app.sicn（**新建应用**，旧 com.zddz.app.sicn 已弃用） |
+| APP ID | 待创建（旧 6917621097144791270 对应 com.zddz.app.sicn，将弃用） |
 | 软件包类型 | APP（HarmonyOS 应用） |
 | 版本 | 26.48 / versionCode 1000048 |
 | 支持设备 | 手机（工程 deviceTypes 含 phone / tablet，AGC 先仅勾选手机） |
